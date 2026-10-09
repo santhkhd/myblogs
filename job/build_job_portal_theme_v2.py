@@ -2693,7 +2693,13 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
         var job = ALL_JOBS.find(function(j) { return j.id === jobId; });
         if (!job) return;
 
-        window.location.hash = jobId;
+        if (window.location.hash !== '#' + jobId) {
+          try {
+            history.pushState(null, null, '#' + jobId);
+          } catch(e) {
+            window.location.hash = jobId;
+          }
+        }
 
         // Dynamic Document Title for SEO
         var yr = new Date().getFullYear();
@@ -2824,6 +2830,13 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
             "<li>Submit application fees online and print your final acknowledgment confirmation.</li>" +
           "</ol>";
 
+        if (job.content_html) {
+          content.innerHTML += "<div class='full-post-body' style='margin-top:2rem; padding:1.5rem; background:var(--bg-surface); border-radius:12px; border:1px solid var(--border-color); line-height:1.8;'>" +
+            "<h3 style='font-size:1.15rem; font-weight:800; margin-bottom:1rem; color:var(--primary);'><i class='fas fa-file-alt'></i> Full Notification &amp; Official Details</h3>" +
+            job.content_html +
+          "</div>";
+        }
+
         // Render Related Job Cards Under Post
         var related = ALL_JOBS.filter(function(other) {
           return other.id !== job.id && (other.category === job.category || (other.labels && other.labels.some(function(l) { return job.labels && job.labels.indexOf(l) !== -1; })));
@@ -2858,7 +2871,13 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
       }
 
       function showFeedView() {
-        window.location.hash = '';
+        if (window.location.hash) {
+          try {
+            history.pushState('', document.title, window.location.pathname + window.location.search);
+          } catch(e) {
+            window.location.hash = '';
+          }
+        }
         var yr = new Date().getFullYear();
         document.title = "Government Job Notifications " + yr + " | Kerala PSC, Central Govt, Banking, Railway, SSC Updates";
         
@@ -2879,11 +2898,14 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
 
       function checkHashRoute() {
         var hash = (window.location.hash || '').replace('#', '');
-        if (hash && hash.startsWith('job-2026-notification-')) {
-          openJobFullPage(hash);
-        } else {
-          showFeedView();
+        if (hash) {
+          var job = ALL_JOBS.find(function(j) { return j.id === hash; });
+          if (job) {
+            openJobFullPage(hash);
+            return;
+          }
         }
+        showFeedView();
       }
 
       window.addEventListener('hashchange', checkHashRoute);
