@@ -2830,12 +2830,7 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
             "<li>Submit application fees online and print your final acknowledgment confirmation.</li>" +
           "</ol>";
 
-        if (job.content_html) {
-          content.innerHTML += "<div class='full-post-body' style='margin-top:2rem; padding:1.5rem; background:var(--bg-surface); border-radius:12px; border:1px solid var(--border-color); line-height:1.8;'>" +
-            "<h3 style='font-size:1.15rem; font-weight:800; margin-bottom:1rem; color:var(--primary);'><i class='fas fa-file-alt'></i> Full Notification &amp; Official Details</h3>" +
-            job.content_html +
-          "</div>";
-        }
+
 
         // Render Related Job Cards Under Post
         var related = ALL_JOBS.filter(function(other) {
