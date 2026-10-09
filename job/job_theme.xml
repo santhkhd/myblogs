@@ -2857,6 +2857,102 @@
 
       window.addEventListener('hashchange', checkHashRoute);
 
+      function onBloggerLiveFeedLoaded(data) {
+        if (!data || !data.feed || !data.feed.entry || data.feed.entry.length === 0) return;
+        var entries = data.feed.entry;
+        var newlyAdded = [];
+        for (var i = 0; i < entries.length; i++) {
+          var entry = entries[i];
+          var title = entry.title ? (entry.title.$t || '') : '';
+          var contentHtml = entry.content ? (entry.content.$t || '') : (entry.summary ? entry.summary.$t : '');
+          var published = entry.published ? entry.published.$t.split('T')[0] : new Date().toISOString().split('T')[0];
+          
+          var labels = [];
+          if (entry.category) {
+            for (var c = 0; c < entry.category.length; c++) {
+              if (entry.category[c].term) labels.push(entry.category[c].term);
+            }
+          }
+
+          var link = '';
+          if (entry.link) {
+            for (var l = 0; l < entry.link.length; l++) {
+              if (entry.link[l].rel === 'alternate') {
+                link = entry.link[l].href;
+                break;
+              }
+            }
+          }
+
+          var postId = 'live-post-' + (entry.id ? entry.id.$t.replace(/[^a-zA-Z0-9]/g, '-').slice(-20) : i);
+
+          var exists = ALL_JOBS.some(function(j) {
+            return j.title.toLowerCase().trim() === title.toLowerCase().trim();
+          });
+
+          if (!exists && title) {
+            var orgName = (labels.length > 0 ? labels[0] : 'Govt Recruitment');
+            var qual = 'Any Degree / 12th / 10th Pass';
+            var lastDate = published;
+            
+            var qualMatch = contentHtml.match(/Qualification[:\s<>\/tdbstrong]+([^<
+]+)/i);
+            if (qualMatch && qualMatch[1]) qual = qualMatch[1].trim();
+
+            var lastDateMatch = contentHtml.match(/(?:Last Date|Closing Date|Apply By)[:\s<>\/tdbstrong]+([^<
+]+)/i);
+            if (lastDateMatch && lastDateMatch[1]) lastDate = lastDateMatch[1].trim();
+
+            var itemType = 'notification';
+            if (title.toLowerCase().indexOf('admit') !== -1 || title.toLowerCase().indexOf('hall ticket') !== -1) itemType = 'admit_card';
+            else if (title.toLowerCase().indexOf('result') !== -1 || title.toLowerCase().indexOf('ranked list') !== -1) itemType = 'result';
+            else if (title.toLowerCase().indexOf('answer key') !== -1) itemType = 'answer_key';
+            else if (title.toLowerCase().indexOf('syllabus') !== -1) itemType = 'syllabus';
+
+            newlyAdded.push({
+              id: postId,
+              title: title,
+              org_name: orgName,
+              post_name: title,
+              vacancies: 'Various',
+              salary: 'As per Govt Norms',
+              qualification: qual,
+              age_limit: '18-40 Years',
+              location: (labels.indexOf('Kerala Govt Jobs') !== -1 || labels.indexOf('Kerala PSC') !== -1) ? 'Kerala' : 'All India',
+              fee: 'Refer Notification',
+              category: labels.length > 0 ? labels[0] : 'Central Govt Jobs',
+              labels: labels,
+              start_date: published,
+              last_date: lastDate,
+              apply_url: link || 'https://www.blogger.com',
+              pdf_url: link || 'https://www.blogger.com',
+              website: 'Official Portal',
+              item_type: itemType
+            });
+          }
+        }
+
+        if (newlyAdded.length > 0) {
+          ALL_JOBS = newlyAdded.concat(ALL_JOBS);
+          activeFilteredJobs = ALL_JOBS;
+          var heroCount = document.getElementById('heroActiveCount');
+          if (heroCount) heroCount.innerText = ALL_JOBS.length + '+';
+          updateChannelCounts();
+          updateCategoryCounts();
+          filterJobs();
+        }
+      }
+      window.onBloggerLiveFeedLoaded = onBloggerLiveFeedLoaded;
+
+      function syncLiveBloggerPosts() {
+        try {
+          var script = document.createElement('script');
+          script.src = '/feeds/posts/default?alt=json-in-script&callback=onBloggerLiveFeedLoaded&max-results=50';
+          script.async = true;
+          document.body.appendChild(script);
+        } catch (e) {}
+      }
+
       function initPortal() {
         updateDynamicYear();
         var heroCount = document.getElementById('heroActiveCount');
@@ -2865,6 +2961,7 @@
         updateCategoryCounts();
         renderJobCards(ALL_JOBS);
         checkHashRoute();
+        syncLiveBloggerPosts();
       }
 
       if (document.readyState === 'loading') {
