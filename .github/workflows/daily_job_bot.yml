@@ -26,13 +26,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run Daily 50 Jobs Bot & Auto-Publish
+      - name: Run Daily 50 Jobs Bot & Auto-Publish via Google Blogger API
         env:
-          BLOGGER_POST_EMAIL: ${{ secrets.BLOGGER_POST_EMAIL }}
-          SENDER_GMAIL: ${{ secrets.SENDER_GMAIL }}
-          SENDER_GMAIL_APP_PASSWORD: ${{ secrets.SENDER_GMAIL_APP_PASSWORD }}
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+          BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+          BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
+          BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
         run: |
-          python job/github_auto_poster.py
+          python job/blogger_api_auto_poster.py
 
       - name: Commit & Push Updated Job History & XML
         run: |

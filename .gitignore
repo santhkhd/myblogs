@@ -5,3 +5,7 @@ scratch/
 dist/
 blogger_import.xml
 *.json.bak
+blogger_api_credentials.txt
+token.json
+client_secret.json
+client_secrets.json
