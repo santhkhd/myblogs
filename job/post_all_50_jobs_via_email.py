@@ -11,6 +11,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 import time
 import smtplib
+import re
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -60,9 +61,9 @@ def post_all_jobs(sender_email=None, sender_password=None, delay_seconds=2):
     fail_count = 0
 
     for idx, job in enumerate(JOBS_50, 1):
-        # Format labels into Blogger hashtags in subject line
-        tags_str = ", ".join([f"#{lbl}" for lbl in job.get("labels", ["Govt Jobs"])])
-        subject = f"{job['title']} {tags_str}"
+        # Clean subject line without hashtag mess
+        clean_title = re.sub(r'\s*#[a-zA-Z0-9_\s,#]+$', '', job['title']).strip()
+        subject = clean_title if clean_title else job['title']
         body_html = render_post_html(job)
 
         msg = MIMEMultipart("alternative")
