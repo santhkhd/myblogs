@@ -2942,24 +2942,64 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
             var cleanTitle = title.replace(/\s*#[a-zA-Z0-9_\s,#]+$/, '').trim();
             if (!cleanTitle) cleanTitle = title;
 
-            var orgName = (labels.length > 0 ? labels[0] : 'Govt Recruitment');
-            var qual = 'Any Degree / 12th / 10th Pass';
-            var lastDate = published;
-            
-            var qualMatch = contentHtml.match(/(?:Qualification|Eligibility|Education)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
-            if (qualMatch && qualMatch[1]) qual = qualMatch[1].trim();
+            function extractTableCell(html, labelPattern) {
+              var re = new RegExp('<td[^>]*>[^<]*' + labelPattern + '[^<]*<\\/td>\\s*<td[^>]*>([\\s\\S]*?)<\\/td>', 'i');
+              var m = html.match(re);
+              if (m && m[1]) {
+                return m[1].replace(/<[^>]+>/g, '').trim();
+              }
+              return '';
+            }
 
-            var lastDateMatch = contentHtml.match(/(?:Last Date|Closing Date|Apply By)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
-            if (lastDateMatch && lastDateMatch[1]) lastDate = lastDateMatch[1].trim();
+            var cellOrg = extractTableCell(contentHtml, '(?:Recruiting Authority|Hiring Authority|Authority)');
+            var cellPost = extractTableCell(contentHtml, '(?:Post Name|Designation|Role)');
+            var cellVac = extractTableCell(contentHtml, '(?:Total Vacancies|Vacancies|Total Posts)');
+            var cellSal = extractTableCell(contentHtml, '(?:Salary|Pay Scale)');
+            var cellQual = extractTableCell(contentHtml, '(?:Qualification|Eligibility|Education)');
+            var cellAge = extractTableCell(contentHtml, '(?:Age Limit|Age)');
+            var cellLoc = extractTableCell(contentHtml, '(?:Job Location|Location)');
+            var cellFee = extractTableCell(contentHtml, '(?:Application Fee|Fee)');
+            var cellLastDate = extractTableCell(contentHtml, '(?:Last Date|Closing Date|Apply By)');
+            var cellStartDate = extractTableCell(contentHtml, '(?:Online Application Starts|Start Date)');
 
-            var vacMatch = contentHtml.match(/(?:Total Vacancies|Vacancies|Total Posts)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
-            var vacancies = (vacMatch && vacMatch[1]) ? vacMatch[1].trim() : 'Various Posts';
+            // Find qualification from labels if cell is empty or 'Required'
+            var qualFromLabels = '';
+            for (var lb = 0; lb < labels.length; lb++) {
+              var lLower = labels[lb].toLowerCase();
+              if (lLower.indexOf('pass') !== -1 || lLower.indexOf('degree') !== -1 || lLower.indexOf('diploma') !== -1 || lLower.indexOf('iti') !== -1 || lLower.indexOf('graduate') !== -1 || lLower.indexOf('b.sc') !== -1 || lLower.indexOf('b.tech') !== -1 || lLower.indexOf('nursing') !== -1 || lLower.indexOf('clerk') !== -1) {
+                qualFromLabels = labels[lb];
+                break;
+              }
+            }
 
-            var salMatch = contentHtml.match(/(?:Monthly Salary|Salary|Pay Scale)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
-            var salary = (salMatch && salMatch[1]) ? salMatch[1].trim() : 'As per Govt Norms';
+            // Find organization name from labels (skip generic qualification/category labels)
+            var orgFromLabels = '';
+            for (var ol = 0; ol < labels.length; ol++) {
+              var oLower = labels[ol].toLowerCase();
+              if (oLower.indexOf('pass') === -1 && oLower.indexOf('govt jobs') === -1 && oLower.indexOf('job alerts') === -1 && oLower.indexOf('degree') === -1 && oLower.indexOf('diploma') === -1 && oLower.indexOf('iti') === -1 && oLower.indexOf('central govt') === -1) {
+                orgFromLabels = labels[ol];
+                break;
+              }
+            }
 
-            var ageMatch = contentHtml.match(/(?:Age Limit|Age)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
-            var ageLimit = (ageMatch && ageMatch[1]) ? ageMatch[1].trim() : '18-40 Years';
+            var qual = cellQual;
+            if (!qual || qual.toLowerCase() === 'required' || qual.length < 3) {
+              qual = qualFromLabels || 'Any Degree / 12th / 10th Pass';
+            }
+
+            var orgName = cellOrg;
+            if (!orgName || orgName.toLowerCase().indexOf('pass') !== -1 || orgName.toLowerCase().indexOf('degree') !== -1) {
+              orgName = orgFromLabels || (labels.length > 0 ? labels[0] : 'Govt Recruitment');
+            }
+
+            var postName = cellPost || cleanTitle;
+            var vacancies = cellVac || 'Various Posts';
+            var salary = cellSal || 'As per Govt Norms';
+            var ageLimit = cellAge || '18-40 Years';
+            var location = cellLoc || ((labels.indexOf('Kerala Govt Jobs') !== -1 || labels.indexOf('Kerala PSC') !== -1) ? 'Kerala' : 'All India');
+            var fee = cellFee || 'Refer Notification';
+            var lastDate = cellLastDate || published;
+            var startDate = cellStartDate || published;
 
             // Extract genuine external official application and PDF links from post content
             var linkMatches = contentHtml.match(/href=['"](https?:\/\/[^'"]+)['"]/gi) || [];
