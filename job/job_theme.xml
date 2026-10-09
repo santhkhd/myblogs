@@ -1202,17 +1202,59 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        padding: 8px 14px;
+        padding: 8px 16px;
         border-radius: 50px;
-        font-size: 0.82rem;
-        font-weight: 700;
-        color: #FFFFFF !important;
+        font-size: 0.84rem;
+        font-weight: 800;
         text-decoration: none;
         transition: var(--transition);
+        border: none;
+        cursor: pointer;
       }
-      .btn-whatsapp { background: #25D366; }
-      .btn-telegram { background: #0088CC; }
-      .btn-copy { background: #64748B; cursor: pointer; border: none; }
+      .btn-save {
+        background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        color: #FFFFFF !important;
+        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35);
+      }
+      .btn-save:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.5);
+      }
+      .btn-save.saved {
+        background: #FEF3C7 !important;
+        color: #B45309 !important;
+        border: 1.5px solid #F59E0B !important;
+        box-shadow: none;
+      }
+      .btn-whatsapp { 
+        background: #25D366; 
+        color: #FFFFFF !important;
+        box-shadow: 0 2px 8px rgba(37, 211, 102, 0.35);
+      }
+      .btn-whatsapp:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+      }
+      .btn-telegram { 
+        background: #0088CC; 
+        color: #FFFFFF !important;
+        box-shadow: 0 2px 8px rgba(0, 136, 204, 0.35);
+      }
+      .btn-telegram:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 136, 204, 0.5);
+      }
+      .btn-copy { 
+        background: #475569; 
+        color: #FFFFFF !important;
+        cursor: pointer; 
+        border: none;
+        box-shadow: 0 2px 8px rgba(71, 85, 105, 0.3);
+      }
+      .btn-copy:hover {
+        transform: translateY(-1px);
+        background: #334155;
+      }
 
       /* Related Jobs Section (Under the Post) */
       .related-jobs-box {
@@ -1869,13 +1911,11 @@
         var artBtn = document.getElementById('articleBookmarkBtn');
         if (artBtn) {
           if (isNowSaved) {
-            artBtn.innerHTML = "<i class='fas fa-bookmark' style='color:#F59E0B;'></i> Saved in Bookmarks";
-            artBtn.style.background = '#FEF3C7';
-            artBtn.style.color = '#D97706';
+            artBtn.className = 'share-btn btn-save saved';
+            artBtn.innerHTML = "<i class='fas fa-bookmark' style='color:#D97706;'></i> Saved in Bookmarks";
           } else {
+            artBtn.className = 'share-btn btn-save';
             artBtn.innerHTML = "<i class='far fa-bookmark'></i> ⭐ Save Job";
-            artBtn.style.background = 'var(--bg-page)';
-            artBtn.style.color = 'var(--text-primary)';
           }
         }
       }
@@ -2786,8 +2826,8 @@
         var savedList = getSavedJobs();
         var isSaved = savedList.indexOf(job.id) !== -1;
         var saveBtnHtml = isSaved 
-          ? "<button onclick='toggleSaveJob(this.dataset.saveid, event)' data-saveid='" + job.id + "' id='articleBookmarkBtn' class='share-btn' style='background:#FEF3C7; color:#D97706; border-color:#F59E0B;' type='button'><i class='fas fa-bookmark'></i> Saved in Bookmarks</button>"
-          : "<button onclick='toggleSaveJob(this.dataset.saveid, event)' data-saveid='" + job.id + "' id='articleBookmarkBtn' class='share-btn' type='button'><i class='far fa-bookmark'></i> ⭐ Save Job</button>";
+          ? "<button onclick='toggleSaveJob(this.dataset.saveid, event)' data-saveid='" + job.id + "' id='articleBookmarkBtn' class='share-btn btn-save saved' type='button'><i class='fas fa-bookmark' style='color:#D97706;'></i> Saved in Bookmarks</button>"
+          : "<button onclick='toggleSaveJob(this.dataset.saveid, event)' data-saveid='" + job.id + "' id='articleBookmarkBtn' class='share-btn btn-save' type='button'><i class='far fa-bookmark'></i> ⭐ Save Job</button>";
 
         var typeClass = 'chip-notif';
         var typeLabel = '📢 OFFICIAL NOTIFICATION';
