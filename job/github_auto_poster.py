@@ -40,39 +40,65 @@ BLOGGER_EMAIL = os.environ.get("BLOGGER_POST_EMAIL", "").strip()
 SENDER_GMAIL = os.environ.get("SENDER_GMAIL", "").strip()
 SENDER_PASSWORD = os.environ.get("SENDER_GMAIL_APP_PASSWORD", "").replace(" ", "").replace('"', '').replace("'", "").strip()
 
+def mask_email(email):
+    if "@" in email:
+        name, domain = email.split("@", 1)
+        masked_name = name[:2] + "***" if len(name) > 2 else name + "***"
+        return f"{masked_name}@{domain}"
+    return "***"
+
 def get_authenticated_smtp():
     """
-    Establishes an authenticated connection to Gmail SMTP via IPv4.
-    Tries Port 587 with STARTTLS first, followed by Port 465 SSL.
+    Establishes an authenticated connection to Gmail SMTP via IPv4 with step-by-step diagnostics.
     """
     if not (BLOGGER_EMAIL and SENDER_GMAIL and SENDER_PASSWORD):
         print("ℹ️ Skipping email dispatch: Required GitHub Secrets (BLOGGER_POST_EMAIL, SENDER_GMAIL, SENDER_GMAIL_APP_PASSWORD) not fully configured.")
         return None
 
+    print(f"📧 SENDER_GMAIL: {mask_email(SENDER_GMAIL)}")
+    print(f"🎯 BLOGGER_EMAIL: {mask_email(BLOGGER_EMAIL)}")
+    print(f"🔑 SENDER_GMAIL_APP_PASSWORD length: {len(SENDER_PASSWORD)} characters")
+
     ssl_context = ssl.create_default_context()
 
-    # Method 1: Port 587 with STARTTLS (IPv4)
-    try:
-        server = smtplib.SMTP("smtp.gmail.com", 587, timeout=30)
-        server.ehlo()
-        server.starttls(context=ssl_context)
-        server.ehlo()
-        server.login(SENDER_GMAIL, SENDER_PASSWORD)
-        print("✅ Connected & Authenticated to Gmail SMTP (Port 587 STARTTLS)")
-        return server
-    except Exception as e587:
-        print(f"⚠️ Port 587 attempt failed: {e587}. Trying Port 465 SSL...")
+    # --- Strategy 1: Port 587 STARTTLS ---
+    for host in ["smtp.gmail.com", "smtp.googlemail.com"]:
+        print(f"\n🔌 Attempting connection to {host}:587 (STARTTLS)...")
+        try:
+            server = smtplib.SMTP(host, 587, timeout=30)
+            server.set_debuglevel(1)
+            print(f"   [1/4] Socket connected to {host}:587. Sending EHLO...")
+            server.ehlo()
+            print("   [2/4] Negotiating STARTTLS...")
+            server.starttls(context=ssl_context)
+            server.ehlo()
+            print(f"   [3/4] Authenticating with Gmail App Password...")
+            server.login(SENDER_GMAIL, SENDER_PASSWORD)
+            print("   [4/4] ✅ Authentication successful! Gmail SMTP session established.")
+            return server
+        except Exception as e:
+            print(f"   ❌ Failed on {host}:587 -> {type(e).__name__}: {e}")
 
-    # Method 2: Port 465 SSL (IPv4)
-    try:
-        server = smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ssl_context, timeout=30)
-        server.login(SENDER_GMAIL, SENDER_PASSWORD)
-        print("✅ Connected & Authenticated to Gmail SMTP (Port 465 SSL)")
-        return server
-    except Exception as e465:
-        print(f"❌ Port 465 SSL attempt failed: {e465}")
+    # --- Strategy 2: Port 465 SSL ---
+    for host in ["smtp.gmail.com", "smtp.googlemail.com"]:
+        print(f"\n🔌 Attempting connection to {host}:465 (Direct SSL)...")
+        try:
+            server = smtplib.SMTP_SSL(host, 465, context=ssl_context, timeout=30)
+            server.set_debuglevel(1)
+            print(f"   [1/3] SSL Socket connected to {host}:465. Sending EHLO...")
+            server.ehlo()
+            print(f"   [2/3] Authenticating with Gmail App Password...")
+            server.login(SENDER_GMAIL, SENDER_PASSWORD)
+            print("   [3/3] ✅ Authentication successful! Gmail SMTP session established.")
+            return server
+        except Exception as e:
+            print(f"   ❌ Failed on {host}:465 -> {type(e).__name__}: {e}")
 
-    print("❌ Could not connect to Gmail SMTP. Please verify SENDER_GMAIL and SENDER_GMAIL_APP_PASSWORD in GitHub Secrets.")
+    print("\n❌ Could not connect or authenticate to Gmail SMTP across all endpoints.")
+    print("💡 Troubleshooting Tips:")
+    print("   1. Verify your App Password at: https://myaccount.google.com/apppasswords")
+    print("   2. Ensure 2-Step Verification is active on your Google Account.")
+    print("   3. Check your Gmail inbox for any Google 'Security alert / Sign-in attempt blocked' notifications.")
     return None
 
 def build_job_email(job):
