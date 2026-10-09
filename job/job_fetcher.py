@@ -16,21 +16,31 @@ import random
 HISTORY_FILE = os.path.join(os.path.dirname(__file__), "jobs_history.json")
 
 def load_history():
+    """Loads history dictionary mapping job_signature -> last_posted_date_iso"""
     if os.path.exists(HISTORY_FILE):
         try:
             with open(HISTORY_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+                data = json.load(f)
+                if isinstance(data, dict):
+                    return data
+                elif isinstance(data, list):
+                    # Migration from legacy list of hashes: convert to dict
+                    today_str = datetime.date.today().isoformat()
+                    return {h: today_str for h in data}
         except Exception:
-            return []
-    return []
+            return {}
+    return {}
 
 def save_history(history):
-    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
-        json.dump(history, f, indent=2, ensure_ascii=False)
+    try:
+        with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=2, ensure_ascii=False)
+    except Exception:
+        pass
 
-def get_job_hash(job):
-    """Generates unique signature for deduplication"""
-    raw = f"{job.get('org_name', '')}_{job.get('post_name', '')}_{job.get('title', '')}".lower().strip()
+def get_job_signature(org_name, post_name):
+    """Generates unique signature for the organization + role"""
+    raw = f"{org_name}_{post_name}".lower().strip()
     return hashlib.md5(raw.encode('utf-8')).hexdigest()
 
 # Comprehensive Master Catalog of 100+ Real Government Recruiting Authorities across India
@@ -439,17 +449,24 @@ def generate_daily_50_jobs(limit=50):
     """
     Generates exactly `limit` (default 50) fresh, non-duplicated government jobs
     with active rolling dates and genuine recruiting entity details.
+    Guarantees limit jobs on every execution.
     """
     history = load_history()
     today = datetime.date.today()
+    cutoff_date = (today - datetime.timedelta(days=7)).isoformat()
+    
+    # Prune history entries older than 14 days to keep registry clean
+    pruned_cutoff = (today - datetime.timedelta(days=14)).isoformat()
+    history = {k: v for k, v in history.items() if v >= pruned_cutoff}
     
     generated_jobs = []
     
-    # Shuffle recruiting entities and post variations for maximum variety
+    # Shuffle recruiting entities with today's date seed for varied rotation
     entities_pool = list(RECRUITING_ENTITIES)
-    random.seed(int(today.strftime("%Y%m%d")))
+    random.seed(int(today.strftime("%Y%m%d")) + 1)
     random.shuffle(entities_pool)
 
+    # Pass 1: Select jobs not posted within the last 7 days
     for entity in entities_pool:
         org = entity["org_name"]
         cat = entity["category"]
@@ -458,11 +475,21 @@ def generate_daily_50_jobs(limit=50):
         apply_url = entity["apply_url"]
         labels = list(entity.get("labels", ["Govt Jobs"]))
 
-        for post in entity["post_names"]:
+        # Randomize post order for variety
+        post_list = list(entity["post_names"])
+        random.shuffle(post_list)
+
+        for post in post_list:
             if len(generated_jobs) >= limit:
                 break
 
-            # Date calculation: Start Date = Today, Last Date = +20 to +45 days
+            sig = get_job_signature(org, post)
+            last_posted = history.get(sig)
+            
+            # Skip if already posted in the last 7 days
+            if last_posted and last_posted >= cutoff_date:
+                continue
+
             days_valid = random.randint(20, 45)
             last_date_obj = today + datetime.timedelta(days=days_valid)
             
@@ -470,11 +497,10 @@ def generate_daily_50_jobs(limit=50):
             last_date_str = last_date_obj.strftime("%d %B %Y")
             
             qual, salary, vac_count, fee = resolve_qual_and_salary(post)
-            
             title = f"{org} {post} Recruitment {today.year}: Apply Online for {vac_count}"
             
             job_obj = {
-                "id": f"govt-job-{abs(hash(org + post + str(today.year))) % 1000000}",
+                "id": f"govt-job-{abs(hash(org + post + str(today.year) + str(today.day))) % 1000000}",
                 "org_name": org,
                 "title": title,
                 "post_name": post,
@@ -494,13 +520,63 @@ def generate_daily_50_jobs(limit=50):
                 "website": site
             }
 
-            job_hash = get_job_hash(job_obj)
-            if job_hash not in history:
-                generated_jobs.append(job_obj)
-                history.append(job_hash)
+            generated_jobs.append(job_obj)
+            history[sig] = today.isoformat()
 
         if len(generated_jobs) >= limit:
             break
+
+    # Pass 2: Fallback fill if pool exhausted (ensures we ALWAYS have limit jobs)
+    if len(generated_jobs) < limit:
+        for entity in entities_pool:
+            if len(generated_jobs) >= limit:
+                break
+            org = entity["org_name"]
+            cat = entity["category"]
+            loc = entity["location"]
+            site = entity["website"]
+            apply_url = entity["apply_url"]
+            labels = list(entity.get("labels", ["Govt Jobs"]))
+
+            for post in entity["post_names"]:
+                if len(generated_jobs) >= limit:
+                    break
+                
+                # Check if already added in this batch
+                already_in_batch = any(j["org_name"] == org and j["post_name"] == post for j in generated_jobs)
+                if already_in_batch:
+                    continue
+
+                days_valid = random.randint(20, 45)
+                last_date_obj = today + datetime.timedelta(days=days_valid)
+                start_date_str = today.strftime("%d %B %Y")
+                last_date_str = last_date_obj.strftime("%d %B %Y")
+                qual, salary, vac_count, fee = resolve_qual_and_salary(post)
+                title = f"{org} {post} Recruitment {today.year}: Apply Online for {vac_count}"
+
+                job_obj = {
+                    "id": f"govt-job-{abs(hash(org + post + str(today.year) + str(today.day))) % 1000000}",
+                    "org_name": org,
+                    "title": title,
+                    "post_name": post,
+                    "vacancies": vac_count,
+                    "salary": salary,
+                    "qualification": qual,
+                    "min_age": "18 Years",
+                    "max_age": "36 Years (Relaxation as per Govt Norms)",
+                    "fee": fee,
+                    "location": loc,
+                    "start_date": start_date_str,
+                    "last_date": last_date_str,
+                    "category": cat,
+                    "labels": labels + [cat, "Govt Jobs 2026"],
+                    "apply_url": apply_url,
+                    "pdf_url": apply_url,
+                    "website": site
+                }
+                generated_jobs.append(job_obj)
+                sig = get_job_signature(org, post)
+                history[sig] = today.isoformat()
 
     # Save updated deduplication registry
     save_history(history)

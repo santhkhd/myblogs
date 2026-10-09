@@ -7,7 +7,16 @@ Fetches latest government jobs and posts them to Blogger without requiring your 
 import os
 import sys
 import smtplib
+import socket
+import ssl
 import time
+
+# Force IPv4 socket resolution for GitHub Actions cloud runners
+# (Gmail SMTP servers drop IPv6 connections from cloud runner IP ranges)
+_orig_getaddrinfo = socket.getaddrinfo
+def _ipv4_getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+    return _orig_getaddrinfo(host, port, socket.AF_INET, type, proto, flags)
+socket.getaddrinfo = _ipv4_getaddrinfo
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 if current_dir not in sys.path:
@@ -29,35 +38,42 @@ from job_publisher import generate_blogger_xml
 # GitHub Secrets / Environment Variables
 BLOGGER_EMAIL = os.environ.get("BLOGGER_POST_EMAIL", "").strip()
 SENDER_GMAIL = os.environ.get("SENDER_GMAIL", "").strip()
-SENDER_PASSWORD = os.environ.get("SENDER_GMAIL_APP_PASSWORD", "").replace(" ", "").strip()
+SENDER_PASSWORD = os.environ.get("SENDER_GMAIL_APP_PASSWORD", "").replace(" ", "").replace('"', '').replace("'", "").strip()
 
 def get_authenticated_smtp():
     """
-    Establishes an authenticated connection to Gmail SMTP.
-    Uses Port 587 with STARTTLS (Preferred for Cloud Runners like GitHub Actions),
-    with automatic fallback to Port 465 SSL.
+    Establishes an authenticated connection to Gmail SMTP via IPv4.
+    Tries Port 587 with STARTTLS first, followed by Port 465 SSL.
     """
     if not (BLOGGER_EMAIL and SENDER_GMAIL and SENDER_PASSWORD):
-        print("ℹ️ Skipping email dispatch: GitHub Secrets BLOGGER_POST_EMAIL / SENDER_GMAIL not set.")
+        print("ℹ️ Skipping email dispatch: Required GitHub Secrets (BLOGGER_POST_EMAIL, SENDER_GMAIL, SENDER_GMAIL_APP_PASSWORD) not fully configured.")
         return None
 
-    # Method 1: Port 587 with STARTTLS (Industry standard for cloud runners)
+    ssl_context = ssl.create_default_context()
+
+    # Method 1: Port 587 with STARTTLS (IPv4)
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587, timeout=30)
         server.ehlo()
-        server.starttls()
+        server.starttls(context=ssl_context)
         server.ehlo()
         server.login(SENDER_GMAIL, SENDER_PASSWORD)
+        print("✅ Connected & Authenticated to Gmail SMTP (Port 587 STARTTLS)")
         return server
     except Exception as e587:
-        # Method 2: Fallback to Port 465 SSL
-        try:
-            server = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=30)
-            server.login(SENDER_GMAIL, SENDER_PASSWORD)
-            return server
-        except Exception as e465:
-            print(f"❌ SMTP Connection Error: Port 587 ({e587}), Port 465 ({e465})")
-            return None
+        print(f"⚠️ Port 587 attempt failed: {e587}. Trying Port 465 SSL...")
+
+    # Method 2: Port 465 SSL (IPv4)
+    try:
+        server = smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ssl_context, timeout=30)
+        server.login(SENDER_GMAIL, SENDER_PASSWORD)
+        print("✅ Connected & Authenticated to Gmail SMTP (Port 465 SSL)")
+        return server
+    except Exception as e465:
+        print(f"❌ Port 465 SSL attempt failed: {e465}")
+
+    print("❌ Could not connect to Gmail SMTP. Please verify SENDER_GMAIL and SENDER_GMAIL_APP_PASSWORD in GitHub Secrets.")
+    return None
 
 def build_job_email(job):
     tags = ", ".join([f"#{lbl}" for lbl in job.get("labels", ["Govt Jobs"])])
