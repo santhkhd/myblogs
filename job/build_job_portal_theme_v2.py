@@ -2944,15 +2944,54 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
           });
 
           if (!exists && title) {
+            var cleanTitle = title.replace(/\s*#[a-zA-Z0-9_\s,#]+$/, '').trim();
+            if (!cleanTitle) cleanTitle = title;
+
             var orgName = (labels.length > 0 ? labels[0] : 'Govt Recruitment');
             var qual = 'Any Degree / 12th / 10th Pass';
             var lastDate = published;
             
-            var qualMatch = contentHtml.match(/Qualification[:\s<>\/tdbstrong]+([^<\n]+)/i);
+            var qualMatch = contentHtml.match(/(?:Qualification|Eligibility|Education)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
             if (qualMatch && qualMatch[1]) qual = qualMatch[1].trim();
 
-            var lastDateMatch = contentHtml.match(/(?:Last Date|Closing Date|Apply By)[:\s<>\/tdbstrong]+([^<\n]+)/i);
+            var lastDateMatch = contentHtml.match(/(?:Last Date|Closing Date|Apply By)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
             if (lastDateMatch && lastDateMatch[1]) lastDate = lastDateMatch[1].trim();
+
+            var vacMatch = contentHtml.match(/(?:Total Vacancies|Vacancies|Total Posts)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
+            var vacancies = (vacMatch && vacMatch[1]) ? vacMatch[1].trim() : 'Various Posts';
+
+            var salMatch = contentHtml.match(/(?:Monthly Salary|Salary|Pay Scale)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
+            var salary = (salMatch && salMatch[1]) ? salMatch[1].trim() : 'As per Govt Norms';
+
+            var ageMatch = contentHtml.match(/(?:Age Limit|Age)[:\s]*(?:<[^>]+>)*\s*([^<\n\r]+)/i);
+            var ageLimit = (ageMatch && ageMatch[1]) ? ageMatch[1].trim() : '18-40 Years';
+
+            // Extract genuine external official application and PDF links from post content
+            var linkMatches = contentHtml.match(/href=['"](https?:\/\/[^'"]+)['"]/gi) || [];
+            var externalLinks = [];
+            for (var m = 0; m < linkMatches.length; m++) {
+              var cleanHref = linkMatches[m].replace(/^href=['"]|['"]$/gi, '');
+              if (cleanHref.indexOf('blogger.com') === -1 && cleanHref.indexOf('blogspot.com') === -1 && cleanHref.indexOf('google.com') === -1) {
+                externalLinks.push(cleanHref);
+              }
+            }
+
+            var applyUrl = externalLinks.length > 0 ? externalLinks[0] : (link || 'https://www.google.com');
+            var pdfUrl = '';
+            for (var p = 0; p < externalLinks.length; p++) {
+              if (externalLinks[p].toLowerCase().indexOf('.pdf') !== -1) {
+                pdfUrl = externalLinks[p];
+                break;
+              }
+            }
+            if (!pdfUrl) {
+              pdfUrl = externalLinks.length > 1 ? externalLinks[1] : applyUrl;
+            }
+
+            var websiteDomain = 'Official Portal';
+            if (applyUrl && applyUrl.indexOf('http') === 0) {
+              websiteDomain = applyUrl.replace(/^https?:\/\//, '').split('/')[0];
+            }
 
             var itemType = 'notification';
             if (title.toLowerCase().indexOf('admit') !== -1 || title.toLowerCase().indexOf('hall ticket') !== -1) itemType = 'admit_card';
@@ -2962,23 +3001,24 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
 
             newlyAdded.push({
               id: postId,
-              title: title,
+              title: cleanTitle,
               org_name: orgName,
-              post_name: title,
-              vacancies: 'Various',
-              salary: 'As per Govt Norms',
+              post_name: cleanTitle,
+              vacancies: vacancies,
+              salary: salary,
               qualification: qual,
-              age_limit: '18-40 Years',
+              age_limit: ageLimit,
               location: (labels.indexOf('Kerala Govt Jobs') !== -1 || labels.indexOf('Kerala PSC') !== -1) ? 'Kerala' : 'All India',
               fee: 'Refer Notification',
               category: labels.length > 0 ? labels[0] : 'Central Govt Jobs',
               labels: labels,
               start_date: published,
               last_date: lastDate,
-              apply_url: link || 'https://www.blogger.com',
-              pdf_url: link || 'https://www.blogger.com',
-              website: 'Official Portal',
-              item_type: itemType
+              apply_url: applyUrl,
+              pdf_url: pdfUrl,
+              website: websiteDomain,
+              item_type: itemType,
+              content_html: contentHtml
             });
           }
         }
