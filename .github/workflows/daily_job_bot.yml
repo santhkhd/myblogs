@@ -1,0 +1,37 @@
+name: Daily Government Job Auto-Poster
+
+on:
+  schedule:
+    # Runs automatically every day at 02:00 UTC (07:30 AM IST)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allows manual 1-click Run button in GitHub
+
+jobs:
+  run-daily-job-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Daily 50 Jobs Bot & Auto-Publish
+        env:
+          BLOGGER_POST_EMAIL: ${{ secrets.BLOGGER_POST_EMAIL }}
+          SENDER_GMAIL: ${{ secrets.SENDER_GMAIL }}
+          SENDER_GMAIL_APP_PASSWORD: ${{ secrets.SENDER_GMAIL_APP_PASSWORD }}
+        run: |
+          cd job
+          python github_auto_poster.py
+
+      - name: Commit & Push Updated Job History & XML
+        run: |
+          git config --global user.name "Daily Job Bot"
+          git config --global user.email "bot@github-actions.local"
+          git add job/jobs_history.json job/daily_jobs_export.xml || true
+          git commit -m "Auto-update daily job posts [skip ci]" || echo "No changes to commit"
+          git push || true
