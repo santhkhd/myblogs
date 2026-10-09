@@ -102,8 +102,7 @@ def get_authenticated_smtp():
     return None
 
 def build_job_email(job):
-    tags = ", ".join([f"#{lbl}" for lbl in job.get("labels", ["Govt Jobs"])])
-    subject = f"{job['title']} {tags}"
+    subject = job['title']
     body_html = format_job_html(job)
     plain_text = f"{job['title']}\n\nAuthority: {job['org_name']}\nPost: {job['post_name']}\nVacancies: {job['vacancies']}\nSalary: {job['salary']}\nQualification: {job['qualification']}\nApply Online: {job['apply_url']}\nOfficial Website: {job['website']}"
 
@@ -111,8 +110,9 @@ def build_job_email(job):
     msg["Subject"] = subject
     msg["From"] = SENDER_GMAIL
     msg["To"] = BLOGGER_EMAIL
+    msg["Reply-To"] = SENDER_GMAIL
     
-    # Attach plain text first, then HTML (RFC compliant for 0 spam score)
+    # Attach plain text first, then HTML (RFC compliant)
     msg.attach(MIMEText(plain_text, "plain", "utf-8"))
     msg.attach(MIMEText(body_html, "html", "utf-8"))
     return msg
