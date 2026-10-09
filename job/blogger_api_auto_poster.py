@@ -110,16 +110,30 @@ def main():
 
     if access_token:
         for idx, job in enumerate(jobs_to_post, 1):
-            try:
-                res = publish_job_to_blogger(access_token, job)
-                post_url = res.get("url", "")
-                print(f"[{idx:02d}/{len(jobs_to_post)}] ✅ Published: {job['title'][:55]}... ➔ {post_url}")
-                success_count += 1
-                time.sleep(1.0) # Smooth rate-limit safe delay
-            except Exception as e:
-                print(f"[{idx:02d}/{len(jobs_to_post)}] ❌ Failed to publish: {e}")
+            posted = False
+            for attempt in range(1, 4):
+                try:
+                    res = publish_job_to_blogger(access_token, job)
+                    post_url = res.get("url", "")
+                    print(f"[{idx:02d}/{len(jobs_to_post)}] ✅ Published: {job['title'][:55]}... ➔ {post_url}")
+                    success_count += 1
+                    posted = True
+                    time.sleep(4.5)  # Safe 4.5s spacing prevents Google 429 burst limit
+                    break
+                except urllib.error.HTTPError as http_err:
+                    if http_err.code == 429:
+                        wait_time = 12 * attempt
+                        print(f"[{idx:02d}/{len(jobs_to_post)}] ⏳ Rate limit (429) hit. Pausing {wait_time}s (Attempt {attempt}/3)...")
+                        time.sleep(wait_time)
+                    else:
+                        print(f"[{idx:02d}/{len(jobs_to_post)}] ❌ HTTP {http_err.code} Error: {http_err}")
+                        break
+                except Exception as e:
+                    print(f"[{idx:02d}/{len(jobs_to_post)}] ❌ Error: {e}")
+                    time.sleep(5)
+
+            if not posted:
                 fail_count += 1
-                time.sleep(2.0)
     else:
         print("ℹ️ Skipping direct API post because API credentials are not yet set.")
         print("💡 Please configure BLOGGER_CLIENT_ID, BLOGGER_CLIENT_SECRET, BLOGGER_REFRESH_TOKEN in GitHub Secrets.")
