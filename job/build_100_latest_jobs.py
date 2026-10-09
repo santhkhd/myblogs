@@ -412,6 +412,7 @@ def main():
   </entry>"""
         xml_entries.append(entry)
 
+    joined_entries = "\n".join(xml_entries)
     full_xml = f"""<?xml version='1.0' encoding='UTF-8'?>
 <feed xmlns='http://www.w3.org/2005/Atom' 
       xmlns:openSearch='http://a9.com/-/spec/opensearchrss/1.0/' 
@@ -425,7 +426,7 @@ def main():
   <title type='text'>Daily Government Job Alerts - 100 Latest Genuine Posts</title>
   <subtitle type='html'>100 Latest Government Job Notifications across Kerala, Central Govt, Banking, Railway, SSC, Police and Defence</subtitle>
   <generator version='7.00' uri='http://www.blogger.com'>Blogger</generator>
-{"\n".join(xml_entries)}
+{joined_entries}
 </feed>"""
 
     out_file = os.path.join(os.path.dirname(__file__), "100_latest_jobs_2026_import.xml")

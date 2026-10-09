@@ -996,7 +996,8 @@ for i, job in enumerate(JOBS_50, 1):
   </entry>"""
     xml_entries.append(entry)
 
-full_xml = f"""<?xml version='1.0' encoding='UTF-8'?>
+    joined_entries = "\n".join(xml_entries)
+    full_xml = f"""<?xml version='1.0' encoding='UTF-8'?>
 <feed xmlns='http://www.w3.org/2005/Atom' 
       xmlns:openSearch='http://a9.com/-/spec/opensearchrss/1.0/' 
       xmlns:blogger='http://schemas.google.com/blogger/2008' 
@@ -1009,7 +1010,7 @@ full_xml = f"""<?xml version='1.0' encoding='UTF-8'?>
   <title type='text'>Daily Government Job Alerts - 50 Genuine Posts</title>
   <subtitle type='html'>50 Latest Government Job Notifications across Kerala, Central Govt, Banking, Railway, SSC, Police and Defence</subtitle>
   <generator version='7.00' uri='http://www.blogger.com'>Blogger</generator>
-{"\n".join(xml_entries)}
+{joined_entries}
 </feed>"""
 
 out_file = os.path.join(os.path.dirname(__file__), "50_genuine_jobs_import.xml")
