@@ -2454,7 +2454,7 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
                     "<h2 class='job-card-title'>" + job.title + "</h2>" +
                     "<div class='job-card-bottom'>" +
                       "<span class='job-qual-chip'><i class='fas fa-graduation-cap'></i> " + job.qualification + "</span>" +
-                      "<span class='job-read-link'>Apply Now ➔</span>" +
+                      "<span class='job-read-link'>Apply ➔</span>" +
                     "</div>" +
                   "</div>";
         }
@@ -2845,7 +2845,7 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
                        "<h4 class='job-card-title' style='font-size:0.96rem;'>" + rJob.title + "</h4>" +
                        "<div class='job-card-bottom'>" +
                          "<span class='job-qual-chip'><i class='fas fa-graduation-cap'></i> " + rJob.qualification + "</span>" +
-                         "<span class='job-read-link'>View ➔</span>" +
+                         "<span class='job-read-link'>Apply ➔</span>" +
                        "</div>" +
                      "</div>";
           }
