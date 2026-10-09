@@ -14,7 +14,7 @@ import os
 import xml.sax
 from build_150_latest_jobs import JOBS_150
 
-THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
+THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsversion='3' b:responsive='true' lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
@@ -1584,50 +1584,65 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
           </div>
         </div>
 
-        <!-- 3. Interactive Job Feed Cards List & Pagination -->
+        <!-- 3. Native Blogger Post Content Container (Rendered on Direct Post Pages) -->
+        <b:section id='main' showaddelement='yes'>
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+            <b:includable id='main' var='top'>
+              <b:if cond='data:blog.pageType == "item"'>
+                <div class='native-post-view' id='nativePostContainer'>
+                  <a class='back-nav-bar' href='/' style='text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:1.25rem; font-weight:800;'>
+                    <i class='fas fa-arrow-left'/> Back to All 167+ Latest Jobs Feed
+                  </a>
+                  <b:loop values='data:posts' var='post'>
+                    <article style='background:var(--bg-card); padding:1.75rem; border-radius:14px; border:1px solid var(--border-color); box-shadow:var(--card-shadow); margin-bottom:1.5rem;'>
+                      <div style='margin-bottom:1rem; display:flex; flex-wrap:wrap; gap:8px;'>
+                        <span class='type-chip chip-notif'>📢 OFFICIAL NOTIFICATION</span>
+                        <b:loop values='data:post.labels' var='label'>
+                          <span class='job-org-badge'><i class='fas fa-tag'/> <data:label.name/></span>
+                        </b:loop>
+                      </div>
+                      <h1 style='font-size:1.6rem; font-weight:900; line-height:1.4; color:var(--text-primary); margin-bottom:1.25rem;'><data:post.title/></h1>
+                      <div class='post-body-content' style='font-size:0.95rem; line-height:1.8; color:var(--text-primary);'>
+                        <data:post.body/>
+                      </div>
+                    </article>
+                  </b:loop>
+                </div>
+              </b:if>
+            </b:includable>
+            <b:includable id='backlinkDeleteIcon' var='backlink'/>
+            <b:includable id='backlinks' var='post'/>
+            <b:includable id='comment-form' var='post'/>
+            <b:includable id='commentDeleteIcon' var='comment'/>
+            <b:includable id='comment_picker' var='post'/>
+            <b:includable id='comments' var='post'/>
+            <b:includable id='feedLinks'/>
+            <b:includable id='feedLinksBody' var='links'/>
+            <b:includable id='iframe_comments' var='post'/>
+            <b:includable id='mobile-index-post' var='post'/>
+            <b:includable id='mobile-main' var='top'/>
+            <b:includable id='mobile-nextprev'/>
+            <b:includable id='mobile-post' var='post'/>
+            <b:includable id='nextprev'/>
+            <b:includable id='post' var='post'/>
+            <b:includable id='postQuickEdit' var='post'/>
+            <b:includable id='shareButtons' var='post'/>
+            <b:includable id='status-message'/>
+            <b:includable id='threaded-comment-form' var='post'/>
+            <b:includable id='threaded_comment_js' var='post'/>
+            <b:includable id='threaded_comments' var='post'/>
+          </b:widget>
+        </b:section>
+
+        <!-- 4. Interactive Job Feed Cards List & Pagination (For Homepage Portal) -->
         <div id='jobFeedWrapper'>
           <div class='results-count-bar'>
             <span id='resultsCountText'>Showing latest notifications</span>
             <span id='currentPageIndicator'>Page 1</span>
           </div>
 
-          <div class='job-feed' id='jobFeedContainer'>
-            <b:section id='main' showaddelement='yes'>
-              <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
-                <b:includable id='main' var='top'>
-                  <b:if cond='data:blog.pageType == "item"'>
-                    <b:loop values='data:posts' var='post'>
-                      <article style='background:var(--bg-card); padding:1.5rem; border-radius:12px; border:1px solid var(--border-color);'>
-                        <h1 style='font-size:1.8rem; font-weight:900; margin-bottom:1rem;'><data:post.title/></h1>
-                        <data:post.body/>
-                      </article>
-                    </b:loop>
-                  </b:if>
-                </b:includable>
-                <b:includable id='backlinkDeleteIcon' var='backlink'/>
-                <b:includable id='backlinks' var='post'/>
-                <b:includable id='comment-form' var='post'/>
-                <b:includable id='commentDeleteIcon' var='comment'/>
-                <b:includable id='comment_picker' var='post'/>
-                <b:includable id='comments' var='post'/>
-                <b:includable id='feedLinks'/>
-                <b:includable id='feedLinksBody' var='links'/>
-                <b:includable id='iframe_comments' var='post'/>
-                <b:includable id='mobile-index-post' var='post'/>
-                <b:includable id='mobile-main' var='top'/>
-                <b:includable id='mobile-nextprev'/>
-                <b:includable id='mobile-post' var='post'/>
-                <b:includable id='nextprev'/>
-                <b:includable id='post' var='post'/>
-                <b:includable id='postQuickEdit' var='post'/>
-                <b:includable id='shareButtons' var='post'/>
-                <b:includable id='status-message'/>
-                <b:includable id='threaded-comment-form' var='post'/>
-                <b:includable id='threaded_comment_js' var='post'/>
-                <b:includable id='threaded_comments' var='post'/>
-              </b:widget>
-            </b:section>
-          </div>
+          <!-- Interactive Job Feed Cards List (For Homepage Portal) -->
+          <div class='job-feed' id='jobFeedContainer'></div>
 
           <!-- Page Numbers Navigation -->
           <div class='pagination-container' id='paginationControls'/>
@@ -2967,14 +2982,26 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
         } catch (e) {}
       }
 
+      var isNativePostPage = (window.location.pathname.indexOf('.html') !== -1) || (document.getElementById('nativePostContainer') !== null);
+
       function initPortal() {
         updateDynamicYear();
         var heroCount = document.getElementById('heroActiveCount');
         if (heroCount) heroCount.innerText = ALL_JOBS.length + '+';
         updateChannelCounts();
         updateCategoryCounts();
-        renderJobCards(ALL_JOBS);
-        checkHashRoute();
+
+        if (isNativePostPage) {
+          var hero = document.getElementById('heroSearchSection');
+          if (hero) hero.style.display = 'none';
+          var feedWrapper = document.getElementById('jobFeedWrapper');
+          if (feedWrapper) feedWrapper.style.display = 'none';
+          var articleView = document.getElementById('fullJobArticleView');
+          if (articleView) articleView.style.display = 'none';
+        } else {
+          renderJobCards(ALL_JOBS);
+          checkHashRoute();
+        }
         syncLiveBloggerPosts();
       }
 
