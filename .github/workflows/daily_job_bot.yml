@@ -1,9 +1,12 @@
-name: Daily Government Job Auto-Poster
+name: Daily Government Job Auto-Poster (4x Daily)
 
 on:
   schedule:
-    # Runs automatically every day at 02:00 UTC (07:30 AM IST)
-    - cron: '0 2 * * *'
+    # Runs 4 times a day (every 6 hours)
+    - cron: '0 0 * * *'   # 05:30 AM IST (Morning Fresh Batch)
+    - cron: '0 6 * * *'   # 11:30 AM IST (Noon Fresh Batch)
+    - cron: '0 12 * * *'  # 05:30 PM IST (Evening Fresh Batch)
+    - cron: '0 18 * * *'  # 11:30 PM IST (Night Fresh Batch)
   workflow_dispatch: # Allows manual 1-click Run button in GitHub
 
 # Required write permissions to save jobs_history.json
@@ -26,12 +29,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run Daily 50 Jobs Bot & Auto-Publish via Google Blogger API
+      - name: Run Job Bot & Auto-Publish via Google Blogger API
         env:
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
           BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
           BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+          POSTS_PER_RUN: "12"
         run: |
           python job/blogger_api_auto_poster.py
 

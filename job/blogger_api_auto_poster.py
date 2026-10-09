@@ -97,11 +97,11 @@ def main():
     print(f"🚀 Google Blogger API v3 Automatic Poster Started for Blog ID: {BLOG_ID}")
     print("=" * 65)
 
-    # 1. Fetch fresh jobs
-    new_jobs, all_jobs = fetch_new_jobs(limit=50)
+    posts_limit = int(os.environ.get("POSTS_PER_RUN", "12"))
+    new_jobs, all_jobs = fetch_new_jobs(limit=posts_limit)
     jobs_to_post = new_jobs if new_jobs else all_jobs
-    jobs_to_post = jobs_to_post[:50]
-    print(f"📋 Total fresh unique jobs to publish: {len(jobs_to_post)}")
+    jobs_to_post = jobs_to_post[:posts_limit]
+    print(f"📋 Total fresh unique jobs to publish in this run: {len(jobs_to_post)}")
 
     # 2. Authenticate
     access_token = get_access_token()
