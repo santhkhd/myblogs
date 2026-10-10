@@ -1192,70 +1192,78 @@
       .share-bar {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin: 1.25rem 0 1rem;
-        padding: 0.9rem;
+        gap: 10px;
+        margin: 1.25rem 0 1.25rem;
+        padding: 0.75rem 1rem;
         background: var(--bg-page);
         border: 1px solid var(--border-color);
         border-radius: 12px;
         align-items: center;
       }
-      .share-btn {
+      .share-icon-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        padding: 8px 16px;
-        border-radius: 50px;
-        font-size: 0.84rem;
-        font-weight: 800;
+        justify-content: center;
+        font-size: 1.15rem;
         text-decoration: none;
         transition: var(--transition);
         border: none;
         cursor: pointer;
+        flex-shrink: 0;
       }
-      .btn-save {
+      .share-icon-btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn-save-icon {
         background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
         color: #FFFFFF !important;
         box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35);
       }
-      .btn-save:hover {
-        transform: translateY(-1px);
+      .btn-save-icon:hover {
         box-shadow: 0 4px 12px rgba(245, 158, 11, 0.5);
       }
-      .btn-save.saved {
+      .btn-save-icon.saved {
         background: #FEF3C7 !important;
         color: #B45309 !important;
         border: 1.5px solid #F59E0B !important;
         box-shadow: none;
       }
-      .btn-whatsapp { 
+      .btn-whatsapp-icon { 
         background: #25D366; 
         color: #FFFFFF !important;
         box-shadow: 0 2px 8px rgba(37, 211, 102, 0.35);
       }
-      .btn-whatsapp:hover {
-        transform: translateY(-1px);
+      .btn-whatsapp-icon:hover {
         box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
       }
-      .btn-telegram { 
+      .btn-telegram-icon { 
         background: #0088CC; 
         color: #FFFFFF !important;
         box-shadow: 0 2px 8px rgba(0, 136, 204, 0.35);
       }
-      .btn-telegram:hover {
-        transform: translateY(-1px);
+      .btn-telegram-icon:hover {
         box-shadow: 0 4px 12px rgba(0, 136, 204, 0.5);
       }
-      .btn-copy { 
+      .btn-copy-icon { 
         background: #475569; 
         color: #FFFFFF !important;
-        cursor: pointer; 
-        border: none;
         box-shadow: 0 2px 8px rgba(71, 85, 105, 0.3);
       }
-      .btn-copy:hover {
-        transform: translateY(-1px);
+      .btn-copy-icon:hover {
         background: #334155;
+        box-shadow: 0 4px 12px rgba(71, 85, 105, 0.5);
+      }
+      .btn-print-icon { 
+        background: var(--primary); 
+        color: #FFFFFF !important;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+      }
+      .btn-print-icon:hover {
+        background: var(--primary-dark);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
       }
 
       /* Related Jobs Section (Under the Post) */
@@ -1607,19 +1615,21 @@
         <b:section id='main' showaddelement='yes'>
           <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
             <b:includable id='main' var='top'>
-              <b:if cond='data:blog.pageType == "item"'>
+              <b:if cond='data:blog.pageType in {"item","static_page"}'>
                 <div class='native-post-view' id='nativePostContainer'>
                   <a class='back-nav-bar' href='/' style='text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:1.25rem; font-weight:800;'>
                     <i class='fas fa-arrow-left'/> Back to All Latest Jobs Feed
                   </a>
                   <b:loop values='data:posts' var='post'>
                     <article style='background:var(--bg-card); padding:1.75rem; border-radius:14px; border:1px solid var(--border-color); box-shadow:var(--card-shadow); margin-bottom:1.5rem;'>
-                      <div style='margin-bottom:1rem; display:flex; flex-wrap:wrap; gap:8px;'>
-                        <span class='type-chip chip-notif'>📢 OFFICIAL NOTIFICATION</span>
-                        <b:loop values='data:post.labels' var='label'>
-                          <span class='job-org-badge'><i class='fas fa-tag'/> <data:label.name/></span>
-                        </b:loop>
-                      </div>
+                      <b:if cond='data:blog.pageType == "item"'>
+                        <div style='margin-bottom:1rem; display:flex; flex-wrap:wrap; gap:8px;'>
+                          <span class='type-chip chip-notif'>📢 OFFICIAL NOTIFICATION</span>
+                          <b:loop values='data:post.labels' var='label'>
+                            <span class='job-org-badge'><i class='fas fa-tag'/> <data:label.name/></span>
+                          </b:loop>
+                        </div>
+                      </b:if>
                       <h1 style='font-size:1.6rem; font-weight:900; line-height:1.4; color:var(--text-primary); margin-bottom:1.25rem;'><data:post.title/></h1>
                       <div class='post-body-content' style='font-size:0.95rem; line-height:1.8; color:var(--text-primary);'>
                         <data:post.body/>
@@ -1639,7 +1649,9 @@
             <b:includable id='feedLinksBody' var='links'/>
             <b:includable id='iframe_comments' var='post'/>
             <b:includable id='mobile-index-post' var='post'/>
-            <b:includable id='mobile-main' var='top'/>
+            <b:includable id='mobile-main' var='top'>
+              <b:include name='main'/>
+            </b:includable>
             <b:includable id='mobile-nextprev'/>
             <b:includable id='mobile-post' var='post'/>
             <b:includable id='nextprev'/>
@@ -2884,6 +2896,11 @@
         var calcEl = document.getElementById('eligibilityWidget');
         if (calcEl) calcEl.style.display = 'none';
 
+        var sidebar = document.querySelector('.portal-sidebar');
+        if (sidebar) sidebar.style.display = 'none';
+        var portalLayout = document.querySelector('.portal-layout');
+        if (portalLayout) portalLayout.style.gridTemplateColumns = '1fr';
+
         var articleView = document.getElementById('fullJobArticleView');
         articleView.style.display = 'block';
 
@@ -2894,9 +2911,9 @@
 
         var savedList = getSavedJobs();
         var isSaved = savedList.indexOf(job.id) !== -1;
-        var saveBtnHtml = isSaved 
-          ? "<button onclick='toggleSaveJob(this.dataset.saveid, event)' data-saveid='" + job.id + "' id='articleBookmarkBtn' class='share-btn btn-save saved' type='button'><i class='fas fa-bookmark' style='color:#D97706;'></i> Saved in Bookmarks</button>"
-          : "<button onclick='toggleSaveJob(this.dataset.saveid, event)' data-saveid='" + job.id + "' id='articleBookmarkBtn' class='share-btn btn-save' type='button'><i class='far fa-bookmark'></i> ⭐ Save Job</button>";
+        var saveIconClass = isSaved ? 'fas fa-bookmark' : 'far fa-bookmark';
+        var saveBtnClass = isSaved ? 'share-icon-btn btn-save-icon saved' : 'share-icon-btn btn-save-icon';
+        var saveBtnHtml = "<button onclick='toggleSaveJob(this.dataset.saveid, event)' data-saveid='" + job.id + "' id='articleBookmarkBtn' class='" + saveBtnClass + "' title='Save / Bookmark Job' type='button'><i class='" + saveIconClass + "'></i></button>";
 
         var typeClass = 'chip-notif';
         var typeLabel = '📢 OFFICIAL NOTIFICATION';
@@ -2945,13 +2962,24 @@
             "</ol>";
         }
 
+        var shareBarHtml = "" +
+          "<div class='share-bar'>" +
+            "<span style='font-weight:800; font-size:0.88rem; color:var(--text-secondary); margin-right:4px;'><i class='fas fa-share-alt'></i> Share:</span>" +
+            saveBtnHtml +
+            "<a href='https://api.whatsapp.com/send?text=" + shareText + "%20" + shareUrl + "' target='_blank' rel='noopener' class='share-icon-btn btn-whatsapp-icon' title='Share on WhatsApp'><i class='fab fa-whatsapp'></i></a>" +
+            "<a href='https://t.me/share/url?url=" + shareUrl + "&text=" + shareText + "' target='_blank' rel='noopener' class='share-icon-btn btn-telegram-icon' title='Share on Telegram'><i class='fab fa-telegram-plane'></i></a>" +
+            "<button onclick='copyJobLink()' class='share-icon-btn btn-copy-icon' title='Copy Job Link' type='button'><i class='fas fa-link'></i></button>" +
+            "<button onclick='window.print()' class='share-icon-btn btn-print-icon' title='Print Job Notification' type='button'><i class='fas fa-print'></i></button>" +
+          "</div>";
+
         content.innerHTML = "" +
           "<div style='background:linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color:#FFFFFF; border-radius:14px; padding:1.75rem; text-align:center; margin-bottom:1.5rem;'>" +
             "<div style='display:flex; justify-content:center; gap:8px; margin-bottom:8px; flex-wrap:wrap;'>" +
               "<span class='type-chip " + typeClass + "' style='font-size:0.75rem;'>" + typeLabel + "</span>" +
               "<span style='background:rgba(255,255,255,0.2); color:#FFF; padding:4px 12px; border-radius:50px; font-weight:800; font-size:0.75rem; text-transform:uppercase;'>🏛️ " + job.org_name + "</span>" +
+              "<span style='background:rgba(255,255,255,0.25); color:#FFF; padding:4px 12px; border-radius:50px; font-weight:800; font-size:0.75rem;'><i class='fas fa-graduation-cap'></i> " + job.qualification + "</span>" +
             "</div>" +
-            "<h1 style='font-size:clamp(1.4rem, 3.5vw, 2rem); font-weight:900; margin:0.5rem 0; color:#FFFFFF; line-height:1.3;'>" + job.title + "</h1>" +
+            "<h1 style='font-size:clamp(1.35rem, 4vw, 2rem); font-weight:900; margin:0.5rem 0; color:#FFFFFF; line-height:1.35; letter-spacing:-0.015em;'>" + job.title + "</h1>" +
             "<p style='margin:0; font-size:0.92rem; opacity:0.92;'>Official Recruitment Notification <span class='dyn-year'>" + yr + "</span> | Verified Eligibility &amp; Direct Application Portal</p>" +
           "</div>" +
 
@@ -2959,13 +2987,7 @@
             "📅 <strong>Application Status:</strong> " + statusObj.label + " | Submit online before the closing date." +
           "</div>" +
 
-          "<div class='share-bar'>" +
-            "<span style='font-weight:800; font-size:0.85rem; color:var(--text-primary);'><i class='fas fa-share-alt'></i> Actions:</span>" +
-            saveBtnHtml +
-            "<a href='https://api.whatsapp.com/send?text=" + shareText + "%20" + shareUrl + "' target='_blank' rel='noopener' class='share-btn btn-whatsapp'><i class='fab fa-whatsapp'></i> WhatsApp</a>" +
-            "<a href='https://t.me/share/url?url=" + shareUrl + "&text=" + shareText + "' target='_blank' rel='noopener' class='share-btn btn-telegram'><i class='fab fa-telegram-plane'></i> Telegram</a>" +
-            "<button onclick='copyJobLink()' class='share-btn btn-copy' type='button'><i class='fas fa-copy'></i> Copy Link</button>" +
-          "</div>" +
+          shareBarHtml +
           
           articleBodyHtml;
 
@@ -3020,6 +3042,11 @@
 
         var articleView = document.getElementById('fullJobArticleView');
         if (articleView) articleView.style.display = 'none';
+
+        var sidebar = document.querySelector('.portal-sidebar');
+        if (sidebar) sidebar.style.display = '';
+        var portalLayout = document.querySelector('.portal-layout');
+        if (portalLayout) portalLayout.style.gridTemplateColumns = '';
 
         var feedWrapper = document.getElementById('jobFeedWrapper');
         if (feedWrapper) feedWrapper.style.display = 'block';
@@ -3284,6 +3311,10 @@
           if (feedWrapper) feedWrapper.style.display = 'none';
           var articleView = document.getElementById('fullJobArticleView');
           if (articleView) articleView.style.display = 'none';
+          var sidebar = document.querySelector('.portal-sidebar');
+          if (sidebar) sidebar.style.display = 'none';
+          var portalLayout = document.querySelector('.portal-layout');
+          if (portalLayout) portalLayout.style.gridTemplateColumns = '1fr';
         } else {
           renderJobCards(ALL_JOBS);
           checkHashRoute();
