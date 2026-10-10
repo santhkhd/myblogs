@@ -3025,7 +3025,7 @@
 
       function extractTableCell(html, labelPattern) {
         if (!html) return '';
-        var reg = new RegExp('<td>\\s*(?:' + labelPattern + ')\\s*<\\/td>\\s*<td[^>]*>([\\s\\S]*?)<\\/td>', 'i');
+        var reg = new RegExp('<td[^>]*>\\s*(?:' + labelPattern + ')\\s*<\\/td>\\s*<td[^>]*>([\\s\\S]*?)<\\/td>', 'i');
         var m = html.match(reg);
         if (m && m[1]) {
           return m[1].replace(/<[^>]+>/g, '').trim();
@@ -3067,16 +3067,16 @@
           var cleanTitle = title.replace(/\s*#[a-zA-Z0-9_\s,#]+$/, '').trim();
           if (!cleanTitle) cleanTitle = title;
 
-          var cellOrg = extractTableCell(contentHtml, 'Hiring Authority|Organization|Department|Recruitment Board|Company');
+          var cellOrg = extractTableCell(contentHtml, 'Recruiting Authority|Hiring Authority|Organization|Department|Recruitment Board|Company');
           var cellPost = extractTableCell(contentHtml, 'Post Name|Job Role|Designation|Position');
-          var cellVac = extractTableCell(contentHtml, 'Total Vacancies|Vacancies|No\\. of Posts|Number of Vacancies');
-          var cellSal = extractTableCell(contentHtml, 'Monthly Salary|Salary|Pay Scale|Stipend|Remuneration');
-          var cellQual = extractTableCell(contentHtml, 'Educational Qualification|Qualification|Eligibility');
+          var cellVac = extractTableCell(contentHtml, 'Total Vacancies|Vacancies|No\\.? of Posts|Number of Vacancies');
+          var cellSal = extractTableCell(contentHtml, 'Salary \\/ Pay Scale|Monthly Salary|Salary|Pay Scale|Stipend|Remuneration');
+          var cellQual = extractTableCell(contentHtml, 'Qualification Required|Educational Qualification|Qualification|Eligibility');
           var cellAge = extractTableCell(contentHtml, 'Age Limit|Age Criteria|Candidate Age');
           var cellFee = extractTableCell(contentHtml, 'Application Fee|Fee|Exam Fee');
           var cellLoc = extractTableCell(contentHtml, 'Job Location|Location|Posting Location');
-          var cellLastDate = extractTableCell(contentHtml, 'Last Date|Application Deadline|Closing Date');
-          var cellStartDate = extractTableCell(contentHtml, 'Application Window|Start Date|Opening Date');
+          var cellLastDate = extractTableCell(contentHtml, 'Last Date to Apply|Last Date|Application Deadline|Closing Date');
+          var cellStartDate = extractTableCell(contentHtml, 'Online Application Starts|Application Window|Start Date|Opening Date');
 
           // Smart fallback: derive qualification & organization from labels or post title
           var qualFromLabels = '';
@@ -3106,7 +3106,29 @@
           var ageLimit = cellAge || '18-40 Years';
           var location = cellLoc || ((labels.indexOf('Kerala Govt Jobs') !== -1 || labels.indexOf('Kerala PSC') !== -1) ? 'Kerala' : 'All India');
           var fee = cellFee || 'Refer Notification';
-          var lastDate = cellLastDate || published;
+
+          // Fallback regex for Last Date in text/header/alert banners
+          if (!cellLastDate) {
+            var dateM = contentHtml.match(/Last Date[^:<>\n]{0,30}:?\s*<strong>\s*([0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4})\s*<\/strong>/i) ||
+                        contentHtml.match(/(?:application is|deadline is|before)\s*<strong>\s*([0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4})\s*<\/strong>/i) ||
+                        contentHtml.match(/([0-9]{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+[0-9]{4})/i);
+            if (dateM && dateM[1]) {
+              cellLastDate = dateM[1].trim();
+            }
+          }
+
+          // Compute safe default future date if no deadline in post
+          var defaultFutureDate = '';
+          try {
+            var pubObj = new Date(published);
+            if (!isNaN(pubObj.getTime())) {
+              var futureObj = new Date(pubObj.getTime() + (30 * 24 * 60 * 60 * 1000));
+              var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+              defaultFutureDate = futureObj.getDate() + ' ' + months[futureObj.getMonth()] + ' ' + futureObj.getFullYear();
+            }
+          } catch(e) {}
+
+          var lastDate = cellLastDate || defaultFutureDate || published;
           var startDate = cellStartDate || published;
 
           // Extract genuine external official application and PDF links from post content
