@@ -4559,6 +4559,314 @@
 
       var isNativePostPage = (window.location.pathname.indexOf('.html') !== -1) || (document.getElementById('nativePostContainer') !== null);
 
+      
+      /* ==========================================================================
+         DEDICATED STATIC PAGES WIZARD ENGINES (KPSC, SIGNATURE, GOVT, COMPRESS)
+         ========================================================================== */
+      // 1. KERALA PSC ENGINE
+      var kpscRawImg = null;
+      var kpscCroppedCanvas = null;
+      var kpscFinalBlob = null;
+      var cropBox = { x: 0, y: 0, w: 150, h: 200 };
+      var isDraggingCrop = false;
+      var dragStartX = 0, dragStartY = 0;
+
+      window.switchKpscStep = function(stepNum) {
+        for (var i = 1; i <= 5; i++) {
+          var stepEl = document.getElementById('kpscStep' + i);
+          var dotEl = document.getElementById('stepDot' + i);
+          if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
+          if (dotEl) {
+            if (i === stepNum) {
+              dotEl.style.background = '#2563EB';
+              dotEl.style.color = '#FFFFFF';
+            } else if (i < stepNum) {
+              dotEl.style.background = '#059669';
+              dotEl.style.color = '#FFFFFF';
+            } else {
+              dotEl.style.background = '#F1F5F9';
+              dotEl.style.color = '#64748B';
+            }
+          }
+        }
+      };
+
+      window.onKpscImageSelected = function(e) {
+        var file = e.target.files && e.target.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function(evt) {
+          var img = new Image();
+          img.onload = function() {
+            kpscRawImg = img;
+            initCropScreen();
+            switchKpscStep(2);
+          };
+          img.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      };
+
+      window.initCropScreen = function() {
+        if (!kpscRawImg) return;
+        var canvas = document.getElementById('cropCanvas');
+        if (!canvas) return;
+        var maxW = 500, maxH = 360;
+        var ratio = Math.min(maxW / kpscRawImg.width, maxH / kpscRawImg.height, 1);
+        canvas.width = kpscRawImg.width * ratio;
+        canvas.height = kpscRawImg.height * ratio;
+
+        var boxW = Math.min(canvas.width * 0.75, canvas.height * 0.75 * (3/4));
+        var boxH = boxW * (4/3);
+        if (boxH > canvas.height * 0.9) {
+          boxH = canvas.height * 0.9;
+          boxW = boxH * (3/4);
+        }
+        cropBox = {
+          x: (canvas.width - boxW) / 2,
+          y: (canvas.height - boxH) / 2,
+          w: boxW,
+          h: boxH
+        };
+        drawCropCanvas();
+        setupCropDrag(canvas);
+      };
+
+      window.drawCropCanvas = function() {
+        var canvas = document.getElementById('cropCanvas');
+        if (!canvas || !kpscRawImg) return;
+        var ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(kpscRawImg, 0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+        ctx.fillRect(0, 0, canvas.width, cropBox.y);
+        ctx.fillRect(0, cropBox.y + cropBox.h, canvas.width, canvas.height - (cropBox.y + cropBox.h));
+        ctx.fillRect(0, cropBox.y, cropBox.x, cropBox.h);
+        ctx.fillRect(cropBox.x + cropBox.w, cropBox.y, canvas.width - (cropBox.x + cropBox.w), cropBox.h);
+
+        ctx.strokeStyle = '#38BDF8';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(cropBox.x, cropBox.y, cropBox.w, cropBox.h);
+
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(cropBox.x + cropBox.w/3, cropBox.y);
+        ctx.lineTo(cropBox.x + cropBox.w/3, cropBox.y + cropBox.h);
+        ctx.moveTo(cropBox.x + 2*cropBox.w/3, cropBox.y);
+        ctx.lineTo(cropBox.x + 2*cropBox.w/3, cropBox.y + cropBox.h);
+        ctx.moveTo(cropBox.x, cropBox.y + cropBox.h/3);
+        ctx.lineTo(cropBox.x + cropBox.w, cropBox.y + cropBox.h/3);
+        ctx.moveTo(cropBox.x, cropBox.y + 2*cropBox.h/3);
+        ctx.lineTo(cropBox.x + cropBox.w, cropBox.y + 2*cropBox.h/3);
+        ctx.stroke();
+      };
+
+      window.setupCropDrag = function(canvas) {
+        var onStart = function(cx, cy) {
+          var rect = canvas.getBoundingClientRect();
+          var x = cx - rect.left;
+          var y = cy - rect.top;
+          if (x >= cropBox.x && x <= cropBox.x + cropBox.w && y >= cropBox.y && y <= cropBox.y + cropBox.h) {
+            isDraggingCrop = true;
+            dragStartX = x - cropBox.x;
+            dragStartY = y - cropBox.y;
+          }
+        };
+
+        var onMove = function(cx, cy) {
+          if (!isDraggingCrop) return;
+          var rect = canvas.getBoundingClientRect();
+          var x = cx - rect.left;
+          var y = cy - rect.top;
+          var newX = Math.max(0, Math.min(x - dragStartX, canvas.width - cropBox.w));
+          var newY = Math.max(0, Math.min(y - dragStartY, canvas.height - cropBox.h));
+          cropBox.x = newX;
+          cropBox.y = newY;
+          drawCropCanvas();
+        };
+
+        var onEnd = function() { isDraggingCrop = false; };
+        canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
+        window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
+        window.onmouseup = onEnd;
+
+        canvas.ontouchstart = function(e) { if(e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
+        window.ontouchmove = function(e) { if(e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
+        window.ontouchend = onEnd;
+      };
+
+      window.rotateKpscImage = function(deg) {
+        if (!kpscRawImg) return;
+        var offCanvas = document.createElement('canvas');
+        var offCtx = offCanvas.getContext('2d');
+        offCanvas.width = kpscRawImg.height;
+        offCanvas.height = kpscRawImg.width;
+        offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
+        offCtx.rotate(deg * Math.PI / 180);
+        offCtx.drawImage(kpscRawImg, -kpscRawImg.width / 2, -kpscRawImg.height / 2);
+
+        var rImg = new Image();
+        rImg.onload = function() {
+          kpscRawImg = rImg;
+          initCropScreen();
+        };
+        rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+      };
+
+      window.resetCropBox = function() { initCropScreen(); };
+
+      window.applyCropAndNext = function() {
+        var canvas = document.getElementById('cropCanvas');
+        if (!canvas || !kpscRawImg) return;
+        var scaleX = kpscRawImg.width / canvas.width;
+        var scaleY = kpscRawImg.height / canvas.height;
+
+        kpscCroppedCanvas = document.createElement('canvas');
+        kpscCroppedCanvas.width = 150;
+        kpscCroppedCanvas.height = 200;
+        var ctx = kpscCroppedCanvas.getContext('2d');
+        ctx.drawImage(kpscRawImg, cropBox.x * scaleX, cropBox.y * scaleY, cropBox.w * scaleX, cropBox.h * scaleY, 0, 0, 150, 200);
+
+        var dateInp = document.getElementById('kpscPhotoDate');
+        if (dateInp && !dateInp.value) {
+          var today = new Date();
+          var dd = String(today.getDate()).padStart(2, '0');
+          var mm = String(today.getMonth() + 1).padStart(2, '0');
+          var yyyy = today.getFullYear();
+          dateInp.value = dd + '/' + mm + '/' + yyyy;
+        }
+        renderNameDatePreview();
+        switchKpscStep(3);
+      };
+
+      window.renderNameDatePreview = function() {
+        var previewCanvas = document.getElementById('nameDatePreviewCanvas');
+        if (!previewCanvas || !kpscCroppedCanvas) return;
+        var ctx = previewCanvas.getContext('2d');
+        previewCanvas.width = 150;
+        previewCanvas.height = 200;
+
+        var addStrip = document.getElementById('addWhiteStripCheckbox') ? document.getElementById('addWhiteStripCheckbox').checked : true;
+        var nameVal = (document.getElementById('kpscCandidateName') ? document.getElementById('kpscCandidateName').value : '').toUpperCase().trim();
+        var dateVal = (document.getElementById('kpscPhotoDate') ? document.getElementById('kpscPhotoDate').value : '').trim();
+        var nameSize = document.getElementById('kpscNameSize') ? parseInt(document.getElementById('kpscNameSize').value, 10) : 13;
+        var dateSize = document.getElementById('kpscDateSize') ? parseInt(document.getElementById('kpscDateSize').value, 10) : 11;
+        var nameCol = document.getElementById('kpscNameColor') ? document.getElementById('kpscNameColor').value : '#000000';
+        var dateCol = document.getElementById('kpscDateColor') ? document.getElementById('kpscDateColor').value : '#000000';
+
+        var bannerH = (addStrip && (nameVal || dateVal)) ? 42 : 0;
+        var photoH = 200 - bannerH;
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, 150, 200);
+        ctx.drawImage(kpscCroppedCanvas, 0, 0, 150, 200, 0, 0, 150, photoH);
+
+        if (bannerH > 0) {
+          ctx.fillStyle = '#FFFFFF';
+          ctx.fillRect(0, photoH, 150, bannerH);
+          ctx.strokeStyle = '#000000';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(0, photoH);
+          ctx.lineTo(150, photoH);
+          ctx.stroke();
+
+          ctx.textAlign = 'center';
+          if (nameVal && dateVal) {
+            ctx.fillStyle = nameCol;
+            ctx.font = 'bold ' + nameSize + 'px sans-serif';
+            ctx.fillText(nameVal, 75, photoH + 17, 142);
+            ctx.fillStyle = dateCol;
+            ctx.font = 'bold ' + dateSize + 'px sans-serif';
+            ctx.fillText(dateVal, 75, photoH + 34, 142);
+          } else if (nameVal || dateVal) {
+            var val = nameVal || dateVal;
+            var col = nameVal ? nameCol : dateCol;
+            ctx.fillStyle = col;
+            ctx.font = 'bold ' + nameSize + 'px sans-serif';
+            ctx.fillText(val, 75, photoH + 26, 142);
+          }
+        }
+      };
+
+      window.saveNameDateAndNext = function() {
+        renderDimensionPreview();
+        switchKpscStep(4);
+      };
+
+      window.skipNameDateAndNext = function() {
+        if (document.getElementById('kpscCandidateName')) document.getElementById('kpscCandidateName').value = '';
+        if (document.getElementById('kpscPhotoDate')) document.getElementById('kpscPhotoDate').value = '';
+        renderDimensionPreview();
+        switchKpscStep(4);
+      };
+
+      window.renderDimensionPreview = function() {
+        var dimCanvas = document.getElementById('dimensionPreviewCanvas');
+        var srcCanvas = document.getElementById('nameDatePreviewCanvas');
+        if (dimCanvas && srcCanvas) {
+          dimCanvas.width = 150;
+          dimCanvas.height = 200;
+          var ctx = dimCanvas.getContext('2d');
+          ctx.drawImage(srcCanvas, 0, 0);
+        }
+      };
+
+      window.generateFinalPhoto = function() {
+        var srcCanvas = document.getElementById('dimensionPreviewCanvas');
+        if (!srcCanvas) return;
+        var targetKB = parseInt(document.getElementById('kpscFinalKB').value, 10) || 28;
+        targetKB = Math.min(Math.max(targetKB, 10), 30);
+        var targetW = parseInt(document.getElementById('kpscFinalWidth').value, 10) || 150;
+        var targetH = parseInt(document.getElementById('kpscFinalHeight').value, 10) || 200;
+
+        var outputCanvas = document.createElement('canvas');
+        outputCanvas.width = targetW;
+        outputCanvas.height = targetH;
+        var outCtx = outputCanvas.getContext('2d');
+        outCtx.drawImage(srcCanvas, 0, 0, targetW, targetH);
+
+        compressCanvasToTarget(outputCanvas, targetKB, function(blob) {
+          kpscFinalBlob = blob;
+          var url = URL.createObjectURL(blob);
+          if (document.getElementById('kpscFinalResultImg')) document.getElementById('kpscFinalResultImg').src = url;
+          if (document.getElementById('kpscFinalSizeBadge')) document.getElementById('kpscFinalSizeBadge').innerText = (blob.size / 1024).toFixed(1) + ' KB';
+          if (document.getElementById('kpscFinalDimBadge')) document.getElementById('kpscFinalDimBadge').innerText = targetW + ' × ' + targetH + ' px';
+
+          var candidateName = (document.getElementById('kpscCandidateName') ? document.getElementById('kpscCandidateName').value : '').trim().replace(/[^a-zA-Z0-9]/g, '_');
+          if (candidateName && document.getElementById('kpscRenameInput')) {
+            document.getElementById('kpscRenameInput').value = 'KPSC_' + candidateName.toUpperCase();
+          }
+          switchKpscStep(5);
+        });
+      };
+
+      window.downloadKpscFinalImage = function() {
+        if (!kpscFinalBlob) return;
+        var fileName = (document.getElementById('kpscRenameInput') ? document.getElementById('kpscRenameInput').value : 'KPSC_PHOTO_1INDIAJOB').trim() + '.jpg';
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(kpscFinalBlob);
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      };
+
+      window.resetToStep1 = function() {
+        kpscRawImg = null;
+        kpscCroppedCanvas = null;
+        kpscFinalBlob = null;
+        if (document.getElementById('kpscFileInput')) document.getElementById('kpscFileInput').value = '';
+        switchKpscStep(1);
+      };
+
+      // 2. GLOBAL EVENT DELEGATION
+      document.addEventListener('change', function(e) {
+        if (e.target && e.target.id === 'kpscFileInput') onKpscImageSelected(e);
+      });
+
       function initPortal() {
         updateDynamicYear();
         var heroCount = document.getElementById('heroActiveCount');
