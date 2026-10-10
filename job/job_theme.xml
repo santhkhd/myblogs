@@ -1849,6 +1849,15 @@
 
     <!-- Footer -->
     <footer>
+      <div style='display:flex; justify-content:center; gap:16px; margin-bottom:0.85rem; flex-wrap:wrap; font-size:0.88rem; font-weight:700;'>
+        <a href='/p/about-us.html' style='color:var(--text-secondary); text-decoration:none;'>About Us</a>
+        <span style='color:var(--border-color);'>•</span>
+        <a href='/p/contact-us.html' style='color:var(--text-secondary); text-decoration:none;'>Contact Us</a>
+        <span style='color:var(--border-color);'>•</span>
+        <a href='/p/privacy-policy.html' style='color:var(--text-secondary); text-decoration:none;'>Privacy Policy</a>
+        <span style='color:var(--border-color);'>•</span>
+        <a href='/p/disclaimer.html' style='color:var(--text-secondary); text-decoration:none;'>Disclaimer</a>
+      </div>
       <p style='margin-bottom:0.4rem;'>
         <strong><data:blog.title/></strong> &#169; <span class='dyn-year'>2026</span> - Daily Government Job Notifications, Admit Cards &amp; Results Portal.
       </p>
@@ -2884,6 +2893,46 @@
         else if (job.item_type === 'answer_key') { typeClass = 'chip-ans'; typeLabel = '📝 ANSWER KEY & PAPER'; }
         else if (job.item_type === 'syllabus') { typeClass = 'chip-syl'; typeLabel = '📚 EXAM SYLLABUS'; }
 
+        var articleBodyHtml = '';
+        if (job.content_html && job.content_html.length > 50) {
+          articleBodyHtml = "<div class='blogger-rich-article'>" + job.content_html + "</div>";
+        } else {
+          articleBodyHtml = "" +
+            "<h2 style='font-size:1.25rem; font-weight:900; color:var(--primary); margin:1.5rem 0 0.5rem; border-bottom:2px solid var(--border-color); padding-bottom:0.4rem;'>📋 Complete Recruitment Overview <span class='dyn-year'>" + yr + "</span></h2>" +
+            "<table class='article-table'>" +
+              "<tr><td>Hiring Authority</td><td>" + job.org_name + "</td></tr>" +
+              "<tr><td>Post Name</td><td>" + job.post_name + "</td></tr>" +
+              "<tr><td>Total Vacancies</td><td style='color:#059669; font-size:1.05rem; font-weight:800;'>" + job.vacancies + "</td></tr>" +
+              "<tr><td>Monthly Salary / Pay Scale</td><td style='color:#2563EB; font-size:1.05rem; font-weight:800;'>" + job.salary + "</td></tr>" +
+              "<tr><td>Educational Qualification</td><td>" + job.qualification + "</td></tr>" +
+              "<tr><td>Age Limit</td><td>" + job.age_limit + "</td></tr>" +
+              "<tr><td>Job Location</td><td>" + job.location + "</td></tr>" +
+              "<tr><td>Official Website</td><td><a href='" + job.apply_url + "' target='_blank' rel='noopener noreferrer' style='color:var(--primary); font-weight:800;'>" + job.website + " ↗</a></td></tr>" +
+            "</table>" +
+
+            "<h2 style='font-size:1.25rem; font-weight:900; color:var(--primary); margin:1.75rem 0 0.5rem; border-bottom:2px solid var(--border-color); padding-bottom:0.4rem;'>📅 Important Dates &amp; Application Fee</h2>" +
+            "<table class='article-table'>" +
+              "<tr><td>Online Application Starts</td><td>" + (job.start_date || 'Active Now') + "</td></tr>" +
+              "<tr><td>Last Date to Apply</td><td style='color:#DC2626; font-weight:800;'>" + job.last_date + "</td></tr>" +
+              "<tr><td>Application Fee</td><td>" + (job.fee || 'Refer Official Notification') + "</td></tr>" +
+            "</table>" +
+
+            "<h2 style='font-size:1.25rem; font-weight:900; color:var(--primary); margin:1.75rem 0 0.5rem; border-bottom:2px solid var(--border-color); padding-bottom:0.4rem;'>🔗 Official Application &amp; Notification Links</h2>" +
+            "<div style='display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:1.25rem 0;'>" +
+              "<a href='" + job.apply_url + "' target='_blank' rel='noopener noreferrer' style='flex:1; min-width:240px; text-align:center; padding:13px 20px; background:#059669; color:#FFFFFF; border-radius:50px; font-weight:900; text-decoration:none; font-size:0.98rem; box-shadow:0 4px 14px rgba(5,150,105,0.3);'>📝 Apply Online Portal ↗</a>" +
+            "</div>" +
+
+            "<h2 style='font-size:1.25rem; font-weight:900; color:var(--primary); margin:1.75rem 0 0.5rem; border-bottom:2px solid var(--border-color); padding-bottom:0.4rem;'>✍️ Step-by-Step Application Instructions</h2>" +
+            "<ol style='padding-left:1.25rem; line-height:1.9; margin:1rem 0; font-size:0.92rem;'>" +
+              "<li>Visit the official government recruitment portal: <strong>" + job.website + "</strong>.</li>" +
+              "<li>Locate the notification link for <strong>" + job.post_name + "</strong>.</li>" +
+              "<li>Register for One-Time Registration (OTR) or login with your registration credentials.</li>" +
+              "<li>Fill in your educational qualification, age, and personal details accurately.</li>" +
+              "<li>Upload scanned copies of certificates, photograph, and signature.</li>" +
+              "<li>Submit online application fee and print the acknowledgment form before <strong>" + job.last_date + "</strong>.</li>" +
+            "</ol>";
+        }
+
         content.innerHTML = "" +
           "<div style='background:linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color:#FFFFFF; border-radius:14px; padding:1.75rem; text-align:center; margin-bottom:1.5rem;'>" +
             "<div style='display:flex; justify-content:center; gap:8px; margin-bottom:8px; flex-wrap:wrap;'>" +
@@ -2905,37 +2954,8 @@
             "<a href='https://t.me/share/url?url=" + shareUrl + "&text=" + shareText + "' target='_blank' rel='noopener' class='share-btn btn-telegram'><i class='fab fa-telegram-plane'></i> Telegram</a>" +
             "<button onclick='copyJobLink()' class='share-btn btn-copy' type='button'><i class='fas fa-copy'></i> Copy Link</button>" +
           "</div>" +
-
-          "<h2 style='font-size:1.25rem; font-weight:900; color:var(--primary); margin:1.5rem 0 0.5rem; border-bottom:2px solid var(--border-color); padding-bottom:0.4rem;'>📋 Complete Recruitment Overview <span class='dyn-year'>" + yr + "</span></h2>" +
-          "<table class='article-table'>" +
-            "<tr><td>Hiring Authority</td><td>" + job.org_name + "</td></tr>" +
-            "<tr><td>Post Name</td><td>" + job.post_name + "</td></tr>" +
-            "<tr><td>Total Vacancies</td><td style='color:#059669; font-size:1.05rem;'>" + job.vacancies + "</td></tr>" +
-            "<tr><td>Monthly Salary / Pay Scale</td><td style='color:#2563EB; font-size:1.05rem;'>" + job.salary + "</td></tr>" +
-            "<tr><td>Educational Qualification</td><td>" + job.qualification + "</td></tr>" +
-            "<tr><td>Age Limit</td><td>" + job.age_limit + "</td></tr>" +
-            "<tr><td>Application Fee</td><td>" + job.fee + "</td></tr>" +
-            "<tr><td>Job Location</td><td>" + job.location + "</td></tr>" +
-            "<tr><td>Application Window</td><td>" + job.start_date + " to " + job.last_date + "</td></tr>" +
-            "<tr><td>Official Website</td><td><a href='" + job.apply_url + "' target='_blank' rel='noopener noreferrer' style='color:var(--primary); font-weight:800;'>" + job.website + " ↗</a></td></tr>" +
-          "</table>" +
-
-          "<h2 style='font-size:1.25rem; font-weight:900; color:var(--primary); margin:1.5rem 0 0.5rem; border-bottom:2px solid var(--border-color); padding-bottom:0.4rem;'>🔗 Official Application &amp; Notification Links</h2>" +
-          "<div style='display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:1.25rem 0;'>" +
-            "<a href='" + job.apply_url + "' target='_blank' rel='noopener noreferrer' style='flex:1; min-width:240px; text-align:center; padding:13px 20px; background:#059669; color:#FFFFFF; border-radius:50px; font-weight:900; text-decoration:none; font-size:0.98rem; box-shadow:0 4px 14px rgba(5,150,105,0.3);'>📝 Apply Online Portal ↗</a>" +
-
-          "</div>" +
-
-          "<h2 style='font-size:1.25rem; font-weight:900; color:var(--primary); margin:1.75rem 0 0.5rem; border-bottom:2px solid var(--border-color); padding-bottom:0.4rem;'>✍️ Step-by-Step Application Instructions</h2>" +
-          "<ol style='padding-left:1.25rem; line-height:1.9; margin:1rem 0; font-size:0.92rem;'>" +
-            "<li>Visit the official government portal: <strong>" + job.website + "</strong>.</li>" +
-            "<li>Look for <strong>Recruitment / Career Notifications " + yr + "</strong>.</li>" +
-            "<li>Select the notification for <strong>" + job.post_name + "</strong>.</li>" +
-            "<li>Register for One-Time Registration (OTR) or login with your registration ID.</li>" +
-            "<li>Fill in your educational qualification, age, and reservation details accurately.</li>" +
-            "<li>Upload scanned copies of required certificates, photo, and signature.</li>" +
-            "<li>Submit application fees online and print your final acknowledgment confirmation.</li>" +
-          "</ol>";
+          
+          articleBodyHtml;
 
 
 
