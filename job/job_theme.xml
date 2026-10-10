@@ -6,6 +6,9 @@
     <title><data:blog.pageTitle/></title>
     <b:include data='blog' name='all-head-content'/>
 
+    <!-- Google AdSense Verification & Auto Ads -->
+    <script async='async' crossorigin='anonymous' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2647466673530215'></script>
+
     <!-- Advanced SEO Meta Tags -->
     <meta content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' name='robots'/>
     <meta content='Government Jobs, Kerala PSC Notifications, Bank Recruitment, Railway RRB, SSC CGL, UPSC, 10th Pass Jobs, Central Govt Jobs, Police Recruitment' name='keywords'/>
