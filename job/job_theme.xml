@@ -862,13 +862,15 @@
         background: rgba(220, 38, 38, 0.2);
       }
 
-      /* Job Title: Clean, Crisp & Proportionate */
+      /* Job Title: Clear, High-Legibility & Professional */
       .job-card-title {
-        font-size: 0.98rem;
+        font-size: 1.05rem;
         font-weight: 800;
         color: var(--text-primary);
-        line-height: 1.38;
-        margin: 0.1rem 0;
+        line-height: 1.45;
+        letter-spacing: -0.012em;
+        margin: 0.25rem 0;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
 
       .job-card-bottom {
@@ -914,9 +916,9 @@
         .quick-browse-grid { padding: 0 12px; }
         .hero-search-box input { height: 42px; font-size: 0.88rem; }
         .saved-header-banner { padding: 0.85rem; }
-        .job-card { padding: 0.85rem; }
-        .job-card { padding: 0.75rem 0.85rem; } .job-card-title { font-size: 0.94rem !important; font-weight: 800 !important; line-height: 1.35 !important; }
-        .full-job-article { padding: 1.15rem 0.85rem; }
+        .job-card { padding: 0.95rem 1rem; gap: 0.55rem; }
+        .job-card-title { font-size: 1.04rem !important; font-weight: 800 !important; line-height: 1.44 !important; letter-spacing: -0.015em !important; margin: 0.2rem 0 !important; color: var(--text-primary) !important; }
+        .full-job-article { padding: 1.25rem 1rem; }
         .results-count-bar { padding: 0 2px 6px; }
       }
 
