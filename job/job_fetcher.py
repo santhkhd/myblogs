@@ -493,7 +493,11 @@ def generate_daily_50_jobs(limit=50):
             days_valid = random.randint(20, 45)
             last_date_obj = today + datetime.timedelta(days=days_valid)
             
-            start_date_str = today.strftime("%d %B %Y")
+            # Use original posting date if job was previously posted
+            if last_posted:
+                start_date_str = datetime.datetime.strptime(last_posted, "%Y-%m-%d").strftime("%d %B %Y")
+            else:
+                start_date_str = today.strftime("%d %B %Y")
             last_date_str = last_date_obj.strftime("%d %B %Y")
             
             qual, salary, vac_count, fee = resolve_qual_and_salary(post)
@@ -549,7 +553,13 @@ def generate_daily_50_jobs(limit=50):
 
                 days_valid = random.randint(20, 45)
                 last_date_obj = today + datetime.timedelta(days=days_valid)
-                start_date_str = today.strftime("%d %B %Y")
+                # Determine start date based on previous posting if exists
+                sig = get_job_signature(org, post)
+                last_posted = history.get(sig)
+                if last_posted:
+                    start_date_str = datetime.datetime.strptime(last_posted, "%Y-%m-%d").strftime("%d %B %Y")
+                else:
+                    start_date_str = today.strftime("%d %B %Y")
                 last_date_str = last_date_obj.strftime("%d %B %Y")
                 qual, salary, vac_count, fee = resolve_qual_and_salary(post)
                 title = f"{org} {post} Recruitment {today.year}: Apply Online for {vac_count}"

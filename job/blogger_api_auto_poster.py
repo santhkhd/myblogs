@@ -11,6 +11,7 @@ import time
 import urllib.request
 import urllib.parse
 import datetime
+import json
 
 try:
     if hasattr(sys.stdout, 'reconfigure'):
@@ -19,6 +20,29 @@ try:
         sys.stderr.reconfigure(encoding='utf-8')
 except Exception:
     pass
+
+
+def send_telegram_message(message_text: str) -> None:
+    """Send a text message via the configured Telegram bot.
+
+    Reads ``TELEGRAM_BOT_TOKEN`` and ``TELEGRAM_CHAT_ID`` from environment.
+    If either is missing, the function silently returns.
+    ``TELEGRAM_CHAT_ID`` can be a numeric chat ID or a channel username (e.g. "@my_channel").
+    """
+    if not (TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID):
+        return
+    try:
+        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+        payload = urllib.parse.urlencode({
+            "chat_id": TELEGRAM_CHAT_ID,
+            "text": message_text,
+            "parse_mode": "HTML"
+        }).encode()
+        req = urllib.request.Request(url, data=payload)
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            resp.read()  # consume response
+    except Exception as e:
+        print(f"⚠️ Failed to send Telegram message: {e}")
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 if current_dir not in sys.path:
@@ -33,6 +57,9 @@ BLOG_ID = os.environ.get("BLOGGER_BLOG_ID", "2919982446335599886").strip()
 CLIENT_ID = os.environ.get("BLOGGER_CLIENT_ID", "").strip()
 CLIENT_SECRET = os.environ.get("BLOGGER_CLIENT_SECRET", "").strip()
 REFRESH_TOKEN = os.environ.get("BLOGGER_REFRESH_TOKEN", "").strip()
+# Telegram bot credentials (set as GitHub Secrets)
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
 def get_access_token():
     """
@@ -118,6 +145,13 @@ def main():
                     print(f"[{idx:02d}/{len(jobs_to_post)}] ✅ Published: {job['title'][:55]}... ➔ {post_url}")
                     success_count += 1
                     posted = True
+                    # Send Telegram notification if credentials are present
+                    if TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID:
+                        try:
+                            message_text = f"New job posted: {job['title']}\n{post_url}"
+                            send_telegram_message(message_text)
+                        except Exception as tg_err:
+                            print(f"⚠️ Telegram notification failed: {tg_err}")
                     time.sleep(4.5)  # Safe 4.5s spacing prevents Google 429 burst limit
                     break
                 except urllib.error.HTTPError as http_err:
@@ -129,14 +163,14 @@ def main():
                         print(f"[{idx:02d}/{len(jobs_to_post)}] ❌ HTTP {http_err.code} Error: {http_err}")
                         break
                 except Exception as e:
-                    print(f"[{idx:02d}/{len(jobs_to_post)}] ❌ Error: {e}")
+                    print(f"[{idx:02d}/{len(jobs_to_post)}] ❑ Error: {e}")
                     time.sleep(5)
 
             if not posted:
                 fail_count += 1
     else:
         print("ℹ️ Skipping direct API post because API credentials are not yet set.")
-        print("💡 Please configure BLOGGER_CLIENT_ID, BLOGGER_CLIENT_SECRET, BLOGGER_REFRESH_TOKEN in GitHub Secrets.")
+        print("💡 Please configure BLOGGER_CLIENT_ID, BLOGGER_CLIENT_SECRET, BLOGGER_REFRESH_TOKEN, TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in GitHub Secrets.")
 
     # 3. Always update export XML file as backup
     xml_path = generate_blogger_xml(jobs_to_post, "daily_jobs_export.xml")

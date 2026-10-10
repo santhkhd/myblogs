@@ -2063,14 +2063,20 @@
         var salInput = document.getElementById('calcSalary');
 
         calcQual = qualInput ? qualInput.value : '';
-        calcAge = ageInput && ageInput.value ? parseInt(ageInput.value, 10) : null;
+        var rawAge = ageInput && ageInput.value ? parseInt(ageInput.value, 10) : null;
+        // Only activate age filter when a sensible complete age (16 to 70) is entered
+        calcAge = (rawAge && !isNaN(rawAge) && rawAge >= 16 && rawAge <= 70) ? rawAge : null;
         calcSalary = salInput && salInput.value ? parseInt(salInput.value, 10) : 0;
 
         filterJobs();
 
         var countBadge = document.getElementById('calcMatchedCount');
         if (countBadge) {
-          countBadge.innerText = 'Matched: ' + activeFilteredJobs.length + ' Opportunities';
+          if (calcQual || calcAge !== null || calcSalary > 0) {
+            countBadge.innerText = 'Matched: ' + activeFilteredJobs.length + ' Opportunities';
+          } else {
+            countBadge.innerText = '';
+          }
         }
       }
 
@@ -2182,15 +2188,45 @@
       }
 
       function matchesAgeLimit(jobAgeStr, candidateAge) {
-        if (!candidateAge || !jobAgeStr) return true;
+        if (!candidateAge || isNaN(candidateAge) || candidateAge < 16 || candidateAge > 70 || !jobAgeStr) return true;
         var nums = jobAgeStr.match(/\d+/g);
         if (!nums || nums.length === 0) return true;
         if (nums.length === 1) {
-          return candidateAge <= (parseInt(nums[0], 10) + 3);
+          var singleLimit = parseInt(nums[0], 10);
+          if (singleLimit >= 25) {
+            return candidateAge >= 18 && candidateAge <= (singleLimit + 3);
+          }
+          return candidateAge <= (singleLimit + 3);
         }
         var minAge = parseInt(nums[0], 10);
         var maxAge = parseInt(nums[1], 10) + 3;
         return candidateAge >= minAge && candidateAge <= maxAge;
+      }
+
+      function matchesQualification(job, qualFilter) {
+        if (!qualFilter) return true;
+        var text = (job.qualification + ' ' + job.title + ' ' + (job.labels ? job.labels.join(' ') : '') + ' ' + job.category).toLowerCase();
+        var qf = qualFilter.toLowerCase();
+        if (qf === '10th pass') {
+          return text.indexOf('10th') !== -1 || text.indexOf('sslc') !== -1 || text.indexOf('matric') !== -1;
+        } else if (qf === '12th pass') {
+          return text.indexOf('12th') !== -1 || text.indexOf('+2') !== -1 || text.indexOf('higher secondary') !== -1 || text.indexOf('plus two') !== -1 || text.indexOf('inter') !== -1;
+        } else if (qf === 'iti') {
+          return text.indexOf('iti') !== -1 || text.indexOf('trade') !== -1 || text.indexOf('fitter') !== -1 || text.indexOf('electrician') !== -1;
+        } else if (qf === 'diploma') {
+          return text.indexOf('diploma') !== -1 || text.indexOf('polytechnic') !== -1;
+        } else if (qf === 'degree') {
+          return text.indexOf('degree') !== -1 || text.indexOf('graduate') !== -1 || text.indexOf('graduation') !== -1 || text.indexOf('bachelor') !== -1 || text.indexOf('b.com') !== -1 || text.indexOf('b.a') !== -1 || text.indexOf('b.sc') !== -1;
+        } else if (qf === 'b.tech') {
+          return text.indexOf('b.tech') !== -1 || text.indexOf('b.e') !== -1 || text.indexOf('engineering') !== -1;
+        } else if (qf === 'nursing') {
+          return text.indexOf('nursing') !== -1 || text.indexOf('gnm') !== -1 || text.indexOf('mbbs') !== -1 || text.indexOf('medical') !== -1 || text.indexOf('surgeon') !== -1;
+        } else if (qf === 'pg') {
+          return text.indexOf('pg') !== -1 || text.indexOf('post graduate') !== -1 || text.indexOf('master') !== -1 || text.indexOf('mba') !== -1 || text.indexOf('m.sc') !== -1 || text.indexOf('m.com') !== -1;
+        } else if (qf === 'teaching') {
+          return text.indexOf('teach') !== -1 || text.indexOf('b.ed') !== -1 || text.indexOf('ttc') !== -1 || text.indexOf('d.el.ed') !== -1 || text.indexOf('ktet') !== -1 || text.indexOf('faculty') !== -1;
+        }
+        return text.indexOf(qf) !== -1;
       }
 
       function updateChannelCounts() {
@@ -2618,8 +2654,7 @@
 
           // Eligibility calculator qualification
           if (calcQual) {
-            var qualText = (job.qualification + ' ' + job.title + ' ' + (job.labels ? job.labels.join(' ') : '')).toLowerCase();
-            if (qualText.indexOf(calcQual.toLowerCase()) === -1) return false;
+            if (!matchesQualification(job, calcQual)) return false;
           }
 
           // Eligibility calculator age
@@ -2875,7 +2910,7 @@
           "<h2 style='font-size:1.25rem; font-weight:900; color:var(--primary); margin:1.5rem 0 0.5rem; border-bottom:2px solid var(--border-color); padding-bottom:0.4rem;'>🔗 Official Application &amp; Notification Links</h2>" +
           "<div style='display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:1.25rem 0;'>" +
             "<a href='" + job.apply_url + "' target='_blank' rel='noopener noreferrer' style='flex:1; min-width:240px; text-align:center; padding:13px 20px; background:#059669; color:#FFFFFF; border-radius:50px; font-weight:900; text-decoration:none; font-size:0.98rem; box-shadow:0 4px 14px rgba(5,150,105,0.3);'>📝 Apply Online Portal ↗</a>" +
-            "<a href='" + job.pdf_url + "' target='_blank' rel='noopener noreferrer' style='flex:1; min-width:240px; text-align:center; padding:13px 20px; background:#2563EB; color:#FFFFFF; border-radius:50px; font-weight:900; text-decoration:none; font-size:0.98rem; box-shadow:0 4px 14px rgba(37,99,235,0.3);'>📄 Download Official PDF ↗</a>" +
+
           "</div>" +
 
           "<h2 style='font-size:1.25rem; font-weight:900; color:var(--primary); margin:1.75rem 0 0.5rem; border-bottom:2px solid var(--border-color); padding-bottom:0.4rem;'>✍️ Step-by-Step Application Instructions</h2>" +
@@ -3120,19 +3155,19 @@
         if (newlyAdded.length > 0) {
           ALL_JOBS = newlyAdded.concat(ALL_JOBS);
           activeFilteredJobs = ALL_JOBS;
-          var heroCount = document.getElementById('heroActiveCount');
-          if (heroCount) heroCount.innerText = ALL_JOBS.length + '+';
-          updateChannelCounts();
-          updateCategoryCounts();
-          filterJobs();
         }
+        var heroCount = document.getElementById('heroActiveCount');
+        if (heroCount) heroCount.innerText = ALL_JOBS.length + '+';
+        updateChannelCounts();
+        updateCategoryCounts();
+        filterJobs();
       }
       window.onBloggerLiveFeedLoaded = onBloggerLiveFeedLoaded;
 
       function syncLiveBloggerPosts() {
         try {
           var script = document.createElement('script');
-          script.src = '/feeds/posts/default?alt=json-in-script&callback=onBloggerLiveFeedLoaded&max-results=50';
+          script.src = '/feeds/posts/default?alt=json-in-script&callback=onBloggerLiveFeedLoaded&max-results=500';
           script.async = true;
           document.body.appendChild(script);
         } catch (e) {}

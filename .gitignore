@@ -9,3 +9,5 @@ blogger_api_credentials.txt
 token.json
 client_secret.json
 client_secrets.json
+mysecret.md
+*secret*.md
