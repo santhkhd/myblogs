@@ -2562,7 +2562,8 @@
           else if (job.item_type === 'answer_key') { typeClass = 'chip-ans'; typeLabel = '📝 ANSWER KEY'; }
           else if (job.item_type === 'syllabus') { typeClass = 'chip-syl'; typeLabel = '📚 SYLLABUS'; }
 
-          html += "<div class='job-card' data-jobid='" + job.id + "' onclick='openJobFullPage(this.dataset.jobid)'>" +
+          var cardHref = job.post_url || ('#' + job.id);
+          html += "<a class='job-card' href='" + cardHref + "' data-jobid='" + job.id + "' onclick='handleCardClick(this, event)'>" +
                     "<div class='job-card-top'>" +
                       "<div class='job-card-badges'>" +
                         "<span class='job-qual-chip'><i class='fas fa-graduation-cap'></i> " + job.qualification + "</span>" +
@@ -2576,7 +2577,7 @@
                       "<span class='status-badge " + statusObj.css + "'>" + statusObj.label + "</span>" +
                       "<span class='job-read-link'>Apply ➔</span>" +
                     "</div>" +
-                  "</div>";
+                  "</a>";
         }
         container.innerHTML = savedHeaderBanner + html;
         renderPagination(totalPages);
@@ -2842,6 +2843,14 @@
         filterJobs();
       }
 
+      function handleCardClick(el, event) {
+        if (event && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+          event.preventDefault();
+        }
+        var jobId = el.getAttribute('data-jobid');
+        openJobFullPage(jobId);
+      }
+
       function copyJobLink() {
         if (navigator.clipboard) {
           navigator.clipboard.writeText(window.location.href);
@@ -2854,12 +2863,11 @@
         var job = ALL_JOBS.find(function(j) { return j.id === jobId; });
         if (!job) return;
 
-        if (window.location.hash !== '#' + jobId) {
-          try {
-            history.pushState(null, null, '#' + jobId);
-          } catch(e) {
-            window.location.hash = jobId;
-          }
+        var targetCanonicalUrl = job.post_url || ('#' + jobId);
+        try {
+          history.pushState(null, null, targetCanonicalUrl);
+        } catch(e) {
+          window.location.hash = jobId;
         }
 
         // Dynamic Document Title for SEO
@@ -2926,7 +2934,7 @@
         articleView.style.display = 'block';
 
         var content = document.getElementById('jobArticleContent');
-        var shareUrl = encodeURIComponent(window.location.href);
+        var shareUrl = encodeURIComponent(job.post_url || window.location.href);
         var shareText = encodeURIComponent(job.title + " - Apply before " + job.last_date);
         var statusObj = getDeadlineStatus(job.last_date);
 
@@ -3028,7 +3036,8 @@
           for (var r = 0; r < related.length; r++) {
             var rJob = related[r];
             var rStatus = getDeadlineStatus(rJob.last_date);
-            rHtml += "<div class='job-card' data-jobid='" + rJob.id + "' onclick='openJobFullPage(this.dataset.jobid)'>" +
+            var rHref = rJob.post_url || ('#' + rJob.id);
+            rHtml += "<a class='job-card' href='" + rHref + "' data-jobid='" + rJob.id + "' onclick='handleCardClick(this, event)'>" +
                        "<div class='job-card-top'>" +
                          "<span class='job-qual-chip'><i class='fas fa-graduation-cap'></i> " + rJob.qualification + "</span>" +
                          "<span class='job-org-badge' style='margin-left:auto;'><i class='fas fa-building'></i> " + rJob.org_name + "</span>" +
@@ -3038,7 +3047,7 @@
                          "<span class='status-badge " + rStatus.css + "'>" + rStatus.label + "</span>" +
                          "<span class='job-read-link'>Apply ➔</span>" +
                        "</div>" +
-                     "</div>";
+                     "</a>";
           }
           relatedContainer.innerHTML = rHtml;
         }
@@ -3260,6 +3269,7 @@
             labels: labels,
             start_date: published,
             last_date: lastDate,
+            post_url: link,
             apply_url: applyUrl,
             pdf_url: pdfUrl,
             website: websiteDomain,
