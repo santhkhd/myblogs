@@ -55,6 +55,24 @@ CORE_QUESTION_SETS = {
             "options": ["United States", "Ireland", "United Kingdom", "Canada"],
             "ans": 1,
             "exp": "The Directive Principles of State Policy (Part IV, Articles 36–51) were borrowed from the Constitution of Ireland (Irish Constitution of 1937)."
+        },
+        {
+            "q": "Which Article of the Indian Constitution provides for the establishment of the Finance Commission?",
+            "options": ["Article 260", "Article 280", "Article 300", "Article 324"],
+            "ans": 1,
+            "exp": "Article 280 of the Constitution provides for a Finance Commission as a quasi-judicial body constituted by the President every fifth year."
+        },
+        {
+            "q": "Who acts as the ex-officio Chairman of the Rajya Sabha (Council of States)?",
+            "options": ["The President", "The Vice-President of India", "The Prime Minister", "The Speaker of Lok Sabha"],
+            "ans": 1,
+            "exp": "Under Article 64 and Article 89(1), the Vice-President of India is the ex-officio Chairman of the Council of States (Rajya Sabha)."
+        },
+        {
+            "q": "Which Constitutional Amendment added the terms 'Socialist', 'Secular' and 'Integrity' to the Preamble?",
+            "options": ["24th Amendment", "42nd Amendment Act, 1976", "44th Amendment Act", "52nd Amendment"],
+            "ans": 1,
+            "exp": "The 42nd Constitutional Amendment Act of 1976 (known as the Mini-Constitution) added 'Socialist', 'Secular', and 'Integrity' to the Preamble."
         }
     ],
     "history": [
@@ -87,6 +105,24 @@ CORE_QUESTION_SETS = {
             "options": ["Chand Bibi", "Razia Sultana", "Nur Jahan", "Rani Durgavati"],
             "ans": 1,
             "exp": "Razia Sultana (reigned 1236–1240) was the first and only female monarch of the Delhi Sultanate, succeeding her father Iltutmish."
+        },
+        {
+            "q": "The Indus Valley Civilization site 'Lothal', famous for its ancient dockyard, is located in which state?",
+            "options": ["Rajasthan", "Gujarat", "Punjab", "Haryana"],
+            "ans": 1,
+            "exp": "Lothal is located along the Bhogava River in the Bhal region of Gujarat. It possessed the world's earliest known tidal dockyard."
+        },
+        {
+            "q": "Who was the founder of the Brahmo Samaj in 1828?",
+            "options": ["Swami Vivekananda", "Raja Ram Mohan Roy", "Ishwar Chandra Vidyasagar", "Dayananda Saraswati"],
+            "ans": 1,
+            "exp": "Raja Ram Mohan Roy, known as the Father of Indian Renaissance, founded the Brahmo Samaj in Calcutta in 1828."
+        },
+        {
+            "q": "Which Mughal Emperor built the famous Red Fort and Jama Masjid in Delhi?",
+            "options": ["Akbar", "Jahangir", "Shah Jahan", "Aurangzeb"],
+            "ans": 2,
+            "exp": "Shah Jahan, known as the Engineer King, commissioned the construction of the Red Fort (Lal Qila) and Jama Masjid in Shahjahanabad (Delhi)."
         }
     ],
     "geography": [
@@ -119,6 +155,24 @@ CORE_QUESTION_SETS = {
             "options": ["Zoji La Pass", "Rohtang Pass", "Nathu La Pass", "Shipki La Pass"],
             "ans": 0,
             "exp": "Zoji La Pass is a high mountain pass in the Himalayas that connects Srinagar with Kargil and Leh on National Highway 1."
+        },
+        {
+            "q": "Which state has the longest coastline in India?",
+            "options": ["Tamil Nadu", "Gujarat", "Andhra Pradesh", "Maharashtra"],
+            "ans": 1,
+            "exp": "Gujarat has the longest mainland coastline in India, extending over approximately 1,600 km along the Kathiawar peninsula."
+        },
+        {
+            "q": "Kaziranga National Park, famous for the One-horned Rhinoceros, is in which state?",
+            "options": ["West Bengal", "Assam", "Meghalaya", "Odisha"],
+            "ans": 1,
+            "exp": "Kaziranga National Park in Assam is a UNESCO World Heritage Site hosting two-thirds of the world's Great One-horned Rhinoceroses."
+        },
+        {
+            "q": "Which Indian lake is the largest brackish water lagoon in Asia?",
+            "options": ["Vembanad Lake", "Chilika Lake", "Kolleru Lake", "Pulicat Lake"],
+            "ans": 1,
+            "exp": "Chilika Lake in Odisha is the largest brackish water coastal lagoon in Asia and the second largest in the world."
         }
     ],
     "science": [
@@ -151,6 +205,24 @@ CORE_QUESTION_SETS = {
             "options": ["Hydrometer", "Barometer", "Hygrometer", "Anemometer"],
             "ans": 1,
             "exp": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure."
+        },
+        {
+            "q": "Which blood group is called the 'Universal Donor'?",
+            "options": ["AB+", "AB-", "O+", "O-"],
+            "ans": 3,
+            "exp": "O-negative (O-) blood lacks A, B, and Rh antigens on red blood cells, making it safe for transfusion to patients of any blood group."
+        },
+        {
+            "q": "What is the chemical formula of Common Salt?",
+            "options": ["NaHCO₃", "NaCl", "Na₂CO₃", "NaOH"],
+            "ans": 1,
+            "exp": "Sodium Chloride (NaCl) is the chemical formula for common table salt."
+        },
+        {
+            "q": "Which hormone is responsible for regulating blood sugar levels in the human body?",
+            "options": ["Thyroxine", "Adrenaline", "Insulin", "Estrogen"],
+            "ans": 2,
+            "exp": "Insulin, secreted by the beta cells of the Islets of Langerhans in the pancreas, facilitates glucose uptake from the bloodstream."
         }
     ],
     "economy": [
@@ -183,11 +255,23 @@ CORE_QUESTION_SETS = {
             "options": ["Finance Commission", "NITI Aayog", "National Development Council", "Zonal Council"],
             "ans": 1,
             "exp": "NITI Aayog (National Institution for Transforming India) replaced the 65-year-old Planning Commission on 1 January 2015."
+        },
+        {
+            "q": "Where is the headquarters of the Reserve Bank of India (RBI) located?",
+            "options": ["New Delhi", "Mumbai", "Kolkata", "Chennai"],
+            "ans": 1,
+            "exp": "The Reserve Bank of India was established on 1 April 1935 and its central office was permanently moved to Mumbai in 1937."
+        },
+        {
+            "q": "Which type of inflation occurs when prices rise due to increase in production costs like wages and raw materials?",
+            "options": ["Demand-Pull Inflation", "Cost-Push Inflation", "Hyperinflation", "Stagflation"],
+            "ans": 1,
+            "exp": "Cost-push inflation occurs when overall prices increase (inflation) due to increases in the cost of wages and raw materials."
         }
     ],
     "current_affairs": [
         {
-            "q": "Which country recently hosted the BRICS Summit 2026?",
+            "q": "Which country hosted the landmark BRICS Leaders Summit 2026?",
             "options": ["India", "Brazil", "South Africa", "Russia"],
             "ans": 0,
             "exp": "India hosted the landmark BRICS Leaders Summit 2026 focusing on global trade integration, technological exchange, and sustainable green initiatives."
@@ -215,6 +299,18 @@ CORE_QUESTION_SETS = {
             "options": ["Vande Metro", "Namo Bharat (RRTS)", "Amrit Bharat Express", "Tejas Express"],
             "ans": 1,
             "exp": "Namo Bharat is India's first indigenous high-speed Regional Rapid Transit System (RRTS) connecting Delhi, Ghaziabad, and Meerut."
+        },
+        {
+            "q": "Which country won the ICC Men's T20 World Cup recently?",
+            "options": ["India", "South Africa", "Australia", "England"],
+            "ans": 0,
+            "exp": "India won the ICC Men's T20 World Cup with an undefeated campaign, clinching the trophy in a thrilling final."
+        },
+        {
+            "q": "What is the primary objective of ISRO's Aditya-L1 satellite mission?",
+            "options": ["Study Lunar South Pole", "Study the Sun's Corona and Solar Flares", "Study Mars Atmosphere", "Search for Exoplanets"],
+            "ans": 1,
+            "exp": "Aditya-L1 is India's dedicated solar observatory situated at the Lagrangian point L1 to observe the photosphere, chromosphere, and solar corona."
         }
     ],
     "kerala_psc": [
@@ -247,6 +343,18 @@ CORE_QUESTION_SETS = {
             "options": ["Ayyankali", "Poikayil Yohannan", "Dr. Palpu", "K.P. Karuppan"],
             "ans": 0,
             "exp": "Mahatma Ayyankali founded the Sadhu Jana Paripalana Sangham (SJPS) in 1907 to advocate for education and social rights of the downtrodden."
+        },
+        {
+            "q": "Which district in Kerala is known as the 'Gateway of Kerala' due to its famous mountain pass?",
+            "options": ["Wayanad", "Palakkad", "Idukki", "Kasaragod"],
+            "ans": 1,
+            "exp": "Palakkad is known as the 'Gateway of Kerala' because of the Palakkad Gap in the Western Ghats connecting Kerala and Tamil Nadu."
+        },
+        {
+            "q": "Who was the first Chief Minister of unified Kerala state formed on November 1, 1956?",
+            "options": ["Pattom A. Thanu Pillai", "E.M.S. Namboodiripad", "C. Achutha Menon", "R. Sankar"],
+            "ans": 1,
+            "exp": "E.M.S. Namboodiripad headed the first elected Communist ministry in Kerala which took office on 5 April 1957."
         }
     ],
     "reasoning_math": [
@@ -279,6 +387,18 @@ CORE_QUESTION_SETS = {
             "options": ["₹2,000", "₹2,400", "₹2,500", "₹1,800"],
             "ans": 1,
             "exp": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400."
+        },
+        {
+            "q": "A and B can complete a work in 12 days and 24 days respectively. If they work together, how many days will they take?",
+            "options": ["6 days", "8 days", "10 days", "16 days"],
+            "ans": 1,
+            "exp": "Combined 1-day work = (1/12) + (1/24) = 3/24 = 1/8. So together they take 8 days."
+        },
+        {
+            "q": "Introducing a boy, a girl says, 'He is the son of the only sister of my father'. How is the boy related to the girl?",
+            "options": ["Brother", "Cousin", "Nephew", "Uncle"],
+            "ans": 1,
+            "exp": "Father's sister is Aunt. Aunt's son is Cousin."
         }
     ]
 }

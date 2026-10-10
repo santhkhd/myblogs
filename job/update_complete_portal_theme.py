@@ -1,9 +1,14 @@
 import os
 import json
 import xml.sax
+import sys
 
 # Load jobs dataset
 import build_job_portal_theme_v2 as base_mod
+
+# Load interactive GK quiz question bank
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from quiz.quiz_generator import CORE_QUESTION_SETS, CATEGORIES
 
 THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
@@ -1615,6 +1620,280 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
           width: calc(100vw - 28px);
         }
       }
+
+      /* ==========================================================
+         Dedicated Interactive GK & Current Affairs Quiz Section
+         ========================================================== */
+      .portal-quiz-section {
+        background: var(--bg-card);
+        border: 1.5px solid var(--border-color);
+        border-radius: 16px;
+        padding: 1.75rem;
+        box-shadow: var(--card-shadow);
+        margin-bottom: 2rem;
+        animation: fadeIn 0.25s ease;
+      }
+      .quiz-hero-banner {
+        background: linear-gradient(135deg, #1E1B4B 0%, #4338CA 50%, #6366F1 100%);
+        color: #FFFFFF;
+        padding: 2rem 1.5rem;
+        border-radius: var(--radius);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.35);
+        position: relative;
+        overflow: hidden;
+      }
+      .quiz-hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 4px 14px;
+        border-radius: 50px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        color: #FDE047;
+      }
+      .quiz-hero-title {
+        font-size: clamp(1.3rem, 3.5vw, 1.85rem);
+        font-weight: 900;
+        margin-bottom: 8px;
+        color: #FFFFFF;
+        line-height: 1.3;
+      }
+      .quiz-hero-sub {
+        font-size: 0.9rem;
+        opacity: 0.92;
+        max-width: 650px;
+        margin: 0 auto;
+        color: #E0E7FF;
+      }
+      .quiz-category-bar {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 4px 0 12px;
+        margin-bottom: 1.25rem;
+        scrollbar-width: none;
+      }
+      .quiz-category-bar::-webkit-scrollbar { display: none; }
+      .quiz-cat-btn {
+        background: var(--bg-page);
+        border: 1.5px solid var(--border-color);
+        color: var(--text-secondary);
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 0.82rem;
+        font-weight: 800;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: var(--transition);
+        flex-shrink: 0;
+      }
+      .quiz-cat-btn:hover {
+        background: rgba(99, 102, 241, 0.1);
+        color: #6366F1;
+        border-color: #6366F1;
+      }
+      .quiz-cat-btn.active {
+        background: #6366F1;
+        color: #FFFFFF !important;
+        border-color: #6366F1;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+      }
+      .quiz-status-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--bg-page);
+        border: 1.5px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        padding: 10px 16px;
+        margin-bottom: 1.25rem;
+        font-weight: 700;
+        font-size: 0.88rem;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .quiz-timer-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--danger);
+        font-size: 1rem;
+        font-weight: 900;
+      }
+      .quiz-main-card {
+        background: var(--bg-surface);
+        border: 1.5px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 1.75rem 1.5rem;
+        box-shadow: var(--card-shadow);
+        margin-bottom: 1.25rem;
+      }
+      .quiz-question-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.5;
+        margin-bottom: 1.25rem;
+      }
+      .quiz-options-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .quiz-opt-btn {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 16px;
+        border: 1.5px solid var(--border-color);
+        background: var(--bg-page);
+        border-radius: 10px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: left;
+        transition: var(--transition);
+        width: 100%;
+        color: var(--text-primary);
+      }
+      .quiz-opt-btn:hover:not(:disabled) {
+        background: var(--primary-light);
+        border-color: var(--primary);
+        transform: translateX(4px);
+      }
+      .quiz-opt-btn.correct {
+        background: var(--success-bg) !important;
+        border-color: var(--success) !important;
+        color: #065F46 !important;
+      }
+      .quiz-opt-btn.wrong {
+        background: var(--danger-bg) !important;
+        border-color: var(--danger) !important;
+        color: #991B1B !important;
+      }
+      .quiz-opt-bullet {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--bg-card);
+        border: 1.5px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.82rem;
+        flex-shrink: 0;
+        color: var(--text-secondary);
+      }
+      .quiz-opt-btn.correct .quiz-opt-bullet {
+        background: var(--success);
+        color: #FFFFFF;
+        border-color: var(--success);
+      }
+      .quiz-opt-btn.wrong .quiz-opt-bullet {
+        background: var(--danger);
+        color: #FFFFFF;
+        border-color: var(--danger);
+      }
+      .quiz-explanation-box {
+        background: var(--success-bg);
+        border-left: 4px solid var(--success);
+        padding: 12px 16px;
+        border-radius: 6px;
+        margin-top: 1.25rem;
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: var(--text-primary);
+        display: none;
+        animation: fadeIn 0.2s ease;
+      }
+      .quiz-nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5rem;
+        gap: 10px;
+      }
+      .quiz-nav-btn {
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 800;
+        font-size: 0.88rem;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+      }
+      .quiz-btn-prev { background: var(--bg-page); color: var(--text-secondary); border: 1px solid var(--border-color); }
+      .quiz-btn-prev:hover { background: var(--border-color); }
+      .quiz-btn-next { background: var(--primary); color: #FFFFFF; box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
+      .quiz-btn-next:hover { background: var(--primary-dark); }
+      .quiz-btn-submit { background: var(--success); color: #FFFFFF; box-shadow: 0 4px 12px rgba(5,150,105,0.25); }
+      .quiz-btn-submit:hover { background: #047857; }
+      .quiz-palette-box {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 1.25rem;
+        box-shadow: var(--card-shadow);
+      }
+      .quiz-palette-grid {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 6px;
+        margin-top: 8px;
+      }
+      @media (max-width: 600px) {
+        .quiz-palette-grid { grid-template-columns: repeat(5, 1fr); }
+      }
+      .quiz-p-btn {
+        padding: 8px 0;
+        border-radius: 6px;
+        border: 1px solid var(--border-color);
+        background: var(--bg-page);
+        font-weight: 800;
+        font-size: 0.8rem;
+        cursor: pointer;
+        text-align: center;
+        color: var(--text-primary);
+        transition: var(--transition);
+      }
+      .quiz-p-btn.active { border-color: var(--primary); background: var(--primary); color: #FFFFFF; }
+      .quiz-p-btn.answered { border-color: var(--success); background: var(--success-bg); color: var(--success); }
+      .quiz-scorecard-view {
+        background: var(--bg-surface);
+        border: 2px solid var(--success);
+        border-radius: 16px;
+        padding: 2.25rem 1.5rem;
+        text-align: center;
+        box-shadow: 0 15px 35px -5px rgba(5,150,105,0.18);
+      }
+      .quiz-score-metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        max-width: 600px;
+        margin: 1.5rem auto;
+      }
+      @media (max-width: 600px) {
+        .quiz-score-metrics-grid { grid-template-columns: 1fr 1fr; }
+      }
+      .quiz-metric-card {
+        padding: 12px;
+        border-radius: 10px;
+        border: 1.5px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
     ]]></b:skin>
   </head>
   <body>
@@ -1631,7 +1910,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
             <a href='javascript:void(0)' onclick='switchPortalType("notification")'>📢 Notifications</a>
             <a href='javascript:void(0)' onclick='switchPortalType("admit_card")'>🎫 Admit Cards</a>
             <a href='javascript:void(0)' onclick='switchPortalType("result")'>🏆 Results</a>
-            <a href='/p/gk-and-current-affairs-quiz.html' style='color:#7C3AED; font-weight:800; background:rgba(124,58,237,0.08); padding:5px 10px; border-radius:6px;'><i class='fas fa-brain'/> 🧠 Daily GK Quiz</a>
+            <a href='javascript:void(0)' id='navQuizBtn' onclick='showQuizView("daily50")' style='color:#7C3AED; font-weight:800; background:rgba(124,58,237,0.08); padding:5px 10px; border-radius:6px;'><i class='fas fa-brain'/> 🧠 Daily GK Quiz</a>
             <a href='javascript:void(0)' onclick='switchPortalType("saved")' style='color:#F59E0B;'>⭐ Saved (<span id='navSavedCount'>0</span>)</a>
             <div class='tools-dropdown' id='headerToolsDropdown'>
               <button class='tools-dropdown-btn' onclick='toggleHeaderToolsDropdown(event)' type='button'>
@@ -1734,6 +2013,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
         <!-- Quick Trending Search Tags -->
         <div class='hero-popular-tags'>
           <span class='label'>🔥 Popular:</span>
+          <a class='pop-tag' href='javascript:void(0)' onclick='showQuizView("daily50")' style='background:linear-gradient(135deg,#7C3AED,#6D28D9); border-color:#A78BFA; font-weight:800;'><i class='fas fa-brain'/> 🧠 Daily GK Quiz</a>
           <a class='pop-tag' href='javascript:void(0)' onclick='filterTodayJobs()'>⚡ Added Today</a>
           <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Kerala PSC")'>🌴 Kerala PSC</a>
           <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Bank Jobs")'>🏦 Bank Jobs</a>
@@ -1749,6 +2029,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
       <div class='job-cat-bar'>
         <div class='job-cat-track' id='categoryPillsTrack'>
           <a class='job-cat-pill active' data-channel='all' href='javascript:void(0)' onclick='switchPortalType("all")'>⚡ All Updates <span class='pill-count' id='cnt-all'>0</span></a>
+          <a class='job-cat-pill pill-quiz' data-channel='quiz' href='javascript:void(0)' onclick='showQuizView("daily50")' style='border-color:#7C3AED; color:#7C3AED; background:rgba(124,58,237,0.08); font-weight:800;'><i class='fas fa-brain'/> 🧠 Daily GK Quiz (50 Qs)</a>
           <a class='job-cat-pill' data-channel='notification' href='javascript:void(0)' onclick='switchPortalType("notification")'>📢 Notifications <span class='pill-count' id='cnt-notif'>0</span></a>
           <a class='job-cat-pill' data-channel='admit_card' href='javascript:void(0)' onclick='switchPortalType("admit_card")'>🎫 Admit Cards <span class='pill-count' id='cnt-admit'>0</span></a>
           <a class='job-cat-pill' data-channel='result' href='javascript:void(0)' onclick='switchPortalType("result")'>🏆 Results <span class='pill-count' id='cnt-res'>0</span></a>
@@ -1781,6 +2062,121 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
     <div class='portal-layout'>
       <!-- Feed / Main Content -->
       <main>
+        <!-- Dedicated Interactive GK & Current Affairs Quiz Section -->
+        <section class='portal-quiz-section' id='portalQuizSection' style='display:none;'>
+          <button class='back-nav-bar' onclick='showFeedView()' style='margin-bottom:1.25rem;' type='button'>
+            <i class='fas fa-arrow-left'/> Back to Job Notifications
+          </button>
+
+          <div class='quiz-hero-banner'>
+            <div class='quiz-hero-badge'>⚡ 1India Job Exam Preparation Portal</div>
+            <h1 class='quiz-hero-title'>🧠 GK &amp; Current Affairs Daily Interactive Mock Test</h1>
+            <p class='quiz-hero-sub'>High-yield questions with instant timer, category filters, detailed explanations, and performance scorecard for Kerala PSC, SSC, Bank, RRB &amp; UPSC.</p>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class='quiz-category-bar' id='quizCategoryBar'>
+            <button class='quiz-cat-btn active' data-cat='daily50' onclick='loadPortalQuizCategory("daily50", this)' type='button'>⚡ Daily 50 Mixed</button>
+            <button class='quiz-cat-btn' data-cat='current_affairs' onclick='loadPortalQuizCategory("current_affairs", this)' type='button'>🔥 Current Affairs 2026</button>
+            <button class='quiz-cat-btn' data-cat='kerala_psc' onclick='loadPortalQuizCategory("kerala_psc", this)' type='button'>🌴 Kerala PSC Special</button>
+            <button class='quiz-cat-btn' data-cat='polity' onclick='loadPortalQuizCategory("polity", this)' type='button'>🏛️ Indian Polity</button>
+            <button class='quiz-cat-btn' data-cat='history' onclick='loadPortalQuizCategory("history", this)' type='button'>📜 Indian History</button>
+            <button class='quiz-cat-btn' data-cat='geography' onclick='loadPortalQuizCategory("geography", this)' type='button'>🌍 Geography</button>
+            <button class='quiz-cat-btn' data-cat='science' onclick='loadPortalQuizCategory("science", this)' type='button'>🔬 General Science</button>
+            <button class='quiz-cat-btn' data-cat='economy' onclick='loadPortalQuizCategory("economy", this)' type='button'>📊 Economy &amp; Banking</button>
+            <button class='quiz-cat-btn' data-cat='reasoning_math' onclick='loadPortalQuizCategory("reasoning_math", this)' type='button'>🧮 Maths &amp; Reasoning</button>
+          </div>
+
+          <!-- Status Bar: Timer, Question Count, Live Score -->
+          <div class='quiz-status-bar'>
+            <div class='quiz-timer-badge'>
+              <i class='fas fa-stopwatch'/> <span id='portalQuizTimer'>30:00</span>
+            </div>
+            <div style='font-size:0.9rem; font-weight:800; color:var(--text-primary);'>
+              Question <span id='portalQuizCurrentQ' style='color:var(--primary); font-weight:900;'>1</span> of <span id='portalQuizTotalQ'>50</span>
+            </div>
+            <div style='font-size:0.9rem; font-weight:800; color:var(--text-primary);'>
+              Score: <span id='portalQuizLiveScore' style='color:var(--success); font-weight:900;'>0</span> / <span id='portalQuizMaxScore'>50</span>
+            </div>
+          </div>
+
+          <!-- Interactive Question Card -->
+          <div id='portalQuizPlayArea'>
+            <div class='quiz-main-card'>
+              <span class='q-badge-meta' id='portalQuizCategoryChip'>Category</span>
+              <h2 class='quiz-question-title' id='portalQuizQuestionTitle'>Loading Practice Test...</h2>
+              
+              <div class='quiz-options-grid' id='portalQuizOptionsContainer'></div>
+              <div class='quiz-explanation-box' id='portalQuizExplanationBox'></div>
+
+              <!-- Navigation Actions -->
+              <div class='quiz-nav-bar'>
+                <button class='quiz-nav-btn quiz-btn-prev' id='btnQuizPrev' onclick='navigatePortalQuiz(-1)' type='button'>
+                  <i class='fas fa-chevron-left'/> Previous
+                </button>
+                <button class='quiz-nav-btn quiz-btn-next' id='btnQuizNext' onclick='navigatePortalQuiz(1)' type='button'>
+                  Next Question <i class='fas fa-chevron-right'/>
+                </button>
+                <button class='quiz-nav-btn quiz-btn-submit' id='btnQuizSubmit' onclick='finishPortalQuiz()' style='display:none;' type='button'>
+                  <i class='fas fa-check-circle'/> Submit Test
+                </button>
+              </div>
+            </div>
+
+            <!-- Number Palette Grid -->
+            <div class='quiz-palette-box'>
+              <div style='display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; font-weight:800; color:var(--text-secondary); margin-bottom:8px;'>
+                <span><i class='fas fa-th'/> Question Palette</span>
+                <span style='font-size:0.75rem; color:var(--text-muted);'>🟢 Green = Answered</span>
+              </div>
+              <div class='quiz-palette-grid' id='portalQuizPaletteGrid'></div>
+            </div>
+          </div>
+
+          <!-- Scorecard View (Shown upon submission) -->
+          <div class='quiz-scorecard-view' id='portalQuizScorecard' style='display:none;'>
+            <div style='font-size:3.5rem; margin-bottom:0.5rem;'>🎉</div>
+            <h2 style='font-size:1.6rem; font-weight:900; color:var(--text-primary); margin-bottom:4px;'>Mock Test Completed!</h2>
+            <p style='color:var(--text-secondary); font-size:0.9rem;'>Review your overall exam performance summary and accuracy below.</p>
+
+            <div class='quiz-score-metrics-grid'>
+              <div class='quiz-metric-card' style='background:var(--primary-light); border-color:var(--primary);'>
+                <div style='font-size:0.8rem; font-weight:800; color:var(--primary);'>TOTAL QUESTIONS</div>
+                <div id='resQuizTotal' style='font-size:1.8rem; font-weight:900; color:var(--primary);'>50</div>
+              </div>
+              <div class='quiz-metric-card' style='background:var(--success-bg); border-color:var(--success);'>
+                <div style='font-size:0.8rem; font-weight:800; color:var(--success);'>CORRECT ANSWERS</div>
+                <div id='resQuizCorrect' style='font-size:1.8rem; font-weight:900; color:var(--success);'>0</div>
+              </div>
+              <div class='quiz-metric-card' style='background:var(--danger-bg); border-color:var(--danger);'>
+                <div style='font-size:0.8rem; font-weight:800; color:var(--danger);'>INCORRECT</div>
+                <div id='resQuizWrong' style='font-size:1.8rem; font-weight:900; color:var(--danger);'>0</div>
+              </div>
+              <div class='quiz-metric-card' style='background:var(--warning-bg); border-color:var(--warning);'>
+                <div style='font-size:0.8rem; font-weight:800; color:var(--warning);'>UNATTEMPTED</div>
+                <div id='resQuizSkipped' style='font-size:1.8rem; font-weight:900; color:var(--warning);'>0</div>
+              </div>
+              <div class='quiz-metric-card' style='background:#F3E8FF; border-color:#7C3AED;'>
+                <div style='font-size:0.8rem; font-weight:800; color:#7C3AED;'>ACCURACY</div>
+                <div id='resQuizAccuracy' style='font-size:1.8rem; font-weight:900; color:#7C3AED;'>0%</div>
+              </div>
+              <div class='quiz-metric-card' style='background:#E0F2FE; border-color:#0284C7;'>
+                <div style='font-size:0.8rem; font-weight:800; color:#0284C7;'>FINAL SCORE</div>
+                <div id='resQuizScore' style='font-size:1.8rem; font-weight:900; color:#0284C7;'>0 / 50</div>
+              </div>
+            </div>
+
+            <div style='display:flex; justify-content:center; gap:12px; margin-top:1.75rem; flex-wrap:wrap;'>
+              <button class='quiz-nav-btn quiz-btn-next' onclick='restartPortalQuiz()' type='button'>
+                <i class='fas fa-redo'/> Re-attempt Test
+              </button>
+              <button class='quiz-nav-btn quiz-btn-prev' onclick='showFeedView()' type='button'>
+                <i class='fas fa-arrow-left'/> Back to Job Updates
+              </button>
+            </div>
+          </div>
+        </section>
+
         <!-- 1. Dedicated Full Job Article View -->
         <article class='full-job-article' id='fullJobArticleView'>
           <button class='back-nav-bar' onclick='showFeedView()' type='button'>
@@ -1928,6 +2324,26 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
           <h3>Daily Job Alerts on Telegram</h3>
           <p>Instant Kerala PSC, SSC, Bank &amp; Railway recruitment updates.</p>
           <a href='https://t.me/GovtJobAlerts12' rel='noopener noreferrer' target='_blank'>Join Telegram Channel ↗</a>
+        </div>
+
+        <!-- Interactive Daily GK Quiz CTA Card -->
+        <div class='sidebar-card' style='background:linear-gradient(135deg,rgba(124,58,237,0.06),rgba(99,102,241,0.06)); border-color:#818CF8;'>
+          <h3 class='sidebar-title' style='color:#6D28D9;'><i class='fas fa-brain'/> 🧠 GK &amp; Current Affairs Quiz</h3>
+          <p style='font-size:0.8rem; color:var(--text-secondary); margin-bottom:0.75rem;'>Practice 50 daily questions across all exam subjects with instant scoring &amp; timer.</p>
+          <div style='display:flex; flex-direction:column; gap:6px;'>
+            <a href='javascript:void(0)' onclick='showQuizView("daily50")' style='background:linear-gradient(135deg,#7C3AED,#6D28D9); color:#FFFFFF; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:800; font-size:0.82rem; display:flex; justify-content:space-between; align-items:center;'>
+              <span>⚡ Start Daily 50 Mock Test</span> <i class='fas fa-play' style='font-size:0.7rem;'/>
+            </a>
+            <a href='javascript:void(0)' onclick='showQuizView("kerala_psc")' style='padding:6px 10px; background:var(--bg-page); border:1px solid var(--border-color); border-radius:6px; color:var(--text-primary); text-decoration:none; font-weight:700; font-size:0.78rem; display:flex; justify-content:space-between;'>
+              <span>🌴 Kerala PSC Special GK</span> <i class='fas fa-chevron-right' style='font-size:0.65rem;'/>
+            </a>
+            <a href='javascript:void(0)' onclick='showQuizView("current_affairs")' style='padding:6px 10px; background:var(--bg-page); border:1px solid var(--border-color); border-radius:6px; color:var(--text-primary); text-decoration:none; font-weight:700; font-size:0.78rem; display:flex; justify-content:space-between;'>
+              <span>🔥 Current Affairs 2026</span> <i class='fas fa-chevron-right' style='font-size:0.65rem;'/>
+            </a>
+            <a href='javascript:void(0)' onclick='showQuizView("polity")' style='padding:6px 10px; background:var(--bg-page); border:1px solid var(--border-color); border-radius:6px; color:var(--text-primary); text-decoration:none; font-weight:700; font-size:0.78rem; display:flex; justify-content:space-between;'>
+              <span>🏛️ Indian Polity &amp; Constitution</span> <i class='fas fa-chevron-right' style='font-size:0.65rem;'/>
+            </a>
+          </div>
         </div>
 
         <!-- Top Job Sectors List -->
@@ -2205,6 +2621,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
     <script type='text/javascript'>
       //<![CDATA[
       var ALL_JOBS = __JOBS_JSON__;
+      var QUIZ_BANK = __QUIZ_DATA_JSON__;
       var currentChannel = 'all';
       var currentFilter = '';
       var currentSearch = '';
@@ -2214,6 +2631,14 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
       var currentPage = 1;
       var itemsPerPage = 12;
       var activeFilteredJobs = ALL_JOBS;
+
+      // Quiz Engine State
+      var currentQuizCat = 'daily50';
+      var currentQuizQuestions = [];
+      var currentQuizIdx = 0;
+      var userQuizAnswers = {};
+      var quizTimerSeconds = 1800;
+      var quizTimerInterval = null;
 
       // Automatic Dynamic Year Calculator (Automatically rolls over to 2027, 2028...)
       function updateDynamicYear() {
@@ -2324,6 +2749,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
       }
 
       function showFeedView() {
+        stopQuizTimer();
         if (isNativePostPage && window.location.pathname !== '/') {
           window.location.href = '/';
           return;
@@ -2350,6 +2776,9 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
 
         var calcEl = document.getElementById('eligibilityWidget');
         if (calcEl) calcEl.style.display = 'none';
+
+        var quizSection = document.getElementById('portalQuizSection');
+        if (quizSection) quizSection.style.display = 'none';
 
         var feedWrapper = document.getElementById('jobFeedWrapper');
         if (feedWrapper) feedWrapper.style.display = 'block';
@@ -2390,6 +2819,316 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
 
         currentPage = 1;
         renderJobCards(ALL_JOBS);
+      }
+
+      // ==========================================================
+      // Dedicated GK & Current Affairs Interactive Quiz Engine
+      // ==========================================================
+      function getDaily50MixedQuestions() {
+        var catKeys = Object.keys(QUIZ_BANK);
+        var mixed = [];
+        var totalTarget = 50;
+        var perCat = Math.floor(totalTarget / catKeys.length);
+        
+        for (var c = 0; c < catKeys.length; c++) {
+          var k = catKeys[c];
+          var list = QUIZ_BANK[k] || [];
+          for (var i = 0; i < perCat; i++) {
+            if (list.length > 0) {
+              var qItem = list[i % list.length];
+              mixed.push({
+                category: k.toUpperCase().replace('_', ' '),
+                q: qItem.q,
+                options: qItem.options,
+                ans: qItem.ans,
+                exp: qItem.exp
+              });
+            }
+          }
+        }
+        // Fill remainder up to 50 if needed
+        var fillIdx = 0;
+        while (mixed.length < totalTarget) {
+          var k = catKeys[fillIdx % catKeys.length];
+          var list = QUIZ_BANK[k] || [];
+          if (list.length > 0) {
+            var qItem = list[mixed.length % list.length];
+            mixed.push({
+              category: k.toUpperCase().replace('_', ' '),
+              q: qItem.q,
+              options: qItem.options,
+              ans: qItem.ans,
+              exp: qItem.exp
+            });
+          }
+          fillIdx++;
+        }
+        return mixed;
+      }
+
+      function showQuizView(categoryKey) {
+        if (isNativePostPage && window.location.pathname !== '/') {
+          window.location.href = '/#quiz' + (categoryKey ? '-' + categoryKey : '');
+          return;
+        }
+        
+        // Hide other views
+        var articleView = document.getElementById('fullJobArticleView');
+        if (articleView) articleView.style.display = 'none';
+        var calcEl = document.getElementById('eligibilityWidget');
+        if (calcEl) calcEl.style.display = 'none';
+        var feedWrapper = document.getElementById('jobFeedWrapper');
+        if (feedWrapper) feedWrapper.style.display = 'none';
+        
+        var quizSection = document.getElementById('portalQuizSection');
+        if (quizSection) quizSection.style.display = 'block';
+
+        // Update nav / pill active status
+        var pills = document.querySelectorAll('#categoryPillsTrack .job-cat-pill');
+        for (var p = 0; p < pills.length; p++) {
+          if (pills[p].getAttribute('data-channel') === 'quiz') pills[p].classList.add('active');
+          else pills[p].classList.remove('active');
+        }
+
+        var btnTarget = document.querySelector('.quiz-cat-btn[data-cat="' + (categoryKey || 'daily50') + '"]');
+        loadPortalQuizCategory(categoryKey || 'daily50', btnTarget);
+
+        try {
+          history.pushState(null, null, '#quiz' + (categoryKey ? '-' + categoryKey : ''));
+        } catch(e) {}
+
+        var yr = new Date().getFullYear();
+        document.title = "GK & Current Affairs Daily 50 Mock Test " + yr + " | 1India Job";
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function loadPortalQuizCategory(catKey, btnEl) {
+        currentQuizCat = catKey || 'daily50';
+        userQuizAnswers = {};
+        currentQuizIdx = 0;
+
+        // Update active class on quiz category buttons
+        var btns = document.querySelectorAll('.quiz-cat-btn');
+        for (var b = 0; b < btns.length; b++) btns[b].classList.remove('active');
+        if (btnEl) btnEl.classList.add('active');
+        else {
+          var found = document.querySelector('.quiz-cat-btn[data-cat="' + currentQuizCat + '"]');
+          if (found) found.classList.add('active');
+        }
+
+        if (currentQuizCat === 'daily50') {
+          currentQuizQuestions = getDaily50MixedQuestions();
+        } else {
+          var rawList = QUIZ_BANK[currentQuizCat] || [];
+          currentQuizQuestions = rawList.map(function(item) {
+            return {
+              category: currentQuizCat.toUpperCase().replace('_', ' '),
+              q: item.q,
+              options: item.options,
+              ans: item.ans,
+              exp: item.exp
+            };
+          });
+        }
+
+        var totalQ = currentQuizQuestions.length;
+        var elTotal = document.getElementById('portalQuizTotalQ');
+        if (elTotal) elTotal.innerText = totalQ;
+        var elMax = document.getElementById('portalQuizMaxScore');
+        if (elMax) elMax.innerText = totalQ;
+
+        // Reset play area
+        var playArea = document.getElementById('portalQuizPlayArea');
+        if (playArea) playArea.style.display = 'block';
+        var scorecard = document.getElementById('portalQuizScorecard');
+        if (scorecard) scorecard.style.display = 'none';
+
+        buildPortalQuizPalette();
+        renderPortalQuizQuestion();
+        startQuizTimer();
+        updateQuizScoreLive();
+      }
+
+      function buildPortalQuizPalette() {
+        var grid = document.getElementById('portalQuizPaletteGrid');
+        if (!grid) return;
+        var html = '';
+        for (var i = 0; i < currentQuizQuestions.length; i++) {
+          html += "<button class='quiz-p-btn' id='pbtn-" + i + "' onclick='jumpToQuizQuestion(" + i + ")' type='button'>" + (i + 1) + "</button>";
+        }
+        grid.innerHTML = html;
+      }
+
+      function renderPortalQuizQuestion() {
+        if (!currentQuizQuestions || currentQuizQuestions.length === 0) return;
+        var q = currentQuizQuestions[currentQuizIdx];
+        if (!q) return;
+
+        var elCur = document.getElementById('portalQuizCurrentQ');
+        if (elCur) elCur.innerText = (currentQuizIdx + 1);
+
+        var elCat = document.getElementById('portalQuizCategoryChip');
+        if (elCat) elCat.innerText = q.category || 'GENERAL KNOWLEDGE';
+
+        var elTitle = document.getElementById('portalQuizQuestionTitle');
+        if (elTitle) elTitle.innerText = "Q" + (currentQuizIdx + 1) + ". " + q.q;
+
+        var ansRecord = userQuizAnswers[currentQuizIdx];
+        var isAnswered = (ansRecord !== undefined);
+
+        var optContainer = document.getElementById('portalQuizOptionsContainer');
+        var optHtml = '';
+        var letters = ['A', 'B', 'C', 'D'];
+
+        for (var i = 0; i < q.options.length; i++) {
+          var btnClass = 'quiz-opt-btn';
+          if (isAnswered) {
+            if (i === q.ans) {
+              btnClass += ' correct';
+            } else if (i === ansRecord.selected) {
+              btnClass += ' wrong';
+            }
+          }
+          var disabledAttr = isAnswered ? "disabled='disabled'" : "";
+          optHtml += "<button class='" + btnClass + "' " + disabledAttr + " onclick='selectPortalQuizAnswer(" + i + ")' type='button'>" +
+            "<span class='quiz-opt-bullet'>" + letters[i] + "</span>" +
+            "<span>" + q.options[i] + "</span>" +
+          "</button>";
+        }
+        if (optContainer) optContainer.innerHTML = optHtml;
+
+        var expBox = document.getElementById('portalQuizExplanationBox');
+        if (expBox) {
+          if (isAnswered && q.exp) {
+            expBox.style.display = 'block';
+            expBox.innerHTML = "<strong>💡 Explanation:</strong> " + q.exp;
+          } else {
+            expBox.style.display = 'none';
+            expBox.innerHTML = '';
+          }
+        }
+
+        // Palette active button update
+        var pbtns = document.querySelectorAll('.quiz-p-btn');
+        for (var p = 0; p < pbtns.length; p++) {
+          pbtns[p].classList.remove('active');
+          if (userQuizAnswers[p] !== undefined) pbtns[p].classList.add('answered');
+          else pbtns[p].classList.remove('answered');
+        }
+        var curPBtn = document.getElementById('pbtn-' + currentQuizIdx);
+        if (curPBtn) curPBtn.classList.add('active');
+
+        // Nav buttons
+        var btnPrev = document.getElementById('btnQuizPrev');
+        if (btnPrev) btnPrev.style.visibility = (currentQuizIdx === 0) ? 'hidden' : 'visible';
+
+        var btnNext = document.getElementById('btnQuizNext');
+        var btnSubmit = document.getElementById('btnQuizSubmit');
+        if (currentQuizIdx === currentQuizQuestions.length - 1) {
+          if (btnNext) btnNext.style.display = 'none';
+          if (btnSubmit) btnSubmit.style.display = 'inline-flex';
+        } else {
+          if (btnNext) btnNext.style.display = 'inline-flex';
+          if (btnSubmit) btnSubmit.style.display = 'none';
+        }
+      }
+
+      function selectPortalQuizAnswer(optIdx) {
+        if (userQuizAnswers[currentQuizIdx] !== undefined) return;
+        var q = currentQuizQuestions[currentQuizIdx];
+        var isCorrect = (optIdx === q.ans);
+        userQuizAnswers[currentQuizIdx] = { selected: optIdx, isCorrect: isCorrect };
+        
+        renderPortalQuizQuestion();
+        updateQuizScoreLive();
+      }
+
+      function navigatePortalQuiz(delta) {
+        var newIdx = currentQuizIdx + delta;
+        if (newIdx >= 0 && newIdx < currentQuizQuestions.length) {
+          currentQuizIdx = newIdx;
+          renderPortalQuizQuestion();
+        }
+      }
+
+      function jumpToQuizQuestion(idx) {
+        if (idx >= 0 && idx < currentQuizQuestions.length) {
+          currentQuizIdx = idx;
+          renderPortalQuizQuestion();
+        }
+      }
+
+      function updateQuizScoreLive() {
+        var score = 0;
+        for (var k in userQuizAnswers) {
+          if (userQuizAnswers[k].isCorrect) score++;
+        }
+        var elScore = document.getElementById('portalQuizLiveScore');
+        if (elScore) elScore.innerText = score;
+      }
+
+      function startQuizTimer() {
+        stopQuizTimer();
+        quizTimerSeconds = 1800; // 30 min
+        var elTimer = document.getElementById('portalQuizTimer');
+        
+        function tick() {
+          if (quizTimerSeconds <= 0) {
+            stopQuizTimer();
+            finishPortalQuiz();
+            return;
+          }
+          quizTimerSeconds--;
+          var m = Math.floor(quizTimerSeconds / 60);
+          var s = quizTimerSeconds % 60;
+          if (elTimer) elTimer.innerText = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+        }
+        tick();
+        quizTimerInterval = setInterval(tick, 1000);
+      }
+
+      function stopQuizTimer() {
+        if (quizTimerInterval) {
+          clearInterval(quizTimerInterval);
+          quizTimerInterval = null;
+        }
+      }
+
+      function finishPortalQuiz() {
+        stopQuizTimer();
+        var total = currentQuizQuestions.length;
+        var correct = 0;
+        var wrong = 0;
+        for (var k in userQuizAnswers) {
+          if (userQuizAnswers[k].isCorrect) correct++;
+          else wrong++;
+        }
+        var skipped = total - (correct + wrong);
+        var accuracy = (correct + wrong > 0) ? Math.round((correct / (correct + wrong)) * 100) : 0;
+
+        var elTotal = document.getElementById('resQuizTotal');
+        if (elTotal) elTotal.innerText = total;
+        var elCor = document.getElementById('resQuizCorrect');
+        if (elCor) elCor.innerText = correct;
+        var elWr = document.getElementById('resQuizWrong');
+        if (elWr) elWr.innerText = wrong;
+        var elSk = document.getElementById('resQuizSkipped');
+        if (elSk) elSk.innerText = skipped;
+        var elAcc = document.getElementById('resQuizAccuracy');
+        if (elAcc) elAcc.innerText = accuracy + '%';
+        var elSc = document.getElementById('resQuizScore');
+        if (elSc) elSc.innerText = correct + ' / ' + total;
+
+        var playArea = document.getElementById('portalQuizPlayArea');
+        if (playArea) playArea.style.display = 'none';
+        var scorecard = document.getElementById('portalQuizScorecard');
+        if (scorecard) scorecard.style.display = 'block';
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function restartPortalQuiz() {
+        loadPortalQuizCategory(currentQuizCat);
       }
 
       function toggleEligibilityWidget() {
@@ -3147,6 +3886,11 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
       function checkHashRoute() {
         var hash = (window.location.hash || '').replace('#', '');
         if (hash) {
+          if (hash.indexOf('quiz') === 0) {
+            var cat = hash.replace(/^quiz-?/, '') || 'daily50';
+            showQuizView(cat);
+            return;
+          }
           var job = ALL_JOBS.find(function(j) { return j.id === hash; });
           if (job) {
             openJobFullPage(hash);
@@ -3405,10 +4149,15 @@ import subprocess
 
 def generate_theme():
     jobs_json_str = json.dumps(base_mod.JOBS_150, ensure_ascii=False).replace("</script>", "<\\/script>")
-    final_theme = THEME_TEMPLATE.replace("__JOBS_JSON__", jobs_json_str)
+    quiz_json_str = json.dumps(CORE_QUESTION_SETS, ensure_ascii=False).replace("</script>", "<\\/script>")
+    final_theme = THEME_TEMPLATE.replace("__JOBS_JSON__", jobs_json_str).replace("__QUIZ_DATA_JSON__", quiz_json_str)
 
     out_file = os.path.join(os.path.dirname(__file__), "job_theme.xml")
     with open(out_file, "w", encoding="utf-8") as f:
+        f.write(final_theme.strip())
+
+    latest_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "LATEST_BLOGGER_THEME.xml")
+    with open(latest_file, "w", encoding="utf-8") as f:
         f.write(final_theme.strip())
 
     # Strict SAX Validation
@@ -3424,7 +4173,7 @@ def generate_theme():
         if res.returncode != 0:
             raise RuntimeError(f"JavaScript Syntax Error in Script #{i}: {res.stderr}")
 
-    print("SUCCESS: 'job_theme.xml' validated with 0 XML and 0 JS Syntax Errors!")
+    print("SUCCESS: 'job_theme.xml' and 'LATEST_BLOGGER_THEME.xml' validated with 0 XML and 0 JS Syntax Errors!")
 
 if __name__ == "__main__":
     generate_theme()
