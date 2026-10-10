@@ -897,9 +897,8 @@
         color: var(--primary);
         display: inline-flex;
         align-items: center;
-        gap: 3px;
+        gap: 4px;
         white-space: nowrap;
-        margin-left: auto;
       }
 
       /* Mobile Overrides: Symmetrical, Uniform Gutter Margins */
@@ -2538,7 +2537,7 @@
           html += "<div class='job-card' data-jobid='" + job.id + "' onclick='openJobFullPage(this.dataset.jobid)'>" +
                     "<div class='job-card-top'>" +
                       "<div class='job-card-badges'>" +
-                        "<span class='status-badge " + statusObj.css + "'>" + statusObj.label + "</span>" +
+                        "<span class='job-qual-chip'><i class='fas fa-graduation-cap'></i> " + job.qualification + "</span>" +
                       "</div>" +
                       "<div class='job-card-actions'>" +
                         "<button class='bookmark-btn " + (isSaved ? "saved" : "") + "' data-saveid='" + job.id + "' onclick='toggleSaveJob(this.dataset.saveid, event)' title='Save Bookmark' type='button'>" + bookmarkIcon + "</button>" +
@@ -2546,8 +2545,8 @@
                     "</div>" +
                     "<h2 class='job-card-title'>" + job.title + "</h2>" +
                     "<div class='job-card-bottom'>" +
-                      "<span class='job-qual-chip'><i class='fas fa-graduation-cap'></i> " + job.qualification + "</span>" +
                       "<span class='job-read-link'>Apply ➔</span>" +
+                      "<span class='status-badge " + statusObj.css + "'>" + statusObj.label + "</span>" +
                     "</div>" +
                   "</div>";
         }
@@ -2985,13 +2984,13 @@
             var rStatus = getDeadlineStatus(rJob.last_date);
             rHtml += "<div class='job-card' data-jobid='" + rJob.id + "' onclick='openJobFullPage(this.dataset.jobid)'>" +
                        "<div class='job-card-top'>" +
-                         "<span class='job-org-badge'><i class='fas fa-building'></i> " + rJob.org_name + "</span>" +
-                         "<span class='status-badge " + rStatus.css + "'>" + rStatus.label + "</span>" +
+                         "<span class='job-qual-chip'><i class='fas fa-graduation-cap'></i> " + rJob.qualification + "</span>" +
+                         "<span class='job-org-badge' style='margin-left:auto;'><i class='fas fa-building'></i> " + rJob.org_name + "</span>" +
                        "</div>" +
                        "<h4 class='job-card-title' style='font-size:0.96rem;'>" + rJob.title + "</h4>" +
                        "<div class='job-card-bottom'>" +
-                         "<span class='job-qual-chip'><i class='fas fa-graduation-cap'></i> " + rJob.qualification + "</span>" +
                          "<span class='job-read-link'>Apply ➔</span>" +
+                         "<span class='status-badge " + rStatus.css + "'>" + rStatus.label + "</span>" +
                        "</div>" +
                      "</div>";
           }
