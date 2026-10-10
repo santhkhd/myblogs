@@ -899,6 +899,7 @@
         align-items: center;
         gap: 4px;
         white-space: nowrap;
+        margin-left: auto;
       }
 
       /* Mobile Overrides: Symmetrical, Uniform Gutter Margins */
@@ -2545,8 +2546,8 @@
                     "</div>" +
                     "<h2 class='job-card-title'>" + job.title + "</h2>" +
                     "<div class='job-card-bottom'>" +
-                      "<span class='job-read-link'>Apply ➔</span>" +
                       "<span class='status-badge " + statusObj.css + "'>" + statusObj.label + "</span>" +
+                      "<span class='job-read-link'>Apply ➔</span>" +
                     "</div>" +
                   "</div>";
         }
@@ -2989,8 +2990,8 @@
                        "</div>" +
                        "<h4 class='job-card-title' style='font-size:0.96rem;'>" + rJob.title + "</h4>" +
                        "<div class='job-card-bottom'>" +
-                         "<span class='job-read-link'>Apply ➔</span>" +
                          "<span class='status-badge " + rStatus.css + "'>" + rStatus.label + "</span>" +
+                         "<span class='job-read-link'>Apply ➔</span>" +
                        "</div>" +
                      "</div>";
           }
