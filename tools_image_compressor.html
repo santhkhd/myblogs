@@ -9,13 +9,13 @@
   <!-- Unified Top Banner -->
   <div style="background:linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(37,99,235,0.25);">
     <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
-      ⚡ Precision File Size Reducer
+      ⚡ Precision File Size Reducer &amp; Cropper
     </span>
     <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25; color:#FFFFFF;">
       Image KB Compressor Online Free
     </h1>
     <p style="font-size:0.95rem; opacity:0.95; max-width:640px; margin:0 auto;">
-      Compress JPG, PNG, and WebP images to exact target file sizes (20KB, 50KB, 100KB, 200KB) for government job applications, SSC, UPSC, and State PSCs without losing clarity.
+      Crop and compress JPG, PNG, and WebP images to exact target file sizes (20KB, 50KB, 100KB, 200KB) for government job applications, SSC, UPSC, and State PSCs without losing clarity.
     </p>
   </div>
 
@@ -29,11 +29,11 @@
       </div>
       <span style="color:#CBD5E1; font-weight:bold;">➔</span>
       <div id="compDot2" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
-        <span>2</span> Target KB
+        <span>2</span> Crop Image
       </div>
       <span style="color:#CBD5E1; font-weight:bold;">➔</span>
       <div id="compDot3" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
-        <span>3</span> Preview &amp; Stats
+        <span>3</span> Target KB
       </div>
       <span style="color:#CBD5E1; font-weight:bold;">➔</span>
       <div id="compDot4" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
@@ -53,18 +53,66 @@
         <input type="file" id="compFileInput" accept="image/*" style="display:none;">
       </div>
       <p style="text-align:center; font-size:0.85rem; color:#94A3B8; margin-top:1rem;">
-        🔒 All compression happens directly inside your web browser. No files are uploaded to any server.
+        🔒 All compression and cropping happen directly inside your web browser. No files are uploaded to any server.
       </p>
     </div>
 
-    <!-- STEP 2: SET TARGET KB & OPTIONS -->
-    <div id="compStep2" style="display:none;">
+    <!-- STEP 2: CROP SCREEN -->
+    <div id="compStep2" style="display:none; text-align:center;">
+      <!-- Aspect Ratio Preset Pills -->
+      <div style="margin-bottom:1rem; display:flex; justify-content:center; align-items:center; gap:8px; flex-wrap:wrap;">
+        <span style="font-size:0.8rem; font-weight:800; color:#64748B; margin-right:4px;">CROP RATIO:</span>
+        <button type="button" class="compRatioBtn" data-ratio="free" style="background:#2563EB; color:#FFFFFF; border:1px solid #2563EB; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">Free Form</button>
+        <button type="button" class="compRatioBtn" data-ratio="1:1" style="background:#F1F5F9; color:#475569; border:1px solid #CBD5E1; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">1:1 (Square)</button>
+        <button type="button" class="compRatioBtn" data-ratio="3:4" style="background:#F1F5F9; color:#475569; border:1px solid #CBD5E1; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">3:4 (Portrait)</button>
+        <button type="button" class="compRatioBtn" data-ratio="4:3" style="background:#F1F5F9; color:#475569; border:1px solid #CBD5E1; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">4:3 (Standard)</button>
+        <button type="button" class="compRatioBtn" data-ratio="16:9" style="background:#F1F5F9; color:#475569; border:1px solid #CBD5E1; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">16:9 (Wide)</button>
+      </div>
+
+      <div style="background:#0F172A; border-radius:12px; padding:1rem; max-width:650px; margin:0 auto 1.25rem; position:relative; overflow:hidden; min-height:300px; display:flex; align-items:center; justify-content:center; touch-action:none;">
+        <canvas id="compCropCanvas" style="max-width:100%; max-height:360px; object-fit:contain; border-radius:6px; cursor:move;"></canvas>
+      </div>
+
+      <!-- Quick Transform & Zoom Controls -->
+      <div style="display:flex; justify-content:center; align-items:center; gap:8px; margin-bottom:1.5rem; flex-wrap:wrap;">
+        <button type="button" id="btnCompRotLeft" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
+          ↺ Rotate Left
+        </button>
+        <button type="button" id="btnCompRotRight" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
+          ↻ Rotate Right
+        </button>
+        <button type="button" id="btnCompFlipH" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
+          ⇄ Flip
+        </button>
+        <button type="button" id="btnCompZoomIn" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
+          🔍 Zoom In (+)
+        </button>
+        <button type="button" id="btnCompZoomOut" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
+          🔍 Zoom Out (-)
+        </button>
+        <button type="button" id="btnCompResetBox" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
+          ⛶ Reset Box
+        </button>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <button type="button" id="btnCompCropNext" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
+          Crop &amp; Next ➔
+        </button>
+        <button type="button" id="btnCompSkipCrop" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:12px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+          Use Full Image (No Crop)
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3: SET TARGET KB & OPTIONS -->
+    <div id="compStep3" style="display:none;">
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; align-items:center;">
         <!-- Left: Image Preview & Original Meta -->
         <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; text-align:center;">
-          <img id="compOrigImgPreview" src="" alt="Original Preview" style="max-width:100%; max-height:220px; object-fit:contain; border-radius:8px; border:1px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+          <img id="compOrigImgPreview" src="" alt="Image Preview" style="max-width:100%; max-height:220px; object-fit:contain; border-radius:8px; border:1px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
           <div style="margin-top:12px; font-size:0.85rem; color:#475569; font-weight:700;">
-            Original: <span id="compOrigSizeText" style="color:#0F172A; font-weight:900;">0 KB</span> | <span id="compOrigDimText">0 &#215; 0 px</span>
+            Source Size: <span id="compOrigSizeText" style="color:#0F172A; font-weight:900;">0 KB</span> | <span id="compOrigDimText">0 &#215; 0 px</span>
           </div>
         </div>
 
@@ -107,8 +155,8 @@
       </div>
     </div>
 
-    <!-- STEP 3 & 4: STATS & PREVIEW / DOWNLOAD -->
-    <div id="compStep3" style="display:none; text-align:center;">
+    <!-- STEP 4: STATS & PREVIEW / DOWNLOAD -->
+    <div id="compStep4" style="display:none; text-align:center;">
       <div style="max-width:380px; margin:0 auto; background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; box-shadow:0 8px 24px rgba(0,0,0,0.06);">
         <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.1); background:#FFFFFF; margin-bottom:1rem; border-radius:8px; overflow:hidden;">
           <img id="compResultImg" src="" alt="Compressed Result" style="max-width:100%; max-height:220px; display:block; object-fit:contain;">
@@ -200,18 +248,23 @@
 (function initCompressorTool() {
   var compRawImg = null;
   var compRawFile = null;
+  var compCroppedCanvas = null;
   var compFinalBlob = null;
+  var compCropBox = { x: 0, y: 0, w: 200, h: 200 };
+  var currentCompRatio = 'free'; // 'free', '1:1', '3:4', '4:3', '16:9'
+  var activeHandle = null;
+  var isCompDragging = false;
+  var compDragStartX = 0, compDragStartY = 0;
+  var startBox = { x: 0, y: 0, w: 0, h: 0 };
+  var HANDLE_SIZE = 10;
 
   function switchStep(stepNum) {
-    [1, 2, 3].forEach(function(i) {
-      var stepEl = document.getElementById('compStep' + i);
-      if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
-    });
     [1, 2, 3, 4].forEach(function(i) {
+      var stepEl = document.getElementById('compStep' + i);
       var dotEl = document.getElementById('compDot' + i);
+      if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
       if (dotEl) {
-        var mappedStep = (stepNum === 3) ? (i >= 3 ? 3 : i) : stepNum;
-        if (i === stepNum || (stepNum === 3 && (i === 3 || i === 4))) {
+        if (i === stepNum) {
           dotEl.style.background = '#2563EB';
           dotEl.style.color = '#FFFFFF';
         } else if (i < stepNum) {
@@ -234,15 +287,7 @@
       var img = new Image();
       img.onload = function() {
         compRawImg = img;
-        var origPreview = document.getElementById('compOrigImgPreview');
-        if (origPreview) origPreview.src = evt.target.result;
-        
-        var sizeKb = (file.size / 1024).toFixed(1);
-        var origSizeText = document.getElementById('compOrigSizeText');
-        var origDimText = document.getElementById('compOrigDimText');
-        if (origSizeText) origSizeText.innerText = sizeKb + ' KB';
-        if (origDimText) origDimText.innerText = img.naturalWidth + ' \u00D7 ' + img.naturalHeight + ' px';
-        
+        initCropScreen();
         switchStep(2);
       };
       img.src = evt.target.result;
@@ -250,15 +295,340 @@
     reader.readAsDataURL(file);
   }
 
-  function compressImageToTarget(targetKB, callback) {
+  function getNumericRatio() {
+    if (currentCompRatio === '1:1') return 1;
+    if (currentCompRatio === '3:4') return 3 / 4;
+    if (currentCompRatio === '4:3') return 4 / 3;
+    if (currentCompRatio === '16:9') return 16 / 9;
+    return null;
+  }
+
+  function initCropScreen() {
     if (!compRawImg) return;
+    var canvas = document.getElementById('compCropCanvas');
+    if (!canvas) return;
+    var maxW = 550, maxH = 380;
+    var ratio = Math.min(maxW / compRawImg.width, maxH / compRawImg.height, 1);
+    canvas.width = Math.round(compRawImg.width * ratio);
+    canvas.height = Math.round(compRawImg.height * ratio);
+
+    resetCropBox();
+    drawCropCanvas();
+    setupCropDrag(canvas);
+  }
+
+  function resetCropBox() {
+    var canvas = document.getElementById('compCropCanvas');
+    if (!canvas) return;
+    var numRatio = getNumericRatio();
+
+    var boxW = canvas.width * 0.8;
+    var boxH = numRatio ? (boxW / numRatio) : (canvas.height * 0.8);
+
+    if (boxH > canvas.height * 0.85) {
+      boxH = canvas.height * 0.85;
+      boxW = numRatio ? (boxH * numRatio) : (canvas.width * 0.8);
+    }
+
+    compCropBox = {
+      x: Math.round((canvas.width - boxW) / 2),
+      y: Math.round((canvas.height - boxH) / 2),
+      w: Math.round(boxW),
+      h: Math.round(boxH)
+    };
+  }
+
+  function getHandles() {
+    var x = compCropBox.x, y = compCropBox.y, w = compCropBox.w, h = compCropBox.h;
+    return {
+      tl: { x: x, y: y },
+      tr: { x: x + w, y: y },
+      bl: { x: x, y: y + h },
+      br: { x: x + w, y: y + h },
+      tc: { x: x + w / 2, y: y },
+      bc: { x: x + w / 2, y: y + h },
+      ml: { x: x, y: y + h / 2 },
+      mr: { x: x + w, y: y + h / 2 }
+    };
+  }
+
+  function drawCropCanvas() {
+    var canvas = document.getElementById('compCropCanvas');
+    if (!canvas || !compRawImg) return;
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(compRawImg, 0, 0, canvas.width, canvas.height);
+
+    // Dark overlay
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+    ctx.fillRect(0, 0, canvas.width, compCropBox.y);
+    ctx.fillRect(0, compCropBox.y + compCropBox.h, canvas.width, canvas.height - (compCropBox.y + compCropBox.h));
+    ctx.fillRect(0, compCropBox.y, compCropBox.x, compCropBox.h);
+    ctx.fillRect(compCropBox.x + compCropBox.w, compCropBox.y, canvas.width - (compCropBox.x + compCropBox.w), compCropBox.h);
+
+    // Border
+    ctx.strokeStyle = '#38BDF8';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(compCropBox.x, compCropBox.y, compCropBox.w, compCropBox.h);
+
+    // Grid lines
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(compCropBox.x + compCropBox.w / 3, compCropBox.y);
+    ctx.lineTo(compCropBox.x + compCropBox.w / 3, compCropBox.y + compCropBox.h);
+    ctx.moveTo(compCropBox.x + (2 * compCropBox.w) / 3, compCropBox.y);
+    ctx.lineTo(compCropBox.x + (2 * compCropBox.w) / 3, compCropBox.y + compCropBox.h);
+    ctx.moveTo(compCropBox.x, compCropBox.y + compCropBox.h / 3);
+    ctx.lineTo(compCropBox.x + compCropBox.w, compCropBox.y + compCropBox.h / 3);
+    ctx.moveTo(compCropBox.x, compCropBox.y + (2 * compCropBox.h) / 3);
+    ctx.lineTo(compCropBox.x + compCropBox.w, compCropBox.y + (2 * compCropBox.h) / 3);
+    ctx.stroke();
+
+    // 8 handles
+    var handles = getHandles();
+    ctx.fillStyle = '#FFFFFF';
+    ctx.strokeStyle = '#0284C7';
+    ctx.lineWidth = 2;
+    for (var k in handles) {
+      var pt = handles[k];
+      ctx.fillRect(pt.x - HANDLE_SIZE / 2, pt.y - HANDLE_SIZE / 2, HANDLE_SIZE, HANDLE_SIZE);
+      ctx.strokeRect(pt.x - HANDLE_SIZE / 2, pt.y - HANDLE_SIZE / 2, HANDLE_SIZE, HANDLE_SIZE);
+    }
+  }
+
+  function getMouseHandle(mx, my) {
+    var handles = getHandles();
+    var hit = HANDLE_SIZE + 4;
+    for (var k in handles) {
+      var pt = handles[k];
+      if (Math.abs(mx - pt.x) <= hit && Math.abs(my - pt.y) <= hit) {
+        return k;
+      }
+    }
+    if (mx >= compCropBox.x && mx <= compCropBox.x + compCropBox.w && my >= compCropBox.y && my <= compCropBox.y + compCropBox.h) {
+      return 'inside';
+    }
+    return null;
+  }
+
+  function setupCropDrag(canvas) {
+    var onStart = function(cx, cy) {
+      var rect = canvas.getBoundingClientRect();
+      var x = cx - rect.left;
+      var y = cy - rect.top;
+      var hKey = getMouseHandle(x, y);
+
+      if (hKey) {
+        activeHandle = hKey;
+        isCompDragging = true;
+        compDragStartX = x;
+        compDragStartY = y;
+        startBox = { x: compCropBox.x, y: compCropBox.y, w: compCropBox.w, h: compCropBox.h };
+      }
+    };
+
+    var onMove = function(cx, cy) {
+      var rect = canvas.getBoundingClientRect();
+      var x = cx - rect.left;
+      var y = cy - rect.top;
+
+      if (!isCompDragging) {
+        var hoverHandle = getMouseHandle(x, y);
+        if (hoverHandle === 'tl' || hoverHandle === 'br') canvas.style.cursor = 'nwse-resize';
+        else if (hoverHandle === 'tr' || hoverHandle === 'bl') canvas.style.cursor = 'nesw-resize';
+        else if (hoverHandle === 'tc' || hoverHandle === 'bc') canvas.style.cursor = 'ns-resize';
+        else if (hoverHandle === 'ml' || hoverHandle === 'mr') canvas.style.cursor = 'ew-resize';
+        else if (hoverHandle === 'inside') canvas.style.cursor = 'move';
+        else canvas.style.cursor = 'crosshair';
+        return;
+      }
+
+      var dx = x - compDragStartX;
+      var dy = y - compDragStartY;
+      var numRatio = getNumericRatio();
+
+      if (activeHandle === 'inside') {
+        var newX = Math.max(0, Math.min(startBox.x + dx, canvas.width - startBox.w));
+        var newY = Math.max(0, Math.min(startBox.y + dy, canvas.height - startBox.h));
+        compCropBox.x = newX;
+        compCropBox.y = newY;
+      } else if (activeHandle === 'br') {
+        var newW = Math.max(40, Math.min(startBox.w + dx, canvas.width - startBox.x));
+        var newH = numRatio ? (newW / numRatio) : Math.max(40, Math.min(startBox.h + dy, canvas.height - startBox.y));
+        if (startBox.y + newH <= canvas.height && startBox.x + newW <= canvas.width) {
+          compCropBox.w = newW;
+          compCropBox.h = newH;
+        }
+      } else if (activeHandle === 'tl') {
+        var newW = Math.max(40, startBox.w - dx);
+        var newH = numRatio ? (newW / numRatio) : Math.max(40, startBox.h - dy);
+        var newX = startBox.x + (startBox.w - newW);
+        var newY = startBox.y + (startBox.h - newH);
+        if (newX >= 0 && newY >= 0) {
+          compCropBox.x = newX;
+          compCropBox.y = newY;
+          compCropBox.w = newW;
+          compCropBox.h = newH;
+        }
+      } else if (activeHandle === 'tr') {
+        var newW = Math.max(40, Math.min(startBox.w + dx, canvas.width - startBox.x));
+        var newH = numRatio ? (newW / numRatio) : Math.max(40, startBox.h - dy);
+        var newY = startBox.y + (startBox.h - newH);
+        if (newY >= 0 && startBox.x + newW <= canvas.width) {
+          compCropBox.y = newY;
+          compCropBox.w = newW;
+          compCropBox.h = newH;
+        }
+      } else if (activeHandle === 'bl') {
+        var newW = Math.max(40, startBox.w - dx);
+        var newH = numRatio ? (newW / numRatio) : Math.max(40, startBox.h + dy);
+        var newX = startBox.x + (startBox.w - newW);
+        if (newX >= 0 && startBox.y + newH <= canvas.height) {
+          compCropBox.x = newX;
+          compCropBox.w = newW;
+          compCropBox.h = newH;
+        }
+      } else if (activeHandle === 'tc' || activeHandle === 'bc' || activeHandle === 'ml' || activeHandle === 'mr') {
+        if (activeHandle === 'bc') compCropBox.h = Math.max(40, Math.min(startBox.h + dy, canvas.height - compCropBox.y));
+        if (activeHandle === 'mr') compCropBox.w = Math.max(40, Math.min(startBox.w + dx, canvas.width - compCropBox.x));
+        if (activeHandle === 'tc') {
+          var newH = Math.max(40, startBox.h - dy);
+          var newY = startBox.y + (startBox.h - newH);
+          if (newY >= 0) { compCropBox.y = newY; compCropBox.h = newH; }
+        }
+        if (activeHandle === 'ml') {
+          var newW = Math.max(40, startBox.w - dx);
+          var newX = startBox.x + (startBox.w - newW);
+          if (newX >= 0) { compCropBox.x = newX; compCropBox.w = newW; }
+        }
+      }
+
+      drawCropCanvas();
+    };
+
+    var onEnd = function() {
+      isCompDragging = false;
+      activeHandle = null;
+    };
+
+    canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
+    window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
+    window.onmouseup = onEnd;
+
+    canvas.ontouchstart = function(e) { if (e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
+    window.ontouchmove = function(e) { if (e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
+    window.ontouchend = onEnd;
+  }
+
+  function rotateImage(deg) {
+    if (!compRawImg) return;
+    var offCanvas = document.createElement('canvas');
+    var offCtx = offCanvas.getContext('2d');
+    offCanvas.width = compRawImg.height;
+    offCanvas.height = compRawImg.width;
+    offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
+    offCtx.rotate(deg * Math.PI / 180);
+    offCtx.drawImage(compRawImg, -compRawImg.width / 2, -compRawImg.height / 2);
+
+    var rImg = new Image();
+    rImg.onload = function() {
+      compRawImg = rImg;
+      initCropScreen();
+    };
+    rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+  }
+
+  function flipImageHorizontal() {
+    if (!compRawImg) return;
+    var offCanvas = document.createElement('canvas');
+    var offCtx = offCanvas.getContext('2d');
+    offCanvas.width = compRawImg.width;
+    offCanvas.height = compRawImg.height;
+    offCtx.translate(offCanvas.width, 0);
+    offCtx.scale(-1, 1);
+    offCtx.drawImage(compRawImg, 0, 0);
+
+    var fImg = new Image();
+    fImg.onload = function() {
+      compRawImg = fImg;
+      initCropScreen();
+    };
+    fImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+  }
+
+  function zoomCropBox(factor) {
+    var canvas = document.getElementById('compCropCanvas');
+    if (!canvas) return;
+    var newW = compCropBox.w * factor;
+    var newH = compCropBox.h * factor;
+    var cx = compCropBox.x + compCropBox.w / 2;
+    var cy = compCropBox.y + compCropBox.h / 2;
+
+    if (newW >= 50 && newH >= 50 && newW <= canvas.width && newH <= canvas.height) {
+      compCropBox.w = Math.round(newW);
+      compCropBox.h = Math.round(newH);
+      compCropBox.x = Math.max(0, Math.min(Math.round(cx - compCropBox.w / 2), canvas.width - compCropBox.w));
+      compCropBox.y = Math.max(0, Math.min(Math.round(cy - compCropBox.h / 2), canvas.height - compCropBox.h));
+      drawCropCanvas();
+    }
+  }
+
+  function applyCrop(skip) {
+    if (!compRawImg) return;
+    var canvas = document.getElementById('compCropCanvas');
+    compCroppedCanvas = document.createElement('canvas');
+    var ctx = compCroppedCanvas.getContext('2d');
+
+    if (skip === true || !canvas) {
+      compCroppedCanvas.width = compRawImg.width;
+      compCroppedCanvas.height = compRawImg.height;
+      ctx.drawImage(compRawImg, 0, 0);
+    } else {
+      var scaleX = compRawImg.width / canvas.width;
+      var scaleY = compRawImg.height / canvas.height;
+      compCroppedCanvas.width = Math.round(compCropBox.w * scaleX);
+      compCroppedCanvas.height = Math.round(compCropBox.h * scaleY);
+      ctx.drawImage(
+        compRawImg,
+        compCropBox.x * scaleX,
+        compCropBox.y * scaleY,
+        compCropBox.w * scaleX,
+        compCropBox.h * scaleY,
+        0,
+        0,
+        compCroppedCanvas.width,
+        compCroppedCanvas.height
+      );
+    }
+
+    var previewImg = document.getElementById('compOrigImgPreview');
+    if (previewImg) previewImg.src = compCroppedCanvas.toDataURL('image/jpeg', 0.95);
+
+    var origSizeText = document.getElementById('compOrigSizeText');
+    var origDimText = document.getElementById('compOrigDimText');
+    if (origSizeText && compRawFile) origSizeText.innerText = (compRawFile.size / 1024).toFixed(1) + ' KB';
+    if (origDimText) origDimText.innerText = compCroppedCanvas.width + ' \u00D7 ' + compCroppedCanvas.height + ' px';
+
+    switchStep(3);
+  }
+
+  function compressImageToTarget(targetKB, callback) {
+    var sourceCanvas = compCroppedCanvas;
+    if (!sourceCanvas && compRawImg) {
+      sourceCanvas = document.createElement('canvas');
+      sourceCanvas.width = compRawImg.width;
+      sourceCanvas.height = compRawImg.height;
+      var cctx = sourceCanvas.getContext('2d');
+      cctx.drawImage(compRawImg, 0, 0);
+    }
+    if (!sourceCanvas) return;
+
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
-    
-    var w = compRawImg.naturalWidth || compRawImg.width;
-    var h = compRawImg.naturalHeight || compRawImg.height;
+    var w = sourceCanvas.width;
+    var h = sourceCanvas.height;
 
-    // Downscale if very large (> 2000px) to ensure effective compression without quality loss
     if (w > 2000 || h > 2000) {
       var ratio = Math.min(2000 / w, 2000 / h);
       w = Math.round(w * ratio);
@@ -267,11 +637,9 @@
 
     canvas.width = w;
     canvas.height = h;
-    
-    // Fill white background for transparent PNGs
     ctx.fillStyle = '#FFFFFF';
     ctx.fillRect(0, 0, w, h);
-    ctx.drawImage(compRawImg, 0, 0, w, h);
+    ctx.drawImage(sourceCanvas, 0, 0, w, h);
 
     var minQ = 0.05, maxQ = 0.98;
     var bestBlob = null;
@@ -326,7 +694,7 @@
         redBadge.innerText = (reduction > 0) ? ('Reduced by ' + reduction + '%') : 'Optimized for Target KB';
       }
 
-      switchStep(3);
+      switchStep(4);
     });
   }
 
@@ -383,6 +751,49 @@
       fileInput.addEventListener('change', handleFileSelect);
     }
 
+    // Ratio Preset Buttons
+    var ratioBtns = document.querySelectorAll('.compRatioBtn');
+    ratioBtns.forEach(function(btn) {
+      btn.onclick = function() {
+        var r = btn.getAttribute('data-ratio');
+        currentCompRatio = r;
+        ratioBtns.forEach(function(b) {
+          b.style.background = '#F1F5F9';
+          b.style.color = '#475569';
+          b.style.borderColor = '#CBD5E1';
+        });
+        btn.style.background = '#2563EB';
+        btn.style.color = '#FFFFFF';
+        btn.style.borderColor = '#2563EB';
+        resetCropBox();
+        drawCropCanvas();
+      };
+    });
+
+    var btnRotL = document.getElementById('btnCompRotLeft');
+    if (btnRotL) btnRotL.onclick = function() { rotateImage(-90); };
+
+    var btnRotR = document.getElementById('btnCompRotRight');
+    if (btnRotR) btnRotR.onclick = function() { rotateImage(90); };
+
+    var btnFlpH = document.getElementById('btnCompFlipH');
+    if (btnFlpH) btnFlpH.onclick = flipImageHorizontal;
+
+    var btnZmIn = document.getElementById('btnCompZoomIn');
+    if (btnZmIn) btnZmIn.onclick = function() { zoomCropBox(0.9); };
+
+    var btnZmOut = document.getElementById('btnCompZoomOut');
+    if (btnZmOut) btnZmOut.onclick = function() { zoomCropBox(1.1); };
+
+    var btnReset = document.getElementById('btnCompResetBox');
+    if (btnReset) btnReset.onclick = initCropScreen;
+
+    var btnCrop = document.getElementById('btnCompCropNext');
+    if (btnCrop) btnCrop.onclick = function() { applyCrop(false); };
+
+    var btnSkip = document.getElementById('btnCompSkipCrop');
+    if (btnSkip) btnSkip.onclick = function() { applyCrop(true); };
+
     var presetBtns = document.querySelectorAll('.kbPresetBtn');
     presetBtns.forEach(function(btn) {
       btn.addEventListener('click', function() {
@@ -415,6 +826,7 @@
     if (anotherBtn) {
       anotherBtn.addEventListener('click', function() {
         compRawImg = null;
+        compCroppedCanvas = null;
         compFinalBlob = null;
         if (fileInput) fileInput.value = '';
         switchStep(1);
