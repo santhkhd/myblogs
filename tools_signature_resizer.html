@@ -47,14 +47,14 @@
 
     <!-- STEP 1: UPLOAD BOX -->
     <div id="sigStep1" style="display:block;">
-      <div style="border:2px dashed #818CF8; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#4F46E5'; this.style.background='#EEF2FF';" onmouseout="this.style.borderColor='#818CF8'; this.style.background='#F8FAFC';">
+      <div id="sigDropArea" onclick="document.getElementById('sigFileInput').click();" style="border:2px dashed #818CF8; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#4F46E5'; this.style.background='#EEF2FF';" onmouseout="this.style.borderColor='#818CF8'; this.style.background='#F8FAFC';">
         <p style="font-size:1.15rem; font-weight:700; color:#334155; margin:0 0 1.25rem;">
           Select Or Drag &amp; Drop Signature Photo Here
         </p>
-        <button type="button" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.3); pointer-events:none;">
+        <button type="button" onclick="event.stopPropagation(); document.getElementById('sigFileInput').click();" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.3);">
           Select Signature
         </button>
-        <input type="file" id="sigFileInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="onSigImageSelected(event)">
+        <input type="file" id="sigFileInput" accept="image/*" style="display:none;">
       </div>
       <p style="text-align:center; font-size:0.85rem; color:#94A3B8; margin-top:1rem;">
         🔒 Processed 100% in your browser. Automatic shadow removal turns phone camera photos into clean scanned signatures.
@@ -68,18 +68,18 @@
       </div>
 
       <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:1.5rem; flex-wrap:wrap;">
-        <button type="button" onclick="rotateSigImage(-90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnSigRotLeft" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
           ↺ Rotate Left
         </button>
-        <button type="button" onclick="rotateSigImage(90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnSigRotRight" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
           ↻ Rotate Right
         </button>
-        <button type="button" onclick="initSigCropScreen()" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnSigResetBox" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
           ⛶ Reset Box
         </button>
       </div>
 
-      <button type="button" onclick="applySigCropAndNext()" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+      <button type="button" id="btnSigCropNext" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.35);">
         Crop &amp; Next
       </button>
     </div>
@@ -102,7 +102,7 @@
           </h3>
 
           <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; font-weight:700; color:#334155; margin-bottom:1.25rem; cursor:pointer;">
-            <input type="checkbox" id="autoWhitePaperCheckbox" checked onchange="renderSigCleanPreview()">
+            <input type="checkbox" id="autoWhitePaperCheckbox" checked>
             Pure White Paper (Remove Grey Shadow)
           </label>
 
@@ -112,7 +112,7 @@
               <span>Ink Darkness / Threshold:</span>
               <span id="inkDarknessVal">160</span>
             </div>
-            <input type="range" id="inkThresholdSlider" min="80" max="230" value="160" style="width:100%;" oninput="document.getElementById('inkDarknessVal').innerText=this.value; renderSigCleanPreview();">
+            <input type="range" id="inkThresholdSlider" min="80" max="230" value="160" style="width:100%;">
           </div>
 
           <!-- Ink Color Option -->
@@ -120,23 +120,23 @@
             <label style="display:block; font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:6px;">Ink Color Style:</label>
             <div style="display:flex; gap:10px;">
               <label style="display:flex; align-items:center; gap:6px; font-size:0.88rem; font-weight:700; cursor:pointer;">
-                <input type="radio" name="sigInkColor" value="black" checked onchange="renderSigCleanPreview()"> Black Ink
+                <input type="radio" name="sigInkColor" value="black" checked> Black Ink
               </label>
               <label style="display:flex; align-items:center; gap:6px; font-size:0.88rem; font-weight:700; cursor:pointer;">
-                <input type="radio" name="sigInkColor" value="blue" onchange="renderSigCleanPreview()"> Blue Ink
+                <input type="radio" name="sigInkColor" value="blue"> Blue Ink
               </label>
               <label style="display:flex; align-items:center; gap:6px; font-size:0.88rem; font-weight:700; cursor:pointer;">
-                <input type="radio" name="sigInkColor" value="original" onchange="renderSigCleanPreview()"> Original
+                <input type="radio" name="sigInkColor" value="original"> Original
               </label>
             </div>
           </div>
 
           <!-- Buttons -->
           <div style="display:flex; gap:12px;">
-            <button type="button" onclick="saveSigCleanAndNext()" style="background:#4F46E5; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(79,70,229,0.3);">
+            <button type="button" id="btnSigSaveClean" style="background:#4F46E5; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(79,70,229,0.3);">
               Save &amp; Next
             </button>
-            <button type="button" onclick="skipSigCleanAndNext()" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+            <button type="button" id="btnSigSkipClean" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
               Skip
             </button>
           </div>
@@ -162,7 +162,7 @@
 
           <div style="margin-bottom:1rem;">
             <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Exam Preset</label>
-            <select id="sigExamPreset" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; background:#F8FAFC;" onchange="applySigPresetChoice(this.value)">
+            <select id="sigExamPreset" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; background:#F8FAFC;">
               <option value="kpsc">Kerala PSC (150 × 100 px, 10-30 KB)</option>
               <option value="ssc" selected>SSC &amp; Railway RRB (140 × 60 px, 10-20 KB)</option>
               <option value="ibps">IBPS / SBI Bank (140 × 60 px, 10-20 KB)</option>
@@ -196,10 +196,10 @@
 
           <!-- Buttons -->
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <button type="button" onclick="generateFinalSignature()" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(79,70,229,0.3);">
+            <button type="button" id="btnSigCreate" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(79,70,229,0.3);">
               Create Signature
             </button>
-            <button type="button" onclick="resetSigToStep1()" style="background:#FFFFFF; color:#4F46E5; border:1.5px solid #4F46E5; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+            <button type="button" id="btnSigUploadNew" style="background:#FFFFFF; color:#4F46E5; border:1.5px solid #4F46E5; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
               + Upload New Image
             </button>
           </div>
@@ -227,7 +227,7 @@
           </div>
         </div>
 
-        <button type="button" onclick="downloadSigFinalImage()" style="width:100%; background:#4F46E5; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+        <button type="button" id="btnSigDownloadFinal" style="width:100%; background:#4F46E5; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.35);">
           Download Signature
         </button>
       </div>
@@ -235,25 +235,12 @@
       <div style="margin-top:2rem; font-size:0.9rem; color:#64748B;">
         <p style="margin-bottom:6px;">Made on your device. Nothing was uploaded.</p>
         <p>Need your photo resized? <a href="/p/kerala-psc-photo-resizer.html" style="color:#2563EB; font-weight:800; text-decoration:underline;">Use our PSC photo resizer</a>.</p>
-        <button type="button" onclick="resetSigToStep1()" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
+        <button type="button" id="btnSigMakeAnother" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
           Make Another Signature
         </button>
       </div>
     </div>
 
-  </div>
-
-  <!-- Guidelines -->
-  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2rem;">
-    <h2 style="font-size:1.25rem; font-weight:800; color:#4338CA; margin-top:0; margin-bottom:0.75rem;">
-      📋 Standard Government Exam Signature Dimensions
-    </h2>
-    <ul style="padding-left:1.25rem; margin:0; font-size:0.9rem; color:#334155; line-height:1.7;">
-      <li><strong>Kerala PSC:</strong> 150&#215;100 pixels, File size under 30 KB.</li>
-      <li><strong>SSC (CGL, CHSL, MTS, GD):</strong> 140&#215;60 pixels, File size 10 KB to 20 KB.</li>
-      <li><strong>IBPS / SBI PO &amp; Clerk:</strong> 140&#215;60 pixels, File size 10 KB to 20 KB.</li>
-      <li><strong>UPSC CSE &amp; CDS:</strong> 350&#215;350 pixels, File size 20 KB to 300 KB.</li>
-    </ul>
   </div>
 
   <div style="text-align:center; margin-top:2rem;">
@@ -264,302 +251,353 @@
 </div>
 
 <script>
-var sigRawImg = null;
-var sigCroppedCanvas = null;
-var sigFinalBlob = null;
-var sigCropBox = { x: 0, y: 0, w: 200, h: 100 };
-var isSigDragging = false;
-var sigDragStartX = 0, sigDragStartY = 0;
+//<![CDATA[
+(function initSigTool() {
+  var sigRawImg = null;
+  var sigCroppedCanvas = null;
+  var sigFinalBlob = null;
+  var sigCropBox = { x: 0, y: 0, w: 200, h: 100 };
+  var isSigDragging = false;
+  var sigDragStartX = 0, sigDragStartY = 0;
 
-function switchSigStep(stepNum) {
-  for (var i = 1; i <= 5; i++) {
-    var stepEl = document.getElementById('sigStep' + i);
-    var dotEl = document.getElementById('sigDot' + i);
-    if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
-    if (dotEl) {
-      if (i === stepNum) {
-        dotEl.style.background = '#4F46E5';
-        dotEl.style.color = '#FFFFFF';
-      } else if (i < stepNum) {
-        dotEl.style.background = '#059669';
-        dotEl.style.color = '#FFFFFF';
-      } else {
-        dotEl.style.background = '#F1F5F9';
-        dotEl.style.color = '#64748B';
-      }
-    }
-  }
-}
-
-function onSigImageSelected(e) {
-  var file = e.target.files[0];
-  if (!file) return;
-  var reader = new FileReader();
-  reader.onload = function(evt) {
-    var img = new Image();
-    img.onload = function() {
-      sigRawImg = img;
-      initSigCropScreen();
-      switchSigStep(2);
-    };
-    img.src = evt.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-function initSigCropScreen() {
-  if (!sigRawImg) return;
-  var canvas = document.getElementById('sigCropCanvas');
-  var maxW = 500, maxH = 320;
-  var ratio = Math.min(maxW / sigRawImg.width, maxH / sigRawImg.height, 1);
-  canvas.width = sigRawImg.width * ratio;
-  canvas.height = sigRawImg.height * ratio;
-
-  var boxW = canvas.width * 0.8;
-  var boxH = boxW * 0.45;
-  if (boxH > canvas.height * 0.85) {
-    boxH = canvas.height * 0.85;
-    boxW = boxH / 0.45;
-  }
-  sigCropBox = {
-    x: (canvas.width - boxW) / 2,
-    y: (canvas.height - boxH) / 2,
-    w: boxW,
-    h: boxH
-  };
-
-  drawSigCropCanvas();
-  setupSigCropDrag(canvas);
-}
-
-function drawSigCropCanvas() {
-  var canvas = document.getElementById('sigCropCanvas');
-  if (!canvas || !sigRawImg) return;
-  var ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  ctx.drawImage(sigRawImg, 0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
-  ctx.fillRect(0, 0, canvas.width, sigCropBox.y);
-  ctx.fillRect(0, sigCropBox.y + sigCropBox.h, canvas.width, canvas.height - (sigCropBox.y + sigCropBox.h));
-  ctx.fillRect(0, sigCropBox.y, sigCropBox.x, sigCropBox.h);
-  ctx.fillRect(sigCropBox.x + sigCropBox.w, sigCropBox.y, canvas.width - (sigCropBox.x + sigCropBox.w), sigCropBox.h);
-
-  ctx.strokeStyle = '#818CF8';
-  ctx.lineWidth = 2;
-  ctx.strokeRect(sigCropBox.x, sigCropBox.y, sigCropBox.w, sigCropBox.h);
-}
-
-function setupSigCropDrag(canvas) {
-  var onStart = function(cx, cy) {
-    var rect = canvas.getBoundingClientRect();
-    var x = cx - rect.left;
-    var y = cy - rect.top;
-    if (x >= sigCropBox.x && x <= sigCropBox.x + sigCropBox.w && y >= sigCropBox.y && y <= sigCropBox.y + sigCropBox.h) {
-      isSigDragging = true;
-      sigDragStartX = x - sigCropBox.x;
-      sigDragStartY = y - sigCropBox.y;
-    }
-  };
-
-  var onMove = function(cx, cy) {
-    if (!isSigDragging) return;
-    var rect = canvas.getBoundingClientRect();
-    var x = cx - rect.left;
-    var y = cy - rect.top;
-    var newX = Math.max(0, Math.min(x - sigDragStartX, canvas.width - sigCropBox.w));
-    var newY = Math.max(0, Math.min(y - sigDragStartY, canvas.height - sigCropBox.h));
-    sigCropBox.x = newX;
-    sigCropBox.y = newY;
-    drawSigCropCanvas();
-  };
-
-  var onEnd = function() { isSigDragging = false; };
-  canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
-  window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
-  window.onmouseup = onEnd;
-
-  canvas.ontouchstart = function(e) { if(e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
-  window.ontouchmove = function(e) { if(e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
-  window.ontouchend = onEnd;
-}
-
-function rotateSigImage(deg) {
-  if (!sigRawImg) return;
-  var offCanvas = document.createElement('canvas');
-  var offCtx = offCanvas.getContext('2d');
-  offCanvas.width = sigRawImg.height;
-  offCanvas.height = sigRawImg.width;
-  offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
-  offCtx.rotate(deg * Math.PI / 180);
-  offCtx.drawImage(sigRawImg, -sigRawImg.width / 2, -sigRawImg.height / 2);
-
-  var rImg = new Image();
-  rImg.onload = function() {
-    sigRawImg = rImg;
-    initSigCropScreen();
-  };
-  rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
-}
-
-function applySigCropAndNext() {
-  var canvas = document.getElementById('sigCropCanvas');
-  var scaleX = sigRawImg.width / canvas.width;
-  var scaleY = sigRawImg.height / canvas.height;
-
-  sigCroppedCanvas = document.createElement('canvas');
-  sigCroppedCanvas.width = sigCropBox.w * scaleX;
-  sigCroppedCanvas.height = sigCropBox.h * scaleY;
-  var ctx = sigCroppedCanvas.getContext('2d');
-  ctx.drawImage(sigRawImg, sigCropBox.x * scaleX, sigCropBox.y * scaleY, sigCropBox.w * scaleX, sigCropBox.h * scaleY, 0, 0, sigCroppedCanvas.width, sigCroppedCanvas.height);
-
-  renderSigCleanPreview();
-  switchSigStep(3);
-}
-
-function renderSigCleanPreview() {
-  var previewCanvas = document.getElementById('sigCleanPreviewCanvas');
-  if (!previewCanvas || !sigCroppedCanvas) return;
-  var ctx = previewCanvas.getContext('2d');
-  previewCanvas.width = 240;
-  previewCanvas.height = 120;
-
-  var doWhite = document.getElementById('autoWhitePaperCheckbox').checked;
-  var thresh = parseInt(document.getElementById('inkThresholdSlider').value, 10);
-  var inkType = document.querySelector('input[name="sigInkColor"]:checked').value;
-
-  // Draw temp
-  var tempCanvas = document.createElement('canvas');
-  tempCanvas.width = 240;
-  tempCanvas.height = 120;
-  var tCtx = tempCanvas.getContext('2d');
-  tCtx.fillStyle = '#FFFFFF';
-  tCtx.fillRect(0, 0, 240, 120);
-  tCtx.drawImage(sigCroppedCanvas, 0, 0, 240, 120);
-
-  if (doWhite) {
-    var imgData = tCtx.getImageData(0, 0, 240, 120);
-    var d = imgData.data;
-    for (var i = 0; i < d.length; i += 4) {
-      var r = d[i], g = d[i+1], b = d[i+2];
-      var brightness = (r * 0.299 + g * 0.587 + b * 0.114);
-
-      if (brightness > thresh) {
-        // Pure White paper background
-        d[i] = 255; d[i+1] = 255; d[i+2] = 255;
-      } else {
-        // Darkened ink
-        if (inkType === 'black') {
-          var dark = Math.max(0, brightness - 40);
-          d[i] = dark; d[i+1] = dark; d[i+2] = dark;
-        } else if (inkType === 'blue') {
-          d[i] = 10; d[i+1] = 40; d[i+2] = 180;
+  function switchStep(stepNum) {
+    [1, 2, 3, 4, 5].forEach(function(i) {
+      var sEl = document.getElementById('sigStep' + i);
+      var dEl = document.getElementById('sigDot' + i);
+      if (sEl) sEl.style.display = (i === stepNum) ? 'block' : 'none';
+      if (dEl) {
+        if (i === stepNum) {
+          dEl.style.background = '#4F46E5';
+          dEl.style.color = '#FFFFFF';
+        } else if (i < stepNum) {
+          dEl.style.background = '#059669';
+          dEl.style.color = '#FFFFFF';
+        } else {
+          dEl.style.background = '#F1F5F9';
+          dEl.style.color = '#64748B';
         }
       }
+    });
+  }
+
+  function handleFileSelect(e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(evt) {
+      var img = new Image();
+      img.onload = function() {
+        sigRawImg = img;
+        initCropScreen();
+        switchStep(2);
+      };
+      img.src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function initCropScreen() {
+    if (!sigRawImg) return;
+    var canvas = document.getElementById('sigCropCanvas');
+    if (!canvas) return;
+    var maxW = 500, maxH = 320;
+    var ratio = Math.min(maxW / sigRawImg.width, maxH / sigRawImg.height, 1);
+    canvas.width = sigRawImg.width * ratio;
+    canvas.height = sigRawImg.height * ratio;
+
+    var boxW = canvas.width * 0.8;
+    var boxH = boxW * 0.45;
+    if (boxH > canvas.height * 0.85) {
+      boxH = canvas.height * 0.85;
+      boxW = boxH / 0.45;
     }
-    tCtx.putImageData(imgData, 0, 0);
+    sigCropBox = {
+      x: (canvas.width - boxW) / 2,
+      y: (canvas.height - boxH) / 2,
+      w: boxW,
+      h: boxH
+    };
+    drawCropCanvas();
+    setupCropDrag(canvas);
   }
 
-  ctx.drawImage(tempCanvas, 0, 0);
-}
+  function drawCropCanvas() {
+    var canvas = document.getElementById('sigCropCanvas');
+    if (!canvas || !sigRawImg) return;
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(sigRawImg, 0, 0, canvas.width, canvas.height);
 
-function saveSigCleanAndNext() {
-  renderSigDimPreview();
-  switchSigStep(4);
-}
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+    ctx.fillRect(0, 0, canvas.width, sigCropBox.y);
+    ctx.fillRect(0, sigCropBox.y + sigCropBox.h, canvas.width, canvas.height - (sigCropBox.y + sigCropBox.h));
+    ctx.fillRect(0, sigCropBox.y, sigCropBox.x, sigCropBox.h);
+    ctx.fillRect(sigCropBox.x + sigCropBox.w, sigCropBox.y, canvas.width - (sigCropBox.x + sigCropBox.w), sigCropBox.h);
 
-function skipSigCleanAndNext() {
-  renderSigDimPreview();
-  switchSigStep(4);
-}
-
-function applySigPresetChoice(preset) {
-  if (preset === 'kpsc') {
-    document.getElementById('sigFinalWidth').value = 150;
-    document.getElementById('sigFinalHeight').value = 100;
-    document.getElementById('sigFinalKB').value = 20;
-  } else if (preset === 'ssc' || preset === 'ibps') {
-    document.getElementById('sigFinalWidth').value = 140;
-    document.getElementById('sigFinalHeight').value = 60;
-    document.getElementById('sigFinalKB').value = 15;
-  } else if (preset === 'upsc') {
-    document.getElementById('sigFinalWidth').value = 350;
-    document.getElementById('sigFinalHeight').value = 350;
-    document.getElementById('sigFinalKB').value = 40;
+    ctx.strokeStyle = '#818CF8';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(sigCropBox.x, sigCropBox.y, sigCropBox.w, sigCropBox.h);
   }
-}
 
-function renderSigDimPreview() {
-  var dimCanvas = document.getElementById('sigDimPreviewCanvas');
-  var srcCanvas = document.getElementById('sigCleanPreviewCanvas');
-  if (dimCanvas && srcCanvas) {
-    dimCanvas.width = 150;
-    dimCanvas.height = 80;
-    var ctx = dimCanvas.getContext('2d');
-    ctx.drawImage(srcCanvas, 0, 0, 150, 80);
-  }
-}
-
-function generateFinalSignature() {
-  var srcCanvas = document.getElementById('sigCleanPreviewCanvas');
-  var targetKB = parseInt(document.getElementById('sigFinalKB').value, 10) || 15;
-  var targetW = parseInt(document.getElementById('sigFinalWidth').value, 10) || 140;
-  var targetH = parseInt(document.getElementById('sigFinalHeight').value, 10) || 60;
-
-  var outCanvas = document.createElement('canvas');
-  outCanvas.width = targetW;
-  outCanvas.height = targetH;
-  var ctx = outCanvas.getContext('2d');
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(0, 0, targetW, targetH);
-  ctx.drawImage(srcCanvas, 0, 0, targetW, targetH);
-
-  compressCanvasToTarget(outCanvas, targetKB, function(blob) {
-    sigFinalBlob = blob;
-    document.getElementById('sigFinalResultImg').src = URL.createObjectURL(blob);
-    document.getElementById('sigFinalSizeBadge').innerText = (blob.size / 1024).toFixed(1) + ' KB';
-    document.getElementById('sigFinalDimBadge').innerText = targetW + ' × ' + targetH + ' px';
-    switchSigStep(5);
-  });
-}
-
-function compressCanvasToTarget(canvas, maxKB, callback) {
-  var minQ = 0.4, maxQ = 0.98, q = 0.85;
-  var attempts = 0;
-
-  function tryQ(currentQ) {
-    canvas.toBlob(function(blob) {
-      attempts++;
-      var currentKB = blob.size / 1024;
-      if (currentKB <= maxKB || attempts >= 6 || minQ >= maxQ) {
-        callback(blob);
-      } else {
-        maxQ = currentQ - 0.05;
-        q = (minQ + maxQ) / 2;
-        tryQ(q);
+  function setupCropDrag(canvas) {
+    var onStart = function(cx, cy) {
+      var rect = canvas.getBoundingClientRect();
+      var x = cx - rect.left;
+      var y = cy - rect.top;
+      if (x >= sigCropBox.x && x <= sigCropBox.x + sigCropBox.w && y >= sigCropBox.y && y <= sigCropBox.y + sigCropBox.h) {
+        isSigDragging = true;
+        sigDragStartX = x - sigCropBox.x;
+        sigDragStartY = y - sigCropBox.y;
       }
-    }, 'image/jpeg', currentQ);
+    };
+
+    var onMove = function(cx, cy) {
+      if (!isSigDragging) return;
+      var rect = canvas.getBoundingClientRect();
+      var x = cx - rect.left;
+      var y = cy - rect.top;
+      var newX = Math.max(0, Math.min(x - sigDragStartX, canvas.width - sigCropBox.w));
+      var newY = Math.max(0, Math.min(y - sigDragStartY, canvas.height - sigCropBox.h));
+      sigCropBox.x = newX;
+      sigCropBox.y = newY;
+      drawCropCanvas();
+    };
+
+    var onEnd = function() { isSigDragging = false; };
+    canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
+    window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
+    window.onmouseup = onEnd;
+
+    canvas.ontouchstart = function(e) { if (e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
+    window.ontouchmove = function(e) { if (e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
+    window.ontouchend = onEnd;
   }
-  tryQ(q);
-}
 
-function downloadSigFinalImage() {
-  if (!sigFinalBlob) return;
-  var fileName = (document.getElementById('sigRenameInput').value || 'SIGNATURE_1INDIAJOB').trim() + '.jpg';
-  var a = document.createElement('a');
-  a.href = URL.createObjectURL(sigFinalBlob);
-  a.download = fileName;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
+  function rotateImage(deg) {
+    if (!sigRawImg) return;
+    var offCanvas = document.createElement('canvas');
+    var offCtx = offCanvas.getContext('2d');
+    offCanvas.width = sigRawImg.height;
+    offCanvas.height = sigRawImg.width;
+    offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
+    offCtx.rotate(deg * Math.PI / 180);
+    offCtx.drawImage(sigRawImg, -sigRawImg.width / 2, -sigRawImg.height / 2);
 
-function resetSigToStep1() {
-  sigRawImg = null;
-  sigCroppedCanvas = null;
-  sigFinalBlob = null;
-  document.getElementById('sigFileInput').value = '';
-  switchSigStep(1);
-}
+    var rImg = new Image();
+    rImg.onload = function() {
+      sigRawImg = rImg;
+      initCropScreen();
+    };
+    rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+  }
+
+  function applyCrop() {
+    var canvas = document.getElementById('sigCropCanvas');
+    if (!canvas || !sigRawImg) return;
+    var scaleX = sigRawImg.width / canvas.width;
+    var scaleY = sigRawImg.height / canvas.height;
+
+    sigCroppedCanvas = document.createElement('canvas');
+    sigCroppedCanvas.width = sigCropBox.w * scaleX;
+    sigCroppedCanvas.height = sigCropBox.h * scaleY;
+    var ctx = sigCroppedCanvas.getContext('2d');
+    ctx.drawImage(sigRawImg, sigCropBox.x * scaleX, sigCropBox.y * scaleY, sigCropBox.w * scaleX, sigCropBox.h * scaleY, 0, 0, sigCroppedCanvas.width, sigCroppedCanvas.height);
+
+    renderCleanPreview();
+    switchStep(3);
+  }
+
+  function renderCleanPreview() {
+    var previewCanvas = document.getElementById('sigCleanPreviewCanvas');
+    if (!previewCanvas || !sigCroppedCanvas) return;
+    var ctx = previewCanvas.getContext('2d');
+    previewCanvas.width = 240;
+    previewCanvas.height = 120;
+
+    var doWhite = document.getElementById('autoWhitePaperCheckbox') ? document.getElementById('autoWhitePaperCheckbox').checked : true;
+    var thresh = document.getElementById('inkThresholdSlider') ? parseInt(document.getElementById('inkThresholdSlider').value, 10) : 160;
+    var inkRadio = document.querySelector('input[name="sigInkColor"]:checked');
+    var inkType = inkRadio ? inkRadio.value : 'black';
+
+    var tempCanvas = document.createElement('canvas');
+    tempCanvas.width = 240;
+    tempCanvas.height = 120;
+    var tCtx = tempCanvas.getContext('2d');
+    tCtx.fillStyle = '#FFFFFF';
+    tCtx.fillRect(0, 0, 240, 120);
+    tCtx.drawImage(sigCroppedCanvas, 0, 0, 240, 120);
+
+    if (doWhite) {
+      var imgData = tCtx.getImageData(0, 0, 240, 120);
+      var d = imgData.data;
+      for (var i = 0; i < d.length; i += 4) {
+        var r = d[i], g = d[i+1], b = d[i+2];
+        var brightness = (r * 0.299 + g * 0.587 + b * 0.114);
+
+        if (brightness > thresh) {
+          d[i] = 255; d[i+1] = 255; d[i+2] = 255;
+        } else {
+          if (inkType === 'black') {
+            var dark = Math.max(0, brightness - 40);
+            d[i] = dark; d[i+1] = dark; d[i+2] = dark;
+          } else if (inkType === 'blue') {
+            d[i] = 10; d[i+1] = 40; d[i+2] = 180;
+          }
+        }
+      }
+      tCtx.putImageData(imgData, 0, 0);
+    }
+    ctx.drawImage(tempCanvas, 0, 0);
+  }
+
+  function applyPreset(preset) {
+    if (preset === 'kpsc') {
+      document.getElementById('sigFinalWidth').value = 150;
+      document.getElementById('sigFinalHeight').value = 100;
+      document.getElementById('sigFinalKB').value = 20;
+    } else if (preset === 'ssc' || preset === 'ibps') {
+      document.getElementById('sigFinalWidth').value = 140;
+      document.getElementById('sigFinalHeight').value = 60;
+      document.getElementById('sigFinalKB').value = 15;
+    } else if (preset === 'upsc') {
+      document.getElementById('sigFinalWidth').value = 350;
+      document.getElementById('sigFinalHeight').value = 350;
+      document.getElementById('sigFinalKB').value = 40;
+    }
+  }
+
+  function renderDimPreview() {
+    var dimCanvas = document.getElementById('sigDimPreviewCanvas');
+    var srcCanvas = document.getElementById('sigCleanPreviewCanvas');
+    if (dimCanvas && srcCanvas) {
+      dimCanvas.width = 150;
+      dimCanvas.height = 80;
+      var ctx = dimCanvas.getContext('2d');
+      ctx.drawImage(srcCanvas, 0, 0, 150, 80);
+    }
+  }
+
+  function compressCanvasToTarget(canvas, maxKB, callback) {
+    var minQ = 0.4, maxQ = 0.98, q = 0.85;
+    var attempts = 0;
+
+    function tryQ(currentQ) {
+      canvas.toBlob(function(blob) {
+        attempts++;
+        var currentKB = blob.size / 1024;
+        if (currentKB <= maxKB || attempts >= 6 || minQ >= maxQ) {
+          callback(blob);
+        } else {
+          maxQ = currentQ - 0.05;
+          q = (minQ + maxQ) / 2;
+          tryQ(q);
+        }
+      }, 'image/jpeg', currentQ);
+    }
+    tryQ(q);
+  }
+
+  function generateFinalSig() {
+    var srcCanvas = document.getElementById('sigCleanPreviewCanvas');
+    if (!srcCanvas) return;
+    var targetKB = parseInt(document.getElementById('sigFinalKB').value, 10) || 15;
+    var targetW = parseInt(document.getElementById('sigFinalWidth').value, 10) || 140;
+    var targetH = parseInt(document.getElementById('sigFinalHeight').value, 10) || 60;
+
+    var outCanvas = document.createElement('canvas');
+    outCanvas.width = targetW;
+    outCanvas.height = targetH;
+    var ctx = outCanvas.getContext('2d');
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, targetW, targetH);
+    ctx.drawImage(srcCanvas, 0, 0, targetW, targetH);
+
+    compressCanvasToTarget(outCanvas, targetKB, function(blob) {
+      sigFinalBlob = blob;
+      if (document.getElementById('sigFinalResultImg')) document.getElementById('sigFinalResultImg').src = URL.createObjectURL(blob);
+      if (document.getElementById('sigFinalSizeBadge')) document.getElementById('sigFinalSizeBadge').innerText = (blob.size / 1024).toFixed(1) + ' KB';
+      if (document.getElementById('sigFinalDimBadge')) document.getElementById('sigFinalDimBadge').innerText = targetW + ' × ' + targetH + ' px';
+      switchStep(5);
+    });
+  }
+
+  function downloadFinal() {
+    if (!sigFinalBlob) return;
+    var fileName = (document.getElementById('sigRenameInput') ? document.getElementById('sigRenameInput').value : 'SIGNATURE_1INDIAJOB').trim() + '.jpg';
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(sigFinalBlob);
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  function resetAll() {
+    sigRawImg = null;
+    sigCroppedCanvas = null;
+    sigFinalBlob = null;
+    var fInput = document.getElementById('sigFileInput');
+    if (fInput) fInput.value = '';
+    switchStep(1);
+  }
+
+  function attachListeners() {
+    var fInput = document.getElementById('sigFileInput');
+    if (fInput) fInput.addEventListener('change', handleFileSelect);
+
+    var btnRotL = document.getElementById('btnSigRotLeft');
+    if (btnRotL) btnRotL.onclick = function() { rotateImage(-90); };
+
+    var btnRotR = document.getElementById('btnSigRotRight');
+    if (btnRotR) btnRotR.onclick = function() { rotateImage(90); };
+
+    var btnReset = document.getElementById('btnSigResetBox');
+    if (btnReset) btnReset.onclick = initCropScreen;
+
+    var btnCrop = document.getElementById('btnSigCropNext');
+    if (btnCrop) btnCrop.onclick = applyCrop;
+
+    var chkWh = document.getElementById('autoWhitePaperCheckbox');
+    if (chkWh) chkWh.onchange = renderCleanPreview;
+
+    var sldThresh = document.getElementById('inkThresholdSlider');
+    if (sldThresh) {
+      sldThresh.oninput = function() {
+        if (document.getElementById('inkDarknessVal')) document.getElementById('inkDarknessVal').innerText = this.value;
+        renderCleanPreview();
+      };
+    }
+
+    var inkRadios = document.querySelectorAll('input[name="sigInkColor"]');
+    inkRadios.forEach(function(r) { r.onchange = renderCleanPreview; });
+
+    var btnSaveC = document.getElementById('btnSigSaveClean');
+    if (btnSaveC) btnSaveC.onclick = function() { renderDimPreview(); switchStep(4); };
+
+    var btnSkipC = document.getElementById('btnSigSkipClean');
+    if (btnSkipC) btnSkipC.onclick = function() { renderDimPreview(); switchStep(4); };
+
+    var selPreset = document.getElementById('sigExamPreset');
+    if (selPreset) selPreset.onchange = function() { applyPreset(this.value); };
+
+    var btnCreate = document.getElementById('btnSigCreate');
+    if (btnCreate) btnCreate.onclick = generateFinalSig;
+
+    var btnUpNew = document.getElementById('btnSigUploadNew');
+    if (btnUpNew) btnUpNew.onclick = resetAll;
+
+    var btnDl = document.getElementById('btnSigDownloadFinal');
+    if (btnDl) btnDl.onclick = downloadFinal;
+
+    var btnAnother = document.getElementById('btnSigMakeAnother');
+    if (btnAnother) btnAnother.onclick = resetAll;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachListeners);
+  } else {
+    attachListeners();
+  }
+})();
+//]]>
 </script>

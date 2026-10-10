@@ -47,14 +47,14 @@
 
     <!-- STEP 1: UPLOAD BOX -->
     <div id="kpscStep1" style="display:block;">
-      <div id="kpscDropArea" onclick="document.getElementById('kpscFileInput').click()" style="border:2px dashed #818CF8; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#4F46E5'; this.style.background='#EEF2FF';" onmouseout="this.style.borderColor='#818CF8'; this.style.background='#F8FAFC';">
+      <div id="kpscDropArea" onclick="document.getElementById('kpscFileInput').click();" style="border:2px dashed #818CF8; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#4F46E5'; this.style.background='#EEF2FF';" onmouseout="this.style.borderColor='#818CF8'; this.style.background='#F8FAFC';">
         <p style="font-size:1.15rem; font-weight:700; color:#334155; margin:0 0 1.25rem;">
           Select Or Drag &amp; Drop Images Here
         </p>
         <button type="button" onclick="event.stopPropagation(); document.getElementById('kpscFileInput').click();" style="background:#0D9488; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(13,148,136,0.3);">
           Select Images
         </button>
-        <input type="file" id="kpscFileInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="window.onKpscImageSelected &amp;&amp; window.onKpscImageSelected(event)">
+        <input type="file" id="kpscFileInput" accept="image/*" style="display:none;">
       </div>
       <p style="text-align:center; font-size:0.85rem; color:#94A3B8; margin-top:1rem;">
         🔒 All editing is 100% processed directly in your browser. No files are uploaded to any server.
@@ -69,18 +69,18 @@
 
       <!-- Crop & Zoom Controls -->
       <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:1.5rem; flex-wrap:wrap;">
-        <button type="button" onclick="window.rotateKpscImage &amp;&amp; window.rotateKpscImage(-90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnRotateLeft" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
           ↺ Rotate Left
         </button>
-        <button type="button" onclick="window.rotateKpscImage &amp;&amp; window.rotateKpscImage(90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnRotateRight" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
           ↻ Rotate Right
         </button>
-        <button type="button" onclick="window.resetCropBox &amp;&amp; window.resetCropBox()" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnResetBox" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
           ⛶ Reset Box
         </button>
       </div>
 
-      <button type="button" onclick="window.applyCropAndNext &amp;&amp; window.applyCropAndNext()" style="background:#3B82F6; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(59,130,246,0.35);">
+      <button type="button" id="btnApplyCrop" style="background:#3B82F6; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(59,130,246,0.35);">
         Crop &amp; Next
       </button>
     </div>
@@ -103,7 +103,7 @@
           </h3>
 
           <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; font-weight:700; color:#334155; margin-bottom:1.25rem; cursor:pointer;">
-            <input type="checkbox" id="addWhiteStripCheckbox" checked onchange="window.renderNameDatePreview &amp;&amp; window.renderNameDatePreview()">
+            <input type="checkbox" id="addWhiteStripCheckbox" checked>
             Add Extra White Space On Bottom
           </label>
 
@@ -111,9 +111,9 @@
           <div style="border:1px solid #CBD5E1; border-radius:8px; padding:10px 14px; margin-bottom:1rem; position:relative; background:#FFFFFF;">
             <span style="position:absolute; top:-9px; left:10px; background:#FFFFFF; padding:0 6px; font-size:0.75rem; font-weight:800; color:#64748B;">Name on Image</span>
             <div style="display:flex; gap:8px; align-items:center;">
-              <input type="text" id="kpscCandidateName" placeholder="e.g. ARUN KUMAR M" style="flex:1; border:none; outline:none; font-size:0.95rem; font-weight:700; text-transform:uppercase;" oninput="window.renderNameDatePreview &amp;&amp; window.renderNameDatePreview()">
-              <input type="number" id="kpscNameSize" value="13" min="8" max="22" style="width:50px; padding:4px 6px; border:1px solid #CBD5E1; border-radius:6px; text-align:center; font-weight:700;" oninput="window.renderNameDatePreview &amp;&amp; window.renderNameDatePreview()" title="Font Size">
-              <input type="color" id="kpscNameColor" value="#000000" style="width:32px; height:32px; border:none; border-radius:50%; cursor:pointer; background:none;" oninput="window.renderNameDatePreview &amp;&amp; window.renderNameDatePreview()">
+              <input type="text" id="kpscCandidateName" placeholder="e.g. ARUN KUMAR M" style="flex:1; border:none; outline:none; font-size:0.95rem; font-weight:700; text-transform:uppercase;">
+              <input type="number" id="kpscNameSize" value="13" min="8" max="22" style="width:50px; padding:4px 6px; border:1px solid #CBD5E1; border-radius:6px; text-align:center; font-weight:700;" title="Font Size">
+              <input type="color" id="kpscNameColor" value="#000000" style="width:32px; height:32px; border:none; border-radius:50%; cursor:pointer; background:none;">
             </div>
           </div>
 
@@ -121,18 +121,18 @@
           <div style="border:1px solid #CBD5E1; border-radius:8px; padding:10px 14px; margin-bottom:1.5rem; position:relative; background:#FFFFFF;">
             <span style="position:absolute; top:-9px; left:10px; background:#FFFFFF; padding:0 6px; font-size:0.75rem; font-weight:800; color:#64748B;">Date on Image</span>
             <div style="display:flex; gap:8px; align-items:center;">
-              <input type="text" id="kpscPhotoDate" placeholder="e.g. 10/10/2026" style="flex:1; border:none; outline:none; font-size:0.95rem; font-weight:700;" oninput="window.renderNameDatePreview &amp;&amp; window.renderNameDatePreview()">
-              <input type="number" id="kpscDateSize" value="11" min="8" max="20" style="width:50px; padding:4px 6px; border:1px solid #CBD5E1; border-radius:6px; text-align:center; font-weight:700;" oninput="window.renderNameDatePreview &amp;&amp; window.renderNameDatePreview()" title="Font Size">
-              <input type="color" id="kpscDateColor" value="#000000" style="width:32px; height:32px; border:none; border-radius:50%; cursor:pointer; background:none;" oninput="window.renderNameDatePreview &amp;&amp; window.renderNameDatePreview()">
+              <input type="text" id="kpscPhotoDate" placeholder="e.g. 10/10/2026" style="flex:1; border:none; outline:none; font-size:0.95rem; font-weight:700;">
+              <input type="number" id="kpscDateSize" value="11" min="8" max="20" style="width:50px; padding:4px 6px; border:1px solid #CBD5E1; border-radius:6px; text-align:center; font-weight:700;" title="Font Size">
+              <input type="color" id="kpscDateColor" value="#000000" style="width:32px; height:32px; border:none; border-radius:50%; cursor:pointer; background:none;">
             </div>
           </div>
 
           <!-- Buttons -->
           <div style="display:flex; gap:12px;">
-            <button type="button" onclick="window.saveNameDateAndNext &amp;&amp; window.saveNameDateAndNext()" style="background:#4338CA; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(67,56,202,0.3);">
+            <button type="button" id="btnSaveNameDate" style="background:#4338CA; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(67,56,202,0.3);">
               Save &amp; Next
             </button>
-            <button type="button" onclick="window.skipNameDateAndNext &amp;&amp; window.skipNameDateAndNext()" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+            <button type="button" id="btnSkipNameDate" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
               Skip
             </button>
           </div>
@@ -182,10 +182,10 @@
 
           <!-- Action Buttons -->
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <button type="button" onclick="window.generateFinalPhoto &amp;&amp; window.generateFinalPhoto()" style="background:#3B82F6; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(59,130,246,0.3);">
+            <button type="button" id="btnCreatePhoto" style="background:#3B82F6; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(59,130,246,0.3);">
               Create Photo
             </button>
-            <button type="button" onclick="window.resetToStep1 &amp;&amp; window.resetToStep1()" style="background:#FFFFFF; color:#3B82F6; border:1.5px solid #3B82F6; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+            <button type="button" id="btnUploadNew" style="background:#FFFFFF; color:#3B82F6; border:1.5px solid #3B82F6; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
               + Upload New Image
             </button>
           </div>
@@ -213,7 +213,7 @@
           </div>
         </div>
 
-        <button type="button" onclick="window.downloadKpscFinalImage &amp;&amp; window.downloadKpscFinalImage()" style="width:100%; background:#4338CA; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(67,56,202,0.35);">
+        <button type="button" id="btnDownloadFinal" style="width:100%; background:#4338CA; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(67,56,202,0.35);">
           Download Image
         </button>
       </div>
@@ -221,7 +221,7 @@
       <div style="margin-top:2rem; font-size:0.9rem; color:#64748B;">
         <p style="margin-bottom:6px;">Made on your device. Nothing was uploaded.</p>
         <p>Need your signature sized for the same form? <a href="/p/govt-job-signature-resizer.html" style="color:#2563EB; font-weight:800; text-decoration:underline;">Use our signature resizer</a>.</p>
-        <button type="button" onclick="window.resetToStep1 &amp;&amp; window.resetToStep1()" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
+        <button type="button" id="btnMakeAnother" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
           Make Another Photo
         </button>
       </div>
@@ -262,3 +262,386 @@
     </a>
   </div>
 </div>
+
+<script>
+//<![CDATA[
+(function initKpscTool() {
+  var kpscRawImg = null;
+  var kpscCroppedCanvas = null;
+  var kpscFinalBlob = null;
+  var cropBox = { x: 0, y: 0, w: 150, h: 200 };
+  var isDraggingCrop = false;
+  var dragStartX = 0, dragStartY = 0;
+
+  function switchStep(stepNum) {
+    [1, 2, 3, 4, 5].forEach(function(i) {
+      var stepEl = document.getElementById('kpscStep' + i);
+      var dotEl = document.getElementById('stepDot' + i);
+      if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
+      if (dotEl) {
+        if (i === stepNum) {
+          dotEl.style.background = '#2563EB';
+          dotEl.style.color = '#FFFFFF';
+        } else if (i < stepNum) {
+          dotEl.style.background = '#059669';
+          dotEl.style.color = '#FFFFFF';
+        } else {
+          dotEl.style.background = '#F1F5F9';
+          dotEl.style.color = '#64748B';
+        }
+      }
+    });
+  }
+
+  function handleFileSelect(e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(evt) {
+      var img = new Image();
+      img.onload = function() {
+        kpscRawImg = img;
+        initCropScreen();
+        switchStep(2);
+      };
+      img.src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function initCropScreen() {
+    if (!kpscRawImg) return;
+    var canvas = document.getElementById('cropCanvas');
+    if (!canvas) return;
+    var maxW = 500, maxH = 360;
+    var ratio = Math.min(maxW / kpscRawImg.width, maxH / kpscRawImg.height, 1);
+    canvas.width = kpscRawImg.width * ratio;
+    canvas.height = kpscRawImg.height * ratio;
+
+    var boxW = Math.min(canvas.width * 0.75, canvas.height * 0.75 * (3/4));
+    var boxH = boxW * (4/3);
+    if (boxH > canvas.height * 0.9) {
+      boxH = canvas.height * 0.9;
+      boxW = boxH * (3/4);
+    }
+    cropBox = {
+      x: (canvas.width - boxW) / 2,
+      y: (canvas.height - boxH) / 2,
+      w: boxW,
+      h: boxH
+    };
+    drawCropCanvas();
+    setupCropDrag(canvas);
+  }
+
+  function drawCropCanvas() {
+    var canvas = document.getElementById('cropCanvas');
+    if (!canvas || !kpscRawImg) return;
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(kpscRawImg, 0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+    ctx.fillRect(0, 0, canvas.width, cropBox.y);
+    ctx.fillRect(0, cropBox.y + cropBox.h, canvas.width, canvas.height - (cropBox.y + cropBox.h));
+    ctx.fillRect(0, cropBox.y, cropBox.x, cropBox.h);
+    ctx.fillRect(cropBox.x + cropBox.w, cropBox.y, canvas.width - (cropBox.x + cropBox.w), cropBox.h);
+
+    ctx.strokeStyle = '#38BDF8';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(cropBox.x, cropBox.y, cropBox.w, cropBox.h);
+
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(cropBox.x + cropBox.w/3, cropBox.y);
+    ctx.lineTo(cropBox.x + cropBox.w/3, cropBox.y + cropBox.h);
+    ctx.moveTo(cropBox.x + 2*cropBox.w/3, cropBox.y);
+    ctx.lineTo(cropBox.x + 2*cropBox.w/3, cropBox.y + cropBox.h);
+    ctx.moveTo(cropBox.x, cropBox.y + cropBox.h/3);
+    ctx.lineTo(cropBox.x + cropBox.w, cropBox.y + cropBox.h/3);
+    ctx.moveTo(cropBox.x, cropBox.y + 2*cropBox.h/3);
+    ctx.lineTo(cropBox.x + cropBox.w, cropBox.y + 2*cropBox.h/3);
+    ctx.stroke();
+  }
+
+  function setupCropDrag(canvas) {
+    var onStart = function(cx, cy) {
+      var rect = canvas.getBoundingClientRect();
+      var x = cx - rect.left;
+      var y = cy - rect.top;
+      if (x >= cropBox.x && x <= cropBox.x + cropBox.w && y >= cropBox.y && y <= cropBox.y + cropBox.h) {
+        isDraggingCrop = true;
+        dragStartX = x - cropBox.x;
+        dragStartY = y - cropBox.y;
+      }
+    };
+
+    var onMove = function(cx, cy) {
+      if (!isDraggingCrop) return;
+      var rect = canvas.getBoundingClientRect();
+      var x = cx - rect.left;
+      var y = cy - rect.top;
+      var newX = Math.max(0, Math.min(x - dragStartX, canvas.width - cropBox.w));
+      var newY = Math.max(0, Math.min(y - dragStartY, canvas.height - cropBox.h));
+      cropBox.x = newX;
+      cropBox.y = newY;
+      drawCropCanvas();
+    };
+
+    var onEnd = function() { isDraggingCrop = false; };
+    canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
+    window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
+    window.onmouseup = onEnd;
+
+    canvas.ontouchstart = function(e) { if (e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
+    window.ontouchmove = function(e) { if (e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
+    window.ontouchend = onEnd;
+  }
+
+  function rotateImage(deg) {
+    if (!kpscRawImg) return;
+    var offCanvas = document.createElement('canvas');
+    var offCtx = offCanvas.getContext('2d');
+    offCanvas.width = kpscRawImg.height;
+    offCanvas.height = kpscRawImg.width;
+    offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
+    offCtx.rotate(deg * Math.PI / 180);
+    offCtx.drawImage(kpscRawImg, -kpscRawImg.width / 2, -kpscRawImg.height / 2);
+
+    var rImg = new Image();
+    rImg.onload = function() {
+      kpscRawImg = rImg;
+      initCropScreen();
+    };
+    rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+  }
+
+  function applyCrop() {
+    var canvas = document.getElementById('cropCanvas');
+    if (!canvas || !kpscRawImg) return;
+    var scaleX = kpscRawImg.width / canvas.width;
+    var scaleY = kpscRawImg.height / canvas.height;
+
+    kpscCroppedCanvas = document.createElement('canvas');
+    kpscCroppedCanvas.width = 150;
+    kpscCroppedCanvas.height = 200;
+    var ctx = kpscCroppedCanvas.getContext('2d');
+    ctx.drawImage(kpscRawImg, cropBox.x * scaleX, cropBox.y * scaleY, cropBox.w * scaleX, cropBox.h * scaleY, 0, 0, 150, 200);
+
+    var dateInp = document.getElementById('kpscPhotoDate');
+    if (dateInp && !dateInp.value) {
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0');
+      var yyyy = today.getFullYear();
+      dateInp.value = dd + '/' + mm + '/' + yyyy;
+    }
+    renderNameDatePreview();
+    switchStep(3);
+  }
+
+  function renderNameDatePreview() {
+    var previewCanvas = document.getElementById('nameDatePreviewCanvas');
+    if (!previewCanvas || !kpscCroppedCanvas) return;
+    var ctx = previewCanvas.getContext('2d');
+    previewCanvas.width = 150;
+    previewCanvas.height = 200;
+
+    var addStrip = document.getElementById('addWhiteStripCheckbox') ? document.getElementById('addWhiteStripCheckbox').checked : true;
+    var nameVal = (document.getElementById('kpscCandidateName') ? document.getElementById('kpscCandidateName').value : '').toUpperCase().trim();
+    var dateVal = (document.getElementById('kpscPhotoDate') ? document.getElementById('kpscPhotoDate').value : '').trim();
+    var nameSize = document.getElementById('kpscNameSize') ? parseInt(document.getElementById('kpscNameSize').value, 10) : 13;
+    var dateSize = document.getElementById('kpscDateSize') ? parseInt(document.getElementById('kpscDateSize').value, 10) : 11;
+    var nameCol = document.getElementById('kpscNameColor') ? document.getElementById('kpscNameColor').value : '#000000';
+    var dateCol = document.getElementById('kpscDateColor') ? document.getElementById('kpscDateColor').value : '#000000';
+
+    var bannerH = (addStrip && (nameVal || dateVal)) ? 42 : 0;
+    var photoH = 200 - bannerH;
+
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, 150, 200);
+    ctx.drawImage(kpscCroppedCanvas, 0, 0, 150, 200, 0, 0, 150, photoH);
+
+    if (bannerH > 0) {
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(0, photoH, 150, bannerH);
+      ctx.strokeStyle = '#000000';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, photoH);
+      ctx.lineTo(150, photoH);
+      ctx.stroke();
+
+      ctx.textAlign = 'center';
+      if (nameVal && dateVal) {
+        ctx.fillStyle = nameCol;
+        ctx.font = 'bold ' + nameSize + 'px sans-serif';
+        ctx.fillText(nameVal, 75, photoH + 17, 142);
+        ctx.fillStyle = dateCol;
+        ctx.font = 'bold ' + dateSize + 'px sans-serif';
+        ctx.fillText(dateVal, 75, photoH + 34, 142);
+      } else if (nameVal || dateVal) {
+        var val = nameVal || dateVal;
+        var col = nameVal ? nameCol : dateCol;
+        ctx.fillStyle = col;
+        ctx.font = 'bold ' + nameSize + 'px sans-serif';
+        ctx.fillText(val, 75, photoH + 26, 142);
+      }
+    }
+  }
+
+  function renderDimensionPreview() {
+    var dimCanvas = document.getElementById('dimensionPreviewCanvas');
+    var srcCanvas = document.getElementById('nameDatePreviewCanvas');
+    if (dimCanvas && srcCanvas) {
+      dimCanvas.width = 150;
+      dimCanvas.height = 200;
+      var ctx = dimCanvas.getContext('2d');
+      ctx.drawImage(srcCanvas, 0, 0);
+    }
+  }
+
+  function compressCanvasToTarget(canvas, maxKB, callback) {
+    var minQ = 0.4, maxQ = 0.98, q = 0.88;
+    var attempts = 0;
+
+    function tryQ(currentQ) {
+      canvas.toBlob(function(blob) {
+        attempts++;
+        var currentKB = blob.size / 1024;
+        if ((currentKB <= maxKB && currentKB >= maxKB - 4) || attempts >= 7 || minQ >= maxQ) {
+          callback(blob);
+        } else if (currentKB > maxKB) {
+          maxQ = currentQ - 0.05;
+          q = (minQ + maxQ) / 2;
+          tryQ(q);
+        } else {
+          minQ = currentQ + 0.05;
+          q = (minQ + maxQ) / 2;
+          tryQ(q);
+        }
+      }, 'image/jpeg', currentQ);
+    }
+    tryQ(q);
+  }
+
+  function generateFinalPhoto() {
+    var srcCanvas = document.getElementById('dimensionPreviewCanvas');
+    if (!srcCanvas) return;
+    var targetKB = parseInt(document.getElementById('kpscFinalKB').value, 10) || 28;
+    targetKB = Math.min(Math.max(targetKB, 10), 30);
+    var targetW = parseInt(document.getElementById('kpscFinalWidth').value, 10) || 150;
+    var targetH = parseInt(document.getElementById('kpscFinalHeight').value, 10) || 200;
+
+    var outputCanvas = document.createElement('canvas');
+    outputCanvas.width = targetW;
+    outputCanvas.height = targetH;
+    var outCtx = outputCanvas.getContext('2d');
+    outCtx.drawImage(srcCanvas, 0, 0, targetW, targetH);
+
+    compressCanvasToTarget(outputCanvas, targetKB, function(blob) {
+      kpscFinalBlob = blob;
+      var url = URL.createObjectURL(blob);
+      if (document.getElementById('kpscFinalResultImg')) document.getElementById('kpscFinalResultImg').src = url;
+      if (document.getElementById('kpscFinalSizeBadge')) document.getElementById('kpscFinalSizeBadge').innerText = (blob.size / 1024).toFixed(1) + ' KB';
+      if (document.getElementById('kpscFinalDimBadge')) document.getElementById('kpscFinalDimBadge').innerText = targetW + ' × ' + targetH + ' px';
+
+      var candidateName = (document.getElementById('kpscCandidateName') ? document.getElementById('kpscCandidateName').value : '').trim().replace(/[^a-zA-Z0-9]/g, '_');
+      if (candidateName && document.getElementById('kpscRenameInput')) {
+        document.getElementById('kpscRenameInput').value = 'KPSC_' + candidateName.toUpperCase();
+      }
+      switchStep(5);
+    });
+  }
+
+  function downloadFinal() {
+    if (!kpscFinalBlob) return;
+    var fileName = (document.getElementById('kpscRenameInput') ? document.getElementById('kpscRenameInput').value : 'KPSC_PHOTO_1INDIAJOB').trim() + '.jpg';
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(kpscFinalBlob);
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  function resetAll() {
+    kpscRawImg = null;
+    kpscCroppedCanvas = null;
+    kpscFinalBlob = null;
+    var fInput = document.getElementById('kpscFileInput');
+    if (fInput) fInput.value = '';
+    switchStep(1);
+  }
+
+  // ATTACH EVENT LISTENERS
+  function attachListeners() {
+    var fInput = document.getElementById('kpscFileInput');
+    if (fInput) fInput.addEventListener('change', handleFileSelect);
+
+    var btnRotL = document.getElementById('btnRotateLeft');
+    if (btnRotL) btnRotL.onclick = function() { rotateImage(-90); };
+
+    var btnRotR = document.getElementById('btnRotateRight');
+    if (btnRotR) btnRotR.onclick = function() { rotateImage(90); };
+
+    var btnReset = document.getElementById('btnResetBox');
+    if (btnReset) btnReset.onclick = initCropScreen;
+
+    var btnCrop = document.getElementById('btnApplyCrop');
+    if (btnCrop) btnCrop.onclick = applyCrop;
+
+    var nameInp = document.getElementById('kpscCandidateName');
+    if (nameInp) nameInp.oninput = renderNameDatePreview;
+
+    var dateInp = document.getElementById('kpscPhotoDate');
+    if (dateInp) dateInp.oninput = renderNameDatePreview;
+
+    var nSize = document.getElementById('kpscNameSize');
+    if (nSize) nSize.oninput = renderNameDatePreview;
+
+    var dSize = document.getElementById('kpscDateSize');
+    if (dSize) dSize.oninput = renderNameDatePreview;
+
+    var nCol = document.getElementById('kpscNameColor');
+    if (nCol) nCol.oninput = renderNameDatePreview;
+
+    var dCol = document.getElementById('kpscDateColor');
+    if (dCol) dCol.oninput = renderNameDatePreview;
+
+    var chkStrip = document.getElementById('addWhiteStripCheckbox');
+    if (chkStrip) chkStrip.onchange = renderNameDatePreview;
+
+    var btnSaveND = document.getElementById('btnSaveNameDate');
+    if (btnSaveND) btnSaveND.onclick = function() { renderDimensionPreview(); switchStep(4); };
+
+    var btnSkipND = document.getElementById('btnSkipNameDate');
+    if (btnSkipND) btnSkipND.onclick = function() {
+      if (document.getElementById('kpscCandidateName')) document.getElementById('kpscCandidateName').value = '';
+      if (document.getElementById('kpscPhotoDate')) document.getElementById('kpscPhotoDate').value = '';
+      renderDimensionPreview();
+      switchStep(4);
+    };
+
+    var btnCreate = document.getElementById('btnCreatePhoto');
+    if (btnCreate) btnCreate.onclick = generateFinalPhoto;
+
+    var btnUpNew = document.getElementById('btnUploadNew');
+    if (btnUpNew) btnUpNew.onclick = resetAll;
+
+    var btnDl = document.getElementById('btnDownloadFinal');
+    if (btnDl) btnDl.onclick = downloadFinal;
+
+    var btnAnother = document.getElementById('btnMakeAnother');
+    if (btnAnother) btnAnother.onclick = resetAll;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachListeners);
+  } else {
+    attachListeners();
+  }
+})();
+//]]>
+</script>

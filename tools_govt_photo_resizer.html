@@ -47,14 +47,14 @@
 
     <!-- STEP 1: UPLOAD BOX -->
     <div id="govtStep1" style="display:block;">
-      <div style="border:2px dashed #3B82F6; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#2563EB'; this.style.background='#EFF6FF';" onmouseout="this.style.borderColor='#3B82F6'; this.style.background='#F8FAFC';">
+      <div id="govtDropArea" onclick="document.getElementById('govtFileInput').click();" style="border:2px dashed #3B82F6; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#2563EB'; this.style.background='#EFF6FF';" onmouseout="this.style.borderColor='#3B82F6'; this.style.background='#F8FAFC';">
         <p style="font-size:1.15rem; font-weight:700; color:#334155; margin:0 0 1.25rem;">
           Select Or Drag &amp; Drop Images Here
         </p>
-        <button type="button" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.3); pointer-events:none;">
+        <button type="button" onclick="event.stopPropagation(); document.getElementById('govtFileInput').click();" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.3);">
           Select Images
         </button>
-        <input type="file" id="govtFileInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="onGovtImageSelected(event)">
+        <input type="file" id="govtFileInput" accept="image/*" style="display:none;">
       </div>
       <p style="text-align:center; font-size:0.85rem; color:#94A3B8; margin-top:1rem;">
         🔒 All editing is 100% processed directly on your device. Supports JPG, JPEG, and PNG.
@@ -68,18 +68,18 @@
       </div>
 
       <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:1.5rem; flex-wrap:wrap;">
-        <button type="button" onclick="rotateGovtImage(-90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnGovtRotLeft" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
           ↺ Rotate Left
         </button>
-        <button type="button" onclick="rotateGovtImage(90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnGovtRotRight" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
           ↻ Rotate Right
         </button>
-        <button type="button" onclick="initGovtCropScreen()" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnGovtResetBox" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
           ⛶ Reset Box
         </button>
       </div>
 
-      <button type="button" onclick="applyGovtCropAndNext()" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
+      <button type="button" id="btnGovtCropNext" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
         Crop &amp; Next
       </button>
     </div>
@@ -101,28 +101,28 @@
           </h3>
 
           <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; font-weight:700; color:#334155; margin-bottom:1.25rem; cursor:pointer;">
-            <input type="checkbox" id="govtAddStripCheckbox" onchange="renderGovtNamePreview()">
+            <input type="checkbox" id="govtAddStripCheckbox">
             Add Bottom White Strip (For State PSC / SSC if required)
           </label>
 
           <!-- Candidate Name -->
           <div style="border:1px solid #CBD5E1; border-radius:8px; padding:10px 14px; margin-bottom:1rem; position:relative; background:#FFFFFF;">
             <span style="position:absolute; top:-9px; left:10px; background:#FFFFFF; padding:0 6px; font-size:0.75rem; font-weight:800; color:#64748B;">Candidate Name</span>
-            <input type="text" id="govtCandidateName" placeholder="e.g. RAHUL SHARMA" style="width:100%; border:none; outline:none; font-size:0.95rem; font-weight:700; text-transform:uppercase;" oninput="renderGovtNamePreview()">
+            <input type="text" id="govtCandidateName" placeholder="e.g. RAHUL SHARMA" style="width:100%; border:none; outline:none; font-size:0.95rem; font-weight:700; text-transform:uppercase;">
           </div>
 
           <!-- Date of Photo -->
           <div style="border:1px solid #CBD5E1; border-radius:8px; padding:10px 14px; margin-bottom:1.5rem; position:relative; background:#FFFFFF;">
             <span style="position:absolute; top:-9px; left:10px; background:#FFFFFF; padding:0 6px; font-size:0.75rem; font-weight:800; color:#64748B;">Date on Photo</span>
-            <input type="text" id="govtPhotoDate" placeholder="e.g. 10/10/2026" style="width:100%; border:none; outline:none; font-size:0.95rem; font-weight:700;" oninput="renderGovtNamePreview()">
+            <input type="text" id="govtPhotoDate" placeholder="e.g. 10/10/2026" style="width:100%; border:none; outline:none; font-size:0.95rem; font-weight:700;">
           </div>
 
           <!-- Buttons -->
           <div style="display:flex; gap:12px;">
-            <button type="button" onclick="saveGovtNameAndNext()" style="background:#2563EB; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3);">
+            <button type="button" id="btnGovtSaveName" style="background:#2563EB; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3);">
               Save &amp; Next
             </button>
-            <button type="button" onclick="skipGovtNameAndNext()" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+            <button type="button" id="btnGovtSkipName" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
               Skip
             </button>
           </div>
@@ -148,7 +148,7 @@
 
           <div style="margin-bottom:1rem;">
             <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Official Exam Preset</label>
-            <select id="govtExamPresetSelect" style="width:100%; box-sizing:border-box; padding:10px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; background:#F8FAFC;" onchange="applyGovtExamPreset(this.value)">
+            <select id="govtExamPresetSelect" style="width:100%; box-sizing:border-box; padding:10px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; background:#F8FAFC;">
               <option value="ssc">SSC CGL, CHSL, MTS, GD (350 × 450 px, 20-50 KB)</option>
               <option value="upsc">UPSC Civil Services / NDA (350 × 350 px, 20-300 KB)</option>
               <option value="ibps">IBPS PO / Clerk / SBI Bank (200 × 230 px, 20-50 KB)</option>
@@ -183,10 +183,10 @@
 
           <!-- Action Buttons -->
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <button type="button" onclick="generateFinalGovtPhoto()" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3);">
+            <button type="button" id="btnGovtCreatePhoto" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3);">
               Create Photo
             </button>
-            <button type="button" onclick="resetGovtToStep1()" style="background:#FFFFFF; color:#2563EB; border:1.5px solid #2563EB; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+            <button type="button" id="btnGovtUploadNew" style="background:#FFFFFF; color:#2563EB; border:1.5px solid #2563EB; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
               + Upload New Image
             </button>
           </div>
@@ -214,7 +214,7 @@
           </div>
         </div>
 
-        <button type="button" onclick="downloadGovtFinalImage()" style="width:100%; background:#2563EB; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
+        <button type="button" id="btnGovtDownloadFinal" style="width:100%; background:#2563EB; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
           Download Image
         </button>
       </div>
@@ -222,7 +222,7 @@
       <div style="margin-top:2rem; font-size:0.9rem; color:#64748B;">
         <p style="margin-bottom:6px;">Made on your device. Nothing was uploaded.</p>
         <p>Need your signature resized? <a href="/p/govt-job-signature-resizer.html" style="color:#2563EB; font-weight:800; text-decoration:underline;">Use our signature resizer</a>.</p>
-        <button type="button" onclick="resetGovtToStep1()" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
+        <button type="button" id="btnGovtMakeAnother" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
           Make Another Photo
         </button>
       </div>
@@ -238,304 +238,356 @@
 </div>
 
 <script>
-var govtRawImg = null;
-var govtCroppedCanvas = null;
-var govtFinalBlob = null;
-var govtCropBox = { x: 0, y: 0, w: 200, h: 260 };
-var isGovtDragging = false;
-var govtDragStartX = 0, govtDragStartY = 0;
+//<![CDATA[
+(function initGovtTool() {
+  var govtRawImg = null;
+  var govtCroppedCanvas = null;
+  var govtFinalBlob = null;
+  var govtCropBox = { x: 0, y: 0, w: 200, h: 260 };
+  var isGovtDragging = false;
+  var govtDragStartX = 0, govtDragStartY = 0;
 
-function switchGovtStep(stepNum) {
-  for (var i = 1; i <= 5; i++) {
-    var stepEl = document.getElementById('govtStep' + i);
-    var dotEl = document.getElementById('govtDot' + i);
-    if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
-    if (dotEl) {
-      if (i === stepNum) {
-        dotEl.style.background = '#2563EB';
-        dotEl.style.color = '#FFFFFF';
-      } else if (i < stepNum) {
-        dotEl.style.background = '#059669';
-        dotEl.style.color = '#FFFFFF';
-      } else {
-        dotEl.style.background = '#F1F5F9';
-        dotEl.style.color = '#64748B';
+  function switchStep(stepNum) {
+    [1, 2, 3, 4, 5].forEach(function(i) {
+      var stepEl = document.getElementById('govtStep' + i);
+      var dotEl = document.getElementById('govtDot' + i);
+      if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
+      if (dotEl) {
+        if (i === stepNum) {
+          dotEl.style.background = '#2563EB';
+          dotEl.style.color = '#FFFFFF';
+        } else if (i < stepNum) {
+          dotEl.style.background = '#059669';
+          dotEl.style.color = '#FFFFFF';
+        } else {
+          dotEl.style.background = '#F1F5F9';
+          dotEl.style.color = '#64748B';
+        }
       }
-    }
+    });
   }
-}
 
-function onGovtImageSelected(e) {
-  var file = e.target.files[0];
-  if (!file) return;
-  var reader = new FileReader();
-  reader.onload = function(evt) {
-    var img = new Image();
-    img.onload = function() {
-      govtRawImg = img;
-      initGovtCropScreen();
-      switchGovtStep(2);
+  function handleFileSelect(e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(evt) {
+      var img = new Image();
+      img.onload = function() {
+        govtRawImg = img;
+        initCropScreen();
+        switchStep(2);
+      };
+      img.src = evt.target.result;
     };
-    img.src = evt.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-function initGovtCropScreen() {
-  if (!govtRawImg) return;
-  var canvas = document.getElementById('govtCropCanvas');
-  var maxW = 500, maxH = 350;
-  var ratio = Math.min(maxW / govtRawImg.width, maxH / govtRawImg.height, 1);
-  canvas.width = govtRawImg.width * ratio;
-  canvas.height = govtRawImg.height * ratio;
-
-  var boxW = canvas.width * 0.7;
-  var boxH = boxW * (450 / 350);
-  if (boxH > canvas.height * 0.9) {
-    boxH = canvas.height * 0.9;
-    boxW = boxH * (350 / 450);
+    reader.readAsDataURL(file);
   }
-  govtCropBox = {
-    x: (canvas.width - boxW) / 2,
-    y: (canvas.height - boxH) / 2,
-    w: boxW,
-    h: boxH
-  };
 
-  drawGovtCropCanvas();
-  setupGovtCropDrag(canvas);
-}
+  function initCropScreen() {
+    if (!govtRawImg) return;
+    var canvas = document.getElementById('govtCropCanvas');
+    if (!canvas) return;
+    var maxW = 500, maxH = 350;
+    var ratio = Math.min(maxW / govtRawImg.width, maxH / govtRawImg.height, 1);
+    canvas.width = govtRawImg.width * ratio;
+    canvas.height = govtRawImg.height * ratio;
 
-function drawGovtCropCanvas() {
-  var canvas = document.getElementById('govtCropCanvas');
-  if (!canvas || !govtRawImg) return;
-  var ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  ctx.drawImage(govtRawImg, 0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
-  ctx.fillRect(0, 0, canvas.width, govtCropBox.y);
-  ctx.fillRect(0, govtCropBox.y + govtCropBox.h, canvas.width, canvas.height - (govtCropBox.y + govtCropBox.h));
-  ctx.fillRect(0, govtCropBox.y, govtCropBox.x, govtCropBox.h);
-  ctx.fillRect(govtCropBox.x + govtCropBox.w, govtCropBox.y, canvas.width - (govtCropBox.x + govtCropBox.w), govtCropBox.h);
-
-  ctx.strokeStyle = '#38BDF8';
-  ctx.lineWidth = 2;
-  ctx.strokeRect(govtCropBox.x, govtCropBox.y, govtCropBox.w, govtCropBox.h);
-}
-
-function setupGovtCropDrag(canvas) {
-  var onStart = function(cx, cy) {
-    var rect = canvas.getBoundingClientRect();
-    var x = cx - rect.left;
-    var y = cy - rect.top;
-    if (x >= govtCropBox.x && x <= govtCropBox.x + govtCropBox.w && y >= govtCropBox.y && y <= govtCropBox.y + govtCropBox.h) {
-      isGovtDragging = true;
-      govtDragStartX = x - govtCropBox.x;
-      govtDragStartY = y - govtCropBox.y;
+    var boxW = canvas.width * 0.7;
+    var boxH = boxW * (450 / 350);
+    if (boxH > canvas.height * 0.9) {
+      boxH = canvas.height * 0.9;
+      boxW = boxH * (350 / 450);
     }
-  };
-
-  var onMove = function(cx, cy) {
-    if (!isGovtDragging) return;
-    var rect = canvas.getBoundingClientRect();
-    var x = cx - rect.left;
-    var y = cy - rect.top;
-    var newX = Math.max(0, Math.min(x - govtDragStartX, canvas.width - govtCropBox.w));
-    var newY = Math.max(0, Math.min(y - govtDragStartY, canvas.height - govtCropBox.h));
-    govtCropBox.x = newX;
-    govtCropBox.y = newY;
-    drawGovtCropCanvas();
-  };
-
-  var onEnd = function() { isGovtDragging = false; };
-  canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
-  window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
-  window.onmouseup = onEnd;
-
-  canvas.ontouchstart = function(e) { if(e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
-  window.ontouchmove = function(e) { if(e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
-  window.ontouchend = onEnd;
-}
-
-function rotateGovtImage(deg) {
-  if (!govtRawImg) return;
-  var offCanvas = document.createElement('canvas');
-  var offCtx = offCanvas.getContext('2d');
-  offCanvas.width = govtRawImg.height;
-  offCanvas.height = govtRawImg.width;
-  offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
-  offCtx.rotate(deg * Math.PI / 180);
-  offCtx.drawImage(govtRawImg, -govtRawImg.width / 2, -govtRawImg.height / 2);
-
-  var rImg = new Image();
-  rImg.onload = function() {
-    govtRawImg = rImg;
-    initGovtCropScreen();
-  };
-  rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
-}
-
-function applyGovtCropAndNext() {
-  var canvas = document.getElementById('govtCropCanvas');
-  var scaleX = govtRawImg.width / canvas.width;
-  var scaleY = govtRawImg.height / canvas.height;
-
-  govtCroppedCanvas = document.createElement('canvas');
-  govtCroppedCanvas.width = 350;
-  govtCroppedCanvas.height = 450;
-  var ctx = govtCroppedCanvas.getContext('2d');
-  ctx.drawImage(govtRawImg, govtCropBox.x * scaleX, govtCropBox.y * scaleY, govtCropBox.w * scaleX, govtCropBox.h * scaleY, 0, 0, 350, 450);
-
-  renderGovtNamePreview();
-  switchGovtStep(3);
-}
-
-function renderGovtNamePreview() {
-  var previewCanvas = document.getElementById('govtNamePreviewCanvas');
-  if (!previewCanvas || !govtCroppedCanvas) return;
-  var ctx = previewCanvas.getContext('2d');
-  previewCanvas.width = 180;
-  previewCanvas.height = 230;
-
-  var addStrip = document.getElementById('govtAddStripCheckbox').checked;
-  var nameVal = (document.getElementById('govtCandidateName').value || '').toUpperCase().trim();
-  var dateVal = (document.getElementById('govtPhotoDate').value || '').trim();
-
-  var bannerH = (addStrip && (nameVal || dateVal)) ? 44 : 0;
-  var photoH = 230 - bannerH;
-
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(0, 0, 180, 230);
-  ctx.drawImage(govtCroppedCanvas, 0, 0, 350, 450, 0, 0, 180, photoH);
-
-  if (bannerH > 0) {
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(0, photoH, 180, bannerH);
-    ctx.strokeStyle = '#000000';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(0, photoH);
-    ctx.lineTo(180, photoH);
-    ctx.stroke();
-
-    ctx.fillStyle = '#000000';
-    ctx.textAlign = 'center';
-    if (nameVal && dateVal) {
-      ctx.font = 'bold 12px sans-serif';
-      ctx.fillText(nameVal, 90, photoH + 18, 170);
-      ctx.font = 'bold 11px sans-serif';
-      ctx.fillText(dateVal, 90, photoH + 34, 170);
-    } else if (nameVal || dateVal) {
-      ctx.font = 'bold 13px sans-serif';
-      ctx.fillText(nameVal || dateVal, 90, photoH + 26, 170);
-    }
+    govtCropBox = {
+      x: (canvas.width - boxW) / 2,
+      y: (canvas.height - boxH) / 2,
+      w: boxW,
+      h: boxH
+    };
+    drawCropCanvas();
+    setupCropDrag(canvas);
   }
-}
 
-function saveGovtNameAndNext() {
-  renderGovtDimPreview();
-  switchGovtStep(4);
-}
+  function drawCropCanvas() {
+    var canvas = document.getElementById('govtCropCanvas');
+    if (!canvas || !govtRawImg) return;
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(govtRawImg, 0, 0, canvas.width, canvas.height);
 
-function skipGovtNameAndNext() {
-  document.getElementById('govtCandidateName').value = '';
-  document.getElementById('govtPhotoDate').value = '';
-  renderGovtDimPreview();
-  switchGovtStep(4);
-}
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+    ctx.fillRect(0, 0, canvas.width, govtCropBox.y);
+    ctx.fillRect(0, govtCropBox.y + govtCropBox.h, canvas.width, canvas.height - (govtCropBox.y + govtCropBox.h));
+    ctx.fillRect(0, govtCropBox.y, govtCropBox.x, govtCropBox.h);
+    ctx.fillRect(govtCropBox.x + govtCropBox.w, govtCropBox.y, canvas.width - (govtCropBox.x + govtCropBox.w), govtCropBox.h);
 
-function applyGovtExamPreset(preset) {
-  if (preset === 'ssc' || preset === 'state_psc') {
-    document.getElementById('govtFinalWidth').value = 350;
-    document.getElementById('govtFinalHeight').value = 450;
-    document.getElementById('govtFinalKB').value = 45;
-  } else if (preset === 'upsc') {
-    document.getElementById('govtFinalWidth').value = 350;
-    document.getElementById('govtFinalHeight').value = 350;
-    document.getElementById('govtFinalKB').value = 100;
-  } else if (preset === 'ibps') {
-    document.getElementById('govtFinalWidth').value = 200;
-    document.getElementById('govtFinalHeight').value = 230;
-    document.getElementById('govtFinalKB').value = 40;
-  } else if (preset === 'rrb') {
-    document.getElementById('govtFinalWidth').value = 210;
-    document.getElementById('govtFinalHeight').value = 270;
-    document.getElementById('govtFinalKB').value = 50;
+    ctx.strokeStyle = '#38BDF8';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(govtCropBox.x, govtCropBox.y, govtCropBox.w, govtCropBox.h);
   }
-}
 
-function renderGovtDimPreview() {
-  var dimCanvas = document.getElementById('govtDimPreviewCanvas');
-  var srcCanvas = document.getElementById('govtNamePreviewCanvas');
-  if (dimCanvas && srcCanvas) {
-    dimCanvas.width = 180;
-    dimCanvas.height = 230;
-    var ctx = dimCanvas.getContext('2d');
-    ctx.drawImage(srcCanvas, 0, 0, 180, 230);
-  }
-}
-
-function generateFinalGovtPhoto() {
-  var srcCanvas = document.getElementById('govtNamePreviewCanvas');
-  var targetKB = parseInt(document.getElementById('govtFinalKB').value, 10) || 45;
-  var targetW = parseInt(document.getElementById('govtFinalWidth').value, 10) || 350;
-  var targetH = parseInt(document.getElementById('govtFinalHeight').value, 10) || 450;
-
-  var outCanvas = document.createElement('canvas');
-  outCanvas.width = targetW;
-  outCanvas.height = targetH;
-  var ctx = outCanvas.getContext('2d');
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(0, 0, targetW, targetH);
-  ctx.drawImage(srcCanvas, 0, 0, targetW, targetH);
-
-  compressCanvasToTarget(outCanvas, targetKB, function(blob) {
-    govtFinalBlob = blob;
-    document.getElementById('govtFinalResultImg').src = URL.createObjectURL(blob);
-    document.getElementById('govtFinalSizeBadge').innerText = (blob.size / 1024).toFixed(1) + ' KB';
-    document.getElementById('govtFinalDimBadge').innerText = targetW + ' × ' + targetH + ' px';
-    switchGovtStep(5);
-  });
-}
-
-function compressCanvasToTarget(canvas, maxKB, callback) {
-  var minQ = 0.4, maxQ = 0.98, q = 0.88;
-  var attempts = 0;
-
-  function tryQ(currentQ) {
-    canvas.toBlob(function(blob) {
-      attempts++;
-      var currentKB = blob.size / 1024;
-      if (currentKB <= maxKB || attempts >= 6 || minQ >= maxQ) {
-        callback(blob);
-      } else {
-        maxQ = currentQ - 0.05;
-        q = (minQ + maxQ) / 2;
-        tryQ(q);
+  function setupCropDrag(canvas) {
+    var onStart = function(cx, cy) {
+      var rect = canvas.getBoundingClientRect();
+      var x = cx - rect.left;
+      var y = cy - rect.top;
+      if (x >= govtCropBox.x && x <= govtCropBox.x + govtCropBox.w && y >= govtCropBox.y && y <= govtCropBox.y + govtCropBox.h) {
+        isGovtDragging = true;
+        govtDragStartX = x - govtCropBox.x;
+        govtDragStartY = y - govtCropBox.y;
       }
-    }, 'image/jpeg', currentQ);
+    };
+
+    var onMove = function(cx, cy) {
+      if (!isGovtDragging) return;
+      var rect = canvas.getBoundingClientRect();
+      var x = cx - rect.left;
+      var y = cy - rect.top;
+      var newX = Math.max(0, Math.min(x - govtDragStartX, canvas.width - govtCropBox.w));
+      var newY = Math.max(0, Math.min(y - govtDragStartY, canvas.height - govtCropBox.h));
+      govtCropBox.x = newX;
+      govtCropBox.y = newY;
+      drawCropCanvas();
+    };
+
+    var onEnd = function() { isGovtDragging = false; };
+    canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
+    window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
+    window.onmouseup = onEnd;
+
+    canvas.ontouchstart = function(e) { if (e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
+    window.ontouchmove = function(e) { if (e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
+    window.ontouchend = onEnd;
   }
-  tryQ(q);
-}
 
-function downloadGovtFinalImage() {
-  if (!govtFinalBlob) return;
-  var fileName = (document.getElementById('govtRenameInput').value || 'GOVT_PHOTO_1INDIAJOB').trim() + '.jpg';
-  var a = document.createElement('a');
-  a.href = URL.createObjectURL(govtFinalBlob);
-  a.download = fileName;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
+  function rotateImage(deg) {
+    if (!govtRawImg) return;
+    var offCanvas = document.createElement('canvas');
+    var offCtx = offCanvas.getContext('2d');
+    offCanvas.width = govtRawImg.height;
+    offCanvas.height = govtRawImg.width;
+    offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
+    offCtx.rotate(deg * Math.PI / 180);
+    offCtx.drawImage(govtRawImg, -govtRawImg.width / 2, -govtRawImg.height / 2);
 
-function resetGovtToStep1() {
-  govtRawImg = null;
-  govtCroppedCanvas = null;
-  govtFinalBlob = null;
-  document.getElementById('govtFileInput').value = '';
-  switchGovtStep(1);
-}
+    var rImg = new Image();
+    rImg.onload = function() {
+      govtRawImg = rImg;
+      initCropScreen();
+    };
+    rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+  }
+
+  function applyCrop() {
+    var canvas = document.getElementById('govtCropCanvas');
+    if (!canvas || !govtRawImg) return;
+    var scaleX = govtRawImg.width / canvas.width;
+    var scaleY = govtRawImg.height / canvas.height;
+
+    govtCroppedCanvas = document.createElement('canvas');
+    govtCroppedCanvas.width = 350;
+    govtCroppedCanvas.height = 450;
+    var ctx = govtCroppedCanvas.getContext('2d');
+    ctx.drawImage(govtRawImg, govtCropBox.x * scaleX, govtCropBox.y * scaleY, govtCropBox.w * scaleX, govtCropBox.h * scaleY, 0, 0, 350, 450);
+
+    renderNamePreview();
+    switchStep(3);
+  }
+
+  function renderNamePreview() {
+    var previewCanvas = document.getElementById('govtNamePreviewCanvas');
+    if (!previewCanvas || !govtCroppedCanvas) return;
+    var ctx = previewCanvas.getContext('2d');
+    previewCanvas.width = 180;
+    previewCanvas.height = 230;
+
+    var addStrip = document.getElementById('govtAddStripCheckbox') ? document.getElementById('govtAddStripCheckbox').checked : false;
+    var nameVal = (document.getElementById('govtCandidateName') ? document.getElementById('govtCandidateName').value : '').toUpperCase().trim();
+    var dateVal = (document.getElementById('govtPhotoDate') ? document.getElementById('govtPhotoDate').value : '').trim();
+
+    var bannerH = (addStrip && (nameVal || dateVal)) ? 44 : 0;
+    var photoH = 230 - bannerH;
+
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, 180, 230);
+    ctx.drawImage(govtCroppedCanvas, 0, 0, 350, 450, 0, 0, 180, photoH);
+
+    if (bannerH > 0) {
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(0, photoH, 180, bannerH);
+      ctx.strokeStyle = '#000000';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, photoH);
+      ctx.lineTo(180, photoH);
+      ctx.stroke();
+
+      ctx.fillStyle = '#000000';
+      ctx.textAlign = 'center';
+      if (nameVal && dateVal) {
+        ctx.font = 'bold 12px sans-serif';
+        ctx.fillText(nameVal, 90, photoH + 18, 170);
+        ctx.font = 'bold 11px sans-serif';
+        ctx.fillText(dateVal, 90, photoH + 34, 170);
+      } else if (nameVal || dateVal) {
+        ctx.font = 'bold 13px sans-serif';
+        ctx.fillText(nameVal || dateVal, 90, photoH + 26, 170);
+      }
+    }
+  }
+
+  function applyPreset(preset) {
+    if (preset === 'ssc' || preset === 'state_psc') {
+      document.getElementById('govtFinalWidth').value = 350;
+      document.getElementById('govtFinalHeight').value = 450;
+      document.getElementById('govtFinalKB').value = 45;
+    } else if (preset === 'upsc') {
+      document.getElementById('govtFinalWidth').value = 350;
+      document.getElementById('govtFinalHeight').value = 350;
+      document.getElementById('govtFinalKB').value = 100;
+    } else if (preset === 'ibps') {
+      document.getElementById('govtFinalWidth').value = 200;
+      document.getElementById('govtFinalHeight').value = 230;
+      document.getElementById('govtFinalKB').value = 40;
+    } else if (preset === 'rrb') {
+      document.getElementById('govtFinalWidth').value = 210;
+      document.getElementById('govtFinalHeight').value = 270;
+      document.getElementById('govtFinalKB').value = 50;
+    }
+  }
+
+  function renderDimPreview() {
+    var dimCanvas = document.getElementById('govtDimPreviewCanvas');
+    var srcCanvas = document.getElementById('govtNamePreviewCanvas');
+    if (dimCanvas && srcCanvas) {
+      dimCanvas.width = 180;
+      dimCanvas.height = 230;
+      var ctx = dimCanvas.getContext('2d');
+      ctx.drawImage(srcCanvas, 0, 0, 180, 230);
+    }
+  }
+
+  function compressCanvasToTarget(canvas, maxKB, callback) {
+    var minQ = 0.4, maxQ = 0.98, q = 0.88;
+    var attempts = 0;
+
+    function tryQ(currentQ) {
+      canvas.toBlob(function(blob) {
+        attempts++;
+        var currentKB = blob.size / 1024;
+        if (currentKB <= maxKB || attempts >= 6 || minQ >= maxQ) {
+          callback(blob);
+        } else {
+          maxQ = currentQ - 0.05;
+          q = (minQ + maxQ) / 2;
+          tryQ(q);
+        }
+      }, 'image/jpeg', currentQ);
+    }
+    tryQ(q);
+  }
+
+  function generateFinalPhoto() {
+    var srcCanvas = document.getElementById('govtNamePreviewCanvas');
+    if (!srcCanvas) return;
+    var targetKB = parseInt(document.getElementById('govtFinalKB').value, 10) || 45;
+    var targetW = parseInt(document.getElementById('govtFinalWidth').value, 10) || 350;
+    var targetH = parseInt(document.getElementById('govtFinalHeight').value, 10) || 450;
+
+    var outCanvas = document.createElement('canvas');
+    outCanvas.width = targetW;
+    outCanvas.height = targetH;
+    var ctx = outCanvas.getContext('2d');
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, targetW, targetH);
+    ctx.drawImage(srcCanvas, 0, 0, targetW, targetH);
+
+    compressCanvasToTarget(outCanvas, targetKB, function(blob) {
+      govtFinalBlob = blob;
+      if (document.getElementById('govtFinalResultImg')) document.getElementById('govtFinalResultImg').src = URL.createObjectURL(blob);
+      if (document.getElementById('govtFinalSizeBadge')) document.getElementById('govtFinalSizeBadge').innerText = (blob.size / 1024).toFixed(1) + ' KB';
+      if (document.getElementById('govtFinalDimBadge')) document.getElementById('govtFinalDimBadge').innerText = targetW + ' × ' + targetH + ' px';
+      switchStep(5);
+    });
+  }
+
+  function downloadFinal() {
+    if (!govtFinalBlob) return;
+    var fileName = (document.getElementById('govtRenameInput') ? document.getElementById('govtRenameInput').value : 'GOVT_PHOTO_1INDIAJOB').trim() + '.jpg';
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(govtFinalBlob);
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  function resetAll() {
+    govtRawImg = null;
+    govtCroppedCanvas = null;
+    govtFinalBlob = null;
+    var fInput = document.getElementById('govtFileInput');
+    if (fInput) fInput.value = '';
+    switchStep(1);
+  }
+
+  function attachListeners() {
+    var fInput = document.getElementById('govtFileInput');
+    if (fInput) fInput.addEventListener('change', handleFileSelect);
+
+    var btnRotL = document.getElementById('btnGovtRotLeft');
+    if (btnRotL) btnRotL.onclick = function() { rotateImage(-90); };
+
+    var btnRotR = document.getElementById('btnGovtRotRight');
+    if (btnRotR) btnRotR.onclick = function() { rotateImage(90); };
+
+    var btnReset = document.getElementById('btnGovtResetBox');
+    if (btnReset) btnReset.onclick = initCropScreen;
+
+    var btnCrop = document.getElementById('btnGovtCropNext');
+    if (btnCrop) btnCrop.onclick = applyCrop;
+
+    var chkStrip = document.getElementById('govtAddStripCheckbox');
+    if (chkStrip) chkStrip.onchange = renderNamePreview;
+
+    var nameInp = document.getElementById('govtCandidateName');
+    if (nameInp) nameInp.oninput = renderNamePreview;
+
+    var dateInp = document.getElementById('govtPhotoDate');
+    if (dateInp) dateInp.oninput = renderNamePreview;
+
+    var btnSaveN = document.getElementById('btnGovtSaveName');
+    if (btnSaveN) btnSaveN.onclick = function() { renderDimPreview(); switchStep(4); };
+
+    var btnSkipN = document.getElementById('btnGovtSkipName');
+    if (btnSkipN) btnSkipN.onclick = function() {
+      if (document.getElementById('govtCandidateName')) document.getElementById('govtCandidateName').value = '';
+      if (document.getElementById('govtPhotoDate')) document.getElementById('govtPhotoDate').value = '';
+      renderDimPreview();
+      switchStep(4);
+    };
+
+    var selPreset = document.getElementById('govtExamPresetSelect');
+    if (selPreset) selPreset.onchange = function() { applyPreset(this.value); };
+
+    var btnCreate = document.getElementById('btnGovtCreatePhoto');
+    if (btnCreate) btnCreate.onclick = generateFinalPhoto;
+
+    var btnUpNew = document.getElementById('btnGovtUploadNew');
+    if (btnUpNew) btnUpNew.onclick = resetAll;
+
+    var btnDl = document.getElementById('btnGovtDownloadFinal');
+    if (btnDl) btnDl.onclick = downloadFinal;
+
+    var btnAnother = document.getElementById('btnGovtMakeAnother');
+    if (btnAnother) btnAnother.onclick = resetAll;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachListeners);
+  } else {
+    attachListeners();
+  }
+})();
+//]]>
 </script>
