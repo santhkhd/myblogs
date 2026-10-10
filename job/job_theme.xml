@@ -3932,6 +3932,9 @@
         if (entries.length > 0 && nextIndex <= totalResults) {
           fetchBloggerFeedBatch(nextIndex);
         }
+      }
+      window.onBloggerLiveFeedLoaded = onBloggerLiveFeedLoaded;
+
       // ==========================================================
       // Govt Exam Utility Suite JavaScript Engines (6-in-1 Hub)
       // ==========================================================
