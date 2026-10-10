@@ -2999,9 +2999,26 @@
 
       window.addEventListener('hashchange', checkHashRoute);
 
+      var liveFeedBatchesActive = 0;
+      function fetchBloggerFeedBatch(startIndex) {
+        try {
+          var script = document.createElement('script');
+          script.src = '/feeds/posts/default?alt=json-in-script&callback=onBloggerLiveFeedLoaded&start-index=' + startIndex + '&max-results=50&_=' + new Date().getTime();
+          script.async = true;
+          document.body.appendChild(script);
+        } catch (e) {}
+      }
+
+      function syncLiveBloggerPosts() {
+        fetchBloggerFeedBatch(1);
+      }
+
       function onBloggerLiveFeedLoaded(data) {
-        if (!data || !data.feed || !data.feed.entry || data.feed.entry.length === 0) return;
-        var entries = data.feed.entry;
+        if (!data || !data.feed) return;
+        var totalResults = data.feed.openSearch$totalResults ? parseInt(data.feed.openSearch$totalResults.$t, 10) : 0;
+        var startIndex = data.feed.openSearch$startIndex ? parseInt(data.feed.openSearch$startIndex.$t, 10) : 1;
+        var entries = data.feed.entry || [];
+        
         var newlyAdded = [];
         for (var i = 0; i < entries.length; i++) {
           var entry = entries[i];
@@ -3026,129 +3043,138 @@
             }
           }
 
-          var postId = 'live-post-' + (entry.id ? entry.id.$t.replace(/[^a-zA-Z0-9]/g, '-').slice(-20) : i);
+          var postId = 'live-post-' + (entry.id ? entry.id.$t.replace(/[^a-zA-Z0-9]/g, '-').slice(-20) : (startIndex + i));
 
-          var exists = ALL_JOBS.some(function(j) {
-            return j.title.toLowerCase().trim() === title.toLowerCase().trim();
-          });
+          var cleanTitle = title.replace(/\s*#[a-zA-Z0-9_\s,#]+$/, '').trim();
+          if (!cleanTitle) cleanTitle = title;
 
-          if (!exists && title) {
-            var cleanTitle = title.replace(/\s*#[a-zA-Z0-9_\s,#]+$/, '').trim();
-            if (!cleanTitle) cleanTitle = title;
-
-            function extractTableCell(html, labelPattern) {
-              var re = new RegExp('<td[^>]*>[^<]*' + labelPattern + '[^<]*<\\/td>\\s*<td[^>]*>([\\s\\S]*?)<\\/td>', 'i');
-              var m = html.match(re);
-              if (m && m[1]) {
-                return m[1].replace(/<[^>]+>/g, '').trim();
-              }
-              return '';
+          var existingIndex = -1;
+          for (var j = 0; j < ALL_JOBS.length; j++) {
+            if (ALL_JOBS[j].title.toLowerCase().trim() === cleanTitle.toLowerCase().trim() || ALL_JOBS[j].id === postId) {
+              existingIndex = j;
+              break;
             }
+          }
 
-            var cellOrg = extractTableCell(contentHtml, '(?:Recruiting Authority|Hiring Authority|Authority)');
-            var cellPost = extractTableCell(contentHtml, '(?:Post Name|Designation|Role)');
-            var cellVac = extractTableCell(contentHtml, '(?:Total Vacancies|Vacancies|Total Posts)');
-            var cellSal = extractTableCell(contentHtml, '(?:Salary|Pay Scale)');
-            var cellQual = extractTableCell(contentHtml, '(?:Qualification|Eligibility|Education)');
-            var cellAge = extractTableCell(contentHtml, '(?:Age Limit|Age)');
-            var cellLoc = extractTableCell(contentHtml, '(?:Job Location|Location)');
-            var cellFee = extractTableCell(contentHtml, '(?:Application Fee|Fee)');
-            var cellLastDate = extractTableCell(contentHtml, '(?:Last Date|Closing Date|Apply By)');
-            var cellStartDate = extractTableCell(contentHtml, '(?:Online Application Starts|Start Date)');
-
-            // Find qualification from labels if cell is empty or 'Required'
-            var qualFromLabels = '';
-            for (var lb = 0; lb < labels.length; lb++) {
-              var lLower = labels[lb].toLowerCase();
-              if (lLower.indexOf('pass') !== -1 || lLower.indexOf('degree') !== -1 || lLower.indexOf('diploma') !== -1 || lLower.indexOf('iti') !== -1 || lLower.indexOf('graduate') !== -1 || lLower.indexOf('b.sc') !== -1 || lLower.indexOf('b.tech') !== -1 || lLower.indexOf('nursing') !== -1 || lLower.indexOf('clerk') !== -1) {
-                qualFromLabels = labels[lb];
-                break;
-              }
+          function extractTableCell(html, labelPattern) {
+            var re = new RegExp('<td[^>]*>[^<]*' + labelPattern + '[^<]*<\\/td>\\s*<td[^>]*>([\\s\\S]*?)<\\/td>', 'i');
+            var m = html.match(re);
+            if (m && m[1]) {
+              return m[1].replace(/<[^>]+>/g, '').trim();
             }
+            return '';
+          }
 
-            // Find organization name from labels (skip generic qualification/category labels)
-            var orgFromLabels = '';
-            for (var ol = 0; ol < labels.length; ol++) {
-              var oLower = labels[ol].toLowerCase();
-              if (oLower.indexOf('pass') === -1 && oLower.indexOf('govt jobs') === -1 && oLower.indexOf('job alerts') === -1 && oLower.indexOf('degree') === -1 && oLower.indexOf('diploma') === -1 && oLower.indexOf('iti') === -1 && oLower.indexOf('central govt') === -1) {
-                orgFromLabels = labels[ol];
-                break;
-              }
+          var cellOrg = extractTableCell(contentHtml, '(?:Recruiting Authority|Hiring Authority|Authority)');
+          var cellPost = extractTableCell(contentHtml, '(?:Post Name|Designation|Role)');
+          var cellVac = extractTableCell(contentHtml, '(?:Total Vacancies|Vacancies|Total Posts)');
+          var cellSal = extractTableCell(contentHtml, '(?:Salary|Pay Scale)');
+          var cellQual = extractTableCell(contentHtml, '(?:Qualification|Eligibility|Education)');
+          var cellAge = extractTableCell(contentHtml, '(?:Age Limit|Age)');
+          var cellLoc = extractTableCell(contentHtml, '(?:Job Location|Location)');
+          var cellFee = extractTableCell(contentHtml, '(?:Application Fee|Fee)');
+          var cellLastDate = extractTableCell(contentHtml, '(?:Last Date|Closing Date|Apply By)');
+          var cellStartDate = extractTableCell(contentHtml, '(?:Online Application Starts|Start Date)');
+
+          // Find qualification from labels if cell is empty or 'Required'
+          var qualFromLabels = '';
+          for (var lb = 0; lb < labels.length; lb++) {
+            var lLower = labels[lb].toLowerCase();
+            if (lLower.indexOf('pass') !== -1 || lLower.indexOf('degree') !== -1 || lLower.indexOf('diploma') !== -1 || lLower.indexOf('iti') !== -1 || lLower.indexOf('graduate') !== -1 || lLower.indexOf('b.sc') !== -1 || lLower.indexOf('b.tech') !== -1 || lLower.indexOf('nursing') !== -1 || lLower.indexOf('clerk') !== -1) {
+              qualFromLabels = labels[lb];
+              break;
             }
+          }
 
-            var qual = cellQual;
-            if (!qual || qual.toLowerCase() === 'required' || qual.length < 3) {
-              qual = qualFromLabels || 'Any Degree / 12th / 10th Pass';
+          // Find organization name from labels (skip generic qualification/category labels)
+          var orgFromLabels = '';
+          for (var ol = 0; ol < labels.length; ol++) {
+            var oLower = labels[ol].toLowerCase();
+            if (oLower.indexOf('pass') === -1 && oLower.indexOf('govt jobs') === -1 && oLower.indexOf('job alerts') === -1 && oLower.indexOf('degree') === -1 && oLower.indexOf('diploma') === -1 && oLower.indexOf('iti') === -1 && oLower.indexOf('central govt') === -1) {
+              orgFromLabels = labels[ol];
+              break;
             }
+          }
 
-            var orgName = cellOrg;
-            if (!orgName || orgName.toLowerCase().indexOf('pass') !== -1 || orgName.toLowerCase().indexOf('degree') !== -1) {
-              orgName = orgFromLabels || (labels.length > 0 ? labels[0] : 'Govt Recruitment');
+          var qual = cellQual;
+          if (!qual || qual.toLowerCase() === 'required' || qual.length < 3) {
+            qual = qualFromLabels || 'Any Degree / 12th / 10th Pass';
+          }
+
+          var orgName = cellOrg;
+          if (!orgName || orgName.toLowerCase().indexOf('pass') !== -1 || orgName.toLowerCase().indexOf('degree') !== -1) {
+            orgName = orgFromLabels || (labels.length > 0 ? labels[0] : 'Govt Recruitment');
+          }
+
+          var postName = cellPost || cleanTitle;
+          var vacancies = cellVac || 'Various Posts';
+          var salary = cellSal || 'As per Govt Norms';
+          var ageLimit = cellAge || '18-40 Years';
+          var location = cellLoc || ((labels.indexOf('Kerala Govt Jobs') !== -1 || labels.indexOf('Kerala PSC') !== -1) ? 'Kerala' : 'All India');
+          var fee = cellFee || 'Refer Notification';
+          var lastDate = cellLastDate || published;
+          var startDate = cellStartDate || published;
+
+          // Extract genuine external official application and PDF links from post content
+          var linkMatches = contentHtml.match(/href=['"](https?:\/\/[^'"]+)['"]/gi) || [];
+          var externalLinks = [];
+          for (var m = 0; m < linkMatches.length; m++) {
+            var cleanHref = linkMatches[m].replace(/^href=['"]|['"]$/gi, '');
+            if (cleanHref.indexOf('blogger.com') === -1 && cleanHref.indexOf('blogspot.com') === -1 && cleanHref.indexOf('google.com') === -1) {
+              externalLinks.push(cleanHref);
             }
+          }
 
-            var postName = cellPost || cleanTitle;
-            var vacancies = cellVac || 'Various Posts';
-            var salary = cellSal || 'As per Govt Norms';
-            var ageLimit = cellAge || '18-40 Years';
-            var location = cellLoc || ((labels.indexOf('Kerala Govt Jobs') !== -1 || labels.indexOf('Kerala PSC') !== -1) ? 'Kerala' : 'All India');
-            var fee = cellFee || 'Refer Notification';
-            var lastDate = cellLastDate || published;
-            var startDate = cellStartDate || published;
-
-            // Extract genuine external official application and PDF links from post content
-            var linkMatches = contentHtml.match(/href=['"](https?:\/\/[^'"]+)['"]/gi) || [];
-            var externalLinks = [];
-            for (var m = 0; m < linkMatches.length; m++) {
-              var cleanHref = linkMatches[m].replace(/^href=['"]|['"]$/gi, '');
-              if (cleanHref.indexOf('blogger.com') === -1 && cleanHref.indexOf('blogspot.com') === -1 && cleanHref.indexOf('google.com') === -1) {
-                externalLinks.push(cleanHref);
-              }
+          var applyUrl = externalLinks.length > 0 ? externalLinks[0] : (link || 'https://www.google.com');
+          var pdfUrl = '';
+          for (var p = 0; p < externalLinks.length; p++) {
+            if (externalLinks[p].toLowerCase().indexOf('.pdf') !== -1) {
+              pdfUrl = externalLinks[p];
+              break;
             }
+          }
+          if (!pdfUrl) {
+            pdfUrl = externalLinks.length > 1 ? externalLinks[1] : applyUrl;
+          }
 
-            var applyUrl = externalLinks.length > 0 ? externalLinks[0] : (link || 'https://www.google.com');
-            var pdfUrl = '';
-            for (var p = 0; p < externalLinks.length; p++) {
-              if (externalLinks[p].toLowerCase().indexOf('.pdf') !== -1) {
-                pdfUrl = externalLinks[p];
-                break;
-              }
-            }
-            if (!pdfUrl) {
-              pdfUrl = externalLinks.length > 1 ? externalLinks[1] : applyUrl;
-            }
+          var websiteDomain = 'Official Portal';
+          if (applyUrl && applyUrl.indexOf('http') === 0) {
+            websiteDomain = applyUrl.replace(/^https?:\/\//, '').split('/')[0];
+          }
 
-            var websiteDomain = 'Official Portal';
-            if (applyUrl && applyUrl.indexOf('http') === 0) {
-              websiteDomain = applyUrl.replace(/^https?:\/\//, '').split('/')[0];
-            }
+          var itemType = 'notification';
+          if (title.toLowerCase().indexOf('admit') !== -1 || title.toLowerCase().indexOf('hall ticket') !== -1) itemType = 'admit_card';
+          else if (title.toLowerCase().indexOf('result') !== -1 || title.toLowerCase().indexOf('ranked list') !== -1) itemType = 'result';
+          else if (title.toLowerCase().indexOf('answer key') !== -1) itemType = 'answer_key';
+          else if (title.toLowerCase().indexOf('syllabus') !== -1) itemType = 'syllabus';
 
-            var itemType = 'notification';
-            if (title.toLowerCase().indexOf('admit') !== -1 || title.toLowerCase().indexOf('hall ticket') !== -1) itemType = 'admit_card';
-            else if (title.toLowerCase().indexOf('result') !== -1 || title.toLowerCase().indexOf('ranked list') !== -1) itemType = 'result';
-            else if (title.toLowerCase().indexOf('answer key') !== -1) itemType = 'answer_key';
-            else if (title.toLowerCase().indexOf('syllabus') !== -1) itemType = 'syllabus';
+          var liveJob = {
+            id: postId,
+            title: cleanTitle,
+            org_name: orgName,
+            post_name: cleanTitle,
+            vacancies: vacancies,
+            salary: salary,
+            qualification: qual,
+            age_limit: ageLimit,
+            location: location,
+            fee: 'Refer Notification',
+            category: labels.length > 0 ? labels[0] : 'Central Govt Jobs',
+            labels: labels,
+            start_date: published,
+            last_date: lastDate,
+            apply_url: applyUrl,
+            pdf_url: pdfUrl,
+            website: websiteDomain,
+            item_type: itemType,
+            content_html: contentHtml
+          };
 
-            newlyAdded.push({
-              id: postId,
-              title: cleanTitle,
-              org_name: orgName,
-              post_name: cleanTitle,
-              vacancies: vacancies,
-              salary: salary,
-              qualification: qual,
-              age_limit: ageLimit,
-              location: (labels.indexOf('Kerala Govt Jobs') !== -1 || labels.indexOf('Kerala PSC') !== -1) ? 'Kerala' : 'All India',
-              fee: 'Refer Notification',
-              category: labels.length > 0 ? labels[0] : 'Central Govt Jobs',
-              labels: labels,
-              start_date: published,
-              last_date: lastDate,
-              apply_url: applyUrl,
-              pdf_url: pdfUrl,
-              website: websiteDomain,
-              item_type: itemType,
-              content_html: contentHtml
-            });
+          if (existingIndex !== -1) {
+            // Update base item with live Blogger data
+            ALL_JOBS[existingIndex] = Object.assign({}, ALL_JOBS[existingIndex], liveJob);
+          } else if (cleanTitle) {
+            newlyAdded.push(liveJob);
           }
         }
 
@@ -3161,17 +3187,14 @@
         updateChannelCounts();
         updateCategoryCounts();
         filterJobs();
+
+        // Paginate to next batch if there are more posts in Blogger feed
+        var nextIndex = startIndex + entries.length;
+        if (entries.length > 0 && nextIndex <= totalResults) {
+          fetchBloggerFeedBatch(nextIndex);
+        }
       }
       window.onBloggerLiveFeedLoaded = onBloggerLiveFeedLoaded;
-
-      function syncLiveBloggerPosts() {
-        try {
-          var script = document.createElement('script');
-          script.src = '/feeds/posts/default?alt=json-in-script&callback=onBloggerLiveFeedLoaded&max-results=500';
-          script.async = true;
-          document.body.appendChild(script);
-        } catch (e) {}
-      }
 
       var isNativePostPage = (window.location.pathname.indexOf('.html') !== -1) || (document.getElementById('nativePostContainer') !== null);
 
