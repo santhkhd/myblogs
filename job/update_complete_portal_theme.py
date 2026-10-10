@@ -2799,7 +2799,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
         for (var i = 0; i < pageItems.length; i++) {
           var job = pageItems[i];
           var statusObj = getDeadlineStatus(job.last_date);
-          var todayBadge = isJobAddedToday(job) ? "<span class='badge-today'>⚡ TODAY</span>" : "";
+          var todayBadge = (currentFilter === '__TODAY__') ? "<span class='badge-today'>⚡ TODAY</span>" : "";
           var isSaved = savedList.indexOf(job.id) !== -1;
           var bookmarkIcon = isSaved ? "<i class='fas fa-bookmark saved'></i>" : "<i class='far fa-bookmark'></i>";
 
