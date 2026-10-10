@@ -2721,7 +2721,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
               "<h3 style='font-size:1.05rem; font-weight:900; color:#92400E; margin:0 0 4px;'><i class='fas fa-bookmark' style='color:#D97706;'></i> Your Bookmarked &amp; Saved Notifications</h3>" +
               "<p style='font-size:0.84rem; color:#B45309; margin:0;'>Saved directly in your browser. Access all your tracked vacancies instantly anytime.</p>" +
             "</div>" +
-            "<button onclick='switchPortalType(\"all\")' class='back-nav-bar' style='margin:0; background:#FFFFFF; color:#92400E; border-color:#F59E0B;' type='button'><i class='fas fa-th-large'></i> Explore All Jobs</button>" +
+            "<button onclick='switchPortalType(\\'all\\')' class='back-nav-bar' style='margin:0; background:#FFFFFF; color:#92400E; border-color:#F59E0B;' type='button'><i class='fas fa-th-large'></i> Explore All Jobs</button>" +
           "</div>";
         }
 
@@ -3930,6 +3930,9 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
   </body>
 </html>"""
 
+import re
+import subprocess
+
 def generate_theme():
     jobs_json_str = json.dumps(base_mod.JOBS_150, ensure_ascii=False).replace("</script>", "<\\/script>")
     final_theme = THEME_TEMPLATE.replace("__JOBS_JSON__", jobs_json_str)
@@ -3940,7 +3943,19 @@ def generate_theme():
 
     # Strict SAX Validation
     xml.sax.parseString(final_theme.encode('utf-8'), xml.sax.ContentHandler())
-    print("SUCCESS: 'job_theme.xml' with Full Footer, 6-in-1 Modal, Floating Launcher & Clean Hash Routing validated with 0 errors!")
+
+    # Strict JavaScript Syntax Validation
+    scripts = re.findall(r'<script[^>]*>(.*?)</script>', final_theme, re.DOTALL)
+    for i, s in enumerate(scripts):
+        if 'application/ld+json' in s or '"@context"' in s:
+            continue
+        clean_js = s.replace('//<![CDATA[', '').replace('//]]>', '')
+        res = subprocess.run(['node', '-e', 'let code = ""; process.stdin.on("data", c => code += c); process.stdin.on("end", () => { new Function(code); });'], input=clean_js, capture_output=True, text=True, encoding='utf-8')
+        if res.returncode != 0:
+            raise RuntimeError(f"JavaScript Syntax Error in Script #{i}: {res.stderr}")
+
+    print("SUCCESS: 'job_theme.xml' validated with 0 XML and 0 JS Syntax Errors!")
 
 if __name__ == "__main__":
     generate_theme()
+
