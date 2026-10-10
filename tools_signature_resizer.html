@@ -353,7 +353,7 @@
   }
 
   function handleFileSelect(e) {
-    var file = e.target.files && e.target.files[0];
+    var file = (e.target && e.target.files && e.target.files[0]) || (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]);
     if (!file) return;
     var reader = new FileReader();
     reader.onload = function(evt) {
@@ -821,13 +821,45 @@
 
   function attachListeners() {
     var fInput = document.getElementById('sigFileInput');
+    var dropArea = document.getElementById('sigDropArea');
+    var btnSelect = document.getElementById('btnSelectSig');
+
     if (fInput) fInput.addEventListener('change', handleFileSelect);
 
-    var dropArea = document.getElementById('sigDropArea');
-    if (dropArea) dropArea.onclick = function() { if (fInput) fInput.click(); };
+    if (dropArea) {
+      dropArea.addEventListener('click', function(e) {
+        if (e.target !== fInput && fInput) fInput.click();
+      });
 
-    var btnSelect = document.getElementById('btnSelectSig');
-    if (btnSelect) btnSelect.onclick = function(e) { e.stopPropagation(); if (fInput) fInput.click(); };
+      dropArea.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropArea.style.borderColor = '#2563EB';
+        dropArea.style.background = '#EFF6FF';
+      });
+
+      dropArea.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropArea.style.borderColor = '#3B82F6';
+        dropArea.style.background = '#F8FAFC';
+      });
+
+      dropArea.addEventListener('drop', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropArea.style.borderColor = '#3B82F6';
+        dropArea.style.background = '#F8FAFC';
+        handleFileSelect(e);
+      });
+    }
+
+    if (btnSelect) {
+      btnSelect.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (fInput) fInput.click();
+      });
+    }
 
     // Ratio Preset Buttons
     var ratioBtns = document.querySelectorAll('.sigRatioBtn');
