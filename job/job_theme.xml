@@ -2160,27 +2160,27 @@
         }
       }
 
-      // Check if job is newly added (Today: exact calendar date match)
+      // Check if job was published today (exact calendar date)
       function isJobAddedToday(job) {
         if (!job || !job.start_date) return false;
         var today = new Date();
-        var jobDate = new Date(job.start_date);
-        if (isNaN(jobDate.getTime())) return false;
-        return today.getFullYear() === jobDate.getFullYear() &&
-               today.getMonth() === jobDate.getMonth() &&
-               today.getDate() === jobDate.getDate();
+        var todayStr = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+        return job.start_date === todayStr;
       }
 
-      // Check if job was added Yesterday
-      function isJobAddedYesterday(job) {
+      // Check if job belongs to today or the latest uploaded batch
+      function isJobInLatestBatch(job) {
         if (!job || !job.start_date) return false;
-        var today = new Date();
-        var yesterday = new Date(today.getTime() - (24 * 60 * 60 * 1000));
-        var jobDate = new Date(job.start_date);
-        if (isNaN(jobDate.getTime())) return false;
-        return yesterday.getFullYear() === jobDate.getFullYear() &&
-               yesterday.getMonth() === jobDate.getMonth() &&
-               yesterday.getDate() === jobDate.getDate();
+        if (isJobAddedToday(job)) return true;
+        var hasToday = ALL_JOBS.some(function(j) { return isJobAddedToday(j); });
+        if (hasToday) return false;
+        var latestDateStr = '';
+        for (var i = 0; i < ALL_JOBS.length; i++) {
+          if (ALL_JOBS[i].start_date && ALL_JOBS[i].start_date > latestDateStr) {
+            latestDateStr = ALL_JOBS[i].start_date;
+          }
+        }
+        return job.start_date === latestDateStr;
       }
 
       // Smart Deadline Status Calculator
@@ -2307,9 +2307,8 @@
           }).length;
         }
 
-        var todayCount = ALL_JOBS.filter(function(j) { return isJobAddedToday(j); }).length;
-        var freshCount = ALL_JOBS.filter(function(j) { return isJobAddedToday(j) || isJobAddedYesterday(j); }).length;
-        var displayTodayCount = todayCount > 0 ? todayCount : freshCount;
+        var todayJobs = ALL_JOBS.filter(function(j) { return isJobInLatestBatch(j); });
+        var displayTodayCount = todayJobs.length;
         var elToday = document.getElementById('cnt-today');
         if (elToday) elToday.innerText = displayTodayCount;
         var elSideToday = document.getElementById('side-today');
@@ -2526,12 +2525,6 @@
         for (var i = 0; i < pageItems.length; i++) {
           var job = pageItems[i];
           var statusObj = getDeadlineStatus(job.last_date);
-          var todayBadge = '';
-          if (isJobAddedToday(job)) {
-            todayBadge = "<span class='badge-today'>⚡ TODAY</span>";
-          } else if (isJobAddedYesterday(job)) {
-            todayBadge = "<span class='badge-yesterday' style='background:rgba(245,158,11,0.15); color:#D97706; border:1px solid rgba(245,158,11,0.3); font-size:0.7rem; padding:2px 7px; border-radius:4px; font-weight:800; text-transform:uppercase;'>⚡ YESTERDAY</span>";
-          }
           var isSaved = savedList.indexOf(job.id) !== -1;
           var bookmarkIcon = isSaved ? "<i class='fas fa-bookmark saved'></i>" : "<i class='far fa-bookmark'></i>";
 
@@ -2545,7 +2538,6 @@
           html += "<div class='job-card' data-jobid='" + job.id + "' onclick='openJobFullPage(this.dataset.jobid)'>" +
                     "<div class='job-card-top'>" +
                       "<div class='job-card-badges'>" +
-                        todayBadge +
                         "<span class='status-badge " + statusObj.css + "'>" + statusObj.label + "</span>" +
                       "</div>" +
                       "<div class='job-card-actions'>" +
@@ -2680,7 +2672,7 @@
 
           // Category pill filter
           if (currentFilter === '__TODAY__') {
-            if (!isJobAddedToday(job) && !isJobAddedYesterday(job)) return false;
+            if (!isJobInLatestBatch(job)) return false;
           } else if (currentFilter) {
             var allText = (job.title + ' ' + job.category + ' ' + (job.labels ? job.labels.join(' ') : '') + ' ' + job.qualification + ' ' + job.location + ' ' + job.org_name).toLowerCase();
             if (allText.indexOf(currentFilter.toLowerCase()) === -1) return false;
@@ -3081,7 +3073,8 @@
           var entry = entries[i];
           var title = entry.title ? (entry.title.$t || '') : '';
           var contentHtml = entry.content ? (entry.content.$t || '') : (entry.summary ? entry.summary.$t : '');
-          var published = entry.published ? entry.published.$t.split('T')[0] : new Date().toISOString().split('T')[0];
+          var pubDateObj = entry.published ? new Date(entry.published.$t) : new Date();
+          var published = pubDateObj.getFullYear() + '-' + ('0' + (pubDateObj.getMonth() + 1)).slice(-2) + '-' + ('0' + pubDateObj.getDate()).slice(-2);
           
           var labels = [];
           if (entry.category) {
