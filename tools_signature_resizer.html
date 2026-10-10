@@ -1,197 +1,565 @@
 <!-- 
   ========================================================================
-  PAGE TITLE: Government Job Signature Resizer & Background Cleaner Online
+  PAGE TITLE: ✍️ Signature Resizer & Background Cleaner - 140x60, 150x100 px (10KB - 20KB)
   PERMALINK / SLUG: govt-job-signature-resizer
   ========================================================================
 -->
-<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+<div class="pi7-sig-wrapper" style="max-width:920px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#1E293B; line-height:1.6;">
 
-  <!-- Header Banner -->
-  <div style="background:linear-gradient(135deg, #4338CA 0%, #6366F1 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(99,102,241,0.25);">
-    <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
+  <!-- Main Heading -->
+  <div style="text-align:center; margin-bottom:2rem;">
+    <span style="background:#EEF2FF; color:#4F46E5; font-size:0.8rem; font-weight:800; padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.6rem; border:1px solid #C7D2FE;">
       ✍️ Auto Shadow Cleaner &amp; Contrast Enhancer
     </span>
-    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
-      Govt Exam Signature Resizer &amp; Cleaner Online
+    <h1 style="font-size:2rem; font-weight:900; color:#0F172A; margin:0 0 0.5rem; line-height:1.25;">
+      Govt Exam Signature Resizer &amp; Cleaner
     </h1>
-    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
-      Crop, resize and enhance signatures for Kerala PSC (150&#215;100 px), SSC (140&#215;60 px), Bank IBPS, UPSC and Railway exams. Automatically removes phone shadow and turns grey paper pure white.
+    <p style="font-size:0.95rem; color:#64748B; max-width:620px; margin:0 auto;">
+      Crop, whiten paper background, and resize signature for Kerala PSC (150&#215;100 px), SSC (140&#215;60 px), IBPS, UPSC, and RRB strictly under 10KB - 20KB.
     </p>
   </div>
 
-  <!-- Interactive Tool Box -->
-  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem;">
-      <!-- Controls -->
-      <div>
-        <div style="border:2px dashed #6366F1; border-radius:12px; padding:1.75rem 1rem; text-align:center; background:#EEF2FF; cursor:pointer; position:relative;">
-          <div style="font-size:2.2rem; color:#4F46E5; margin-bottom:0.5rem;">✍️</div>
-          <strong style="font-size:1rem; color:#3730A3; display:block;">Click to Upload Signature</strong>
-          <span style="font-size:0.8rem; color:#64748B;">Upload photo of paper signature</span>
-          <input type="file" id="pageSigInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="handlePageSigUpload(event)">
-        </div>
+  <!-- Wizard Card Container -->
+  <div id="sigWizardContainer" style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:20px; padding:2rem 1.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin-bottom:2.5rem; min-height:380px;">
 
-        <div style="margin-top:1.25rem;">
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Select Signature Preset:</label>
-          <select id="pageSigPreset" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.9rem; font-weight:700; background:#F8FAFC;" onchange="applyPageSigPreset(this.value)">
-            <option value="kpsc_sig">Kerala PSC Signature - 150&#215;100 px (&lt;30 KB)</option>
-            <option value="ssc_sig">SSC Signature - 140&#215;60 px (10-20 KB)</option>
-            <option value="ibps_sig">IBPS &amp; Bank Signature - 140&#215;60 px (10-20 KB)</option>
-            <option value="upsc_sig">UPSC Signature - 350&#215;350 px (20-300 KB)</option>
-            <option value="rrb_sig">Railway RRB Signature - 140&#215;60 px (10-20 KB)</option>
-            <option value="custom">Custom Signature Dimension</option>
-          </select>
-        </div>
+    <!-- STEP INDICATOR -->
+    <div style="display:flex; justify-content:center; align-items:center; gap:8px; margin-bottom:2rem; flex-wrap:wrap;">
+      <div id="sigDot1" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#4F46E5; color:#FFFFFF;">
+        <span>1</span> Upload
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="sigDot2" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>2</span> Crop Signature
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="sigDot3" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>3</span> Clean &amp; Contrast
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="sigDot4" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>4</span> Dimensions &amp; KB
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="sigDot5" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>5</span> Download
+      </div>
+    </div>
 
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:1rem;">
-          <div>
-            <label style="display:block; font-size:0.82rem; font-weight:800; color:#475569; margin-bottom:4px;">Width (px):</label>
-            <input type="number" id="pageSigW" value="150" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageSigCanvas()">
-          </div>
-          <div>
-            <label style="display:block; font-size:0.82rem; font-weight:800; color:#475569; margin-bottom:4px;">Height (px):</label>
-            <input type="number" id="pageSigH" value="100" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageSigCanvas()">
-          </div>
-        </div>
+    <!-- STEP 1: UPLOAD BOX -->
+    <div id="sigStep1" style="display:block;">
+      <div style="border:2px dashed #818CF8; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#4F46E5'; this.style.background='#EEF2FF';" onmouseout="this.style.borderColor='#818CF8'; this.style.background='#F8FAFC';">
+        <p style="font-size:1.15rem; font-weight:700; color:#334155; margin:0 0 1.25rem;">
+          Select Or Drag &amp; Drop Signature Photo Here
+        </p>
+        <button type="button" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.3); pointer-events:none;">
+          Select Signature
+        </button>
+        <input type="file" id="sigFileInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="onSigImageSelected(event)">
+      </div>
+      <p style="text-align:center; font-size:0.85rem; color:#94A3B8; margin-top:1rem;">
+        🔒 Processed 100% in your browser. Automatic shadow removal turns phone camera photos into clean scanned signatures.
+      </p>
+    </div>
 
-        <div style="margin-top:1.15rem; display:flex; align-items:center; gap:8px;">
-          <input type="checkbox" id="pageSigEnhance" checked="checked" style="width:18px; height:18px;" onchange="updatePageSigCanvas()">
-          <label for="pageSigEnhance" style="font-size:0.88rem; font-weight:800; color:#4F46E5; cursor:pointer;">
-            ✨ Remove Shadow &amp; Whiten Background Paper
-          </label>
-        </div>
+    <!-- STEP 2: CROP SIGNATURE -->
+    <div id="sigStep2" style="display:none; text-align:center;">
+      <div style="background:#0F172A; border-radius:12px; padding:1rem; max-width:650px; margin:0 auto 1.5rem; position:relative; overflow:hidden; min-height:280px; display:flex; align-items:center; justify-content:center;">
+        <canvas id="sigCropCanvas" style="max-width:100%; max-height:340px; object-fit:contain; border-radius:6px; cursor:crosshair;"></canvas>
       </div>
 
-      <!-- Preview Box -->
-      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
-        <div style="font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:10px;">
-          Clean Signature Preview (<span id="pageSigSizeBadge" style="color:#059669;">0 KB</span>)
+      <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:1.5rem; flex-wrap:wrap;">
+        <button type="button" onclick="rotateSigImage(-90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+          ↺ Rotate Left
+        </button>
+        <button type="button" onclick="rotateSigImage(90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+          ↻ Rotate Right
+        </button>
+        <button type="button" onclick="initSigCropScreen()" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+          ⛶ Reset Box
+        </button>
+      </div>
+
+      <button type="button" onclick="applySigCropAndNext()" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+        Crop &amp; Next
+      </button>
+    </div>
+
+    <!-- STEP 3: CLEAN BACKGROUND & CONTRAST -->
+    <div id="sigStep3" style="display:none;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:2rem; align-items:center;">
+        <!-- Live Signature Preview Left -->
+        <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; text-align:center;">
+          <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 6px 16px rgba(0,0,0,0.08); background:#FFFFFF; padding:4px;">
+            <canvas id="sigCleanPreviewCanvas" width="200" height="100" style="width:200px; height:100px; display:block; background:#FFFFFF;"></canvas>
+          </div>
+          <div style="font-size:0.8rem; color:#64748B; margin-top:8px; font-weight:700;">Cleaned White Paper Preview</div>
         </div>
-        <div style="border:1px solid #CBD5E1; box-shadow:0 4px 14px rgba(0,0,0,0.1); background:#FFFFFF; display:inline-block; border-radius:4px; overflow:hidden;">
-          <canvas id="pageSigCanvas" width="150" height="100" style="max-width:200px; max-height:100px; display:block;"></canvas>
+
+        <!-- Filter Controls Right -->
+        <div>
+          <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin:0 0 1rem;">
+            Enhance &amp; Whiten Background
+          </h3>
+
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; font-weight:700; color:#334155; margin-bottom:1.25rem; cursor:pointer;">
+            <input type="checkbox" id="autoWhitePaperCheckbox" checked onchange="renderSigCleanPreview()">
+            Pure White Paper (Remove Grey Shadow)
+          </label>
+
+          <!-- Ink Darkening Slider -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:4px;">
+              <span>Ink Darkness / Threshold:</span>
+              <span id="inkDarknessVal">160</span>
+            </div>
+            <input type="range" id="inkThresholdSlider" min="80" max="230" value="160" style="width:100%;" oninput="document.getElementById('inkDarknessVal').innerText=this.value; renderSigCleanPreview();">
+          </div>
+
+          <!-- Ink Color Option -->
+          <div style="margin-bottom:1.5rem;">
+            <label style="display:block; font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:6px;">Ink Color Style:</label>
+            <div style="display:flex; gap:10px;">
+              <label style="display:flex; align-items:center; gap:6px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+                <input type="radio" name="sigInkColor" value="black" checked onchange="renderSigCleanPreview()"> Black Ink
+              </label>
+              <label style="display:flex; align-items:center; gap:6px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+                <input type="radio" name="sigInkColor" value="blue" onchange="renderSigCleanPreview()"> Blue Ink
+              </label>
+              <label style="display:flex; align-items:center; gap:6px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+                <input type="radio" name="sigInkColor" value="original" onchange="renderSigCleanPreview()"> Original
+              </label>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div style="display:flex; gap:12px;">
+            <button type="button" onclick="saveSigCleanAndNext()" style="background:#4F46E5; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(79,70,229,0.3);">
+              Save &amp; Next
+            </button>
+            <button type="button" onclick="skipSigCleanAndNext()" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+              Skip
+            </button>
+          </div>
         </div>
-        <button type="button" onclick="downloadPageSignature()" style="margin-top:1.25rem; width:100%; background:linear-gradient(135deg, #059669 0%, #047857 100%); color:#FFFFFF; border:none; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(5,150,105,0.3); transition:all 0.2s;">
-          📥 Download Official Signature
+      </div>
+    </div>
+
+    <!-- STEP 4: SET SIZE & DIMENSIONS -->
+    <div id="sigStep4" style="display:none;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:2rem; align-items:center;">
+        <!-- Image Preview Left -->
+        <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; text-align:center;">
+          <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 6px 16px rgba(0,0,0,0.08); background:#FFFFFF; padding:4px;">
+            <canvas id="sigDimPreviewCanvas" width="150" height="100" style="width:150px; height:100px; display:block;"></canvas>
+          </div>
+        </div>
+
+        <!-- Controls Right -->
+        <div>
+          <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin:0 0 1rem;">
+            Select Exam Preset &amp; KB
+          </h3>
+
+          <div style="margin-bottom:1rem;">
+            <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Exam Preset</label>
+            <select id="sigExamPreset" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; background:#F8FAFC;" onchange="applySigPresetChoice(this.value)">
+              <option value="kpsc">Kerala PSC (150 × 100 px, 10-30 KB)</option>
+              <option value="ssc" selected>SSC &amp; Railway RRB (140 × 60 px, 10-20 KB)</option>
+              <option value="ibps">IBPS / SBI Bank (140 × 60 px, 10-20 KB)</option>
+              <option value="upsc">UPSC Online (350 × 350 px, 20-50 KB)</option>
+              <option value="custom">Custom Dimensions</option>
+            </select>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.25rem;">
+            <div style="flex:1;">
+              <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Width (PX)</label>
+              <input type="number" id="sigFinalWidth" value="140" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800;">
+            </div>
+            <span style="font-weight:900; color:#94A3B8; margin-top:16px;">✕</span>
+            <div style="flex:1;">
+              <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Height (PX)</label>
+              <input type="number" id="sigFinalHeight" value="60" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800;">
+            </div>
+          </div>
+
+          <div style="margin-bottom:1.5rem;">
+            <div style="font-size:0.82rem; color:#64748B; margin-bottom:6px;">
+              ℹ️ Target File Size In KB
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:0.9rem; font-weight:800; color:#334155;">Size:</span>
+              <input type="number" id="sigFinalKB" value="15" min="5" max="50" style="width:80px; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; text-align:center;">
+              <span style="background:#475569; color:#FFFFFF; font-size:0.85rem; font-weight:800; padding:8px 12px; border-radius:6px;">Kb</span>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button type="button" onclick="generateFinalSignature()" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(79,70,229,0.3);">
+              Create Signature
+            </button>
+            <button type="button" onclick="resetSigToStep1()" style="background:#FFFFFF; color:#4F46E5; border:1.5px solid #4F46E5; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+              + Upload New Image
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5: FINAL RESULT / DOWNLOAD -->
+    <div id="sigStep5" style="display:none; text-align:center;">
+      <div style="max-width:340px; margin:0 auto; background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+        <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.1); background:#FFFFFF; padding:6px; margin-bottom:1rem;">
+          <img id="sigFinalResultImg" src="" alt="Signature" style="max-width:200px; height:auto; display:block; object-fit:contain;">
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <div id="sigFinalSizeBadge" style="font-size:1.8rem; font-weight:900; color:#0F172A;">15 KB</div>
+          <span id="sigFinalDimBadge" style="background:#EEF2FF; color:#4F46E5; font-size:0.8rem; font-weight:800; padding:3px 10px; border-radius:50px; display:inline-block;">140 &#215; 60 px</span>
+        </div>
+
+        <div style="margin-bottom:1.25rem; text-align:left;">
+          <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Rename Signature</label>
+          <div style="display:flex; align-items:center; border:1.5px solid #CBD5E1; border-radius:8px; overflow:hidden; background:#FFFFFF;">
+            <input type="text" id="sigRenameInput" value="SIGNATURE_1INDIAJOB" style="flex:1; border:none; outline:none; padding:8px 10px; font-size:0.9rem; font-weight:700;">
+            <span style="background:#F1F5F9; color:#64748B; padding:8px 10px; font-weight:800; font-size:0.85rem;">.jpg</span>
+          </div>
+        </div>
+
+        <button type="button" onclick="downloadSigFinalImage()" style="width:100%; background:#4F46E5; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+          Download Signature
+        </button>
+      </div>
+
+      <div style="margin-top:2rem; font-size:0.9rem; color:#64748B;">
+        <p style="margin-bottom:6px;">Made on your device. Nothing was uploaded.</p>
+        <p>Need your photo resized? <a href="/p/kerala-psc-photo-resizer.html" style="color:#2563EB; font-weight:800; text-decoration:underline;">Use our PSC photo resizer</a>.</p>
+        <button type="button" onclick="resetSigToStep1()" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
+          Make Another Signature
         </button>
       </div>
     </div>
+
+  </div>
+
+  <!-- Guidelines -->
+  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2rem;">
+    <h2 style="font-size:1.25rem; font-weight:800; color:#4338CA; margin-top:0; margin-bottom:0.75rem;">
+      📋 Standard Government Exam Signature Dimensions
+    </h2>
+    <ul style="padding-left:1.25rem; margin:0; font-size:0.9rem; color:#334155; line-height:1.7;">
+      <li><strong>Kerala PSC:</strong> 150&#215;100 pixels, File size under 30 KB.</li>
+      <li><strong>SSC (CGL, CHSL, MTS, GD):</strong> 140&#215;60 pixels, File size 10 KB to 20 KB.</li>
+      <li><strong>IBPS / SBI PO &amp; Clerk:</strong> 140&#215;60 pixels, File size 10 KB to 20 KB.</li>
+      <li><strong>UPSC CSE &amp; CDS:</strong> 350&#215;350 pixels, File size 20 KB to 300 KB.</li>
+    </ul>
   </div>
 
   <div style="text-align:center; margin-top:2rem;">
-    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#4338CA; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#4F46E5; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
       🏠 Return to 1IndiaJob Home
     </a>
   </div>
 </div>
 
 <script>
-var pageSigImg = null;
-function handlePageSigUpload(e) {
+var sigRawImg = null;
+var sigCroppedCanvas = null;
+var sigFinalBlob = null;
+var sigCropBox = { x: 0, y: 0, w: 200, h: 100 };
+var isSigDragging = false;
+var sigDragStartX = 0, sigDragStartY = 0;
+
+function switchSigStep(stepNum) {
+  for (var i = 1; i <= 5; i++) {
+    var stepEl = document.getElementById('sigStep' + i);
+    var dotEl = document.getElementById('sigDot' + i);
+    if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
+    if (dotEl) {
+      if (i === stepNum) {
+        dotEl.style.background = '#4F46E5';
+        dotEl.style.color = '#FFFFFF';
+      } else if (i < stepNum) {
+        dotEl.style.background = '#059669';
+        dotEl.style.color = '#FFFFFF';
+      } else {
+        dotEl.style.background = '#F1F5F9';
+        dotEl.style.color = '#64748B';
+      }
+    }
+  }
+}
+
+function onSigImageSelected(e) {
   var file = e.target.files[0];
   if (!file) return;
-  var r = new FileReader();
-  r.onload = function(evt) {
+  var reader = new FileReader();
+  reader.onload = function(evt) {
     var img = new Image();
     img.onload = function() {
-      pageSigImg = img;
-      updatePageSigCanvas();
+      sigRawImg = img;
+      initSigCropScreen();
+      switchSigStep(2);
     };
     img.src = evt.target.result;
   };
-  r.readAsDataURL(file);
+  reader.readAsDataURL(file);
 }
 
-function applyPageSigPreset(p) {
-  var w = document.getElementById('pageSigW');
-  var h = document.getElementById('pageSigH');
-  if (!w || !h) return;
-  if (p === 'kpsc_sig') { w.value = 150; h.value = 100; }
-  else if (p === 'ssc_sig' || p === 'ibps_sig' || p === 'rrb_sig') { w.value = 140; h.value = 60; }
-  else if (p === 'upsc_sig') { w.value = 350; h.value = 175; }
-  updatePageSigCanvas();
+function initSigCropScreen() {
+  if (!sigRawImg) return;
+  var canvas = document.getElementById('sigCropCanvas');
+  var maxW = 500, maxH = 320;
+  var ratio = Math.min(maxW / sigRawImg.width, maxH / sigRawImg.height, 1);
+  canvas.width = sigRawImg.width * ratio;
+  canvas.height = sigRawImg.height * ratio;
+
+  var boxW = canvas.width * 0.8;
+  var boxH = boxW * 0.45;
+  if (boxH > canvas.height * 0.85) {
+    boxH = canvas.height * 0.85;
+    boxW = boxH / 0.45;
+  }
+  sigCropBox = {
+    x: (canvas.width - boxW) / 2,
+    y: (canvas.height - boxH) / 2,
+    w: boxW,
+    h: boxH
+  };
+
+  drawSigCropCanvas();
+  setupSigCropDrag(canvas);
 }
 
-function updatePageSigCanvas() {
-  var canvas = document.getElementById('pageSigCanvas');
-  if (!canvas) return;
+function drawSigCropCanvas() {
+  var canvas = document.getElementById('sigCropCanvas');
+  if (!canvas || !sigRawImg) return;
   var ctx = canvas.getContext('2d');
-  var w = parseInt(document.getElementById('pageSigW').value, 10) || 150;
-  var h = parseInt(document.getElementById('pageSigH').value, 10) || 100;
-  var doEnhance = document.getElementById('pageSigEnhance') ? document.getElementById('pageSigEnhance').checked : true;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  canvas.width = w;
-  canvas.height = h;
+  ctx.drawImage(sigRawImg, 0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(0, 0, w, h);
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+  ctx.fillRect(0, 0, canvas.width, sigCropBox.y);
+  ctx.fillRect(0, sigCropBox.y + sigCropBox.h, canvas.width, canvas.height - (sigCropBox.y + sigCropBox.h));
+  ctx.fillRect(0, sigCropBox.y, sigCropBox.x, sigCropBox.h);
+  ctx.fillRect(sigCropBox.x + sigCropBox.w, sigCropBox.y, canvas.width - (sigCropBox.x + sigCropBox.w), sigCropBox.h);
 
-  if (pageSigImg) {
-    var scale = Math.min(w / pageSigImg.width, h / pageSigImg.height);
-    var nw = pageSigImg.width * scale;
-    var nh = pageSigImg.height * scale;
-    var nx = (w - nw) / 2;
-    var ny = (h - nh) / 2;
-    ctx.drawImage(pageSigImg, nx, ny, nw, nh);
+  ctx.strokeStyle = '#818CF8';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(sigCropBox.x, sigCropBox.y, sigCropBox.w, sigCropBox.h);
+}
 
-    if (doEnhance) {
-      var imgData = ctx.getImageData(0, 0, w, h);
-      var d = imgData.data;
-      for (var i = 0; i < d.length; i += 4) {
-        var gray = 0.299 * d[i] + 0.587 * d[i+1] + 0.114 * d[i+2];
-        if (gray > 165) {
-          d[i] = 255; d[i+1] = 255; d[i+2] = 255;
-        } else {
-          var dark = Math.max(0, gray * 0.7);
+function setupSigCropDrag(canvas) {
+  var onStart = function(cx, cy) {
+    var rect = canvas.getBoundingClientRect();
+    var x = cx - rect.left;
+    var y = cy - rect.top;
+    if (x >= sigCropBox.x && x <= sigCropBox.x + sigCropBox.w && y >= sigCropBox.y && y <= sigCropBox.y + sigCropBox.h) {
+      isSigDragging = true;
+      sigDragStartX = x - sigCropBox.x;
+      sigDragStartY = y - sigCropBox.y;
+    }
+  };
+
+  var onMove = function(cx, cy) {
+    if (!isSigDragging) return;
+    var rect = canvas.getBoundingClientRect();
+    var x = cx - rect.left;
+    var y = cy - rect.top;
+    var newX = Math.max(0, Math.min(x - sigDragStartX, canvas.width - sigCropBox.w));
+    var newY = Math.max(0, Math.min(y - sigDragStartY, canvas.height - sigCropBox.h));
+    sigCropBox.x = newX;
+    sigCropBox.y = newY;
+    drawSigCropCanvas();
+  };
+
+  var onEnd = function() { isSigDragging = false; };
+  canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
+  window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
+  window.onmouseup = onEnd;
+
+  canvas.ontouchstart = function(e) { if(e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
+  window.ontouchmove = function(e) { if(e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
+  window.ontouchend = onEnd;
+}
+
+function rotateSigImage(deg) {
+  if (!sigRawImg) return;
+  var offCanvas = document.createElement('canvas');
+  var offCtx = offCanvas.getContext('2d');
+  offCanvas.width = sigRawImg.height;
+  offCanvas.height = sigRawImg.width;
+  offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
+  offCtx.rotate(deg * Math.PI / 180);
+  offCtx.drawImage(sigRawImg, -sigRawImg.width / 2, -sigRawImg.height / 2);
+
+  var rImg = new Image();
+  rImg.onload = function() {
+    sigRawImg = rImg;
+    initSigCropScreen();
+  };
+  rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+}
+
+function applySigCropAndNext() {
+  var canvas = document.getElementById('sigCropCanvas');
+  var scaleX = sigRawImg.width / canvas.width;
+  var scaleY = sigRawImg.height / canvas.height;
+
+  sigCroppedCanvas = document.createElement('canvas');
+  sigCroppedCanvas.width = sigCropBox.w * scaleX;
+  sigCroppedCanvas.height = sigCropBox.h * scaleY;
+  var ctx = sigCroppedCanvas.getContext('2d');
+  ctx.drawImage(sigRawImg, sigCropBox.x * scaleX, sigCropBox.y * scaleY, sigCropBox.w * scaleX, sigCropBox.h * scaleY, 0, 0, sigCroppedCanvas.width, sigCroppedCanvas.height);
+
+  renderSigCleanPreview();
+  switchSigStep(3);
+}
+
+function renderSigCleanPreview() {
+  var previewCanvas = document.getElementById('sigCleanPreviewCanvas');
+  if (!previewCanvas || !sigCroppedCanvas) return;
+  var ctx = previewCanvas.getContext('2d');
+  previewCanvas.width = 240;
+  previewCanvas.height = 120;
+
+  var doWhite = document.getElementById('autoWhitePaperCheckbox').checked;
+  var thresh = parseInt(document.getElementById('inkThresholdSlider').value, 10);
+  var inkType = document.querySelector('input[name="sigInkColor"]:checked').value;
+
+  // Draw temp
+  var tempCanvas = document.createElement('canvas');
+  tempCanvas.width = 240;
+  tempCanvas.height = 120;
+  var tCtx = tempCanvas.getContext('2d');
+  tCtx.fillStyle = '#FFFFFF';
+  tCtx.fillRect(0, 0, 240, 120);
+  tCtx.drawImage(sigCroppedCanvas, 0, 0, 240, 120);
+
+  if (doWhite) {
+    var imgData = tCtx.getImageData(0, 0, 240, 120);
+    var d = imgData.data;
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i], g = d[i+1], b = d[i+2];
+      var brightness = (r * 0.299 + g * 0.587 + b * 0.114);
+
+      if (brightness > thresh) {
+        // Pure White paper background
+        d[i] = 255; d[i+1] = 255; d[i+2] = 255;
+      } else {
+        // Darkened ink
+        if (inkType === 'black') {
+          var dark = Math.max(0, brightness - 40);
           d[i] = dark; d[i+1] = dark; d[i+2] = dark;
+        } else if (inkType === 'blue') {
+          d[i] = 10; d[i+1] = 40; d[i+2] = 180;
         }
       }
-      ctx.putImageData(imgData, 0, 0);
     }
-  } else {
-    ctx.fillStyle = '#E2E8F0';
-    ctx.fillRect(0, 0, w, h);
-    ctx.fillStyle = '#94A3B8';
-    ctx.font = 'bold 12px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('Select Signature', w / 2, h / 2);
+    tCtx.putImageData(imgData, 0, 0);
   }
 
-  var q = 0.92;
-  function step() {
-    canvas.toBlob(function(b) {
-      if (!b) return;
-      var kb = b.size / 1024;
-      if (kb <= 25 || q <= 0.1) {
-        var bd = document.getElementById('pageSigSizeBadge');
-        if (bd) bd.innerText = kb.toFixed(1) + ' KB';
-      } else {
-        q -= 0.08;
-        step();
-      }
-    }, 'image/jpeg', q);
-  }
-  step();
+  ctx.drawImage(tempCanvas, 0, 0);
 }
 
-function downloadPageSignature() {
-  var canvas = document.getElementById('pageSigCanvas');
-  if (!canvas) return;
-  var q = 0.92;
-  function step() {
-    canvas.toBlob(function(b) {
-      if (!b) return;
-      var kb = b.size / 1024;
-      if (kb <= 25 || q <= 0.1) {
-        var a = document.createElement('a');
-        a.href = URL.createObjectURL(b);
-        a.download = 'Govt_Exam_Signature.jpg';
-        a.click();
-      } else {
-        q -= 0.08;
-        step();
-      }
-    }, 'image/jpeg', q);
+function saveSigCleanAndNext() {
+  renderSigDimPreview();
+  switchSigStep(4);
+}
+
+function skipSigCleanAndNext() {
+  renderSigDimPreview();
+  switchSigStep(4);
+}
+
+function applySigPresetChoice(preset) {
+  if (preset === 'kpsc') {
+    document.getElementById('sigFinalWidth').value = 150;
+    document.getElementById('sigFinalHeight').value = 100;
+    document.getElementById('sigFinalKB').value = 20;
+  } else if (preset === 'ssc' || preset === 'ibps') {
+    document.getElementById('sigFinalWidth').value = 140;
+    document.getElementById('sigFinalHeight').value = 60;
+    document.getElementById('sigFinalKB').value = 15;
+  } else if (preset === 'upsc') {
+    document.getElementById('sigFinalWidth').value = 350;
+    document.getElementById('sigFinalHeight').value = 350;
+    document.getElementById('sigFinalKB').value = 40;
   }
-  step();
+}
+
+function renderSigDimPreview() {
+  var dimCanvas = document.getElementById('sigDimPreviewCanvas');
+  var srcCanvas = document.getElementById('sigCleanPreviewCanvas');
+  if (dimCanvas && srcCanvas) {
+    dimCanvas.width = 150;
+    dimCanvas.height = 80;
+    var ctx = dimCanvas.getContext('2d');
+    ctx.drawImage(srcCanvas, 0, 0, 150, 80);
+  }
+}
+
+function generateFinalSignature() {
+  var srcCanvas = document.getElementById('sigCleanPreviewCanvas');
+  var targetKB = parseInt(document.getElementById('sigFinalKB').value, 10) || 15;
+  var targetW = parseInt(document.getElementById('sigFinalWidth').value, 10) || 140;
+  var targetH = parseInt(document.getElementById('sigFinalHeight').value, 10) || 60;
+
+  var outCanvas = document.createElement('canvas');
+  outCanvas.width = targetW;
+  outCanvas.height = targetH;
+  var ctx = outCanvas.getContext('2d');
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, targetW, targetH);
+  ctx.drawImage(srcCanvas, 0, 0, targetW, targetH);
+
+  compressCanvasToTarget(outCanvas, targetKB, function(blob) {
+    sigFinalBlob = blob;
+    document.getElementById('sigFinalResultImg').src = URL.createObjectURL(blob);
+    document.getElementById('sigFinalSizeBadge').innerText = (blob.size / 1024).toFixed(1) + ' KB';
+    document.getElementById('sigFinalDimBadge').innerText = targetW + ' × ' + targetH + ' px';
+    switchSigStep(5);
+  });
+}
+
+function compressCanvasToTarget(canvas, maxKB, callback) {
+  var minQ = 0.4, maxQ = 0.98, q = 0.85;
+  var attempts = 0;
+
+  function tryQ(currentQ) {
+    canvas.toBlob(function(blob) {
+      attempts++;
+      var currentKB = blob.size / 1024;
+      if (currentKB <= maxKB || attempts >= 6 || minQ >= maxQ) {
+        callback(blob);
+      } else {
+        maxQ = currentQ - 0.05;
+        q = (minQ + maxQ) / 2;
+        tryQ(q);
+      }
+    }, 'image/jpeg', currentQ);
+  }
+  tryQ(q);
+}
+
+function downloadSigFinalImage() {
+  if (!sigFinalBlob) return;
+  var fileName = (document.getElementById('sigRenameInput').value || 'SIGNATURE_1INDIAJOB').trim() + '.jpg';
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(sigFinalBlob);
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function resetSigToStep1() {
+  sigRawImg = null;
+  sigCroppedCanvas = null;
+  sigFinalBlob = null;
+  document.getElementById('sigFileInput').value = '';
+  switchSigStep(1);
 }
 </script>

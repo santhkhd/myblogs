@@ -1,91 +1,258 @@
 <!-- 
   ========================================================================
-  PAGE TITLE: Kerala PSC Photo Resizer with Name and Date Online (150x200 px, <30KB)
+  PAGE TITLE: 🌴 Kerala PSC Photo Resizer with Name & Date (150x200 px, Under 30KB) - Online Free
   PERMALINK / SLUG: kerala-psc-photo-resizer
   ========================================================================
 -->
-<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+<div class="pi7-kpsc-wrapper" style="max-width:920px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#1E293B; line-height:1.6;">
 
-  <!-- Header Banner -->
-  <div style="background:linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(37,99,235,0.25);">
-    <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
-      ⚡ Official Kerala PSC Thulasi Standard
+  <!-- Main Heading -->
+  <div style="text-align:center; margin-bottom:2rem;">
+    <span style="background:#EFF6FF; color:#2563EB; font-size:0.8rem; font-weight:800; padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.6rem; border:1px solid #BFDBFE;">
+      ⚡ Kerala PSC Thulasi One Time Registration (OTR)
     </span>
-    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
-      Kerala PSC Photo Resizer with Name &amp; Date Online
+    <h1 style="font-size:2rem; font-weight:900; color:#0F172A; margin:0 0 0.5rem; line-height:1.25;">
+      Resize Image for PSC Online
     </h1>
-    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
-      Instant 150&#215;200 px photo maker with name &amp; date stamped at the bottom. Auto-compressed strictly under 30 KB for Kerala PSC One Time Registration (OTR).
+    <p style="font-size:0.95rem; color:#64748B; max-width:620px; margin:0 auto;">
+      Create official Kerala PSC Application Photos (150&#215;200 px, under 30KB) with candidate name and date stamped in 5 easy steps.
     </p>
   </div>
 
-  <!-- Interactive Tool Box -->
-  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem;">
-      <!-- Controls -->
-      <div>
-        <div style="border:2px dashed #3B82F6; border-radius:12px; padding:1.75rem 1rem; text-align:center; background:#EFF6FF; cursor:pointer; position:relative;">
-          <div style="font-size:2.2rem; color:#2563EB; margin-bottom:0.5rem;">📷</div>
-          <strong style="font-size:1rem; color:#1E3A8A; display:block;">Click to Upload Candidate Photo</strong>
-          <span style="font-size:0.8rem; color:#64748B;">Supports JPG, JPEG, PNG (Phone camera or scan)</span>
-          <input type="file" id="pageKpscPhotoInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="handlePageKpscUpload(event)">
-        </div>
+  <!-- Wizard Card Container -->
+  <div id="kpscWizardContainer" style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:20px; padding:2rem 1.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin-bottom:2.5rem; min-height:380px;">
 
-        <div style="margin-top:1.25rem;">
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Candidate Full Name (in Capital Letters):</label>
-          <input type="text" id="pageKpscNameInput" placeholder="e.g. ARUN KUMAR M" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.92rem; font-weight:700;" oninput="updatePageKpscCanvas()">
-        </div>
+    <!-- STEP INDICATOR -->
+    <div style="display:flex; justify-content:center; align-items:center; gap:8px; margin-bottom:2rem; flex-wrap:wrap;">
+      <div id="stepDot1" class="kpsc-dot active" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#2563EB; color:#FFFFFF;">
+        <span>1</span> Upload
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="stepDot2" class="kpsc-dot" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>2</span> Crop
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="stepDot3" class="kpsc-dot" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>3</span> Name &amp; Date
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="stepDot4" class="kpsc-dot" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>4</span> Dimensions &amp; KB
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="stepDot5" class="kpsc-dot" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>5</span> Download
+      </div>
+    </div>
 
-        <div style="margin-top:1rem;">
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Date of Photo Taken (DD/MM/YYYY):</label>
-          <input type="text" id="pageKpscDateInput" placeholder="e.g. 10/10/2026" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.92rem; font-weight:700;" oninput="updatePageKpscCanvas()">
-        </div>
+    <!-- STEP 1: UPLOAD BOX -->
+    <div id="kpscStep1" style="display:block;">
+      <div style="border:2px dashed #818CF8; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#4F46E5'; this.style.background='#EEF2FF';" onmouseout="this.style.borderColor='#818CF8'; this.style.background='#F8FAFC';">
+        <p style="font-size:1.15rem; font-weight:700; color:#334155; margin:0 0 1.25rem;">
+          Select Or Drag &amp; Drop Images Here
+        </p>
+        <button type="button" style="background:#0D9488; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(13,148,136,0.3); pointer-events:none;">
+          Select Images
+        </button>
+        <input type="file" id="kpscFileInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="onKpscImageSelected(event)">
+      </div>
+      <p style="text-align:center; font-size:0.85rem; color:#94A3B8; margin-top:1rem;">
+        🔒 All editing is 100% processed directly in your browser. No files are uploaded to any server.
+      </p>
+    </div>
 
-        <div style="margin-top:1rem;">
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Text Size Adjustment:</label>
-          <input type="range" id="pageKpscFontSlider" min="10" max="18" value="13" style="width:100%;" oninput="updatePageKpscCanvas()">
-        </div>
+    <!-- STEP 2: CROP & ADJUST -->
+    <div id="kpscStep2" style="display:none; text-align:center;">
+      <div style="background:#0F172A; border-radius:12px; padding:1rem; max-width:650px; margin:0 auto 1.5rem; position:relative; overflow:hidden; min-height:300px; display:flex; align-items:center; justify-content:center;">
+        <canvas id="cropCanvas" style="max-width:100%; max-height:360px; object-fit:contain; border-radius:6px; cursor:crosshair;"></canvas>
       </div>
 
-      <!-- Preview Box -->
-      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
-        <div style="font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:10px;">
-          Live 150&#215;200 Preview (<span id="pageKpscSizeBadge" style="color:#059669;">0 KB</span>)
+      <!-- Crop & Zoom Controls -->
+      <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:1.5rem; flex-wrap:wrap;">
+        <button type="button" onclick="rotateKpscImage(-90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+          ↺ Rotate Left
+        </button>
+        <button type="button" onclick="rotateKpscImage(90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+          ↻ Rotate Right
+        </button>
+        <button type="button" onclick="resetCropBox()" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+          ⛶ Reset Box
+        </button>
+      </div>
+
+      <button type="button" onclick="applyCropAndNext()" style="background:#3B82F6; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(59,130,246,0.35);">
+        Crop &amp; Next
+      </button>
+    </div>
+
+    <!-- STEP 3: ADD NAME & DATE -->
+    <div id="kpscStep3" style="display:none;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:2rem; align-items:center;">
+        <!-- Live Preview Left -->
+        <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; text-align:center;">
+          <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 6px 16px rgba(0,0,0,0.08); background:#FFFFFF;">
+            <canvas id="nameDatePreviewCanvas" width="150" height="200" style="width:150px; height:200px; display:block;"></canvas>
+          </div>
+          <div style="font-size:0.8rem; color:#64748B; margin-top:8px; font-weight:700;">Live 150&#215;200 Preview</div>
         </div>
-        <div style="border:1px solid #CBD5E1; box-shadow:0 4px 14px rgba(0,0,0,0.1); background:#FFFFFF; display:inline-block; border-radius:4px; overflow:hidden;">
-          <canvas id="pageKpscCanvas" width="150" height="200" style="width:150px; height:200px; display:block;"></canvas>
+
+        <!-- Inputs Right -->
+        <div>
+          <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin:0 0 1rem;">
+            Add Name &amp; Date On Image
+          </h3>
+
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; font-weight:700; color:#334155; margin-bottom:1.25rem; cursor:pointer;">
+            <input type="checkbox" id="addWhiteStripCheckbox" checked onchange="renderNameDatePreview()">
+            Add Extra White Space On Bottom
+          </label>
+
+          <!-- Candidate Name -->
+          <div style="border:1px solid #CBD5E1; border-radius:8px; padding:10px 14px; margin-bottom:1rem; position:relative; background:#FFFFFF;">
+            <span style="position:absolute; top:-9px; left:10px; background:#FFFFFF; padding:0 6px; font-size:0.75rem; font-weight:800; color:#64748B;">Name on Image</span>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="text" id="kpscCandidateName" placeholder="e.g. ARUN KUMAR M" style="flex:1; border:none; outline:none; font-size:0.95rem; font-weight:700; text-transform:uppercase;" oninput="renderNameDatePreview()">
+              <input type="number" id="kpscNameSize" value="13" min="8" max="22" style="width:50px; padding:4px 6px; border:1px solid #CBD5E1; border-radius:6px; text-align:center; font-weight:700;" oninput="renderNameDatePreview()" title="Font Size">
+              <input type="color" id="kpscNameColor" value="#000000" style="width:32px; height:32px; border:none; border-radius:50%; cursor:pointer; background:none;" oninput="renderNameDatePreview()">
+            </div>
+          </div>
+
+          <!-- Date of Photo -->
+          <div style="border:1px solid #CBD5E1; border-radius:8px; padding:10px 14px; margin-bottom:1.5rem; position:relative; background:#FFFFFF;">
+            <span style="position:absolute; top:-9px; left:10px; background:#FFFFFF; padding:0 6px; font-size:0.75rem; font-weight:800; color:#64748B;">Date on Image</span>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="text" id="kpscPhotoDate" placeholder="e.g. 10/10/2026" style="flex:1; border:none; outline:none; font-size:0.95rem; font-weight:700;" oninput="renderNameDatePreview()">
+              <input type="number" id="kpscDateSize" value="11" min="8" max="20" style="width:50px; padding:4px 6px; border:1px solid #CBD5E1; border-radius:6px; text-align:center; font-weight:700;" oninput="renderNameDatePreview()" title="Font Size">
+              <input type="color" id="kpscDateColor" value="#000000" style="width:32px; height:32px; border:none; border-radius:50%; cursor:pointer; background:none;" oninput="renderNameDatePreview()">
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div style="display:flex; gap:12px;">
+            <button type="button" onclick="saveNameDateAndNext()" style="background:#4338CA; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(67,56,202,0.3);">
+              Save &amp; Next
+            </button>
+            <button type="button" onclick="skipNameDateAndNext()" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+              Skip
+            </button>
+          </div>
         </div>
-        <button type="button" id="pageKpscDownloadBtn" onclick="downloadPageKpscPhoto()" style="margin-top:1.25rem; width:100%; background:linear-gradient(135deg, #059669 0%, #047857 100%); color:#FFFFFF; border:none; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(5,150,105,0.3); transition:all 0.2s;">
-          📥 Download Kerala PSC Photo (&lt;30 KB)
+      </div>
+    </div>
+
+    <!-- STEP 4: SET SIZE & DIMENSIONS -->
+    <div id="kpscStep4" style="display:none;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:2rem; align-items:center;">
+        <!-- Image Preview Left -->
+        <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; text-align:center;">
+          <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 6px 16px rgba(0,0,0,0.08); background:#FFFFFF;">
+            <canvas id="dimensionPreviewCanvas" width="150" height="200" style="width:150px; height:200px; display:block;"></canvas>
+          </div>
+        </div>
+
+        <!-- Dimension Controls Right -->
+        <div>
+          <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin:0 0 1rem;">
+            Set Size &amp; Dimensions
+          </h3>
+
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.25rem;">
+            <div style="flex:1;">
+              <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Width (PX)</label>
+              <input type="number" id="kpscFinalWidth" value="150" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800;">
+            </div>
+            <span style="font-weight:900; color:#94A3B8; margin-top:16px;">✕</span>
+            <div style="flex:1;">
+              <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Height (PX)</label>
+              <input type="number" id="kpscFinalHeight" value="200" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800;">
+            </div>
+          </div>
+
+          <div style="margin-bottom:1.5rem;">
+            <div style="font-size:0.82rem; color:#64748B; margin-bottom:6px;">
+              ℹ️ Enter Image Size In KB (1MB = 1024KB)
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:0.9rem; font-weight:800; color:#334155;">Size:</span>
+              <input type="number" id="kpscFinalKB" value="28" min="5" max="30" style="width:80px; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; text-align:center;">
+              <span style="background:#475569; color:#FFFFFF; font-size:0.85rem; font-weight:800; padding:8px 12px; border-radius:6px;">Kb</span>
+            </div>
+            <small style="color:#059669; font-weight:700; display:block; margin-top:4px;">✓ Target Kerala PSC size is strictly under 30KB.</small>
+          </div>
+
+          <!-- Action Buttons -->
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button type="button" onclick="generateFinalPhoto()" style="background:#3B82F6; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(59,130,246,0.3);">
+              Create Photo
+            </button>
+            <button type="button" onclick="resetToStep1()" style="background:#FFFFFF; color:#3B82F6; border:1.5px solid #3B82F6; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+              + Upload New Image
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5: FINAL RESULT / DOWNLOAD -->
+    <div id="kpscStep5" style="display:none; text-align:center;">
+      <div style="max-width:320px; margin:0 auto; background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+        <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.1); background:#FFFFFF; margin-bottom:1rem;">
+          <img id="kpscFinalResultImg" src="" alt="Kerala PSC Photo" style="width:150px; height:200px; display:block; object-fit:contain;">
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <div id="kpscFinalSizeBadge" style="font-size:1.8rem; font-weight:900; color:#0F172A;">28 KB</div>
+          <span id="kpscFinalDimBadge" style="background:#EEF2FF; color:#4F46E5; font-size:0.8rem; font-weight:800; padding:3px 10px; border-radius:50px; display:inline-block;">150 &#215; 200 px</span>
+        </div>
+
+        <div style="margin-bottom:1.25rem; text-align:left;">
+          <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Rename Image</label>
+          <div style="display:flex; align-items:center; border:1.5px solid #CBD5E1; border-radius:8px; overflow:hidden; background:#FFFFFF;">
+            <input type="text" id="kpscRenameInput" value="KPSC_PHOTO_1INDIAJOB" style="flex:1; border:none; outline:none; padding:8px 10px; font-size:0.9rem; font-weight:700;">
+            <span style="background:#F1F5F9; color:#64748B; padding:8px 10px; font-weight:800; font-size:0.85rem;">.jpg</span>
+          </div>
+        </div>
+
+        <button type="button" onclick="downloadKpscFinalImage()" style="width:100%; background:#4338CA; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(67,56,202,0.35);">
+          Download Image
+        </button>
+      </div>
+
+      <div style="margin-top:2rem; font-size:0.9rem; color:#64748B;">
+        <p style="margin-bottom:6px;">Made on your device. Nothing was uploaded.</p>
+        <p>Need your signature sized for the same form? <a href="/p/govt-job-signature-resizer.html" style="color:#2563EB; font-weight:800; text-decoration:underline;">Use our signature resizer</a>.</p>
+        <button type="button" onclick="resetToStep1()" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
+          Make Another Photo
         </button>
       </div>
     </div>
+
   </div>
 
-  <!-- Detailed Specifications & Guide -->
-  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:1.5rem; margin-bottom:2rem;">
-    <h2 style="font-size:1.3rem; font-weight:800; color:#1E3A8A; margin-top:0; margin-bottom:0.75rem;">
-      📋 Official Kerala PSC Photograph Upload Guidelines
+  <!-- Guidelines & SEO Section -->
+  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2rem;">
+    <h2 style="font-size:1.25rem; font-weight:800; color:#1E3A8A; margin-top:0; margin-bottom:0.75rem;">
+      📋 Official Kerala PSC Photograph Upload Specifications
     </h2>
-    <ul style="padding-left:1.25rem; margin-bottom:1rem; font-size:0.92rem; color:#334155; line-height:1.7;">
+    <ul style="padding-left:1.25rem; margin:0; font-size:0.9rem; color:#334155; line-height:1.7;">
       <li><strong>Dimensions:</strong> 150 pixels width by 200 pixels height (aspect ratio 3:4).</li>
-      <li><strong>File Size:</strong> Strictly maximum 30 KB (Our tool optimizes between 15 KB and 28 KB).</li>
+      <li><strong>File Size:</strong> Strictly under 30 KB (Optimized automatically between 20 KB and 28 KB).</li>
       <li><strong>File Format:</strong> JPG / JPEG.</li>
-      <li><strong>Bottom White Banner:</strong> The name of the candidate in bold capital letters and the date on which the photograph was taken must be firmly printed in black color at the bottom portion of the photograph.</li>
-      <li><strong>Validity:</strong> The photograph once uploaded on Kerala PSC Thulasi One Time Registration is valid for 10 years from the date of taking.</li>
+      <li><strong>Bottom White Strip:</strong> Candidate's name in bold capital letters and photo taken date printed in black text at the bottom.</li>
+      <li><strong>Background:</strong> Light or white plain background with clear facial visibility without caps or dark glasses.</li>
     </ul>
   </div>
 
-  <!-- Frequently Asked Questions (SEO FAQs) -->
+  <!-- FAQs -->
   <div style="margin-bottom:2rem;">
-    <h3 style="font-size:1.2rem; font-weight:800; color:#0F172A; margin-bottom:1rem;">❓ Frequently Asked Questions</h3>
+    <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin-bottom:1rem;">❓ Frequently Asked Questions</h3>
     <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
-      <strong style="font-size:0.95rem; color:#1E3A8A;">1. Why is Kerala PSC rejecting my uploaded photograph?</strong>
-      <p style="font-size:0.88rem; color:#475569; margin:4px 0 0;">Rejections usually occur if the file size exceeds 30 KB, dimensions are not 150&#215;200 px, or candidate name &amp; date taken are missing from the bottom white strip.</p>
+      <strong style="font-size:0.92rem; color:#1E3A8A;">1. Why does Kerala PSC Thulasi reject my photo?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">Common reasons include size exceeding 30 KB, incorrect 150x200 pixel aspect ratio, or missing candidate name and date stamp on the bottom strip.</p>
     </div>
     <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
-      <strong style="font-size:0.95rem; color:#1E3A8A;">2. Is my photo uploaded to any external server?</strong>
-      <p style="font-size:0.88rem; color:#475569; margin:4px 0 0;">No. All processing happens 100% locally inside your web browser via HTML5 Canvas. Your photograph is never uploaded to any remote server, ensuring complete data security.</p>
+      <strong style="font-size:0.92rem; color:#1E3A8A;">2. Is it safe to upload my photo here?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">Yes! 100% of all processing and cropping happens directly inside your web browser. Nothing is ever sent to any remote server.</p>
     </div>
   </div>
 
@@ -97,112 +264,363 @@
 </div>
 
 <script>
-var pageKpscImg = null;
-function handlePageKpscUpload(e) {
+/* Global Wizard State */
+var kpscRawImg = null;
+var kpscRotation = 0;
+var kpscCroppedCanvas = null;
+var kpscFinalBlob = null;
+var cropBox = { x: 0, y: 0, w: 150, h: 200 };
+var isDraggingCrop = false;
+var dragStartX = 0, dragStartY = 0;
+
+function switchKpscStep(stepNum) {
+  for (var i = 1; i <= 5; i++) {
+    var stepEl = document.getElementById('kpscStep' + i);
+    var dotEl = document.getElementById('stepDot' + i);
+    if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
+    if (dotEl) {
+      if (i === stepNum) {
+        dotEl.style.background = '#2563EB';
+        dotEl.style.color = '#FFFFFF';
+      } else if (i < stepNum) {
+        dotEl.style.background = '#059669';
+        dotEl.style.color = '#FFFFFF';
+      } else {
+        dotEl.style.background = '#F1F5F9';
+        dotEl.style.color = '#64748B';
+      }
+    }
+  }
+}
+
+function onKpscImageSelected(e) {
   var file = e.target.files[0];
   if (!file) return;
-  var r = new FileReader();
-  r.onload = function(evt) {
+  var reader = new FileReader();
+  reader.onload = function(evt) {
     var img = new Image();
     img.onload = function() {
-      pageKpscImg = img;
-      updatePageKpscCanvas();
+      kpscRawImg = img;
+      kpscRotation = 0;
+      initCropScreen();
+      switchKpscStep(2);
     };
     img.src = evt.target.result;
   };
-  r.readAsDataURL(file);
+  reader.readAsDataURL(file);
 }
 
-function updatePageKpscCanvas() {
-  var canvas = document.getElementById('pageKpscCanvas');
-  if (!canvas) return;
+function initCropScreen() {
+  if (!kpscRawImg) return;
+  var canvas = document.getElementById('cropCanvas');
   var ctx = canvas.getContext('2d');
-  canvas.width = 150;
-  canvas.height = 200;
+
+  var maxW = 500;
+  var maxH = 360;
+  var ratio = Math.min(maxW / kpscRawImg.width, maxH / kpscRawImg.height, 1);
+  canvas.width = kpscRawImg.width * ratio;
+  canvas.height = kpscRawImg.height * ratio;
+
+  // Initialize crop box to 3:4 ratio centered
+  var boxW = Math.min(canvas.width * 0.75, canvas.height * 0.75 * (3/4));
+  var boxH = boxW * (4/3);
+  if (boxH > canvas.height * 0.9) {
+    boxH = canvas.height * 0.9;
+    boxW = boxH * (3/4);
+  }
+  cropBox = {
+    x: (canvas.width - boxW) / 2,
+    y: (canvas.height - boxH) / 2,
+    w: boxW,
+    h: boxH
+  };
+
+  drawCropCanvas();
+  setupCropDrag(canvas);
+}
+
+function drawCropCanvas() {
+  var canvas = document.getElementById('cropCanvas');
+  if (!canvas || !kpscRawImg) return;
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.save();
+  ctx.drawImage(kpscRawImg, 0, 0, canvas.width, canvas.height);
+
+  // Dark overlay outside crop box
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+  ctx.fillRect(0, 0, canvas.width, cropBox.y);
+  ctx.fillRect(0, cropBox.y + cropBox.h, canvas.width, canvas.height - (cropBox.y + cropBox.h));
+  ctx.fillRect(0, cropBox.y, cropBox.x, cropBox.h);
+  ctx.fillRect(cropBox.x + cropBox.w, cropBox.y, canvas.width - (cropBox.x + cropBox.w), cropBox.h);
+
+  // Crop Box Border & Grid
+  ctx.strokeStyle = '#38BDF8';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(cropBox.x, cropBox.y, cropBox.w, cropBox.h);
+
+  // Grid lines
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(cropBox.x + cropBox.w/3, cropBox.y);
+  ctx.lineTo(cropBox.x + cropBox.w/3, cropBox.y + cropBox.h);
+  ctx.moveTo(cropBox.x + 2*cropBox.w/3, cropBox.y);
+  ctx.lineTo(cropBox.x + 2*cropBox.w/3, cropBox.y + cropBox.h);
+  ctx.moveTo(cropBox.x, cropBox.y + cropBox.h/3);
+  ctx.lineTo(cropBox.x + cropBox.w, cropBox.y + cropBox.h/3);
+  ctx.moveTo(cropBox.x, cropBox.y + 2*cropBox.h/3);
+  ctx.lineTo(cropBox.x + cropBox.w, cropBox.y + 2*cropBox.h/3);
+  ctx.stroke();
+
+  ctx.restore();
+}
+
+function setupCropDrag(canvas) {
+  var onStart = function(cx, cy) {
+    var rect = canvas.getBoundingClientRect();
+    var x = cx - rect.left;
+    var y = cy - rect.top;
+    if (x >= cropBox.x && x <= cropBox.x + cropBox.w && y >= cropBox.y && y <= cropBox.y + cropBox.h) {
+      isDraggingCrop = true;
+      dragStartX = x - cropBox.x;
+      dragStartY = y - cropBox.y;
+    }
+  };
+
+  var onMove = function(cx, cy) {
+    if (!isDraggingCrop) return;
+    var rect = canvas.getBoundingClientRect();
+    var x = cx - rect.left;
+    var y = cy - rect.top;
+    var newX = x - dragStartX;
+    var newY = y - dragStartY;
+
+    newX = Math.max(0, Math.min(newX, canvas.width - cropBox.w));
+    newY = Math.max(0, Math.min(newY, canvas.height - cropBox.h));
+    cropBox.x = newX;
+    cropBox.y = newY;
+    drawCropCanvas();
+  };
+
+  var onEnd = function() {
+    isDraggingCrop = false;
+  };
+
+  canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
+  window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
+  window.onmouseup = onEnd;
+
+  canvas.ontouchstart = function(e) { if(e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
+  window.ontouchmove = function(e) { if(e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
+  window.ontouchend = onEnd;
+}
+
+function rotateKpscImage(deg) {
+  if (!kpscRawImg) return;
+  var offCanvas = document.createElement('canvas');
+  var offCtx = offCanvas.getContext('2d');
+  if (Math.abs(deg) === 90) {
+    offCanvas.width = kpscRawImg.height;
+    offCanvas.height = kpscRawImg.width;
+    offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
+    offCtx.rotate(deg * Math.PI / 180);
+    offCtx.drawImage(kpscRawImg, -kpscRawImg.width / 2, -kpscRawImg.height / 2);
+  }
+  var rotatedImg = new Image();
+  rotatedImg.onload = function() {
+    kpscRawImg = rotatedImg;
+    initCropScreen();
+  };
+  rotatedImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+}
+
+function resetCropBox() {
+  initCropScreen();
+}
+
+function applyCropAndNext() {
+  var canvas = document.getElementById('cropCanvas');
+  var scaleX = kpscRawImg.width / canvas.width;
+  var scaleY = kpscRawImg.height / canvas.height;
+
+  var sx = cropBox.x * scaleX;
+  var sy = cropBox.y * scaleY;
+  var sw = cropBox.w * scaleX;
+  var sh = cropBox.h * scaleY;
+
+  kpscCroppedCanvas = document.createElement('canvas');
+  kpscCroppedCanvas.width = 150;
+  kpscCroppedCanvas.height = 200;
+  var ctx = kpscCroppedCanvas.getContext('2d');
+  ctx.drawImage(kpscRawImg, sx, sy, sw, sh, 0, 0, 150, 200);
+
+  // Set today's date if date empty
+  var dateInp = document.getElementById('kpscPhotoDate');
+  if (dateInp && !dateInp.value) {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    dateInp.value = dd + '/' + mm + '/' + yyyy;
+  }
+
+  renderNameDatePreview();
+  switchKpscStep(3);
+}
+
+function renderNameDatePreview() {
+  var previewCanvas = document.getElementById('nameDatePreviewCanvas');
+  if (!previewCanvas || !kpscCroppedCanvas) return;
+  var ctx = previewCanvas.getContext('2d');
+  previewCanvas.width = 150;
+  previewCanvas.height = 200;
+
+  var addStrip = document.getElementById('addWhiteStripCheckbox') ? document.getElementById('addWhiteStripCheckbox').checked : true;
+  var nameVal = (document.getElementById('kpscCandidateName') ? document.getElementById('kpscCandidateName').value : '').toUpperCase().trim();
+  var dateVal = (document.getElementById('kpscPhotoDate') ? document.getElementById('kpscPhotoDate').value : '').trim();
+  var nameSize = document.getElementById('kpscNameSize') ? parseInt(document.getElementById('kpscNameSize').value, 10) : 13;
+  var dateSize = document.getElementById('kpscDateSize') ? parseInt(document.getElementById('kpscDateSize').value, 10) : 11;
+  var nameCol = document.getElementById('kpscNameColor') ? document.getElementById('kpscNameColor').value : '#000000';
+  var dateCol = document.getElementById('kpscDateColor') ? document.getElementById('kpscDateColor').value : '#000000';
+
+  var bannerH = (addStrip && (nameVal || dateVal)) ? 42 : 0;
+  var photoH = 200 - bannerH;
 
   ctx.fillStyle = '#FFFFFF';
   ctx.fillRect(0, 0, 150, 200);
 
-  var nameVal = (document.getElementById('pageKpscNameInput') ? document.getElementById('pageKpscNameInput').value : '').toUpperCase().trim();
-  var dateVal = document.getElementById('pageKpscDateInput') ? document.getElementById('pageKpscDateInput').value.trim() : '';
-  var fSize = document.getElementById('pageKpscFontSlider') ? parseInt(document.getElementById('pageKpscFontSlider').value, 10) : 13;
+  // Draw photo
+  ctx.drawImage(kpscCroppedCanvas, 0, 0, 150, 200, 0, 0, 150, photoH);
 
-  var bannerH = (nameVal || dateVal) ? 44 : 0;
-  var photoH = 200 - bannerH;
-
-  if (pageKpscImg) {
-    var scale = Math.max(150 / pageKpscImg.width, photoH / pageKpscImg.height);
-    var nw = pageKpscImg.width * scale;
-    var nh = pageKpscImg.height * scale;
-    var nx = (150 - nw) / 2;
-    var ny = (photoH - nh) / 2;
-    ctx.drawImage(pageKpscImg, nx, ny, nw, nh);
-  } else {
-    ctx.fillStyle = '#E2E8F0';
-    ctx.fillRect(0, 0, 150, photoH);
-    ctx.fillStyle = '#94A3B8';
-    ctx.font = 'bold 12px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('Select Photo', 75, photoH / 2);
-  }
-
+  // Draw white banner & text
   if (bannerH > 0) {
     ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(0, 200 - bannerH, 150, bannerH);
-    ctx.strokeStyle = '#CBD5E1';
+    ctx.fillRect(0, photoH, 150, bannerH);
+    ctx.strokeStyle = '#000000';
     ctx.lineWidth = 1;
-    ctx.strokeRect(0, 200 - bannerH, 150, bannerH);
+    ctx.beginPath();
+    ctx.moveTo(0, photoH);
+    ctx.lineTo(150, photoH);
+    ctx.stroke();
 
-    ctx.fillStyle = '#000000';
     ctx.textAlign = 'center';
-    ctx.font = 'bold ' + fSize + 'px Arial, sans-serif';
-
     if (nameVal && dateVal) {
-      ctx.fillText(nameVal, 75, 200 - bannerH + 17);
-      ctx.fillText(dateVal, 75, 200 - bannerH + 35);
+      ctx.fillStyle = nameCol;
+      ctx.font = 'bold ' + nameSize + 'px sans-serif';
+      ctx.fillText(nameVal, 75, photoH + 17, 142);
+
+      ctx.fillStyle = dateCol;
+      ctx.font = 'bold ' + dateSize + 'px sans-serif';
+      ctx.fillText(dateVal, 75, photoH + 34, 142);
     } else if (nameVal) {
-      ctx.fillText(nameVal, 75, 200 - 16);
+      ctx.fillStyle = nameCol;
+      ctx.font = 'bold ' + nameSize + 'px sans-serif';
+      ctx.fillText(nameVal, 75, photoH + 26, 142);
     } else if (dateVal) {
-      ctx.fillText(dateVal, 75, 200 - 16);
+      ctx.fillStyle = dateCol;
+      ctx.font = 'bold ' + dateSize + 'px sans-serif';
+      ctx.fillText(dateVal, 75, photoH + 26, 142);
     }
   }
+}
 
-  compressPageCanvas(canvas, 28, function(blob, kb) {
-    var b = document.getElementById('pageKpscSizeBadge');
-    if (b) b.innerText = kb.toFixed(1) + ' KB';
+function saveNameDateAndNext() {
+  renderDimensionPreview();
+  switchKpscStep(4);
+}
+
+function skipNameDateAndNext() {
+  document.getElementById('kpscCandidateName').value = '';
+  document.getElementById('kpscPhotoDate').value = '';
+  renderDimensionPreview();
+  switchKpscStep(4);
+}
+
+function renderDimensionPreview() {
+  var dimCanvas = document.getElementById('dimensionPreviewCanvas');
+  var srcCanvas = document.getElementById('nameDatePreviewCanvas');
+  if (dimCanvas && srcCanvas) {
+    dimCanvas.width = 150;
+    dimCanvas.height = 200;
+    var ctx = dimCanvas.getContext('2d');
+    ctx.drawImage(srcCanvas, 0, 0);
+  }
+}
+
+function generateFinalPhoto() {
+  var srcCanvas = document.getElementById('dimensionPreviewCanvas');
+  var targetKB = parseInt(document.getElementById('kpscFinalKB').value, 10) || 28;
+  targetKB = Math.min(Math.max(targetKB, 10), 30); // strictly capped to 30KB for PSC
+
+  var targetW = parseInt(document.getElementById('kpscFinalWidth').value, 10) || 150;
+  var targetH = parseInt(document.getElementById('kpscFinalHeight').value, 10) || 200;
+
+  var outputCanvas = document.createElement('canvas');
+  outputCanvas.width = targetW;
+  outputCanvas.height = targetH;
+  var outCtx = outputCanvas.getContext('2d');
+  outCtx.drawImage(srcCanvas, 0, 0, targetW, targetH);
+
+  // Iterative quality compressor to hit target KB
+  compressCanvasToTarget(outputCanvas, targetKB, function(blob, quality) {
+    kpscFinalBlob = blob;
+    var url = URL.createObjectURL(blob);
+    document.getElementById('kpscFinalResultImg').src = url;
+    var kbSize = (blob.size / 1024).toFixed(1);
+    document.getElementById('kpscFinalSizeBadge').innerText = kbSize + ' KB';
+    document.getElementById('kpscFinalDimBadge').innerText = targetW + ' × ' + targetH + ' px';
+
+    var candidateName = (document.getElementById('kpscCandidateName').value || '').trim().replace(/[^a-zA-Z0-9]/g, '_');
+    if (candidateName) {
+      document.getElementById('kpscRenameInput').value = 'KPSC_' + candidateName.toUpperCase();
+    }
+
+    switchKpscStep(5);
   });
 }
 
-function compressPageCanvas(canvas, maxKb, cb) {
-  var q = 0.92;
-  function step() {
-    canvas.toBlob(function(b) {
-      if (!b) return;
-      var kb = b.size / 1024;
-      if (kb <= maxKb || q <= 0.1) cb(b, kb);
-      else { q -= 0.08; step(); }
-    }, 'image/jpeg', q);
+function compressCanvasToTarget(canvas, maxKB, callback) {
+  var minQ = 0.4, maxQ = 0.98, q = 0.88;
+  var attempts = 0;
+
+  function tryCompress(currentQ) {
+    canvas.toBlob(function(blob) {
+      attempts++;
+      var currentKB = blob.size / 1024;
+      if ((currentKB <= maxKB && currentKB >= maxKB - 4) || attempts >= 7 || minQ >= maxQ) {
+        callback(blob, currentQ);
+      } else if (currentKB > maxKB) {
+        maxQ = currentQ - 0.05;
+        q = (minQ + maxQ) / 2;
+        tryCompress(q);
+      } else {
+        minQ = currentQ + 0.05;
+        q = (minQ + maxQ) / 2;
+        tryCompress(q);
+      }
+    }, 'image/jpeg', currentQ);
   }
-  step();
+  tryCompress(q);
 }
 
-function downloadPageKpscPhoto() {
-  var canvas = document.getElementById('pageKpscCanvas');
-  if (!canvas) return;
-  compressPageCanvas(canvas, 28, function(blob) {
-    var a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'Kerala_PSC_Photo_150x200.jpg';
-    a.click();
-  });
+function downloadKpscFinalImage() {
+  if (!kpscFinalBlob) return;
+  var fileName = (document.getElementById('kpscRenameInput').value || 'KPSC_PHOTO_1INDIAJOB').trim() + '.jpg';
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(kpscFinalBlob);
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-  var dInput = document.getElementById('pageKpscDateInput');
-  if (dInput && !dInput.value) {
-    var now = new Date();
-    dInput.value = ('0' + now.getDate()).slice(-2) + '/' + ('0' + (now.getMonth() + 1)).slice(-2) + '/' + now.getFullYear();
-    updatePageKpscCanvas();
-  }
-});
+function resetToStep1() {
+  kpscRawImg = null;
+  kpscCroppedCanvas = null;
+  kpscFinalBlob = null;
+  document.getElementById('kpscFileInput').value = '';
+  switchKpscStep(1);
+}
 </script>

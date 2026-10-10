@@ -1,233 +1,541 @@
 <!-- 
   ========================================================================
-  PAGE TITLE: Government Job Photo Resizer Online (SSC, UPSC, Bank, Railway, State PSCs)
+  PAGE TITLE: 🇮🇳 Govt Job Photo Resizer Online - SSC, UPSC, IBPS, RRB & State PSC Resizer
   PERMALINK / SLUG: govt-job-photo-resizer
   ========================================================================
 -->
-<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+<div class="pi7-govt-wrapper" style="max-width:920px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#1E293B; line-height:1.6;">
 
-  <!-- Header Banner -->
-  <div style="background:linear-gradient(135deg, #047857 0%, #10B981 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(16,185,129,0.25);">
-    <span style="background:rgba(255,255,255,0.2); color:#FFFFFF; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
-      🇮🇳 All-India &amp; State PSCs Multi-Preset Resizer
+  <!-- Main Heading -->
+  <div style="text-align:center; margin-bottom:2rem;">
+    <span style="background:#EFF6FF; color:#2563EB; font-size:0.8rem; font-weight:800; padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.6rem; border:1px solid #BFDBFE;">
+      🇮🇳 All Central &amp; State Govt Job Presets
     </span>
-    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
-      Government Job Online Photo Resizer
+    <h1 style="font-size:2rem; font-weight:900; color:#0F172A; margin:0 0 0.5rem; line-height:1.25;">
+      Govt Job Photo Resizer Online
     </h1>
-    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
-      Resize and compress your passport photo for SSC CGL, UPSC Civil Services, IBPS Banking, Railway RRB, and State PSC application forms in exact required dimensions and KB limits.
+    <p style="font-size:0.95rem; color:#64748B; max-width:640px; margin:0 auto;">
+      Instant photo resizing with official presets for SSC, UPSC, IBPS / SBI Bank, Railway RRB, and all State PSC exams with precision KB target.
     </p>
   </div>
 
-  <!-- Interactive Tool Box -->
-  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem;">
-      <!-- Controls -->
-      <div>
-        <div style="border:2px dashed #10B981; border-radius:12px; padding:1.75rem 1rem; text-align:center; background:#ECFDF5; cursor:pointer; position:relative;">
-          <div style="font-size:2.2rem; color:#059669; margin-bottom:0.5rem;">🖼️</div>
-          <strong style="font-size:1rem; color:#065F46; display:block;">Click to Upload Photo</strong>
-          <span style="font-size:0.8rem; color:#64748B;">Upload camera image or scanned photograph</span>
-          <input type="file" id="pageAllPscPhotoInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="handlePageAllPscUpload(event)">
-        </div>
+  <!-- Wizard Card Container -->
+  <div id="govtWizardContainer" style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:20px; padding:2rem 1.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin-bottom:2.5rem; min-height:380px;">
 
-        <div style="margin-top:1.25rem;">
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Select Exam Portal Preset:</label>
-          <select id="pageAllPscPreset" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.9rem; font-weight:700; background:#F8FAFC;" onchange="applyPageAllPscPreset(this.value)">
-            <option value="ssc">SSC (CGL, CHSL, MTS, GD) - 350&#215;450 px (20-50 KB)</option>
-            <option value="upsc">UPSC (Civil Services, NDA, CDS) - 350&#215;350 px (20-300 KB)</option>
-            <option value="ibps">IBPS / SBI Banking - 200&#215;230 px (20-50 KB)</option>
-            <option value="rrb">Railway RRB (NTPC, Group D, ALP) - 210&#215;270 px (30-70 KB)</option>
-            <option value="tnpsc">TNPSC (Tamil Nadu PSC) - 165&#215;200 px (20-50 KB)</option>
-            <option value="kpsc_kar">KPSC (Karnataka PSC) - 150&#215;200 px (20-50 KB)</option>
-            <option value="appsc">APPSC / TSPSC - 150&#215;200 px (20-50 KB)</option>
-            <option value="mpsc">MPSC (Maharashtra) - 160&#215;200 px (20-50 KB)</option>
-            <option value="custom">⚙️ Custom Dimension &amp; Target Size</option>
-          </select>
-        </div>
+    <!-- STEP INDICATOR -->
+    <div style="display:flex; justify-content:center; align-items:center; gap:8px; margin-bottom:2rem; flex-wrap:wrap;">
+      <div id="govtDot1" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#2563EB; color:#FFFFFF;">
+        <span>1</span> Upload
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="govtDot2" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>2</span> Crop &amp; Ratio
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="govtDot3" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>3</span> Name / Date (Optional)
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="govtDot4" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>4</span> Exam Preset &amp; KB
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="govtDot5" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>5</span> Download
+      </div>
+    </div>
 
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:1rem;">
-          <div>
-            <label style="display:block; font-size:0.82rem; font-weight:800; color:#475569; margin-bottom:4px;">Width (px):</label>
-            <input type="number" id="pageAllPscW" value="350" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageAllPscCanvas()">
-          </div>
-          <div>
-            <label style="display:block; font-size:0.82rem; font-weight:800; color:#475569; margin-bottom:4px;">Height (px):</label>
-            <input type="number" id="pageAllPscH" value="450" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageAllPscCanvas()">
-          </div>
-        </div>
+    <!-- STEP 1: UPLOAD BOX -->
+    <div id="govtStep1" style="display:block;">
+      <div style="border:2px dashed #3B82F6; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#2563EB'; this.style.background='#EFF6FF';" onmouseout="this.style.borderColor='#3B82F6'; this.style.background='#F8FAFC';">
+        <p style="font-size:1.15rem; font-weight:700; color:#334155; margin:0 0 1.25rem;">
+          Select Or Drag &amp; Drop Images Here
+        </p>
+        <button type="button" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.3); pointer-events:none;">
+          Select Images
+        </button>
+        <input type="file" id="govtFileInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="onGovtImageSelected(event)">
+      </div>
+      <p style="text-align:center; font-size:0.85rem; color:#94A3B8; margin-top:1rem;">
+        🔒 All editing is 100% processed directly on your device. Supports JPG, JPEG, and PNG.
+      </p>
+    </div>
 
-        <div style="margin-top:1rem;">
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Max Target File Size (KB):</label>
-          <input type="number" id="pageAllPscMaxKb" value="50" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageAllPscCanvas()">
-        </div>
+    <!-- STEP 2: CROP SCREEN -->
+    <div id="govtStep2" style="display:none; text-align:center;">
+      <div style="background:#0F172A; border-radius:12px; padding:1rem; max-width:650px; margin:0 auto 1.5rem; position:relative; overflow:hidden; min-height:300px; display:flex; align-items:center; justify-content:center;">
+        <canvas id="govtCropCanvas" style="max-width:100%; max-height:360px; object-fit:contain; border-radius:6px; cursor:crosshair;"></canvas>
       </div>
 
-      <!-- Preview Box -->
-      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
-        <div style="font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:10px;">
-          Resized Preview (<span id="pageAllPscSizeBadge" style="color:#059669;">0 KB</span>)
+      <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:1.5rem; flex-wrap:wrap;">
+        <button type="button" onclick="rotateGovtImage(-90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+          ↺ Rotate Left
+        </button>
+        <button type="button" onclick="rotateGovtImage(90)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+          ↻ Rotate Right
+        </button>
+        <button type="button" onclick="initGovtCropScreen()" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+          ⛶ Reset Box
+        </button>
+      </div>
+
+      <button type="button" onclick="applyGovtCropAndNext()" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
+        Crop &amp; Next
+      </button>
+    </div>
+
+    <!-- STEP 3: NAME & DATE ON IMAGE -->
+    <div id="govtStep3" style="display:none;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:2rem; align-items:center;">
+        <!-- Live Preview Left -->
+        <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; text-align:center;">
+          <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 6px 16px rgba(0,0,0,0.08); background:#FFFFFF;">
+            <canvas id="govtNamePreviewCanvas" width="180" height="230" style="width:180px; height:230px; display:block;"></canvas>
+          </div>
         </div>
-        <div style="border:1px solid #CBD5E1; box-shadow:0 4px 14px rgba(0,0,0,0.1); background:#FFFFFF; display:inline-block; border-radius:4px; overflow:hidden;">
-          <canvas id="pageAllPscCanvas" width="350" height="450" style="max-width:180px; max-height:220px; display:block;"></canvas>
+
+        <!-- Controls Right -->
+        <div>
+          <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin:0 0 1rem;">
+            Add Name &amp; Date On Photo (Optional)
+          </h3>
+
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; font-weight:700; color:#334155; margin-bottom:1.25rem; cursor:pointer;">
+            <input type="checkbox" id="govtAddStripCheckbox" onchange="renderGovtNamePreview()">
+            Add Bottom White Strip (For State PSC / SSC if required)
+          </label>
+
+          <!-- Candidate Name -->
+          <div style="border:1px solid #CBD5E1; border-radius:8px; padding:10px 14px; margin-bottom:1rem; position:relative; background:#FFFFFF;">
+            <span style="position:absolute; top:-9px; left:10px; background:#FFFFFF; padding:0 6px; font-size:0.75rem; font-weight:800; color:#64748B;">Candidate Name</span>
+            <input type="text" id="govtCandidateName" placeholder="e.g. RAHUL SHARMA" style="width:100%; border:none; outline:none; font-size:0.95rem; font-weight:700; text-transform:uppercase;" oninput="renderGovtNamePreview()">
+          </div>
+
+          <!-- Date of Photo -->
+          <div style="border:1px solid #CBD5E1; border-radius:8px; padding:10px 14px; margin-bottom:1.5rem; position:relative; background:#FFFFFF;">
+            <span style="position:absolute; top:-9px; left:10px; background:#FFFFFF; padding:0 6px; font-size:0.75rem; font-weight:800; color:#64748B;">Date on Photo</span>
+            <input type="text" id="govtPhotoDate" placeholder="e.g. 10/10/2026" style="width:100%; border:none; outline:none; font-size:0.95rem; font-weight:700;" oninput="renderGovtNamePreview()">
+          </div>
+
+          <!-- Buttons -->
+          <div style="display:flex; gap:12px;">
+            <button type="button" onclick="saveGovtNameAndNext()" style="background:#2563EB; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3);">
+              Save &amp; Next
+            </button>
+            <button type="button" onclick="skipGovtNameAndNext()" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+              Skip
+            </button>
+          </div>
         </div>
-        <button type="button" onclick="downloadPageAllPscPhoto()" style="margin-top:1.25rem; width:100%; background:linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%); color:#FFFFFF; border:none; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3); transition:all 0.2s;">
-          📥 Download Resized Photo
+      </div>
+    </div>
+
+    <!-- STEP 4: SET SIZE & DIMENSIONS -->
+    <div id="govtStep4" style="display:none;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:2rem; align-items:center;">
+        <!-- Preview Left -->
+        <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; text-align:center;">
+          <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 6px 16px rgba(0,0,0,0.08); background:#FFFFFF;">
+            <canvas id="govtDimPreviewCanvas" width="180" height="230" style="width:180px; height:230px; display:block;"></canvas>
+          </div>
+        </div>
+
+        <!-- Controls Right -->
+        <div>
+          <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin:0 0 1rem;">
+            Select Exam Preset &amp; Target KB
+          </h3>
+
+          <div style="margin-bottom:1rem;">
+            <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Official Exam Preset</label>
+            <select id="govtExamPresetSelect" style="width:100%; box-sizing:border-box; padding:10px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; background:#F8FAFC;" onchange="applyGovtExamPreset(this.value)">
+              <option value="ssc">SSC CGL, CHSL, MTS, GD (350 × 450 px, 20-50 KB)</option>
+              <option value="upsc">UPSC Civil Services / NDA (350 × 350 px, 20-300 KB)</option>
+              <option value="ibps">IBPS PO / Clerk / SBI Bank (200 × 230 px, 20-50 KB)</option>
+              <option value="rrb">Railway RRB ALP / Group D (210 × 270 px, 30-70 KB)</option>
+              <option value="state_psc">State PSC (UPPSC, BPSC, MPPSC, TSPSC) (350 × 450 px, 50 KB)</option>
+              <option value="custom">Custom Dimensions</option>
+            </select>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.25rem;">
+            <div style="flex:1;">
+              <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Width (PX)</label>
+              <input type="number" id="govtFinalWidth" value="350" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800;">
+            </div>
+            <span style="font-weight:900; color:#94A3B8; margin-top:16px;">✕</span>
+            <div style="flex:1;">
+              <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Height (PX)</label>
+              <input type="number" id="govtFinalHeight" value="450" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800;">
+            </div>
+          </div>
+
+          <div style="margin-bottom:1.5rem;">
+            <div style="font-size:0.82rem; color:#64748B; margin-bottom:6px;">
+              ℹ️ Target File Size in KB
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:0.9rem; font-weight:800; color:#334155;">Size:</span>
+              <input type="number" id="govtFinalKB" value="45" min="10" max="300" style="width:80px; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; text-align:center;">
+              <span style="background:#475569; color:#FFFFFF; font-size:0.85rem; font-weight:800; padding:8px 12px; border-radius:6px;">Kb</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button type="button" onclick="generateFinalGovtPhoto()" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3);">
+              Create Photo
+            </button>
+            <button type="button" onclick="resetGovtToStep1()" style="background:#FFFFFF; color:#2563EB; border:1.5px solid #2563EB; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+              + Upload New Image
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5: FINAL RESULT / DOWNLOAD -->
+    <div id="govtStep5" style="display:none; text-align:center;">
+      <div style="max-width:340px; margin:0 auto; background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+        <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.1); background:#FFFFFF; margin-bottom:1rem;">
+          <img id="govtFinalResultImg" src="" alt="Govt Job Photo" style="max-width:180px; height:auto; display:block; object-fit:contain;">
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <div id="govtFinalSizeBadge" style="font-size:1.8rem; font-weight:900; color:#0F172A;">42 KB</div>
+          <span id="govtFinalDimBadge" style="background:#EFF6FF; color:#2563EB; font-size:0.8rem; font-weight:800; padding:3px 10px; border-radius:50px; display:inline-block;">350 &#215; 450 px</span>
+        </div>
+
+        <div style="margin-bottom:1.25rem; text-align:left;">
+          <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Rename Photo</label>
+          <div style="display:flex; align-items:center; border:1.5px solid #CBD5E1; border-radius:8px; overflow:hidden; background:#FFFFFF;">
+            <input type="text" id="govtRenameInput" value="GOVT_PHOTO_1INDIAJOB" style="flex:1; border:none; outline:none; padding:8px 10px; font-size:0.9rem; font-weight:700;">
+            <span style="background:#F1F5F9; color:#64748B; padding:8px 10px; font-weight:800; font-size:0.85rem;">.jpg</span>
+          </div>
+        </div>
+
+        <button type="button" onclick="downloadGovtFinalImage()" style="width:100%; background:#2563EB; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
+          Download Image
+        </button>
+      </div>
+
+      <div style="margin-top:2rem; font-size:0.9rem; color:#64748B;">
+        <p style="margin-bottom:6px;">Made on your device. Nothing was uploaded.</p>
+        <p>Need your signature resized? <a href="/p/govt-job-signature-resizer.html" style="color:#2563EB; font-weight:800; text-decoration:underline;">Use our signature resizer</a>.</p>
+        <button type="button" onclick="resetGovtToStep1()" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
+          Make Another Photo
         </button>
       </div>
     </div>
-  </div>
 
-  <!-- Exam Photo Specifications Reference Table -->
-  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:1.5rem; margin-bottom:2rem; overflow-x:auto;">
-    <h2 style="font-size:1.3rem; font-weight:800; color:#0F172A; margin-top:0; margin-bottom:1rem;">
-      📊 Major Government Exam Photo Upload Requirements
-    </h2>
-    <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
-      <thead>
-        <tr style="background:#E2E8F0; text-align:left;">
-          <th style="padding:10px 12px; border:1px solid #CBD5E1;">Exam Organization</th>
-          <th style="padding:10px 12px; border:1px solid #CBD5E1;">Required Dimensions</th>
-          <th style="padding:10px 12px; border:1px solid #CBD5E1;">File Size Limit</th>
-          <th style="padding:10px 12px; border:1px solid #CBD5E1;">Format</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1; font-weight:700;">SSC (Staff Selection Commission)</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1;">3.5 cm &#215; 4.5 cm (350&#215;450 px)</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1; color:#059669; font-weight:700;">20 KB to 50 KB</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1;">JPG / JPEG</td>
-        </tr>
-        <tr style="background:#FFFFFF;">
-          <td style="padding:8px 12px; border:1px solid #CBD5E1; font-weight:700;">UPSC (Civil Services / NDA / CDS)</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1;">350 &#215; 350 pixels</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1; color:#059669; font-weight:700;">20 KB to 300 KB</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1;">JPG / JPEG</td>
-        </tr>
-        <tr>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1; font-weight:700;">IBPS &amp; State Bank of India (SBI)</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1;">200 &#215; 230 pixels</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1; color:#059669; font-weight:700;">20 KB to 50 KB</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1;">JPG / JPEG</td>
-        </tr>
-        <tr style="background:#FFFFFF;">
-          <td style="padding:8px 12px; border:1px solid #CBD5E1; font-weight:700;">Railway RRB (NTPC, ALP, Group D)</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1;">35 mm &#215; 45 mm</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1; color:#059669; font-weight:700;">30 KB to 70 KB</td>
-          <td style="padding:8px 12px; border:1px solid #CBD5E1;">JPG / JPEG</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 
   <div style="text-align:center; margin-top:2rem;">
-    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#047857; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#2563EB; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
       🏠 Return to 1IndiaJob Home
     </a>
   </div>
 </div>
 
 <script>
-var pageAllPscImg = null;
-function handlePageAllPscUpload(e) {
+var govtRawImg = null;
+var govtCroppedCanvas = null;
+var govtFinalBlob = null;
+var govtCropBox = { x: 0, y: 0, w: 200, h: 260 };
+var isGovtDragging = false;
+var govtDragStartX = 0, govtDragStartY = 0;
+
+function switchGovtStep(stepNum) {
+  for (var i = 1; i <= 5; i++) {
+    var stepEl = document.getElementById('govtStep' + i);
+    var dotEl = document.getElementById('govtDot' + i);
+    if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
+    if (dotEl) {
+      if (i === stepNum) {
+        dotEl.style.background = '#2563EB';
+        dotEl.style.color = '#FFFFFF';
+      } else if (i < stepNum) {
+        dotEl.style.background = '#059669';
+        dotEl.style.color = '#FFFFFF';
+      } else {
+        dotEl.style.background = '#F1F5F9';
+        dotEl.style.color = '#64748B';
+      }
+    }
+  }
+}
+
+function onGovtImageSelected(e) {
   var file = e.target.files[0];
   if (!file) return;
-  var r = new FileReader();
-  r.onload = function(evt) {
+  var reader = new FileReader();
+  reader.onload = function(evt) {
     var img = new Image();
     img.onload = function() {
-      pageAllPscImg = img;
-      updatePageAllPscCanvas();
+      govtRawImg = img;
+      initGovtCropScreen();
+      switchGovtStep(2);
     };
     img.src = evt.target.result;
   };
-  r.readAsDataURL(file);
+  reader.readAsDataURL(file);
 }
 
-function applyPageAllPscPreset(preset) {
-  var w = document.getElementById('pageAllPscW');
-  var h = document.getElementById('pageAllPscH');
-  var kb = document.getElementById('pageAllPscMaxKb');
-  if (!w || !h || !kb) return;
-  if (preset === 'ssc') { w.value = 350; h.value = 450; kb.value = 50; }
-  else if (preset === 'upsc') { w.value = 350; h.value = 350; kb.value = 300; }
-  else if (preset === 'ibps') { w.value = 200; h.value = 230; kb.value = 50; }
-  else if (preset === 'rrb') { w.value = 210; h.value = 270; kb.value = 70; }
-  else if (preset === 'tnpsc') { w.value = 165; h.value = 200; kb.value = 50; }
-  else if (preset === 'kpsc_kar') { w.value = 150; h.value = 200; kb.value = 50; }
-  else if (preset === 'appsc') { w.value = 150; h.value = 200; kb.value = 50; }
-  else if (preset === 'mpsc') { w.value = 160; h.value = 200; kb.value = 50; }
-  updatePageAllPscCanvas();
+function initGovtCropScreen() {
+  if (!govtRawImg) return;
+  var canvas = document.getElementById('govtCropCanvas');
+  var maxW = 500, maxH = 350;
+  var ratio = Math.min(maxW / govtRawImg.width, maxH / govtRawImg.height, 1);
+  canvas.width = govtRawImg.width * ratio;
+  canvas.height = govtRawImg.height * ratio;
+
+  var boxW = canvas.width * 0.7;
+  var boxH = boxW * (450 / 350);
+  if (boxH > canvas.height * 0.9) {
+    boxH = canvas.height * 0.9;
+    boxW = boxH * (350 / 450);
+  }
+  govtCropBox = {
+    x: (canvas.width - boxW) / 2,
+    y: (canvas.height - boxH) / 2,
+    w: boxW,
+    h: boxH
+  };
+
+  drawGovtCropCanvas();
+  setupGovtCropDrag(canvas);
 }
 
-function updatePageAllPscCanvas() {
-  var canvas = document.getElementById('pageAllPscCanvas');
-  if (!canvas) return;
+function drawGovtCropCanvas() {
+  var canvas = document.getElementById('govtCropCanvas');
+  if (!canvas || !govtRawImg) return;
   var ctx = canvas.getContext('2d');
-  var w = parseInt(document.getElementById('pageAllPscW').value, 10) || 350;
-  var h = parseInt(document.getElementById('pageAllPscH').value, 10) || 450;
-  var maxKb = parseInt(document.getElementById('pageAllPscMaxKb').value, 10) || 50;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  canvas.width = w;
-  canvas.height = h;
+  ctx.drawImage(govtRawImg, 0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+  ctx.fillRect(0, 0, canvas.width, govtCropBox.y);
+  ctx.fillRect(0, govtCropBox.y + govtCropBox.h, canvas.width, canvas.height - (govtCropBox.y + govtCropBox.h));
+  ctx.fillRect(0, govtCropBox.y, govtCropBox.x, govtCropBox.h);
+  ctx.fillRect(govtCropBox.x + govtCropBox.w, govtCropBox.y, canvas.width - (govtCropBox.x + govtCropBox.w), govtCropBox.h);
+
+  ctx.strokeStyle = '#38BDF8';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(govtCropBox.x, govtCropBox.y, govtCropBox.w, govtCropBox.h);
+}
+
+function setupGovtCropDrag(canvas) {
+  var onStart = function(cx, cy) {
+    var rect = canvas.getBoundingClientRect();
+    var x = cx - rect.left;
+    var y = cy - rect.top;
+    if (x >= govtCropBox.x && x <= govtCropBox.x + govtCropBox.w && y >= govtCropBox.y && y <= govtCropBox.y + govtCropBox.h) {
+      isGovtDragging = true;
+      govtDragStartX = x - govtCropBox.x;
+      govtDragStartY = y - govtCropBox.y;
+    }
+  };
+
+  var onMove = function(cx, cy) {
+    if (!isGovtDragging) return;
+    var rect = canvas.getBoundingClientRect();
+    var x = cx - rect.left;
+    var y = cy - rect.top;
+    var newX = Math.max(0, Math.min(x - govtDragStartX, canvas.width - govtCropBox.w));
+    var newY = Math.max(0, Math.min(y - govtDragStartY, canvas.height - govtCropBox.h));
+    govtCropBox.x = newX;
+    govtCropBox.y = newY;
+    drawGovtCropCanvas();
+  };
+
+  var onEnd = function() { isGovtDragging = false; };
+  canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
+  window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
+  window.onmouseup = onEnd;
+
+  canvas.ontouchstart = function(e) { if(e.touches.length) onStart(e.touches[0].clientX, e.touches[0].clientY); };
+  window.ontouchmove = function(e) { if(e.touches.length) onMove(e.touches[0].clientX, e.touches[0].clientY); };
+  window.ontouchend = onEnd;
+}
+
+function rotateGovtImage(deg) {
+  if (!govtRawImg) return;
+  var offCanvas = document.createElement('canvas');
+  var offCtx = offCanvas.getContext('2d');
+  offCanvas.width = govtRawImg.height;
+  offCanvas.height = govtRawImg.width;
+  offCtx.translate(offCanvas.width / 2, offCanvas.height / 2);
+  offCtx.rotate(deg * Math.PI / 180);
+  offCtx.drawImage(govtRawImg, -govtRawImg.width / 2, -govtRawImg.height / 2);
+
+  var rImg = new Image();
+  rImg.onload = function() {
+    govtRawImg = rImg;
+    initGovtCropScreen();
+  };
+  rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+}
+
+function applyGovtCropAndNext() {
+  var canvas = document.getElementById('govtCropCanvas');
+  var scaleX = govtRawImg.width / canvas.width;
+  var scaleY = govtRawImg.height / canvas.height;
+
+  govtCroppedCanvas = document.createElement('canvas');
+  govtCroppedCanvas.width = 350;
+  govtCroppedCanvas.height = 450;
+  var ctx = govtCroppedCanvas.getContext('2d');
+  ctx.drawImage(govtRawImg, govtCropBox.x * scaleX, govtCropBox.y * scaleY, govtCropBox.w * scaleX, govtCropBox.h * scaleY, 0, 0, 350, 450);
+
+  renderGovtNamePreview();
+  switchGovtStep(3);
+}
+
+function renderGovtNamePreview() {
+  var previewCanvas = document.getElementById('govtNamePreviewCanvas');
+  if (!previewCanvas || !govtCroppedCanvas) return;
+  var ctx = previewCanvas.getContext('2d');
+  previewCanvas.width = 180;
+  previewCanvas.height = 230;
+
+  var addStrip = document.getElementById('govtAddStripCheckbox').checked;
+  var nameVal = (document.getElementById('govtCandidateName').value || '').toUpperCase().trim();
+  var dateVal = (document.getElementById('govtPhotoDate').value || '').trim();
+
+  var bannerH = (addStrip && (nameVal || dateVal)) ? 44 : 0;
+  var photoH = 230 - bannerH;
 
   ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(0, 0, w, h);
+  ctx.fillRect(0, 0, 180, 230);
+  ctx.drawImage(govtCroppedCanvas, 0, 0, 350, 450, 0, 0, 180, photoH);
 
-  if (pageAllPscImg) {
-    var scale = Math.max(w / pageAllPscImg.width, h / pageAllPscImg.height);
-    var nw = pageAllPscImg.width * scale;
-    var nh = pageAllPscImg.height * scale;
-    var nx = (w - nw) / 2;
-    var ny = (h - nh) / 2;
-    ctx.drawImage(pageAllPscImg, nx, ny, nw, nh);
-  } else {
-    ctx.fillStyle = '#E2E8F0';
-    ctx.fillRect(0, 0, w, h);
-    ctx.fillStyle = '#94A3B8';
-    ctx.font = 'bold 13px sans-serif';
+  if (bannerH > 0) {
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, photoH, 180, bannerH);
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, photoH);
+    ctx.lineTo(180, photoH);
+    ctx.stroke();
+
+    ctx.fillStyle = '#000000';
     ctx.textAlign = 'center';
-    ctx.fillText('Select Photo', w / 2, h / 2);
+    if (nameVal && dateVal) {
+      ctx.font = 'bold 12px sans-serif';
+      ctx.fillText(nameVal, 90, photoH + 18, 170);
+      ctx.font = 'bold 11px sans-serif';
+      ctx.fillText(dateVal, 90, photoH + 34, 170);
+    } else if (nameVal || dateVal) {
+      ctx.font = 'bold 13px sans-serif';
+      ctx.fillText(nameVal || dateVal, 90, photoH + 26, 170);
+    }
   }
-
-  var q = 0.92;
-  function step() {
-    canvas.toBlob(function(b) {
-      if (!b) return;
-      var kb = b.size / 1024;
-      if (kb <= maxKb || q <= 0.1) {
-        var bd = document.getElementById('pageAllPscSizeBadge');
-        if (bd) bd.innerText = kb.toFixed(1) + ' KB';
-      } else {
-        q -= 0.08;
-        step();
-      }
-    }, 'image/jpeg', q);
-  }
-  step();
 }
 
-function downloadPageAllPscPhoto() {
-  var canvas = document.getElementById('pageAllPscCanvas');
-  var maxKb = parseInt(document.getElementById('pageAllPscMaxKb').value, 10) || 50;
-  if (!canvas) return;
-  var q = 0.92;
-  function step() {
-    canvas.toBlob(function(b) {
-      if (!b) return;
-      var kb = b.size / 1024;
-      if (kb <= maxKb || q <= 0.1) {
-        var a = document.createElement('a');
-        a.href = URL.createObjectURL(b);
-        a.download = 'Govt_Exam_Photo_Resized.jpg';
-        a.click();
-      } else {
-        q -= 0.08;
-        step();
-      }
-    }, 'image/jpeg', q);
+function saveGovtNameAndNext() {
+  renderGovtDimPreview();
+  switchGovtStep(4);
+}
+
+function skipGovtNameAndNext() {
+  document.getElementById('govtCandidateName').value = '';
+  document.getElementById('govtPhotoDate').value = '';
+  renderGovtDimPreview();
+  switchGovtStep(4);
+}
+
+function applyGovtExamPreset(preset) {
+  if (preset === 'ssc' || preset === 'state_psc') {
+    document.getElementById('govtFinalWidth').value = 350;
+    document.getElementById('govtFinalHeight').value = 450;
+    document.getElementById('govtFinalKB').value = 45;
+  } else if (preset === 'upsc') {
+    document.getElementById('govtFinalWidth').value = 350;
+    document.getElementById('govtFinalHeight').value = 350;
+    document.getElementById('govtFinalKB').value = 100;
+  } else if (preset === 'ibps') {
+    document.getElementById('govtFinalWidth').value = 200;
+    document.getElementById('govtFinalHeight').value = 230;
+    document.getElementById('govtFinalKB').value = 40;
+  } else if (preset === 'rrb') {
+    document.getElementById('govtFinalWidth').value = 210;
+    document.getElementById('govtFinalHeight').value = 270;
+    document.getElementById('govtFinalKB').value = 50;
   }
-  step();
+}
+
+function renderGovtDimPreview() {
+  var dimCanvas = document.getElementById('govtDimPreviewCanvas');
+  var srcCanvas = document.getElementById('govtNamePreviewCanvas');
+  if (dimCanvas && srcCanvas) {
+    dimCanvas.width = 180;
+    dimCanvas.height = 230;
+    var ctx = dimCanvas.getContext('2d');
+    ctx.drawImage(srcCanvas, 0, 0, 180, 230);
+  }
+}
+
+function generateFinalGovtPhoto() {
+  var srcCanvas = document.getElementById('govtNamePreviewCanvas');
+  var targetKB = parseInt(document.getElementById('govtFinalKB').value, 10) || 45;
+  var targetW = parseInt(document.getElementById('govtFinalWidth').value, 10) || 350;
+  var targetH = parseInt(document.getElementById('govtFinalHeight').value, 10) || 450;
+
+  var outCanvas = document.createElement('canvas');
+  outCanvas.width = targetW;
+  outCanvas.height = targetH;
+  var ctx = outCanvas.getContext('2d');
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, targetW, targetH);
+  ctx.drawImage(srcCanvas, 0, 0, targetW, targetH);
+
+  compressCanvasToTarget(outCanvas, targetKB, function(blob) {
+    govtFinalBlob = blob;
+    document.getElementById('govtFinalResultImg').src = URL.createObjectURL(blob);
+    document.getElementById('govtFinalSizeBadge').innerText = (blob.size / 1024).toFixed(1) + ' KB';
+    document.getElementById('govtFinalDimBadge').innerText = targetW + ' × ' + targetH + ' px';
+    switchGovtStep(5);
+  });
+}
+
+function compressCanvasToTarget(canvas, maxKB, callback) {
+  var minQ = 0.4, maxQ = 0.98, q = 0.88;
+  var attempts = 0;
+
+  function tryQ(currentQ) {
+    canvas.toBlob(function(blob) {
+      attempts++;
+      var currentKB = blob.size / 1024;
+      if (currentKB <= maxKB || attempts >= 6 || minQ >= maxQ) {
+        callback(blob);
+      } else {
+        maxQ = currentQ - 0.05;
+        q = (minQ + maxQ) / 2;
+        tryQ(q);
+      }
+    }, 'image/jpeg', currentQ);
+  }
+  tryQ(q);
+}
+
+function downloadGovtFinalImage() {
+  if (!govtFinalBlob) return;
+  var fileName = (document.getElementById('govtRenameInput').value || 'GOVT_PHOTO_1INDIAJOB').trim() + '.jpg';
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(govtFinalBlob);
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function resetGovtToStep1() {
+  govtRawImg = null;
+  govtCroppedCanvas = null;
+  govtFinalBlob = null;
+  document.getElementById('govtFileInput').value = '';
+  switchGovtStep(1);
 }
 </script>

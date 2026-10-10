@@ -1,149 +1,258 @@
 <!-- 
   ========================================================================
-  PAGE TITLE: Government Job Image KB Reducer & Compressor Online (20KB, 50KB, 100KB, 200KB)
+  PAGE TITLE: 🗜️ Image KB Compressor Online - Compress Photo & Signature to 20KB, 50KB, 100KB
   PERMALINK / SLUG: image-kb-compressor
   ========================================================================
 -->
-<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+<div class="pi7-compress-wrapper" style="max-width:920px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#1E293B; line-height:1.6;">
 
-  <!-- Header Banner -->
-  <div style="background:linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(124,58,237,0.25);">
-    <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
-      🗜️ Precision KB Reducer
+  <!-- Main Heading -->
+  <div style="text-align:center; margin-bottom:2rem;">
+    <span style="background:#ECFDF5; color:#059669; font-size:0.8rem; font-weight:800; padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.6rem; border:1px solid #A7F3D0;">
+      🗜️ Precision KB Target Compression
     </span>
-    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
-      Image KB Reducer &amp; Compressor Online
+    <h1 style="font-size:2rem; font-weight:900; color:#0F172A; margin:0 0 0.5rem; line-height:1.25;">
+      Image KB Compressor Online
     </h1>
-    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
-      Reduce and compress any image or certificate down to exact target file size (20 KB, 30 KB, 50 KB, 100 KB, 200 KB) without blur or loss of quality.
+    <p style="font-size:0.95rem; color:#64748B; max-width:620px; margin:0 auto;">
+      Compress photos, signatures, and marksheets to exact KB sizes (20KB, 30KB, 50KB, 100KB) for government exam application forms without losing clarity.
     </p>
   </div>
 
-  <!-- Interactive Tool Box -->
-  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem;">
-      <!-- Inputs -->
-      <div>
-        <div style="border:2px dashed #9333EA; border-radius:12px; padding:1.75rem 1rem; text-align:center; background:#FAF5FF; cursor:pointer; position:relative;">
-          <div style="font-size:2.2rem; color:#7C3AED; margin-bottom:0.5rem;">🗜️</div>
-          <strong style="font-size:1rem; color:#581C87; display:block;">Click to Select Heavy Image</strong>
-          <span style="font-size:0.8rem; color:#64748B;">Upload camera photo or scanned certificate</span>
-          <input type="file" id="pageCompInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="handlePageCompUpload(event)">
+  <!-- Wizard Card Container -->
+  <div id="compWizardContainer" style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:20px; padding:2rem 1.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin-bottom:2.5rem; min-height:380px;">
+
+    <!-- STEP INDICATOR -->
+    <div style="display:flex; justify-content:center; align-items:center; gap:8px; margin-bottom:2rem; flex-wrap:wrap;">
+      <div id="compDot1" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#059669; color:#FFFFFF;">
+        <span>1</span> Upload Image
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="compDot2" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>2</span> Target KB &amp; Quality
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="compDot3" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>3</span> Download Compressed
+      </div>
+    </div>
+
+    <!-- STEP 1: UPLOAD BOX -->
+    <div id="compStep1" style="display:block;">
+      <div style="border:2px dashed #34D399; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F0FDF4; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#059669'; this.style.background='#DCFCE7';" onmouseout="this.style.borderColor='#34D399'; this.style.background='#F0FDF4';">
+        <p style="font-size:1.15rem; font-weight:700; color:#065F46; margin:0 0 1.25rem;">
+          Select Or Drag &amp; Drop Image Here
+        </p>
+        <button type="button" style="background:#059669; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(5,150,105,0.3); pointer-events:none;">
+          Select Image
+        </button>
+        <input type="file" id="compFileInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="onCompImageSelected(event)">
+      </div>
+      <p style="text-align:center; font-size:0.85rem; color:#94A3B8; margin-top:1rem;">
+        🔒 Processed 100% locally on your computer/phone. Safe &amp; private.
+      </p>
+    </div>
+
+    <!-- STEP 2: SET TARGET KB -->
+    <div id="compStep2" style="display:none;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:2rem; align-items:center;">
+        <!-- Left: Image Preview & Original Stats -->
+        <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; text-align:center;">
+          <img id="compOriginalImgPreview" src="" alt="Preview" style="max-width:180px; max-height:220px; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,0.1); display:inline-block; object-fit:contain;">
+          <div style="margin-top:10px;">
+            <span style="font-size:0.8rem; font-weight:800; color:#64748B;">Original File Size:</span>
+            <strong id="compOriginalSizeBadge" style="color:#0F172A; font-size:0.95rem; display:block;">150 KB</strong>
+          </div>
         </div>
 
-        <div style="margin-top:1.25rem;">
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Select Target KB Limit:</label>
-          <div style="display:flex; gap:6px; flex-wrap:wrap;">
-            <button type="button" onclick="setPageCompKb(20)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">20 KB</button>
-            <button type="button" onclick="setPageCompKb(30)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">30 KB</button>
-            <button type="button" onclick="setPageCompKb(50)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">50 KB</button>
-            <button type="button" onclick="setPageCompKb(100)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">100 KB</button>
-            <button type="button" onclick="setPageCompKb(200)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">200 KB</button>
+        <!-- Right: Target KB Controls -->
+        <div>
+          <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin:0 0 1rem;">
+            Set Target File Size (KB)
+          </h3>
+
+          <!-- Quick Presets -->
+          <div style="margin-bottom:1.25rem;">
+            <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:6px;">Quick Presets</label>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button type="button" onclick="setCompTargetKB(20)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:6px 12px; border-radius:6px; font-size:0.85rem; font-weight:700; cursor:pointer;">20 KB</button>
+              <button type="button" onclick="setCompTargetKB(28)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:6px 12px; border-radius:6px; font-size:0.85rem; font-weight:700; cursor:pointer;">30 KB (Kerala PSC)</button>
+              <button type="button" onclick="setCompTargetKB(50)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:6px 12px; border-radius:6px; font-size:0.85rem; font-weight:700; cursor:pointer;">50 KB (SSC/Bank)</button>
+              <button type="button" onclick="setCompTargetKB(100)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:6px 12px; border-radius:6px; font-size:0.85rem; font-weight:700; cursor:pointer;">100 KB</button>
+              <button type="button" onclick="setCompTargetKB(200)" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:6px 12px; border-radius:6px; font-size:0.85rem; font-weight:700; cursor:pointer;">200 KB</button>
+            </div>
           </div>
-          <input type="number" id="pageCompTargetKb" value="50" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700; margin-top:8px;" oninput="runPageCompressor()">
+
+          <!-- Target KB Input -->
+          <div style="margin-bottom:1.5rem;">
+            <div style="font-size:0.82rem; color:#64748B; margin-bottom:6px;">
+              ℹ️ Exact Target File Size in KB
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:0.9rem; font-weight:800; color:#334155;">Compress To:</span>
+              <input type="number" id="compTargetKBInput" value="28" min="5" max="2000" style="width:90px; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-weight:800; text-align:center;">
+              <span style="background:#059669; color:#FFFFFF; font-size:0.85rem; font-weight:800; padding:8px 12px; border-radius:6px;">Kb</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button type="button" onclick="runCompCompression()" style="background:#059669; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(5,150,105,0.3);">
+              Compress Image
+            </button>
+            <button type="button" onclick="resetCompToStep1()" style="background:#FFFFFF; color:#059669; border:1.5px solid #059669; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+              + Upload Another
+            </button>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Preview Box -->
-      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
-        <div style="font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:10px;">
-          Compressed Preview (<span id="pageCompSizeBadge" style="color:#059669;">0 KB</span>)
+    <!-- STEP 3: RESULT & DOWNLOAD -->
+    <div id="compStep3" style="display:none; text-align:center;">
+      <div style="max-width:340px; margin:0 auto; background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+        <div style="display:inline-block; border:1px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.1); background:#FFFFFF; margin-bottom:1rem;">
+          <img id="compFinalResultImg" src="" alt="Compressed" style="max-width:200px; height:auto; display:block; object-fit:contain;">
         </div>
-        <div style="border:1px solid #CBD5E1; box-shadow:0 4px 14px rgba(0,0,0,0.1); background:#FFFFFF; display:inline-block; border-radius:4px; overflow:hidden;">
-          <canvas id="pageCompCanvas" style="max-width:180px; max-height:160px; display:block;"></canvas>
+
+        <div style="margin-bottom:1rem;">
+          <div id="compFinalSizeBadge" style="font-size:1.8rem; font-weight:900; color:#059669;">27.8 KB</div>
+          <span id="compReductionBadge" style="background:#ECFDF5; color:#047857; font-size:0.8rem; font-weight:800; padding:3px 10px; border-radius:50px; display:inline-block;">Reduced by 78%</span>
         </div>
-        <button type="button" onclick="downloadPageCompFile()" style="margin-top:1.25rem; width:100%; background:linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%); color:#FFFFFF; border:none; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(124,58,237,0.3); transition:all 0.2s;">
-          📥 Download Compressed Image
+
+        <div style="margin-bottom:1.25rem; text-align:left;">
+          <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Rename File</label>
+          <div style="display:flex; align-items:center; border:1.5px solid #CBD5E1; border-radius:8px; overflow:hidden; background:#FFFFFF;">
+            <input type="text" id="compRenameInput" value="COMPRESSED_1INDIAJOB" style="flex:1; border:none; outline:none; padding:8px 10px; font-size:0.9rem; font-weight:700;">
+            <span style="background:#F1F5F9; color:#64748B; padding:8px 10px; font-weight:800; font-size:0.85rem;">.jpg</span>
+          </div>
+        </div>
+
+        <button type="button" onclick="downloadCompFinalImage()" style="width:100%; background:#059669; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(5,150,105,0.35);">
+          Download Image
+        </button>
+      </div>
+
+      <div style="margin-top:2rem; font-size:0.9rem; color:#64748B;">
+        <p style="margin-bottom:6px;">Made on your device. Nothing was uploaded.</p>
+        <button type="button" onclick="resetCompToStep1()" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
+          Compress Another Image
         </button>
       </div>
     </div>
+
   </div>
 
   <div style="text-align:center; margin-top:2rem;">
-    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#7C3AED; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#059669; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
       🏠 Return to 1IndiaJob Home
     </a>
   </div>
 </div>
 
 <script>
-var pageCompImg = null;
-function handlePageCompUpload(e) {
+var compRawImg = null;
+var compOriginalBytes = 0;
+var compFinalBlob = null;
+
+function switchCompStep(stepNum) {
+  for (var i = 1; i <= 3; i++) {
+    var sEl = document.getElementById('compStep' + i);
+    var dEl = document.getElementById('compDot' + i);
+    if (sEl) sEl.style.display = (i === stepNum) ? 'block' : 'none';
+    if (dEl) {
+      if (i === stepNum) {
+        dEl.style.background = '#059669';
+        dEl.style.color = '#FFFFFF';
+      } else if (i < stepNum) {
+        dEl.style.background = '#2563EB';
+        dEl.style.color = '#FFFFFF';
+      } else {
+        dEl.style.background = '#F1F5F9';
+        dEl.style.color = '#64748B';
+      }
+    }
+  }
+}
+
+function onCompImageSelected(e) {
   var file = e.target.files[0];
   if (!file) return;
-  var r = new FileReader();
-  r.onload = function(evt) {
+  compOriginalBytes = file.size;
+  var reader = new FileReader();
+  reader.onload = function(evt) {
     var img = new Image();
     img.onload = function() {
-      pageCompImg = img;
-      runPageCompressor();
+      compRawImg = img;
+      document.getElementById('compOriginalImgPreview').src = evt.target.result;
+      document.getElementById('compOriginalSizeBadge').innerText = (compOriginalBytes / 1024).toFixed(1) + ' KB (' + img.width + ' × ' + img.height + ' px)';
+      switchCompStep(2);
     };
     img.src = evt.target.result;
   };
-  r.readAsDataURL(file);
+  reader.readAsDataURL(file);
 }
 
-function setPageCompKb(kb) {
-  var i = document.getElementById('pageCompTargetKb');
-  if (i) { i.value = kb; runPageCompressor(); }
+function setCompTargetKB(kb) {
+  document.getElementById('compTargetKBInput').value = kb;
 }
 
-function runPageCompressor() {
-  var canvas = document.getElementById('pageCompCanvas');
-  if (!canvas) return;
+function runCompCompression() {
+  if (!compRawImg) return;
+  var targetKB = parseInt(document.getElementById('compTargetKBInput').value, 10) || 30;
+
+  var canvas = document.createElement('canvas');
+  var scale = 1;
+  // If image is massive, scale down slightly
+  if (compRawImg.width > 1600 || compRawImg.height > 1600) {
+    scale = 1600 / Math.max(compRawImg.width, compRawImg.height);
+  }
+  canvas.width = compRawImg.width * scale;
+  canvas.height = compRawImg.height * scale;
   var ctx = canvas.getContext('2d');
-  var targetKb = parseInt(document.getElementById('pageCompTargetKb').value, 10) || 50;
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(compRawImg, 0, 0, canvas.width, canvas.height);
 
-  if (pageCompImg) {
-    var w = pageCompImg.width;
-    var h = pageCompImg.height;
-    var maxDim = 1200;
-    if (w > maxDim || h > maxDim) {
-      if (w > h) { h = Math.round((h * maxDim) / w); w = maxDim; }
-      else { w = Math.round((w * maxDim) / h); h = maxDim; }
-    }
-    canvas.width = w;
-    canvas.height = h;
-    ctx.drawImage(pageCompImg, 0, 0, w, h);
+  var minQ = 0.05, maxQ = 0.98, q = 0.85;
+  var attempts = 0;
 
-    var q = 0.92;
-    function step() {
-      canvas.toBlob(function(b) {
-        if (!b) return;
-        var kb = b.size / 1024;
-        if (kb <= targetKb || q <= 0.1) {
-          var bd = document.getElementById('pageCompSizeBadge');
-          if (bd) bd.innerText = kb.toFixed(1) + ' KB';
-        } else {
-          q -= 0.08;
-          step();
-        }
-      }, 'image/jpeg', q);
-    }
-    step();
+  function tryQ(currentQ) {
+    canvas.toBlob(function(blob) {
+      attempts++;
+      var currentKB = blob.size / 1024;
+      if (currentKB <= targetKB || attempts >= 8 || minQ >= maxQ) {
+        compFinalBlob = blob;
+        document.getElementById('compFinalResultImg').src = URL.createObjectURL(blob);
+        document.getElementById('compFinalSizeBadge').innerText = (blob.size / 1024).toFixed(1) + ' KB';
+        var pct = Math.max(0, Math.round(((compOriginalBytes - blob.size) / compOriginalBytes) * 100));
+        document.getElementById('compReductionBadge').innerText = 'Reduced by ' + pct + '%';
+        switchCompStep(3);
+      } else {
+        maxQ = currentQ - 0.08;
+        q = (minQ + maxQ) / 2;
+        tryQ(q);
+      }
+    }, 'image/jpeg', currentQ);
   }
+  tryQ(q);
 }
 
-function downloadPageCompFile() {
-  var canvas = document.getElementById('pageCompCanvas');
-  var targetKb = parseInt(document.getElementById('pageCompTargetKb').value, 10) || 50;
-  if (!canvas) return;
-  var q = 0.92;
-  function step() {
-    canvas.toBlob(function(b) {
-      if (!b) return;
-      var kb = b.size / 1024;
-      if (kb <= targetKb || q <= 0.1) {
-        var a = document.createElement('a');
-        a.href = URL.createObjectURL(b);
-        a.download = 'Compressed_Image_' + targetKb + 'KB.jpg';
-        a.click();
-      } else {
-        q -= 0.08;
-        step();
-      }
-    }, 'image/jpeg', q);
-  }
-  step();
+function downloadCompFinalImage() {
+  if (!compFinalBlob) return;
+  var fileName = (document.getElementById('compRenameInput').value || 'COMPRESSED_1INDIAJOB').trim() + '.jpg';
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(compFinalBlob);
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function resetCompToStep1() {
+  compRawImg = null;
+  compFinalBlob = null;
+  document.getElementById('compFileInput').value = '';
+  switchCompStep(1);
 }
 </script>
