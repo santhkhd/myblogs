@@ -1,0 +1,5502 @@
+[
+  {
+    "id": "mcq-science-000751",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000752",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000753",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000754",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000755",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000756",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000757",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000758",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000759",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000760",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000761",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000762",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000763",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000764",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000765",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000766",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000767",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000768",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000769",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000770",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000771",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000772",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000773",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000774",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000775",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000776",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000777",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000778",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000779",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000780",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000781",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000782",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000783",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000784",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000785",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000786",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000787",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000788",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000789",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000790",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000791",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000792",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000793",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000794",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000795",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000796",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000797",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000798",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000799",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000800",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000801",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000802",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000803",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000804",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000805",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000806",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000807",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000808",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000809",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000810",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000811",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000812",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000813",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000814",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000815",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000816",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000817",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000818",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000819",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000820",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000821",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000822",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000823",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000824",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000825",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000826",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000827",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000828",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000829",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000830",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000831",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000832",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000833",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000834",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000835",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000836",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000837",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000838",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000839",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000840",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000841",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000842",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000843",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000844",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000845",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000846",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000847",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000848",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000849",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000850",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000851",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000852",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000853",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000854",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000855",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000856",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000857",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000858",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000859",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000860",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000861",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000862",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000863",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000864",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000865",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000866",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000867",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000868",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000869",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000870",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000871",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000872",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000873",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000874",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000875",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000876",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000877",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000878",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000879",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000880",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000881",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000882",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000883",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000884",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000885",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000886",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000887",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000888",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000889",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000890",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000891",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000892",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000893",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000894",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000895",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000896",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000897",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000898",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000899",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000900",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000901",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000902",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000903",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000904",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000905",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000906",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000907",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000908",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000909",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000910",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000911",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000912",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000913",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000914",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000915",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000916",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000917",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000918",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000919",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000920",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000921",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000922",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000923",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000924",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000925",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000926",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000927",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000928",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000929",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000930",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000931",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000932",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000933",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000934",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000935",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000936",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000937",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000938",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000939",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000940",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000941",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000942",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000943",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000944",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000945",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000946",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000947",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000948",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000949",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000950",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000951",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000952",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000953",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000954",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000955",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000956",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000957",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000958",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000959",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000960",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000961",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000962",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000963",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000964",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000965",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000966",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000967",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000968",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000969",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000970",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000971",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000972",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000973",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000974",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000975",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000976",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000977",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000978",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000979",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000980",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000981",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000982",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000983",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000984",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000985",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000986",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000987",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000988",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000989",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000990",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000991",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000992",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000993",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000994",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000995",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000996",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?",
+    "options": [
+      "Ribosome",
+      "Mitochondria",
+      "Golgi Apparatus",
+      "Lysosome"
+    ],
+    "correct_index": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000997",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the chemical name of Vitamin C?",
+    "options": [
+      "Ascorbic Acid",
+      "Retinol",
+      "Tocopherol",
+      "Thiamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000998",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which gas is most abundantly present in the Earth's atmosphere?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon Dioxide",
+      "Argon"
+    ],
+    "correct_index": 1,
+    "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%).",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-000999",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "What is the speed of light in vacuum?",
+    "options": [
+      "3 × 10⁸ m/s",
+      "3 × 10⁶ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁵ m/s"
+    ],
+    "correct_index": 0,
+    "explanation": "The speed of light in vacuum is exactly 299,792,458 meters per second, commonly approximated as 3 × 10⁸ m/s (or 300,000 km/s).",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-science-001000",
+    "category_key": "science",
+    "category_name": "🔬 General Science & Tech",
+    "question": "Which instrument is used to measure atmospheric pressure?",
+    "options": [
+      "Hydrometer",
+      "Barometer",
+      "Hygrometer",
+      "Anemometer"
+    ],
+    "correct_index": 1,
+    "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  }
+]

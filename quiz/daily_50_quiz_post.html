@@ -1,0 +1,389 @@
+<!-- Daily 50-Question Interactive GK & Current Affairs Mock Test -->
+<div id="quizAppContainer" style="font-family:'Plus Jakarta Sans',sans-serif; max-width:860px; margin:0 auto; color:#0F172A;">
+  <style>
+    .quiz-hero-banner {
+      background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+      color: #FFFFFF;
+      padding: 1.75rem;
+      border-radius: 14px;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px -5px rgba(37,99,235,0.25);
+    }
+    .quiz-stats-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      padding: 12px 18px;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .quiz-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom: 1.5rem;
+    }
+    .quiz-cat-badge {
+      display: inline-block;
+      background: #EFF6FF;
+      color: #2563EB;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .quiz-q-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      color: #0F172A;
+    }
+    .quiz-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .quiz-opt-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1.5px solid #E2E8F0;
+      background: #F8FAFC;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+    .quiz-opt-btn:hover:not(:disabled) {
+      background: #EFF6FF;
+      border-color: #2563EB;
+      transform: translateX(3px);
+    }
+    .quiz-opt-btn.correct {
+      background: #ECFDF5 !important;
+      border-color: #059669 !important;
+      color: #065F46 !important;
+    }
+    .quiz-opt-btn.wrong {
+      background: #FEE2E2 !important;
+      border-color: #DC2626 !important;
+      color: #991B1B !important;
+    }
+    .opt-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+    .quiz-opt-btn.correct .opt-letter {
+      background: #059669;
+      color: #FFFFFF;
+    }
+    .quiz-opt-btn.wrong .opt-letter {
+      background: #DC2626;
+      color: #FFFFFF;
+    }
+    .quiz-exp-box {
+      background: #F0FDF4;
+      border-left: 4px solid #059669;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-top: 1.25rem;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #166534;
+      display: none;
+    }
+    .quiz-nav-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      gap: 10px;
+    }
+    .q-btn-action {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .q-btn-prev { background: #E2E8F0; color: #475569; }
+    .q-btn-next { background: #2563EB; color: #FFFFFF; }
+    .q-btn-submit { background: #059669; color: #FFFFFF; }
+    
+    .q-palette-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 6px;
+      margin-top: 1.5rem;
+      background: #FFFFFF;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+    }
+    @media (max-width: 600px) {
+      .q-palette-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+    .q-num-btn {
+      padding: 8px 0;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border-radius: 6px;
+      border: 1px solid #CBD5E1;
+      background: #F8FAFC;
+      cursor: pointer;
+      text-align: center;
+    }
+    .q-num-btn.active { border-color: #2563EB; background: #2563EB; color: #FFF; }
+    .q-num-btn.answered { border-color: #059669; background: #ECFDF5; color: #059669; }
+
+    .quiz-result-scorecard {
+      background: #FFFFFF;
+      border: 2px solid #059669;
+      border-radius: 16px;
+      padding: 2.25rem;
+      text-align: center;
+      display: none;
+      box-shadow: 0 10px 30px rgba(5,150,105,0.15);
+    }
+  </style>
+
+  <div class="quiz-hero-banner">
+    <div style="font-size:0.8rem; font-weight:800; letter-spacing:1px; opacity:0.9; text-transform:uppercase;">🏆 Daily Exam Practice Suite</div>
+    <h1 style="font-size:1.6rem; font-weight:900; margin:6px 0 8px; color:#FFFFFF;">GK &amp; Current Affairs 50-Question Mock Test</h1>
+    <p style="margin:0; font-size:0.9rem; opacity:0.92;">Daily Practice Set for Kerala PSC, SSC CGL, RRB NTPC, Banking &amp; UPSC | 11 October 2026</p>
+  </div>
+
+  <div class="quiz-stats-bar">
+    <div>⏳ Time Left: <span id="quizTimerDisplay" style="color:#DC2626; font-size:1rem; font-weight:900;">30:00</span></div>
+    <div>📊 Question: <span id="qCurrentIndex">1</span> of <span id="qTotalCount">50</span></div>
+    <div>🎯 Score: <span id="qLiveScore" style="color:#059669;">0</span></div>
+  </div>
+
+  <!-- Active Question Card -->
+  <div id="activeQuizCardWrapper">
+    <div class="quiz-card">
+      <span class="quiz-cat-badge" id="qCategoryBadge">Category</span>
+      <div class="quiz-q-title" id="qQuestionText">Loading Question...</div>
+      <div class="quiz-options-list" id="qOptionsList"></div>
+      <div class="quiz-exp-box" id="qExplanationBox"></div>
+
+      <div class="quiz-nav-btns">
+        <button class="q-btn-action q-btn-prev" onclick="goToPrevQ()" id="btnPrevQ" type="button">◀ Previous</button>
+        <button class="q-btn-action q-btn-next" onclick="goToNextQ()" id="btnNextQ" type="button">Next Question ▶</button>
+        <button class="q-btn-action q-btn-submit" onclick="submitQuiz()" id="btnSubmitQuiz" style="display:none;" type="button">Submit Test ➔</button>
+      </div>
+    </div>
+
+    <!-- Number Palette Grid -->
+    <div style="font-size:0.85rem; font-weight:800; margin-bottom:6px; color:#475569;">Question Navigation Palette:</div>
+    <div class="q-palette-grid" id="qPaletteGrid"></div>
+  </div>
+
+  <!-- Scorecard / Result Section -->
+  <div class="quiz-result-scorecard" id="quizScorecard">
+    <div style="font-size:3rem; margin-bottom:0.5rem;">🎉</div>
+    <h2 style="font-size:1.6rem; font-weight:900; color:#0F172A; margin-bottom:0.5rem;">Mock Test Completed!</h2>
+    <p style="color:#64748B; margin-bottom:1.5rem;">Official Result Summary for 11 October 2026</p>
+
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; max-width:500px; margin:0 auto 1.75rem;">
+      <div style="background:#ECFDF5; padding:12px; border-radius:10px; border:1px solid #A7F3D0;">
+        <div style="font-size:0.8rem; color:#065F46; font-weight:700;">Score</div>
+        <div id="finalScoreVal" style="font-size:1.5rem; font-weight:900; color:#059669;">0 / 50</div>
+      </div>
+      <div style="background:#EFF6FF; padding:12px; border-radius:10px; border:1px solid #BFDBFE;">
+        <div style="font-size:0.8rem; color:#1E40AF; font-weight:700;">Accuracy</div>
+        <div id="finalAccuracyVal" style="font-size:1.5rem; font-weight:900; color:#2563EB;">0%</div>
+      </div>
+      <div style="background:#FEF3C7; padding:12px; border-radius:10px; border:1px solid #FDE68A;">
+        <div style="font-size:0.8rem; color:#92400E; font-weight:700;">Attempted</div>
+        <div id="finalAttemptedVal" style="font-size:1.5rem; font-weight:900; color:#D97706;">0 / 50</div>
+      </div>
+    </div>
+
+    <button onclick="restartQuiz()" class="q-btn-action q-btn-next" style="padding:12px 28px; font-size:1rem;" type="button">🔄 Retake Practice Test</button>
+  </div>
+
+  <!-- Quiz Engine Logic -->
+  <script type="text/javascript">
+    (function() {
+      var QUIZ_QUESTIONS = [{"category": "🔬 General Science & Tech", "question": "Which instrument is used to measure atmospheric pressure?", "options": ["Hydrometer", "Barometer", "Hygrometer", "Anemometer"], "correct_index": 1, "explanation": "A Barometer (invented by Evangelista Torricelli) is used to measure atmospheric pressure."}, {"category": "🌴 Kerala PSC Special GK", "question": "Who was the leader of the historic Vaikom Satyagraha in 1924 in Kerala?", "options": ["K. Kelappan", "T.K. Madhavan", "A.K. Gopalan", "Mannathu Padmanabhan"], "correct_index": 1, "explanation": "T.K. Madhavan was the pioneer and main architect of the Vaikom Satyagraha (1924–1925), which demanded temple road entry for all castes."}, {"category": "🌍 Geography & Environment", "question": "Which is the highest peak in Peninsular India (Western Ghats)?", "options": ["Doddabetta", "Anamudi", "Agasthyarkoodam", "Kalsubai"], "correct_index": 1, "explanation": "Anamudi (2,695 meters / 8,842 ft), located in the Idukki district of Kerala within Eravikulam National Park, is the highest peak in South India."}, {"category": "📜 Indian & World History", "question": "Who was the founder of the Maurya Empire in ancient India?", "options": ["Ashoka", "Chandragupta Maurya", "Bindusara", "Samudragupta"], "correct_index": 1, "explanation": "Chandragupta Maurya founded the Maurya Empire in 322 BCE with the help of his chief advisor Chanakya (Kautilya)."}, {"category": "🏛️ Indian Polity & Constitution", "question": "Who is considered the custodian of the Constitution of India?", "options": ["The President of India", "The Prime Minister of India", "The Supreme Court of India", "The Parliament of India"], "correct_index": 2, "explanation": "The Supreme Court of India is regarded as the guardian and custodian of the Constitution and the protector of Fundamental Rights."}, {"category": "⚡ Daily Current Affairs 2026", "question": "India's first semi-high speed regional rapid transit system is named:", "options": ["Vande Metro", "Namo Bharat (RRTS)", "Amrit Bharat Express", "Tejas Express"], "correct_index": 1, "explanation": "Namo Bharat is India's first indigenous high-speed Regional Rapid Transit System (RRTS) connecting Delhi, Ghaziabad, and Meerut."}, {"category": "🌴 Kerala PSC Special GK", "question": "Who was the leader of the historic Vaikom Satyagraha in 1924 in Kerala?", "options": ["K. Kelappan", "T.K. Madhavan", "A.K. Gopalan", "Mannathu Padmanabhan"], "correct_index": 1, "explanation": "T.K. Madhavan was the pioneer and main architect of the Vaikom Satyagraha (1924–1925), which demanded temple road entry for all castes."}, {"category": "📜 Indian & World History", "question": "Who gave the famous slogan 'Do or Die' during the Quit India Movement in 1942?", "options": ["Subhas Chandra Bose", "Mahatma Gandhi", "Jawaharlal Nehru", "Bhagat Singh"], "correct_index": 1, "explanation": "Mahatma Gandhi gave the historic call 'Do or Die' (Karo ya Maro) at the Gowalia Tank Maidan in Bombay on 8 August 1942."}, {"category": "⚡ Daily Current Affairs 2026", "question": "India's first semi-high speed regional rapid transit system is named:", "options": ["Vande Metro", "Namo Bharat (RRTS)", "Amrit Bharat Express", "Tejas Express"], "correct_index": 1, "explanation": "Namo Bharat is India's first indigenous high-speed Regional Rapid Transit System (RRTS) connecting Delhi, Ghaziabad, and Meerut."}, {"category": "📜 Indian & World History", "question": "Who was the founder of the Maurya Empire in ancient India?", "options": ["Ashoka", "Chandragupta Maurya", "Bindusara", "Samudragupta"], "correct_index": 1, "explanation": "Chandragupta Maurya founded the Maurya Empire in 322 BCE with the help of his chief advisor Chanakya (Kautilya)."}, {"category": "🏛️ Indian Polity & Constitution", "question": "Which Article of the Indian Constitution guarantees the 'Right to Constitutional Remedies'?", "options": ["Article 19", "Article 21", "Article 32", "Article 44"], "correct_index": 2, "explanation": "Article 32 gives the right to individuals to move to the Supreme Court to seek justice when they feel that their fundamental rights have been 'unduly deprived'. Dr. B.R. Ambedkar called it the 'Heart and Soul of the Constitution'."}, {"category": "📜 Indian & World History", "question": "In which year did the historic Battle of Plassey take place?", "options": ["1757", "1764", "1857", "1526"], "correct_index": 0, "explanation": "The Battle of Plassey was fought on 23 June 1757 between the British East India Company led by Robert Clive and the Nawab of Bengal Siraj-ud-Daulah."}, {"category": "🌍 Geography & Environment", "question": "Which is the highest peak in Peninsular India (Western Ghats)?", "options": ["Doddabetta", "Anamudi", "Agasthyarkoodam", "Kalsubai"], "correct_index": 1, "explanation": "Anamudi (2,695 meters / 8,842 ft), located in the Idukki district of Kerala within Eravikulam National Park, is the highest peak in South India."}, {"category": "📊 Indian Economy & Banking", "question": "Which Five-Year Plan in India was focused on the 'Mahalanobis Model' emphasizing heavy industries?", "options": ["First Five-Year Plan", "Second Five-Year Plan", "Third Five-Year Plan", "Fourth Five-Year Plan"], "correct_index": 1, "explanation": "The Second Five-Year Plan (1956–1961), based on the PC Mahalanobis Model, focused on the development of the public sector and rapid industrialization."}, {"category": "⚡ Daily Current Affairs 2026", "question": "Which country recently hosted the BRICS Summit 2026?", "options": ["India", "Brazil", "South Africa", "Russia"], "correct_index": 0, "explanation": "India hosted the landmark BRICS Leaders Summit 2026 focusing on global trade integration, technological exchange, and sustainable green initiatives."}, {"category": "🔬 General Science & Tech", "question": "What is the chemical name of Vitamin C?", "options": ["Ascorbic Acid", "Retinol", "Tocopherol", "Thiamine"], "correct_index": 0, "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy."}, {"category": "🌍 Geography & Environment", "question": "The Tropic of Cancer does NOT pass through which of the following Indian states?", "options": ["Gujarat", "Rajasthan", "Odisha", "Tripura"], "correct_index": 2, "explanation": "The Tropic of Cancer (23.5° N) passes through 8 Indian states: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura, and Mizoram. It does not pass through Odisha."}, {"category": "📜 Indian & World History", "question": "Which Viceroy of India was associated with the Partition of Bengal in 1905?", "options": ["Lord Curzon", "Lord Ripon", "Lord Dalhousie", "Lord Mountbatten"], "correct_index": 0, "explanation": "Lord Curzon, the Viceroy of India, carried out the Partition of Bengal in October 1905, which sparked the nationwide Swadeshi Movement."}, {"category": "🌴 Kerala PSC Special GK", "question": "Who established the 'Sadhu Jana Paripalana Sangham' (SJPS) in 1907 in Kerala?", "options": ["Ayyankali", "Poikayil Yohannan", "Dr. Palpu", "K.P. Karuppan"], "correct_index": 0, "explanation": "Mahatma Ayyankali founded the Sadhu Jana Paripalana Sangham (SJPS) in 1907 to advocate for education and social rights of the downtrodden."}, {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?", "options": ["4157", "4158", "4147", "5157"], "correct_index": 0, "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157."}, {"category": "🏛️ Indian Polity & Constitution", "question": "Who is considered the custodian of the Constitution of India?", "options": ["The President of India", "The Prime Minister of India", "The Supreme Court of India", "The Parliament of India"], "correct_index": 2, "explanation": "The Supreme Court of India is regarded as the guardian and custodian of the Constitution and the protector of Fundamental Rights."}, {"category": "🌍 Geography & Environment", "question": "Which pass connects Srinagar with Leh in Jammu and Kashmir / Ladakh?", "options": ["Zoji La Pass", "Rohtang Pass", "Nathu La Pass", "Shipki La Pass"], "correct_index": 0, "explanation": "Zoji La Pass is a high mountain pass in the Himalayas that connects Srinagar with Kargil and Leh on National Highway 1."}, {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?", "options": ["125", "127", "129", "131"], "correct_index": 1, "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127."}, {"category": "⚡ Daily Current Affairs 2026", "question": "What is the name of India's indigenous human spaceflight mission by ISRO?", "options": ["Chandrayaan-4", "Aditya-L1", "Gaganyaan", "Mangalyaan-2"], "correct_index": 2, "explanation": "Gaganyaan is ISRO's mission to demonstrate human spaceflight capability by launching a crew of astronauts to an orbit of 400 km for a multi-day mission."}, {"category": "📊 Indian Economy & Banking", "question": "Which Five-Year Plan in India was focused on the 'Mahalanobis Model' emphasizing heavy industries?", "options": ["First Five-Year Plan", "Second Five-Year Plan", "Third Five-Year Plan", "Fourth Five-Year Plan"], "correct_index": 1, "explanation": "The Second Five-Year Plan (1956–1961), based on the PC Mahalanobis Model, focused on the development of the public sector and rapid industrialization."}, {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?", "options": ["150 meters", "200 meters", "250 meters", "300 meters"], "correct_index": 1, "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters."}, {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?", "options": ["125", "127", "129", "131"], "correct_index": 1, "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127."}, {"category": "🌴 Kerala PSC Special GK", "question": "Who established the 'Sadhu Jana Paripalana Sangham' (SJPS) in 1907 in Kerala?", "options": ["Ayyankali", "Poikayil Yohannan", "Dr. Palpu", "K.P. Karuppan"], "correct_index": 0, "explanation": "Mahatma Ayyankali founded the Sadhu Jana Paripalana Sangham (SJPS) in 1907 to advocate for education and social rights of the downtrodden."}, {"category": "📜 Indian & World History", "question": "Who was the founder of the Maurya Empire in ancient India?", "options": ["Ashoka", "Chandragupta Maurya", "Bindusara", "Samudragupta"], "correct_index": 1, "explanation": "Chandragupta Maurya founded the Maurya Empire in 322 BCE with the help of his chief advisor Chanakya (Kautilya)."}, {"category": "🏛️ Indian Polity & Constitution", "question": "Which Schedule of the Indian Constitution contains the list of 22 officially recognized languages?", "options": ["Seventh Schedule", "Eighth Schedule", "Ninth Schedule", "Eleventh Schedule"], "correct_index": 1, "explanation": "The Eighth Schedule of the Indian Constitution lists the 22 official languages of the Republic of India."}, {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?", "options": ["₹2,000", "₹2,400", "₹2,500", "₹1,800"], "correct_index": 1, "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400."}, {"category": "⚡ Daily Current Affairs 2026", "question": "Which country recently hosted the BRICS Summit 2026?", "options": ["India", "Brazil", "South Africa", "Russia"], "correct_index": 0, "explanation": "India hosted the landmark BRICS Leaders Summit 2026 focusing on global trade integration, technological exchange, and sustainable green initiatives."}, {"category": "🔬 General Science & Tech", "question": "Which gas is most abundantly present in the Earth's atmosphere?", "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"], "correct_index": 1, "explanation": "Nitrogen makes up approximately 78.08% of the Earth's atmosphere, followed by Oxygen (20.95%) and Argon (0.93%)."}, {"category": "📊 Indian Economy & Banking", "question": "Which institution replaced the Planning Commission of India on 1 January 2015?", "options": ["Finance Commission", "NITI Aayog", "National Development Council", "Zonal Council"], "correct_index": 1, "explanation": "NITI Aayog (National Institution for Transforming India) replaced the 65-year-old Planning Commission on 1 January 2015."}, {"category": "📊 Indian Economy & Banking", "question": "Who is known as the regulatory authority of the Indian stock market and securities?", "options": ["RBI", "SEBI", "IRDAI", "NABARD"], "correct_index": 1, "explanation": "The Securities and Exchange Board of India (SEBI), established under the SEBI Act 1992, is the apex regulator for the securities and commodities market in India."}, {"category": "🌍 Geography & Environment", "question": "Which Indian river is known as the 'Dakshin Ganga' (Ganga of the South)?", "options": ["Godavari", "Cauvery", "Krishna", "Narmada"], "correct_index": 0, "explanation": "Godavari is the second longest river in India and is called 'Dakshin Ganga' due to its length and religious significance."}, {"category": "🔬 General Science & Tech", "question": "What is the chemical name of Vitamin C?", "options": ["Ascorbic Acid", "Retinol", "Tocopherol", "Thiamine"], "correct_index": 0, "explanation": "Vitamin C is chemically known as Ascorbic Acid. Its deficiency causes Scurvy."}, {"category": "⚡ Daily Current Affairs 2026", "question": "Which country recently hosted the BRICS Summit 2026?", "options": ["India", "Brazil", "South Africa", "Russia"], "correct_index": 0, "explanation": "India hosted the landmark BRICS Leaders Summit 2026 focusing on global trade integration, technological exchange, and sustainable green initiatives."}, {"category": "🌴 Kerala PSC Special GK", "question": "In which year did the historic Temple Entry Proclamation take place in Travancore?", "options": ["1924", "1931", "1936", "1947"], "correct_index": 2, "explanation": "On 12 November 1936, Maharaja Chithira Thirunal Balarama Varma issued the historic Temple Entry Proclamation, opening all government-controlled temples to all Hindus."}, {"category": "🏛️ Indian Polity & Constitution", "question": "The concept of 'Directive Principles of State Policy' (DPSP) in the Indian Constitution was borrowed from which country?", "options": ["United States", "Ireland", "United Kingdom", "Canada"], "correct_index": 1, "explanation": "The Directive Principles of State Policy (Part IV, Articles 36–51) were borrowed from the Constitution of Ireland (Irish Constitution of 1937)."}, {"category": "📊 Indian Economy & Banking", "question": "In which year was the Goods and Services Tax (GST) implemented across India?", "options": ["1 July 2015", "1 July 2016", "1 July 2017", "1 April 2018"], "correct_index": 2, "explanation": "GST came into effect in India on 1 July 2017 through the implementation of the 101st Amendment of the Constitution of India."}, {"category": "📜 Indian & World History", "question": "Who was the first female ruler of the Delhi Sultanate?", "options": ["Chand Bibi", "Razia Sultana", "Nur Jahan", "Rani Durgavati"], "correct_index": 1, "explanation": "Razia Sultana (reigned 1236–1240) was the first and only female monarch of the Delhi Sultanate, succeeding her father Iltutmish."}, {"category": "🌍 Geography & Environment", "question": "Which is the highest peak in Peninsular India (Western Ghats)?", "options": ["Doddabetta", "Anamudi", "Agasthyarkoodam", "Kalsubai"], "correct_index": 1, "explanation": "Anamudi (2,695 meters / 8,842 ft), located in the Idukki district of Kerala within Eravikulam National Park, is the highest peak in South India."}, {"category": "🔬 General Science & Tech", "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?", "options": ["Ribosome", "Mitochondria", "Golgi Apparatus", "Lysosome"], "correct_index": 1, "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration."}, {"category": "🏛️ Indian Polity & Constitution", "question": "Which Schedule of the Indian Constitution contains the list of 22 officially recognized languages?", "options": ["Seventh Schedule", "Eighth Schedule", "Ninth Schedule", "Eleventh Schedule"], "correct_index": 1, "explanation": "The Eighth Schedule of the Indian Constitution lists the 22 official languages of the Republic of India."}, {"category": "📊 Indian Economy & Banking", "question": "Who is known as the regulatory authority of the Indian stock market and securities?", "options": ["RBI", "SEBI", "IRDAI", "NABARD"], "correct_index": 1, "explanation": "The Securities and Exchange Board of India (SEBI), established under the SEBI Act 1992, is the apex regulator for the securities and commodities market in India."}, {"category": "🏛️ Indian Polity & Constitution", "question": "Who is considered the custodian of the Constitution of India?", "options": ["The President of India", "The Prime Minister of India", "The Supreme Court of India", "The Parliament of India"], "correct_index": 2, "explanation": "The Supreme Court of India is regarded as the guardian and custodian of the Constitution and the protector of Fundamental Rights."}, {"category": "🔬 General Science & Tech", "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?", "options": ["Ribosome", "Mitochondria", "Golgi Apparatus", "Lysosome"], "correct_index": 1, "explanation": "Mitochondria are known as the powerhouse of the cell because they produce energy in the form of ATP (Adenosine Triphosphate) through cellular respiration."}, {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?", "options": ["4157", "4158", "4147", "5157"], "correct_index": 0, "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157."}, {"category": "🌴 Kerala PSC Special GK", "question": "Which is the longest river in the state of Kerala?", "options": ["Bharathapuzha", "Periyar", "Pamba", "Chaliyar"], "correct_index": 1, "explanation": "Periyar (244 km) is the longest river in Kerala, followed by Bharathapuzha (209 km) and Pamba (176 km)."}];
+      var currentQIdx = 0;
+      var userAnswers = new Array(QUIZ_QUESTIONS.length).fill(null);
+      var timeLeft = 30 * 60; // 30 minutes
+      var timerInterval = null;
+
+      function startTimer() {
+        timerInterval = setInterval(function() {
+          timeLeft--;
+          if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submitQuiz();
+            return;
+          }
+          var mins = Math.floor(timeLeft / 60);
+          var secs = timeLeft % 60;
+          var disp = document.getElementById('quizTimerDisplay');
+          if (disp) {
+            disp.innerText = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+          }
+        }, 1000);
+      }
+
+      function renderQuestion(idx) {
+        currentQIdx = idx;
+        var q = QUIZ_QUESTIONS[idx];
+        document.getElementById('qCurrentIndex').innerText = (idx + 1);
+        document.getElementById('qCategoryBadge').innerText = q.category || 'General Knowledge';
+        document.getElementById('qQuestionText').innerText = (idx + 1) + '. ' + q.question;
+
+        var optContainer = document.getElementById('qOptionsList');
+        optContainer.innerHTML = '';
+        var letters = ['A', 'B', 'C', 'D'];
+
+        for (var i = 0; i < q.options.length; i++) {
+          var btn = document.createElement('button');
+          btn.className = 'quiz-opt-btn';
+          btn.type = 'button';
+          btn.dataset.optidx = i;
+          
+          if (userAnswers[idx] !== null) {
+            btn.disabled = true;
+            if (i === q.correct_index) btn.classList.add('correct');
+            else if (i === userAnswers[idx]) btn.classList.add('wrong');
+          }
+
+          btn.innerHTML = "<span class='opt-letter'>" + letters[i] + "</span><span>" + q.options[i] + "</span>";
+          btn.onclick = function() {
+            var chosen = parseInt(this.dataset.optidx, 10);
+            selectAnswer(chosen);
+          };
+          optContainer.appendChild(btn);
+        }
+
+        var expBox = document.getElementById('qExplanationBox');
+        if (userAnswers[idx] !== null) {
+          expBox.style.display = 'block';
+          expBox.innerHTML = "💡 <strong>Explanation &amp; Exam Facts:</strong> " + q.explanation;
+        } else {
+          expBox.style.display = 'none';
+        }
+
+        document.getElementById('btnPrevQ').style.visibility = (idx === 0 ? 'hidden' : 'visible');
+        if (idx === QUIZ_QUESTIONS.length - 1) {
+          document.getElementById('btnNextQ').style.display = 'none';
+          document.getElementById('btnSubmitQuiz').style.display = 'inline-block';
+        } else {
+          document.getElementById('btnNextQ').style.display = 'inline-block';
+          document.getElementById('btnSubmitQuiz').style.display = 'none';
+        }
+
+        renderPalette();
+        updateScore();
+      }
+
+      function selectAnswer(chosenIdx) {
+        if (userAnswers[currentQIdx] !== null) return;
+        userAnswers[currentQIdx] = chosenIdx;
+        renderQuestion(currentQIdx);
+      }
+
+      function renderPalette() {
+        var pGrid = document.getElementById('qPaletteGrid');
+        if (!pGrid) return;
+        pGrid.innerHTML = '';
+        for (var i = 0; i < QUIZ_QUESTIONS.length; i++) {
+          var btn = document.createElement('button');
+          btn.className = 'q-num-btn';
+          btn.type = 'button';
+          btn.innerText = (i + 1);
+          if (i === currentQIdx) btn.classList.add('active');
+          if (userAnswers[i] !== null) btn.classList.add('answered');
+          btn.onclick = (function(targetIdx) {
+            return function() { renderQuestion(targetIdx); };
+          })(i);
+          pGrid.appendChild(btn);
+        }
+      }
+
+      function updateScore() {
+        var correct = 0;
+        for (var i = 0; i < userAnswers.length; i++) {
+          if (userAnswers[i] === QUIZ_QUESTIONS[i].correct_index) correct++;
+        }
+        var scoreEl = document.getElementById('qLiveScore');
+        if (scoreEl) scoreEl.innerText = correct;
+      }
+
+      window.goToNextQ = function() {
+        if (currentQIdx < QUIZ_QUESTIONS.length - 1) {
+          renderQuestion(currentQIdx + 1);
+        }
+      };
+
+      window.goToPrevQ = function() {
+        if (currentQIdx > 0) {
+          renderQuestion(currentQIdx - 1);
+        }
+      };
+
+      window.submitQuiz = function() {
+        clearInterval(timerInterval);
+        var correct = 0;
+        var attempted = 0;
+        for (var i = 0; i < userAnswers.length; i++) {
+          if (userAnswers[i] !== null) {
+            attempted++;
+            if (userAnswers[i] === QUIZ_QUESTIONS[i].correct_index) correct++;
+          }
+        }
+
+        document.getElementById('activeQuizCardWrapper').style.display = 'none';
+        var scorecard = document.getElementById('quizScorecard');
+        scorecard.style.display = 'block';
+
+        document.getElementById('finalScoreVal').innerText = correct + ' / ' + QUIZ_QUESTIONS.length;
+        document.getElementById('finalAttemptedVal').innerText = attempted + ' / ' + QUIZ_QUESTIONS.length;
+        var acc = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+        document.getElementById('finalAccuracyVal').innerText = acc + '%';
+      };
+
+      window.restartQuiz = function() {
+        userAnswers = new Array(QUIZ_QUESTIONS.length).fill(null);
+        timeLeft = 30 * 60;
+        document.getElementById('quizScorecard').style.display = 'none';
+        document.getElementById('activeQuizCardWrapper').style.display = 'block';
+        startTimer();
+        renderQuestion(0);
+      };
+
+      document.getElementById('qTotalCount').innerText = QUIZ_QUESTIONS.length;
+      startTimer();
+      renderQuestion(0);
+    })();
+  </script>
+</div>

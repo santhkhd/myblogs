@@ -1631,6 +1631,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
             <a href='javascript:void(0)' onclick='switchPortalType("notification")'>📢 Notifications</a>
             <a href='javascript:void(0)' onclick='switchPortalType("admit_card")'>🎫 Admit Cards</a>
             <a href='javascript:void(0)' onclick='switchPortalType("result")'>🏆 Results</a>
+            <a href='/p/gk-and-current-affairs-quiz.html' style='color:#7C3AED; font-weight:800; background:rgba(124,58,237,0.08); padding:5px 10px; border-radius:6px;'><i class='fas fa-brain'/> 🧠 Daily GK Quiz</a>
             <a href='javascript:void(0)' onclick='switchPortalType("saved")' style='color:#F59E0B;'>⭐ Saved (<span id='navSavedCount'>0</span>)</a>
             <div class='tools-dropdown' id='headerToolsDropdown'>
               <button class='tools-dropdown-btn' onclick='toggleHeaderToolsDropdown(event)' type='button'>

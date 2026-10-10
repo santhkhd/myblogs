@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" name="viewport"/>
+  <title>GK & Current Affairs Interactive Quiz Portal 2026 | Daily 50 Mock Test for Kerala PSC, SSC, Bank & Railways</title>
+  <meta name="description" content="Practice daily 50 GK & Current Affairs questions online with interactive timer, category filters, detailed explanations and scorecards for Kerala PSC, SSC, UPSC, Bank and Railway exams."/>
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1D4ED8;
+      --primary-light: #EFF6FF;
+      --success: #059669;
+      --success-bg: #ECFDF5;
+      --danger: #DC2626;
+      --danger-bg: #FEE2E2;
+      --warning: #D97706;
+      --warning-bg: #FEF3C7;
+      --bg-page: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --radius: 14px;
+      --shadow: 0 4px 14px rgba(0,0,0,0.05);
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 1rem;
+    }
+    .quiz-max-wrap {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+    
+    /* Header */
+    .portal-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .portal-logo {
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .back-home-link {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+    .back-home-link:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Hero Banner */
+    .quiz-hero {
+      background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+      color: #FFFFFF;
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px -5px rgba(37,99,235,0.3);
+    }
+    .quiz-hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .quiz-hero h1 {
+      font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+    .quiz-hero p {
+      font-size: 0.95rem;
+      opacity: 0.92;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Category Pill Track */
+    .cat-selector-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 0 12px;
+      margin-bottom: 1rem;
+      scrollbar-width: none;
+    }
+    .cat-selector-bar::-webkit-scrollbar { display: none; }
+    .cat-tab-btn {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    .cat-tab-btn:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .cat-tab-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    }
+
+    /* Status Bar */
+    .quiz-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 12px 18px;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .timer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--danger);
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    /* Question Card */
+    .quiz-main-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+    }
+    .q-badge-meta {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .opt-card-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-page);
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: var(--transition);
+      width: 100%;
+      color: var(--text-primary);
+    }
+    .opt-card-btn:hover:not(:disabled) {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      transform: translateX(4px);
+    }
+    .opt-card-btn.correct {
+      background: var(--success-bg) !important;
+      border-color: var(--success) !important;
+      color: #065F46 !important;
+    }
+    .opt-card-btn.wrong {
+      background: var(--danger-bg) !important;
+      border-color: var(--danger) !important;
+      color: #991B1B !important;
+    }
+    .opt-bullet {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      color: #475569;
+    }
+    .opt-card-btn.correct .opt-bullet {
+      background: var(--success);
+      color: #FFFFFF;
+    }
+    .opt-card-btn.wrong .opt-bullet {
+      background: var(--danger);
+      color: #FFFFFF;
+    }
+
+    /* Explanation Box */
+    .explanation-box {
+      background: #F0FDF4;
+      border-left: 4px solid var(--success);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #166534;
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Navigation Bar */
+    .q-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      gap: 12px;
+    }
+    .q-btn {
+      padding: 11px 22px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .q-btn-prev { background: #E2E8F0; color: #475569; }
+    .q-btn-prev:hover { background: #CBD5E1; }
+    .q-btn-next { background: var(--primary); color: #FFFFFF; box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
+    .q-btn-next:hover { background: var(--primary-dark); }
+    .q-btn-submit { background: var(--success); color: #FFFFFF; box-shadow: 0 4px 12px rgba(5,150,105,0.25); }
+    .q-btn-submit:hover { background: #047857; }
+
+    /* Palette Grid */
+    .palette-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+    }
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 6px;
+      margin-top: 10px;
+    }
+    @media (max-width: 600px) {
+      .palette-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+    .p-btn {
+      padding: 9px 0;
+      border-radius: 8px;
+      border: 1px solid #CBD5E1;
+      background: var(--bg-page);
+      font-weight: 800;
+      font-size: 0.82rem;
+      cursor: pointer;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .p-btn.active { border-color: var(--primary); background: var(--primary); color: #FFFFFF; }
+    .p-btn.answered { border-color: var(--success); background: var(--success-bg); color: var(--success); }
+
+    /* Scorecard */
+    .scorecard-view {
+      background: var(--bg-card);
+      border: 2px solid var(--success);
+      border-radius: 16px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 15px 35px -5px rgba(5,150,105,0.18);
+      display: none;
+    }
+    .score-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 540px;
+      margin: 1.75rem auto;
+    }
+    .metric-card {
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-max-wrap">
+  <!-- Nav -->
+  <header class="portal-nav">
+    <a class="portal-logo" href="/">
+      <i class="fas fa-graduation-cap"></i> 1India Job <span>Quiz Hub</span>
+    </a>
+    <a class="back-home-link" href="/">
+      <i class="fas fa-arrow-left"></i> Back to Main Portal
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <div class="quiz-hero">
+    <div class="quiz-hero-badge">⚡ Interactive GK Practice Suite</div>
+    <h1>GK &amp; Current Affairs Daily 50 Mock Test</h1>
+    <p>High-Yield Question Bank for Kerala PSC, SSC CGL, RRB NTPC, Banking &amp; UPSC Examinations</p>
+  </div>
+
+  <!-- Subject Categories -->
+  <div class="cat-selector-bar" id="categoryBar">
+    <button class="cat-tab-btn active" onclick="loadCategoryQuiz('daily50', this)" type="button">⚡ Daily 50 Mixed Test</button>
+    <button class="cat-tab-btn" onclick="loadCategoryQuiz('current_affairs', this)" type="button">🔥 Current Affairs 2026</button>
+    <button class="cat-tab-btn" onclick="loadCategoryQuiz('kerala_psc', this)" type="button">🌴 Kerala PSC Special</button>
+    <button class="cat-tab-btn" onclick="loadCategoryQuiz('polity', this)" type="button">🏛️ Indian Polity</button>
+    <button class="cat-tab-btn" onclick="loadCategoryQuiz('history', this)" type="button">📜 Indian History</button>
+    <button class="cat-tab-btn" onclick="loadCategoryQuiz('geography', this)" type="button">🌍 Geography</button>
+    <button class="cat-tab-btn" onclick="loadCategoryQuiz('science', this)" type="button">🔬 General Science</button>
+    <button class="cat-tab-btn" onclick="loadCategoryQuiz('economy', this)" type="button">📊 Economy &amp; Banking</button>
+    <button class="cat-tab-btn" onclick="loadCategoryQuiz('reasoning_math', this)" type="button">🧮 Maths &amp; Reasoning</button>
+  </div>
+
+  <!-- Status Bar -->
+  <div class="quiz-status-bar">
+    <div class="timer-badge">
+      <i class="fas fa-stopwatch"></i> <span id="portalTimer">30:00</span>
+    </div>
+    <div>
+      Question <span id="portalCurrentQ" style="color:var(--primary); font-weight:900;">1</span> of <span id="portalTotalQ">50</span>
+    </div>
+    <div>
+      Score: <span id="portalLiveScore" style="color:var(--success); font-weight:900;">0</span>
+    </div>
+  </div>
+
+  <!-- Quiz Card Area -->
+  <div id="quizPlayArea">
+    <div class="quiz-main-card">
+      <span class="q-badge-meta" id="portalCategoryChip">Category</span>
+      <h2 class="q-text" id="portalQuestionTitle">Loading Practice Test...</h2>
+      <div class="options-grid" id="portalOptionsContainer"></div>
+      <div class="explanation-box" id="portalExplanationCard"></div>
+
+      <!-- Navigation Actions -->
+      <div class="q-nav-bar">
+        <button class="q-btn q-btn-prev" id="btnPrev" onclick="navigateQ(-1)" type="button">
+          <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        <button class="q-btn q-btn-next" id="btnNext" onclick="navigateQ(1)" type="button">
+          Next Question <i class="fas fa-chevron-right"></i>
+        </button>
+        <button class="q-btn q-btn-submit" id="btnSubmit" onclick="finishQuiz()" style="display:none;" type="button">
+          <i class="fas fa-check-circle"></i> Submit Test
+        </button>
+      </div>
+    </div>
+
+    <!-- Number Palette -->
+    <div class="palette-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; font-weight:800; color:var(--text-secondary);">
+        <span><i class="fas fa-th"></i> Question Palette</span>
+        <span style="font-size:0.75rem; color:var(--text-muted);">🟢 Green = Answered</span>
+      </div>
+      <div class="palette-grid" id="portalPaletteGrid"></div>
+    </div>
+  </div>
+
+  <!-- Scorecard Section -->
+  <div class="scorecard-view" id="portalScorecard">
+    <div style="font-size:3.5rem; margin-bottom:0.5rem;">🎉</div>
+    <h2 style="font-size:1.75rem; font-weight:900; color:var(--text-primary); margin-bottom:4px;">Mock Test Completed!</h2>
+    <p style="color:var(--text-secondary); font-size:0.92rem;">Review your performance summary and accuracy below.</p>
+
+    <div class="score-metrics-grid">
+      <div class="metric-card" style="background:#ECFDF5; border-color:#A7F3D0;">
+        <div style="font-size:0.8rem; color:#065F46; font-weight:800;">Final Score</div>
+        <div id="resScore" style="font-size:1.6rem; font-weight:900; color:#059669; margin-top:4px;">0 / 50</div>
+      </div>
+      <div class="metric-card" style="background:#EFF6FF; border-color:#BFDBFE;">
+        <div style="font-size:0.8rem; color:#1E40AF; font-weight:800;">Accuracy</div>
+        <div id="resAccuracy" style="font-size:1.6rem; font-weight:900; color:#2563EB; margin-top:4px;">0%</div>
+      </div>
+      <div class="metric-card" style="background:#FEF3C7; border-color:#FDE68A;">
+        <div style="font-size:0.8rem; color:#92400E; font-weight:800;">Attempted</div>
+        <div id="resAttempted" style="font-size:1.6rem; font-weight:900; color:#D97706; margin-top:4px;">0 / 50</div>
+      </div>
+    </div>
+
+    <button class="q-btn q-btn-next" onclick="restartPortalQuiz()" style="padding:12px 30px; font-size:1rem;" type="button">
+      <i class="fas fa-redo"></i> Retake Practice Quiz
+    </button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var MASTER_QUESTIONS = [
+    {"category": "🏛️ Indian Polity & Constitution", "question": "Which Article of the Indian Constitution guarantees the 'Right to Constitutional Remedies'?", "options": ["Article 19", "Article 21", "Article 32", "Article 44"], "correct_index": 2, "explanation": "Article 32 allows individuals to move the Supreme Court to seek justice for fundamental rights violation. Dr. B.R. Ambedkar called it the 'Heart and Soul of the Constitution'."},
+    {"category": "🏛️ Indian Polity & Constitution", "question": "Under which Constitutional Amendment was the voting age reduced from 21 years to 18 years in India?", "options": ["42nd Amendment Act", "44th Amendment Act", "61st Amendment Act", "73rd Amendment Act"], "correct_index": 2, "explanation": "The 61st Constitutional Amendment Act, 1988 lowered the voting age for Lok Sabha and Legislative Assembly elections from 21 to 18 years."},
+    {"category": "🏛️ Indian Polity & Constitution", "question": "Who is considered the custodian and guardian of the Constitution of India?", "options": ["The President of India", "The Prime Minister of India", "The Supreme Court of India", "The Parliament of India"], "correct_index": 2, "explanation": "The Supreme Court of India is regarded as the ultimate guardian and custodian of the Indian Constitution."},
+    {"category": "🏛️ Indian Polity & Constitution", "question": "Which Schedule of the Indian Constitution contains the list of 22 officially recognized languages?", "options": ["Seventh Schedule", "Eighth Schedule", "Ninth Schedule", "Eleventh Schedule"], "correct_index": 1, "explanation": "The Eighth Schedule lists the 22 official languages of India."},
+    {"category": "🏛️ Indian Polity & Constitution", "question": "The concept of 'Directive Principles of State Policy' (DPSP) in the Indian Constitution was borrowed from:", "options": ["United States", "Ireland", "United Kingdom", "Canada"], "correct_index": 1, "explanation": "DPSP (Part IV, Articles 36–51) was borrowed from the Constitution of Ireland."},
+
+    {"category": "📜 Indian & World History", "question": "Who was the founder of the Maurya Empire in ancient India?", "options": ["Ashoka", "Chandragupta Maurya", "Bindusara", "Samudragupta"], "correct_index": 1, "explanation": "Chandragupta Maurya founded the Maurya Empire in 322 BCE with the assistance of Chanakya (Kautilya)."},
+    {"category": "📜 Indian & World History", "question": "In which year did the historic Battle of Plassey take place?", "options": ["1757", "1764", "1857", "1526"], "correct_index": 0, "explanation": "The Battle of Plassey was fought on 23 June 1757 under Robert Clive against Siraj-ud-Daulah."},
+    {"category": "📜 Indian & World History", "question": "Who gave the famous slogan 'Do or Die' during the Quit India Movement in 1942?", "options": ["Subhas Chandra Bose", "Mahatma Gandhi", "Jawaharlal Nehru", "Bhagat Singh"], "correct_index": 1, "explanation": "Mahatma Gandhi gave the clarion call 'Do or Die' at Gowalia Tank Maidan, Bombay on 8 August 1942."},
+    {"category": "📜 Indian & World History", "question": "Which Viceroy of India was associated with the Partition of Bengal in 1905?", "options": ["Lord Curzon", "Lord Ripon", "Lord Dalhousie", "Lord Mountbatten"], "correct_index": 0, "explanation": "Lord Curzon partitioned Bengal in October 1905, triggering the Swadeshi and Boycott Movement."},
+    {"category": "📜 Indian & World History", "question": "Who was the first and only female ruler of the Delhi Sultanate?", "options": ["Chand Bibi", "Razia Sultana", "Nur Jahan", "Rani Durgavati"], "correct_index": 1, "explanation": "Razia Sultana (reigned 1236–1240) was the first female monarch of the Delhi Sultanate."},
+
+    {"category": "🌍 Geography & Environment", "question": "Which is the highest peak in Peninsular India (Western Ghats)?", "options": ["Doddabetta", "Anamudi", "Agasthyarkoodam", "Kalsubai"], "correct_index": 1, "explanation": "Anamudi (2,695m / 8,842ft) in Idukki, Kerala within Eravikulam National Park is the highest peak in South India."},
+    {"category": "🌍 Geography & Environment", "question": "The Tropic of Cancer (23.5° N) does NOT pass through which of the following Indian states?", "options": ["Gujarat", "Rajasthan", "Odisha", "Tripura"], "correct_index": 2, "explanation": "The Tropic of Cancer passes through 8 states: Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, West Bengal, Tripura, and Mizoram. It does not pass through Odisha."},
+    {"category": "🌍 Geography & Environment", "question": "Which Indian river is known as the 'Dakshin Ganga' (Ganga of the South)?", "options": ["Godavari", "Cauvery", "Krishna", "Narmada"], "correct_index": 0, "explanation": "Godavari is the longest peninsular river and is called 'Dakshin Ganga'."},
+    {"category": "🌍 Geography & Environment", "question": "Majuli, the world's largest river island, is located on which river in Assam?", "options": ["Ganga", "Brahmaputra", "Indus", "Yamuna"], "correct_index": 1, "explanation": "Majuli is situated on the Brahmaputra river and was designated India's first river island district."},
+    {"category": "🌍 Geography & Environment", "question": "Which high Himalayan pass connects Srinagar with Leh in Ladakh?", "options": ["Zoji La Pass", "Rohtang Pass", "Nathu La Pass", "Shipki La Pass"], "correct_index": 0, "explanation": "Zoji La Pass on NH-1 connects Srinagar with Kargil and Leh."},
+
+    {"category": "🔬 General Science & Tech", "question": "Which organelle is universally known as the 'Powerhouse of the Cell'?", "options": ["Ribosome", "Mitochondria", "Golgi Apparatus", "Lysosome"], "correct_index": 1, "explanation": "Mitochondria produce cellular energy in the form of ATP through cellular respiration."},
+    {"category": "🔬 General Science & Tech", "question": "What is the chemical scientific name of Vitamin C?", "options": ["Ascorbic Acid", "Retinol", "Tocopherol", "Thiamine"], "correct_index": 0, "explanation": "Vitamin C is Ascorbic Acid; deficiency causes Scurvy."},
+    {"category": "🔬 General Science & Tech", "question": "Which gas is most abundantly present in the Earth's atmosphere?", "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"], "correct_index": 1, "explanation": "Nitrogen makes up approximately 78.08% of dry atmosphere."},
+    {"category": "🔬 General Science & Tech", "question": "What is the velocity of light in vacuum?", "options": ["3 × 10⁸ m/s", "3 × 10⁶ m/s", "3 × 10¹⁰ m/s", "3 × 10⁵ m/s"], "correct_index": 0, "explanation": "The speed of light in vacuum is 299,792,458 m/s (approx 3 × 10⁸ m/s)."},
+    {"category": "🔬 General Science & Tech", "question": "Which instrument is used to measure atmospheric pressure?", "options": ["Hydrometer", "Barometer", "Hygrometer", "Anemometer"], "correct_index": 1, "explanation": "A Barometer (invented by Torricelli) measures atmospheric pressure."},
+
+    {"category": "📊 Indian Economy & Banking", "question": "Who is the apex regulatory authority for the securities and stock market in India?", "options": ["RBI", "SEBI", "IRDAI", "NABARD"], "correct_index": 1, "explanation": "SEBI (Securities and Exchange Board of India) regulates the stock and securities market."},
+    {"category": "📊 Indian Economy & Banking", "question": "The rate at which the RBI lends short-term money to commercial banks is called:", "options": ["Reverse Repo Rate", "Repo Rate", "Bank Rate", "CRR"], "correct_index": 1, "explanation": "Repo Rate is the benchmark rate at which RBI lends liquidity to commercial banks."},
+    {"category": "📊 Indian Economy & Banking", "question": "On which date was GST officially rolled out across India?", "options": ["1 July 2015", "1 July 2016", "1 July 2017", "1 April 2018"], "correct_index": 2, "explanation": "GST was implemented across India on 1 July 2017 via the 101st Constitutional Amendment."},
+    {"category": "📊 Indian Economy & Banking", "question": "Which Five-Year Plan in India was based on the PC Mahalanobis heavy industry model?", "options": ["1st Plan", "2nd Plan", "3rd Plan", "4th Plan"], "correct_index": 1, "explanation": "The 2nd Five-Year Plan (1956–1961) focused on heavy industries and public sector creation."},
+    {"category": "📊 Indian Economy & Banking", "question": "Which think-tank replaced the Planning Commission of India on 1 January 2015?", "options": ["Finance Commission", "NITI Aayog", "National Development Council", "Zonal Council"], "correct_index": 1, "explanation": "NITI Aayog (National Institution for Transforming India) replaced the Planning Commission in 2015."},
+
+    {"category": "⚡ Daily Current Affairs 2026", "question": "Which country recently hosted the BRICS Leaders Summit 2026?", "options": ["India", "Brazil", "South Africa", "Russia"], "correct_index": 0, "explanation": "India hosted the landmark BRICS Leaders Summit 2026 focused on digital trade and multilateral growth."},
+    {"category": "⚡ Daily Current Affairs 2026", "question": "Who serves as the Governor of the Reserve Bank of India (RBI)?", "options": ["Urjit Patel", "Shaktikanta Das", "Raghuram Rajan", "Viral Acharya"], "correct_index": 1, "explanation": "Shaktikanta Das serves as the Governor of the Reserve Bank of India."},
+    {"category": "⚡ Daily Current Affairs 2026", "question": "What is the name of India's indigenous human spaceflight mission by ISRO?", "options": ["Chandrayaan-4", "Aditya-L1", "Gaganyaan", "Mangalyaan-2"], "correct_index": 2, "explanation": "Gaganyaan is ISRO's indigenous human spaceflight program to take astronauts into Low Earth Orbit."},
+    {"category": "⚡ Daily Current Affairs 2026", "question": "Which city holds the record for being the cleanest city in the Swachh Survekshan rankings?", "options": ["Surat", "Indore", "Navi Mumbai", "Mysuru"], "correct_index": 1, "explanation": "Indore in Madhya Pradesh has consistently ranked as India's cleanest city in national surveys."},
+    {"category": "⚡ Daily Current Affairs 2026", "question": "India's first semi-high speed Regional Rapid Transit System train is named:", "options": ["Vande Metro", "Namo Bharat (RRTS)", "Amrit Bharat Express", "Tejas Express"], "correct_index": 1, "explanation": "Namo Bharat operates on India's first high-speed Regional Rapid Transit System corridor."},
+
+    {"category": "🌴 Kerala PSC Special GK", "question": "Who was the main pioneer and architect of the Vaikom Satyagraha (1924)?", "options": ["K. Kelappan", "T.K. Madhavan", "A.K. Gopalan", "Mannathu Padmanabhan"], "correct_index": 1, "explanation": "T.K. Madhavan was the chief mover who presented the resolution at Kakinada Congress and led the Vaikom Satyagraha."},
+    {"category": "🌴 Kerala PSC Special GK", "question": "Which Kerala social reformer proclaimed 'One Caste, One Religion, One God for Man'?", "options": ["Chattampi Swamikal", "Sree Narayana Guru", "Ayyankali", "Vakkom Moulavi"], "correct_index": 1, "explanation": "Sree Narayana Guru coined the immortal motto 'Oru Jathi, Oru Matham, Oru Daivam Manushyanu'."},
+    {"category": "🌴 Kerala PSC Special GK", "question": "In which year was the historic Temple Entry Proclamation issued in Travancore?", "options": ["1924", "1931", "1936", "1947"], "correct_index": 2, "explanation": "On 12 November 1936, Maharaja Chithira Thirunal Balarama Varma issued the historic Temple Entry Proclamation."},
+    {"category": "🌴 Kerala PSC Special GK", "question": "Which is the longest river in the state of Kerala?", "options": ["Bharathapuzha", "Periyar", "Pamba", "Chaliyar"], "correct_index": 1, "explanation": "Periyar (244 km) is the longest river flowing entirely in Kerala."},
+    {"category": "🌴 Kerala PSC Special GK", "question": "Who founded the 'Sadhu Jana Paripalana Sangham' (SJPS) in 1907 in Kerala?", "options": ["Ayyankali", "Poikayil Yohannan", "Dr. Palpu", "K.P. Karuppan"], "correct_index": 0, "explanation": "Mahatma Ayyankali founded SJPS in 1907 to champion education and rights for marginalized communities."},
+
+    {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "A train 200m long moving at 72 km/h crosses a 200m platform in how many seconds?", "options": ["15 sec", "20 sec", "25 sec", "30 sec"], "correct_index": 1, "explanation": "Speed = 72 km/h = 20 m/s. Total distance = 200 + 200 = 400m. Time = 400 / 20 = 20 seconds."},
+    {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "Find the missing number in the series: 3, 7, 15, 31, 63, ?", "options": ["125", "127", "129", "131"], "correct_index": 1, "explanation": "Formula: (x × 2) + 1 -> (63 × 2) + 1 = 127."},
+    {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "An item bought for ₹500 is sold for ₹625. What is the profit percentage?", "options": ["20%", "25%", "30%", "15%"], "correct_index": 1, "explanation": "Profit = ₹125. Profit % = (125 / 500) × 100 = 25%."},
+    {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "If CAT is coded as 3120, how is DOG coded in that alphabetical code?", "options": ["4157", "4158", "4147", "5157"], "correct_index": 0, "explanation": "Alphabet numbers: D=4, O=15, G=7 -> 4157."},
+    {"category": "🧮 Quantitative Aptitude & Reasoning", "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?", "options": ["₹2,000", "₹2,400", "₹2,500", "₹1,800"], "correct_index": 1, "explanation": "SI = (P × R × T)/100 = (10000 × 8 × 3)/100 = ₹2,400."}
+  ];
+
+  var activeQuestions = [];
+  var currentIdx = 0;
+  var userAnswers = [];
+  var timeLeft = 30 * 60;
+  var timerHandle = null;
+
+  function loadCategoryQuiz(catKey, btnEl) {
+    if (btnEl) {
+      var allTabs = document.querySelectorAll('.cat-tab-btn');
+      allTabs.forEach(function(t) { t.classList.remove('active'); });
+      btnEl.classList.add('active');
+    }
+
+    if (catKey === 'daily50') {
+      activeQuestions = MASTER_QUESTIONS.slice();
+    } else {
+      var filtered = MASTER_QUESTIONS.filter(function(q) {
+        return q.category.toLowerCase().indexOf(catKey.replace('_', ' ')) !== -1 ||
+               (catKey === 'current_affairs' && q.category.indexOf('Current') !== -1) ||
+               (catKey === 'kerala_psc' && q.category.indexOf('Kerala') !== -1) ||
+               (catKey === 'polity' && q.category.indexOf('Polity') !== -1) ||
+               (catKey === 'history' && q.category.indexOf('History') !== -1) ||
+               (catKey === 'geography' && q.category.indexOf('Geography') !== -1) ||
+               (catKey === 'science' && q.category.indexOf('Science') !== -1) ||
+               (catKey === 'economy' && q.category.indexOf('Economy') !== -1) ||
+               (catKey === 'reasoning_math' && q.category.indexOf('Math') !== -1);
+      });
+      activeQuestions = filtered.length > 0 ? filtered : MASTER_QUESTIONS.slice(0, 10);
+    }
+
+    restartPortalQuiz();
+  }
+
+  function startTimer() {
+    if (timerHandle) clearInterval(timerHandle);
+    timerHandle = setInterval(function() {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(timerHandle);
+        finishQuiz();
+        return;
+      }
+      var m = Math.floor(timeLeft / 60);
+      var s = timeLeft % 60;
+      var el = document.getElementById('portalTimer');
+      if (el) el.innerText = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    }, 1000);
+  }
+
+  function renderQuestion(idx) {
+    currentIdx = idx;
+    var q = activeQuestions[idx];
+    document.getElementById('portalCurrentQ').innerText = (idx + 1);
+    document.getElementById('portalTotalQ').innerText = activeQuestions.length;
+    document.getElementById('portalCategoryChip').innerText = q.category;
+    document.getElementById('portalQuestionTitle').innerText = (idx + 1) + '. ' + q.question;
+
+    var optBox = document.getElementById('portalOptionsContainer');
+    optBox.innerHTML = '';
+    var letters = ['A', 'B', 'C', 'D'];
+
+    for (var i = 0; i < q.options.length; i++) {
+      var btn = document.createElement('button');
+      btn.className = 'opt-card-btn';
+      btn.type = 'button';
+      btn.dataset.index = i;
+
+      if (userAnswers[idx] !== null) {
+        btn.disabled = true;
+        if (i === q.correct_index) btn.classList.add('correct');
+        else if (i === userAnswers[idx]) btn.classList.add('wrong');
+      }
+
+      btn.innerHTML = "<span class='opt-bullet'>" + letters[i] + "</span><span>" + q.options[i] + "</span>";
+      btn.onclick = function() {
+        chooseAnswer(parseInt(this.dataset.index, 10));
+      };
+      optBox.appendChild(btn);
+    }
+
+    var expCard = document.getElementById('portalExplanationCard');
+    if (userAnswers[idx] !== null) {
+      expCard.style.display = 'block';
+      expCard.innerHTML = "💡 <strong>Explanation &amp; Exam Facts:</strong> " + q.explanation;
+    } else {
+      expCard.style.display = 'none';
+    }
+
+    document.getElementById('btnPrev').style.visibility = (idx === 0 ? 'hidden' : 'visible');
+    if (idx === activeQuestions.length - 1) {
+      document.getElementById('btnNext').style.display = 'none';
+      document.getElementById('btnSubmit').style.display = 'inline-flex';
+    } else {
+      document.getElementById('btnNext').style.display = 'inline-flex';
+      document.getElementById('btnSubmit').style.display = 'none';
+    }
+
+    renderPalette();
+    updateLiveScore();
+  }
+
+  function chooseAnswer(selectedOpt) {
+    if (userAnswers[currentIdx] !== null) return;
+    userAnswers[currentIdx] = selectedOpt;
+    renderQuestion(currentIdx);
+  }
+
+  function renderPalette() {
+    var pGrid = document.getElementById('portalPaletteGrid');
+    if (!pGrid) return;
+    pGrid.innerHTML = '';
+    for (var i = 0; i < activeQuestions.length; i++) {
+      var b = document.createElement('button');
+      b.className = 'p-btn';
+      b.type = 'button';
+      b.innerText = (i + 1);
+      if (i === currentIdx) b.classList.add('active');
+      if (userAnswers[i] !== null) b.classList.add('answered');
+      b.onclick = (function(target) {
+        return function() { renderQuestion(target); };
+      })(i);
+      pGrid.appendChild(b);
+    }
+  }
+
+  function updateLiveScore() {
+    var sc = 0;
+    for (var i = 0; i < userAnswers.length; i++) {
+      if (userAnswers[i] === activeQuestions[i].correct_index) sc++;
+    }
+    document.getElementById('portalLiveScore').innerText = sc;
+  }
+
+  function navigateQ(step) {
+    var n = currentIdx + step;
+    if (n >= 0 && n < activeQuestions.length) {
+      renderQuestion(n);
+    }
+  }
+
+  function finishQuiz() {
+    if (timerHandle) clearInterval(timerHandle);
+    var correct = 0;
+    var attempted = 0;
+    for (var i = 0; i < userAnswers.length; i++) {
+      if (userAnswers[i] !== null) {
+        attempted++;
+        if (userAnswers[i] === activeQuestions[i].correct_index) correct++;
+      }
+    }
+
+    document.getElementById('quizPlayArea').style.display = 'none';
+    var scView = document.getElementById('portalScorecard');
+    scView.style.display = 'block';
+
+    document.getElementById('resScore').innerText = correct + ' / ' + activeQuestions.length;
+    document.getElementById('resAttempted').innerText = attempted + ' / ' + activeQuestions.length;
+    var acc = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+    document.getElementById('resAccuracy').innerText = acc + '%';
+    scView.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function restartPortalQuiz() {
+    userAnswers = new Array(activeQuestions.length).fill(null);
+    timeLeft = 30 * 60;
+    document.getElementById('portalScorecard').style.display = 'none';
+    document.getElementById('quizPlayArea').style.display = 'block';
+    startTimer();
+    renderQuestion(0);
+  }
+
+  // Init default
+  activeQuestions = MASTER_QUESTIONS.slice();
+  restartPortalQuiz();
+</script>
+</body>
+</html>

@@ -1,0 +1,5502 @@
+[
+  {
+    "id": "mcq-reasoning_math-001751",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001752",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001753",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001754",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001755",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001756",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001757",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001758",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001759",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001760",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001761",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001762",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001763",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001764",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001765",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001766",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001767",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001768",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001769",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001770",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001771",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001772",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001773",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001774",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001775",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001776",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001777",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001778",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001779",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001780",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001781",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001782",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001783",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001784",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001785",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001786",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001787",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001788",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001789",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001790",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001791",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001792",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001793",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001794",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001795",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001796",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001797",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001798",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001799",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001800",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001801",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001802",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001803",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001804",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001805",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001806",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001807",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001808",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001809",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001810",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001811",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001812",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001813",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001814",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001815",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001816",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001817",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001818",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001819",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001820",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001821",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001822",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001823",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001824",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001825",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001826",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001827",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001828",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001829",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001830",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001831",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001832",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001833",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001834",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001835",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001836",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001837",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001838",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001839",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001840",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001841",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001842",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001843",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001844",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001845",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001846",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001847",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001848",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001849",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001850",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001851",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001852",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001853",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001854",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001855",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001856",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001857",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001858",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001859",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001860",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001861",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001862",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001863",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001864",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001865",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001866",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001867",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001868",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001869",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001870",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001871",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001872",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001873",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001874",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001875",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001876",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001877",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001878",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001879",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001880",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001881",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001882",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001883",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001884",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001885",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001886",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001887",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001888",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001889",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001890",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001891",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001892",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001893",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001894",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001895",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001896",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001897",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001898",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001899",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001900",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001901",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001902",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001903",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001904",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001905",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001906",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001907",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001908",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001909",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001910",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001911",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001912",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001913",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001914",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001915",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001916",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001917",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001918",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001919",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001920",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001921",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001922",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001923",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001924",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001925",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001926",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001927",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001928",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001929",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001930",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001931",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001932",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001933",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001934",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001935",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001936",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001937",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001938",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001939",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001940",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001941",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001942",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001943",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001944",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001945",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001946",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001947",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001948",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001949",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001950",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001951",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001952",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001953",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001954",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001955",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001956",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001957",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001958",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001959",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001960",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001961",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001962",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001963",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001964",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001965",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001966",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001967",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001968",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001969",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001970",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001971",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001972",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001973",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001974",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001975",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001976",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001977",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001978",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001979",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001980",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001981",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001982",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001983",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001984",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001985",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001986",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001987",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001988",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001989",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001990",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001991",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001992",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001993",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001994",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001995",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001996",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If a train traveling at 72 km/h crosses a 200m long platform in 20 seconds, what is the length of the train?",
+    "options": [
+      "150 meters",
+      "200 meters",
+      "250 meters",
+      "300 meters"
+    ],
+    "correct_index": 1,
+    "explanation": "Speed = 72 km/h = 72 × (5/18) = 20 m/s. Total distance in 20s = 20 × 20 = 400m. Total distance = Train Length + Platform Length (200m). Therefore, Train Length = 400 - 200 = 200 meters.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001997",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+    "options": [
+      "125",
+      "127",
+      "129",
+      "131"
+    ],
+    "correct_index": 1,
+    "explanation": "Pattern: (3 × 2) + 1 = 7, (7 × 2) + 1 = 15, (15 × 2) + 1 = 31, (31 × 2) + 1 = 63. Next number = (63 × 2) + 1 = 127.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001998",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "A person buys an article for ₹500 and sells it for ₹625. What is the percentage profit?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correct_index": 1,
+    "explanation": "Profit = ₹625 - ₹500 = ₹125. Profit % = (125 / 500) × 100 = 25%.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-001999",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "If 'CAT' is coded as '3120', how will 'DOG' be coded in the same language?",
+    "options": [
+      "4157",
+      "4158",
+      "4147",
+      "5157"
+    ],
+    "correct_index": 0,
+    "explanation": "Alphabetical positions: C=3, A=1, T=20 -> 3120. Similarly, D=4, O=15, G=7 -> 4157.",
+    "difficulty": "Medium",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  },
+  {
+    "id": "mcq-reasoning_math-002000",
+    "category_key": "reasoning_math",
+    "category_name": "🧮 Quantitative Aptitude & Reasoning",
+    "question": "What is the Simple Interest on ₹10,000 for 3 years at 8% per annum?",
+    "options": [
+      "₹2,000",
+      "₹2,400",
+      "₹2,500",
+      "₹1,800"
+    ],
+    "correct_index": 1,
+    "explanation": "Simple Interest = (P × R × T) / 100 = (10000 × 8 × 3) / 100 = ₹2,400.",
+    "difficulty": "Hard",
+    "exam_tags": [
+      "Kerala PSC",
+      "SSC CGL",
+      "UPSC",
+      "RRB NTPC",
+      "Bank PO"
+    ]
+  }
+]
