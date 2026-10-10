@@ -333,41 +333,60 @@
       }
       .hero-search-box .clear-btn:hover { color: #DC2626; }
 
-      /* Quick Popular Search Tags */
+      /* Quick Popular Search Tags - Smooth Horizontal Scroll Track */
       .hero-popular-tags {
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 6px;
+        gap: 8px;
         margin-top: 1rem;
         font-size: 0.8rem;
         position: relative;
         z-index: 2;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        padding: 4px 6px 8px;
+        max-width: 100%;
+        justify-content: flex-start;
       }
+      .hero-popular-tags::-webkit-scrollbar { display: none; }
       .hero-popular-tags span.label {
-        color: rgba(255, 255, 255, 0.85);
+        color: #FDE047;
         font-weight: 800;
         margin-right: 2px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        flex-shrink: 0;
+        background: rgba(0, 0, 0, 0.28);
+        padding: 4px 11px;
+        border-radius: 20px;
+        border: 1px solid rgba(253, 224, 71, 0.35);
       }
       .pop-tag {
-        background: rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.16);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.28);
         color: #FFFFFF;
-        padding: 3px 12px;
+        padding: 4px 14px;
         border-radius: 20px;
         text-decoration: none;
         font-weight: 700;
         transition: var(--transition);
         cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        flex-shrink: 0;
+        white-space: nowrap;
       }
       .pop-tag:hover {
         background: #FFFFFF;
         color: #1E3A8A;
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
 
       /* Category Pills Bar (Horizontal Scroll with Count Badges) */
@@ -1774,16 +1793,25 @@
           </button>
         </div>
 
-        <!-- Quick Trending Search Tags -->
+        <!-- Quick Trending Search Tags (Horizontal Scrollable Track) -->
         <div class='hero-popular-tags'>
           <span class='label'>🔥 Popular:</span>
           <a class='pop-tag' href='javascript:void(0)' onclick='filterTodayJobs()'>⚡ Added Today</a>
           <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Kerala PSC")'>🌴 Kerala PSC</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Kerala Govt Jobs")'>🌴 Kerala Govt</a>
           <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Bank Jobs")'>🏦 Bank Jobs</a>
-          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Railway Jobs")'>🚆 Railway</a>
-          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("SSC CGL")'>📋 SSC CGL</a>
-          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("10th Pass")'>🎓 10th Pass</a>
-          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Defence Jobs")'>🎖️ Defence</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Railway Jobs")'>🚆 Railway RRB</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("SSC CGL")'>📋 SSC (CGL/CHSL)</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("UPSC Jobs")'>🏛️ UPSC</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("10th Pass")'>🎓 10th Pass (SSLC)</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("12th Pass")'>🎓 12th Pass (+2)</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Degree Jobs")'>🎓 Any Degree</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Police Jobs")'>👮 Police &amp; CPO</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Defence Jobs")'>🎖️ Defence Army</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Teaching Jobs")'>👩‍🏫 Teaching</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Medical Jobs")'>🏥 Medical</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Engineering Jobs")'>⚙️ Engineering</a>
+          <a class='pop-tag' href='javascript:void(0)' onclick='openUtilityToolsModal("kerala_psc")' style='background:linear-gradient(135deg,#059669,#047857); border-color:#34D399; font-weight:800;'><i class='fas fa-crop-alt'/> 🛠️ Photo Resizer</a>
         </div>
       </div>
 
