@@ -53,9 +53,6 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
     <!-- FontAwesome Icons -->
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
 
-    <!-- jsPDF Engine for Certificate Image-to-PDF Conversion -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'></script>
-
     <b:skin><![CDATA[
       :root {
         --primary: #2563EB;
@@ -1402,7 +1399,55 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
             <a href='javascript:void(0)' onclick='switchPortalType("admit_card")'>🎫 Admit Cards</a>
             <a href='javascript:void(0)' onclick='switchPortalType("result")'>🏆 Results</a>
             <a href='javascript:void(0)' onclick='switchPortalType("saved")' style='color:#F59E0B;'>⭐ Saved (<span id='navSavedCount'>0</span>)</a>
-            <a href='javascript:void(0)' onclick='openUtilityToolsModal("kerala_psc")' style='color:#059669; font-weight:800; background:rgba(16,185,129,0.12); padding:5px 10px; border-radius:6px;'><i class='fas fa-crop-alt'/> 🛠️ Exam Tools</a>
+            <div class='tools-dropdown' id='headerToolsDropdown'>
+              <button class='tools-dropdown-btn' onclick='toggleHeaderToolsDropdown(event)' type='button'>
+                <i class='fas fa-magic'/> 🛠️ Exam Tools <i class='fas fa-chevron-down' style='font-size:0.65rem; margin-left:2px;'/>
+              </button>
+              <div class='tools-dropdown-menu' id='headerToolsMenu'>
+                <a class='tools-menu-item' href='/p/kerala-psc-photo-resizer.html'>
+                  <span class='t-ico'>🌴</span>
+                  <div>
+                    <strong>Kerala PSC Photo Maker</strong>
+                    <small>150&#215;200 px &#8226; Name &amp; Date (&lt;30KB)</small>
+                  </div>
+                </a>
+                <a class='tools-menu-item' href='/p/govt-job-photo-resizer-online-ssc-upsc.html'>
+                  <span class='t-ico'>🇮🇳</span>
+                  <div>
+                    <strong>State &amp; SSC Photo Resizer</strong>
+                    <small>SSC, UPSC, IBPS, RRB Presets</small>
+                  </div>
+                </a>
+                <a class='tools-menu-item' href='/p/signature-resizer-contrast-enhancer.html'>
+                  <span class='t-ico'>✍️</span>
+                  <div>
+                    <strong>Signature Resizer &amp; Cleaner</strong>
+                    <small>Whiten Paper &amp; Resize (&lt;20KB)</small>
+                  </div>
+                </a>
+                <a class='tools-menu-item' href='/p/image-to-pdf-converter-online-merge.html'>
+                  <span class='t-ico'>📄</span>
+                  <div>
+                    <strong>Certificate Image to PDF</strong>
+                    <small>Merge Certificates into 1 PDF</small>
+                  </div>
+                </a>
+                <a class='tools-menu-item' href='/p/govt-job-age-calculator-online-with.html'>
+                  <span class='t-ico'>🧮</span>
+                  <div>
+                    <strong>Govt Exam Age Calculator</strong>
+                    <small>Exact Age &amp; Category Relaxation</small>
+                  </div>
+                </a>
+                <a class='tools-menu-item' href='/p/image-kb-compressor-online-compress.html'>
+                  <span class='t-ico'>🗜️</span>
+                  <div>
+                    <strong>Precision KB Compressor</strong>
+                    <small>Compress Photos to Target KB</small>
+                  </div>
+                </a>
+              </div>
+            </div>
           </nav>
           <button class='theme-btn' onclick='toggleDark()' title='Toggle Theme' type='button'>
             <i class='fas fa-moon' id='themeIcon'/>
@@ -1462,7 +1507,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
           <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("SSC CGL")'>📋 SSC CGL</a>
           <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("10th Pass")'>🎓 10th Pass</a>
           <a class='pop-tag' href='javascript:void(0)' onclick='filterByLabel("Defence Jobs")'>🎖️ Defence</a>
-          <a class='pop-tag' href='javascript:void(0)' onclick='openUtilityToolsModal("kerala_psc")' style='background:linear-gradient(135deg,#059669,#047857); border-color:#34D399; font-weight:800;'><i class='fas fa-crop-alt'/> 🛠️ Photo Resizer</a>
+          <a class='pop-tag' href='/p/govt-job-photo-resizer-online-ssc-upsc.html' style='background:linear-gradient(135deg,#059669,#047857); border-color:#34D399; font-weight:800;'><i class='fas fa-crop-alt'/> 🛠️ Photo Resizer</a>
         </div>
       </div>
 
@@ -1476,7 +1521,7 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
           <a class='job-cat-pill' data-channel='answer_key' href='javascript:void(0)' onclick='switchPortalType("answer_key")'>📝 Answer Keys <span class='pill-count' id='cnt-ans'>0</span></a>
           <a class='job-cat-pill' data-channel='syllabus' href='javascript:void(0)' onclick='switchPortalType("syllabus")'>📚 Syllabus <span class='pill-count' id='cnt-syl'>0</span></a>
           <a class='job-cat-pill pill-saved' data-channel='saved' href='javascript:void(0)' onclick='switchPortalType("saved")'>⭐ Saved (<span id='cnt-saved'>0</span>)</a>
-          <a class='job-cat-pill pill-tools' href='javascript:void(0)' onclick='openUtilityToolsModal("kerala_psc")' style='border-color:#10B981; color:#059669; background:#ECFDF5; font-weight:800;'><i class='fas fa-magic'/> 🛠️ Exam Tools Hub</a>
+          <a class='job-cat-pill pill-tools' href='javascript:void(0)' onclick='toggleFloatingTools()' style='border-color:#10B981; color:#059669; background:#ECFDF5; font-weight:800;'><i class='fas fa-magic'/> 🛠️ Exam Tools Hub</a>
           <a class='job-cat-pill pill-today' data-filter='today' href='javascript:void(0)' onclick='filterTodayJobs()'>🆕 Added Today <span class='pill-count' id='cnt-today'>0</span></a>
           <a class='job-cat-pill' data-filter='Kerala Govt Jobs' href='javascript:void(0)' onclick='filterByLabel("Kerala Govt Jobs")'>🌴 Kerala Govt <span class='pill-count' id='cnt-kerala'>0</span></a>
           <a class='job-cat-pill' data-filter='Kerala PSC' href='javascript:void(0)' onclick='filterByLabel("Kerala PSC")'>📜 Kerala PSC <span class='pill-count' id='cnt-kpsc'>0</span></a>
@@ -1854,329 +1899,69 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
       </p>
     </footer>
 
-    <!-- Floating Exam Tools Hub Launcher Button -->
-    <button class='tool-floating-btn' onclick='openUtilityToolsModal("kerala_psc")' title='Open Govt Exam Tools Hub' type='button'>
-      <i class='fas fa-magic'/> 🛠️ Exam Tools
-    </button>
-
-    <!-- Govt Exam Utility Suite Modal (6-in-1 Tools Hub) -->
-    <div class='exam-tools-overlay' id='examToolsOverlay' onclick='handleModalBackdropClick(event)'>
-      <div class='exam-tools-modal'>
-        <!-- Header -->
-        <div class='tools-modal-header'>
-          <h2><i class='fas fa-tools' style='color:var(--primary);'/> Govt Exam Utility Suite &amp; Resizer Hub</h2>
-          <button class='tools-modal-close' onclick='closeUtilityToolsModal()' title='Close Modal' type='button'>
+    <!-- Floating Exam Tools Hub Navigation Drawer -->
+    <div class='tool-floating-container' id='floatingToolsContainer'>
+      <div class='floating-tools-card' id='floatingToolsCard'>
+        <div class='floating-tools-header'>
+          <h4><i class='fas fa-tools'/> Govt Exam Utility Suite</h4>
+          <button class='floating-tools-close' onclick='toggleFloatingTools()' title='Close' type='button'>
             <i class='fas fa-times'/>
           </button>
         </div>
-
-        <!-- Tab Navigation -->
-        <div class='tools-tabs-nav'>
-          <button class='tool-tab-btn active' id='tabBtn-kerala_psc' onclick='switchToolTab("kerala_psc")' type='button'>
-            🌴 Kerala PSC Photo Maker
-          </button>
-          <button class='tool-tab-btn' id='tabBtn-all_psc' onclick='switchToolTab("all_psc")' type='button'>
-            🇮🇳 State &amp; Central Photo Resizer
-          </button>
-          <button class='tool-tab-btn' id='tabBtn-signature' onclick='switchToolTab("signature")' type='button'>
-            ✍️ Signature Resizer &amp; Cleaner
-          </button>
-          <button class='tool-tab-btn' id='tabBtn-pdf' onclick='switchToolTab("pdf")' type='button'>
-            📄 Image to PDF Converter
-          </button>
-          <button class='tool-tab-btn' id='tabBtn-age' onclick='switchToolTab("age")' type='button'>
-            🧮 Age Calculator &amp; Matcher
-          </button>
-          <button class='tool-tab-btn' id='tabBtn-compress' onclick='switchToolTab("compress")' type='button'>
-            🗜️ KB Compressor
-          </button>
-        </div>
-
-        <!-- Modal Body / Panels -->
-        <div class='tools-modal-body'>
-          <!-- PANEL 1: Kerala PSC Photo Maker -->
-          <div class='tool-panel active' id='panel-kerala_psc'>
-            <div style='background:var(--primary-light); padding:10px 14px; border-radius:8px; margin-bottom:1rem; border-left:4px solid var(--primary);'>
-              <strong style='color:var(--primary); font-size:0.88rem;'><i class='fas fa-info-circle'/> Official Kerala PSC Thulasi Standard:</strong>
-              <p style='font-size:0.8rem; color:var(--text-secondary); margin-top:2px;'>
-                Dimensions: <strong>150px &#215; 200px</strong> (Aspect Ratio 3:4) &#8226; File Size: <strong>&lt; 30 KB</strong> &#8226; Requires Candidate Name &amp; Date taken stamped in a white bottom banner.
-              </p>
+        <div class='floating-tools-list'>
+          <a class='floating-tool-link' href='/p/kerala-psc-photo-resizer.html'>
+            <span class='ft-icon'>🌴</span>
+            <div class='ft-info'>
+              <strong>Kerala PSC Photo Maker</strong>
+              <small>150&#215;200 px &#8226; Name &amp; Date (&lt;30 KB)</small>
             </div>
-            <div class='tool-grid'>
-              <div>
-                <div class='tool-upload-box'>
-                  <i class='fas fa-cloud-upload-alt tool-upload-icon'/>
-                  <h4 style='font-size:0.95rem; font-weight:800;'>Select Candidate Photo</h4>
-                  <p style='font-size:0.78rem; color:var(--text-muted); margin-top:3px;'>Click to browse or Drag &amp; Drop (JPG, PNG)</p>
-                  <input accept='image/*' id='kpscPhotoInput' onchange='handleKpscPhotoUpload(event)' type='file'/>
-                </div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-user'/> Candidate Full Name (Printed at bottom)</label>
-                  <input class='tool-input' id='kpscNameInput' oninput='updateKpscCanvas()' placeholder='e.g. RAHUL KRISHNAN' type='text'/>
-                </div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-calendar-alt'/> Date of Photo Taken (DD/MM/YYYY)</label>
-                  <input class='tool-input' id='kpscDateInput' oninput='updateKpscCanvas()' placeholder='e.g. 10/10/2026' type='text'/>
-                </div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-text-height'/> Bottom Banner Text Size</label>
-                  <input id='kpscFontSizeSlider' max='18' min='10' oninput='updateKpscCanvas()' style='width:100%;' type='range' value='13'/>
-                </div>
-              </div>
-              <div class='tool-preview-box'>
-                <div style='font-size:0.82rem; font-weight:800; color:var(--text-secondary); margin-bottom:8px;'>
-                  <i class='fas fa-eye'/> Live 150&#215;200 Preview (<span id='kpscSizeBadge'>0 KB</span>)
-                </div>
-                <div class='tool-canvas-wrap'>
-                  <canvas height='200' id='kpscCanvas' style='width:150px; height:200px; display:block;' width='150'/>
-                </div>
-                <button class='tool-btn-primary tool-btn-success' id='kpscDownloadBtn' onclick='downloadKpscPhoto()' type='button'>
-                  <i class='fas fa-download'/> Download Kerala PSC Photo (&lt;30KB)
-                </button>
-              </div>
+            <i class='fas fa-chevron-right ft-arrow'/>
+          </a>
+          <a class='floating-tool-link' href='/p/govt-job-photo-resizer-online-ssc-upsc.html'>
+            <span class='ft-icon'>🇮🇳</span>
+            <div class='ft-info'>
+              <strong>State &amp; SSC Photo Resizer</strong>
+              <small>SSC, UPSC, IBPS, RRB, PSC Presets</small>
             </div>
-          </div>
-
-          <!-- PANEL 2: All State & Central Govt Photo Resizer -->
-          <div class='tool-panel' id='panel-all_psc'>
-            <div style='background:var(--bg-page); padding:10px 14px; border-radius:8px; margin-bottom:1rem; border:1px solid var(--border-color);'>
-              <strong style='color:var(--text-primary); font-size:0.88rem;'><i class='fas fa-sliders-h'/> Exam Photo Dimension &amp; KB Presets:</strong>
-              <p style='font-size:0.8rem; color:var(--text-secondary); margin-top:2px;'>
-                Choose your target recruitment portal or enter custom pixel dimensions and maximum file size.
-              </p>
+            <i class='fas fa-chevron-right ft-arrow'/>
+          </a>
+          <a class='floating-tool-link' href='/p/signature-resizer-contrast-enhancer.html'>
+            <span class='ft-icon'>✍️</span>
+            <div class='ft-info'>
+              <strong>Signature Resizer &amp; Cleaner</strong>
+              <small>Shadow Remover &amp; Resizer (&lt;20 KB)</small>
             </div>
-            <div class='tool-grid'>
-              <div>
-                <div class='tool-upload-box'>
-                  <i class='fas fa-image tool-upload-icon'/>
-                  <h4 style='font-size:0.95rem; font-weight:800;'>Select Photo to Resize</h4>
-                  <p style='font-size:0.78rem; color:var(--text-muted); margin-top:3px;'>Upload any camera or scanned photo</p>
-                  <input accept='image/*' id='allPscPhotoInput' onchange='handleAllPscPhotoUpload(event)' type='file'/>
-                </div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-building'/> Select Recruitment Exam Preset</label>
-                  <select class='tool-select' id='allPscPresetSelect' onchange='applyPscPreset(this.value)'>
-                    <option value='ssc'>SSC (CGL, CHSL, MTS, GD) - 3.5&#215;4.5 cm (20-50 KB)</option>
-                    <option value='upsc'>UPSC (Civil Services, NDA, CDS) - 350&#215;350 px (20-300 KB)</option>
-                    <option value='ibps'>IBPS &amp; SBI Bank Jobs - 200&#215;230 px (20-50 KB)</option>
-                    <option value='rrb'>Railway RRB (NTPC, Group D, ALP) - 35&#215;45 mm (30-70 KB)</option>
-                    <option value='tnpsc'>TNPSC (Tamil Nadu PSC) - 165&#215;200 px (20-50 KB)</option>
-                    <option value='kpsc_kar'>KPSC (Karnataka PSC) - 150&#215;200 px (20-50 KB)</option>
-                    <option value='appsc'>APPSC &amp; TSPSC - 3.5&#215;4.5 cm (20-50 KB)</option>
-                    <option value='mpsc'>MPSC (Maharashtra) - 160&#215;200 px (20-50 KB)</option>
-                    <option value='custom'>⚙️ Custom Width, Height &amp; Target KB</option>
-                  </select>
-                </div>
-                <div class='tool-grid' style='gap:10px; margin-top:10px;'>
-                  <div class='tool-form-group' style='margin-top:0;'>
-                    <label>Width (Pixels)</label>
-                    <input class='tool-input' id='allPscWidth' oninput='updateAllPscCanvas()' type='number' value='200'/>
-                  </div>
-                  <div class='tool-form-group' style='margin-top:0;'>
-                    <label>Height (Pixels)</label>
-                    <input class='tool-input' id='allPscHeight' oninput='updateAllPscCanvas()' type='number' value='230'/>
-                  </div>
-                </div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-compress-alt'/> Max Target File Size (KB)</label>
-                  <input class='tool-input' id='allPscMaxKb' oninput='updateAllPscCanvas()' type='number' value='50'/>
-                </div>
-              </div>
-              <div class='tool-preview-box'>
-                <div style='font-size:0.82rem; font-weight:800; color:var(--text-secondary); margin-bottom:8px;'>
-                  <i class='fas fa-eye'/> Resized Preview (<span id='allPscSizeBadge'>0 KB</span>)
-                </div>
-                <div class='tool-canvas-wrap'>
-                  <canvas height='230' id='allPscCanvas' style='max-width:180px; max-height:230px; display:block;' width='200'/>
-                </div>
-                <button class='tool-btn-primary' id='allPscDownloadBtn' onclick='downloadAllPscPhoto()' type='button'>
-                  <i class='fas fa-download'/> Download Resized Photo
-                </button>
-              </div>
+            <i class='fas fa-chevron-right ft-arrow'/>
+          </a>
+          <a class='floating-tool-link' href='/p/image-to-pdf-converter-online-merge.html'>
+            <span class='ft-icon'>📄</span>
+            <div class='ft-info'>
+              <strong>Certificate Image to PDF</strong>
+              <small>Merge Certificates into 1 PDF (&lt;200 KB)</small>
             </div>
-          </div>
-
-          <!-- PANEL 3: Signature Resizer & Contrast Enhancer -->
-          <div class='tool-panel' id='panel-signature'>
-            <div style='background:var(--bg-page); padding:10px 14px; border-radius:8px; margin-bottom:1rem; border:1px solid var(--border-color);'>
-              <strong style='color:var(--text-primary); font-size:0.88rem;'><i class='fas fa-signature'/> Govt Exam Signature Resizer &amp; Background Cleaner:</strong>
-              <p style='font-size:0.8rem; color:var(--text-secondary); margin-top:2px;'>
-                Automatically eliminates phone camera shadow and whitens background paper for 100% acceptance.
-              </p>
+            <i class='fas fa-chevron-right ft-arrow'/>
+          </a>
+          <a class='floating-tool-link' href='/p/govt-job-age-calculator-online-with.html'>
+            <span class='ft-icon'>🧮</span>
+            <div class='ft-info'>
+              <strong>Govt Exam Age Calculator</strong>
+              <small>Category Relaxation &amp; Eligibility Matcher</small>
             </div>
-            <div class='tool-grid'>
-              <div>
-                <div class='tool-upload-box'>
-                  <i class='fas fa-pen-nib tool-upload-icon'/>
-                  <h4 style='font-size:0.95rem; font-weight:800;'>Select Signature Image</h4>
-                  <p style='font-size:0.78rem; color:var(--text-muted); margin-top:3px;'>Upload photo of paper signature</p>
-                  <input accept='image/*' id='sigInput' onchange='handleSigUpload(event)' type='file'/>
-                </div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-list'/> Select Exam Signature Preset</label>
-                  <select class='tool-select' id='sigPresetSelect' onchange='applySigPreset(this.value)'>
-                    <option value='kpsc_sig'>Kerala PSC Signature - 150&#215;100 px (&lt;30 KB)</option>
-                    <option value='ssc_sig'>SSC Signature - 140&#215;60 px (10-20 KB)</option>
-                    <option value='ibps_sig'>IBPS &amp; Bank Signature - 140&#215;60 px (10-20 KB)</option>
-                    <option value='upsc_sig'>UPSC Signature - 350&#215;350 px (20-300 KB)</option>
-                    <option value='rrb_sig'>Railway RRB Signature - 140&#215;60 px (10-20 KB)</option>
-                    <option value='custom_sig'>Custom Signature Dimension</option>
-                  </select>
-                </div>
-                <div class='tool-grid' style='gap:10px; margin-top:10px;'>
-                  <div class='tool-form-group' style='margin-top:0;'>
-                    <label>Width (px)</label>
-                    <input class='tool-input' id='sigWidth' oninput='updateSigCanvas()' type='number' value='150'/>
-                  </div>
-                  <div class='tool-form-group' style='margin-top:0;'>
-                    <label>Height (px)</label>
-                    <input class='tool-input' id='sigHeight' oninput='updateSigCanvas()' type='number' value='100'/>
-                  </div>
-                </div>
-                <div style='margin-top:12px; display:flex; align-items:center; gap:8px;'>
-                  <input checked='checked' id='sigEnhanceCheck' onchange='updateSigCanvas()' style='width:18px; height:18px;' type='checkbox'/>
-                  <label for='sigEnhanceCheck' style='font-size:0.85rem; font-weight:800; cursor:pointer; color:var(--primary);'>
-                    ✨ Remove Grey Shadow &amp; Whiten Background
-                  </label>
-                </div>
-              </div>
-              <div class='tool-preview-box'>
-                <div style='font-size:0.82rem; font-weight:800; color:var(--text-secondary); margin-bottom:8px;'>
-                  <i class='fas fa-eye'/> Signature Preview (<span id='sigSizeBadge'>0 KB</span>)
-                </div>
-                <div class='tool-canvas-wrap'>
-                  <canvas height='100' id='sigCanvas' style='max-width:200px; max-height:100px; display:block;' width='150'/>
-                </div>
-                <button class='tool-btn-primary tool-btn-success' id='sigDownloadBtn' onclick='downloadSignature()' type='button'>
-                  <i class='fas fa-download'/> Download Official Signature
-                </button>
-              </div>
+            <i class='fas fa-chevron-right ft-arrow'/>
+          </a>
+          <a class='floating-tool-link' href='/p/image-kb-compressor-online-compress.html'>
+            <span class='ft-icon'>🗜️</span>
+            <div class='ft-info'>
+              <strong>Precision KB Compressor</strong>
+              <small>Compress Heavy Photos to Exact KB Limit</small>
             </div>
-          </div>
-
-          <!-- PANEL 4: Certificate Image to PDF Converter -->
-          <div class='tool-panel' id='panel-pdf'>
-            <div style='background:var(--bg-page); padding:10px 14px; border-radius:8px; margin-bottom:1rem; border:1px solid var(--border-color);'>
-              <strong style='color:var(--text-primary); font-size:0.88rem;'><i class='fas fa-file-pdf'/> Fast Certificate Image-to-PDF Converter:</strong>
-              <p style='font-size:0.8rem; color:var(--text-secondary); margin-top:2px;'>
-                Merge multiple certificates (SSLC, Plus Two, Degree, Caste/OBC, EWS, ID Proof) into a clean, optimized PDF under 200KB / 500KB.
-              </p>
-            </div>
-            <div>
-              <div class='tool-upload-box'>
-                <i class='fas fa-images tool-upload-icon'/>
-                <h4 style='font-size:0.95rem; font-weight:800;'>Select Certificate Images</h4>
-                <p style='font-size:0.78rem; color:var(--text-muted); margin-top:3px;'>Select 1 or multiple JPG/PNG files to merge into 1 PDF</p>
-                <input accept='image/*' id='pdfImagesInput' multiple='multiple' onchange='handlePdfImagesUpload(event)' type='file'/>
-              </div>
-              <div id='pdfSelectedFilesCount' style='font-size:0.85rem; font-weight:800; color:var(--primary); margin:12px 0 6px; display:none;'>
-                Selected Pages: <span id='pdfPageCount'>0</span>
-              </div>
-              <div id='pdfThumbnailsGrid' style='display:flex; gap:10px; overflow-x:auto; padding:8px 0; margin-bottom:1rem;'/>
-              <div class='tool-form-group'>
-                <label><i class='fas fa-compress'/> PDF Compression &amp; Quality</label>
-                <select class='tool-select' id='pdfQualitySelect'>
-                  <option value='0.7'>High Compression (Target &lt; 200 KB - Recommended for Govt Portals)</option>
-                  <option selected='selected' value='0.85'>Balanced Quality (Target &lt; 500 KB)</option>
-                  <option value='0.95'>Maximum Print Quality</option>
-                </select>
-              </div>
-              <button class='tool-btn-primary' id='pdfGenerateBtn' onclick='generateCertificatePdf()' style='margin-top:1.25rem;' type='button'>
-                <i class='fas fa-file-pdf'/> Convert &amp; Download Certificate PDF
-              </button>
-            </div>
-          </div>
-
-          <!-- PANEL 5: Govt Exam Age Calculator -->
-          <div class='tool-panel' id='panel-age'>
-            <div style='background:var(--bg-page); padding:10px 14px; border-radius:8px; margin-bottom:1rem; border:1px solid var(--border-color);'>
-              <strong style='color:var(--text-primary); font-size:0.88rem;'><i class='fas fa-calculator'/> Smart Govt Job Age Calculator &amp; Category Relaxation Matcher:</strong>
-              <p style='font-size:0.8rem; color:var(--text-secondary); margin-top:2px;'>
-                Check exact age and category-based eligibility across Kerala PSC, SSC, UPSC, Banking and Railways.
-              </p>
-            </div>
-            <div class='tool-grid'>
-              <div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-birthday-cake'/> Date of Birth (Candidate DOB)</label>
-                  <input class='tool-input' id='ageCalcDob' onchange='calculateGovtAge()' type='date'/>
-                </div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-calendar-check'/> Cut-off / Reference Date</label>
-                  <input class='tool-input' id='ageCalcCutoff' onchange='calculateGovtAge()' type='date'/>
-                </div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-users'/> Reservation Category (Age Relaxation)</label>
-                  <select class='tool-select' id='ageCalcCategory' onchange='calculateGovtAge()'>
-                    <option value='GEN'>General / Unreserved (No Relaxation)</option>
-                    <option value='OBC'>OBC / Non-Creamy Layer (+3 Years Relaxation)</option>
-                    <option value='SC_ST'>SC / ST (+5 Years Relaxation)</option>
-                    <option value='PWBD'>PwBD / Differently Abled (+10 Years Relaxation)</option>
-                    <option value='EX_SER'>Ex-Servicemen (+3 Years + Service Period)</option>
-                  </select>
-                </div>
-                <button class='tool-btn-primary' onclick='calculateGovtAge()' type='button'>
-                  <i class='fas fa-check-circle'/> Calculate Exact Age &amp; Eligibility
-                </button>
-              </div>
-              <div class='tool-preview-box' style='text-align:left; align-items:flex-start;'>
-                <div style='font-size:0.82rem; font-weight:800; color:var(--text-muted);'>Exact Age as on Cut-off Date:</div>
-                <div id='ageResultHero' style='font-size:1.35rem; font-weight:900; color:var(--primary); margin:6px 0 12px;'>
-                  Please select DOB
-                </div>
-                <div style='width:100%; border-top:1px solid var(--border-color); padding-top:10px;'>
-                  <div style='font-size:0.85rem; font-weight:800; margin-bottom:6px; color:var(--text-primary);'>Exam Eligibility Matcher:</div>
-                  <div id='ageEligibilityList' style='display:flex; flex-direction:column; gap:6px; font-size:0.82rem; width:100%;'>
-                    <div style='color:var(--text-muted);'>Enter DOB to see exam eligibility status.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- PANEL 6: Image KB Compressor -->
-          <div class='tool-panel' id='panel-compress'>
-            <div style='background:var(--bg-page); padding:10px 14px; border-radius:8px; margin-bottom:1rem; border:1px solid var(--border-color);'>
-              <strong style='color:var(--text-primary); font-size:0.88rem;'><i class='fas fa-compress'/> Precision Govt Job File Size Reducer (KB Compressor):</strong>
-              <p style='font-size:0.8rem; color:var(--text-secondary); margin-top:2px;'>
-                Compress heavy camera photos and scanned documents down to exact target KB limits (e.g. 20KB, 50KB, 100KB, 200KB).
-              </p>
-            </div>
-            <div class='tool-grid'>
-              <div>
-                <div class='tool-upload-box'>
-                  <i class='fas fa-file-image tool-upload-icon'/>
-                  <h4 style='font-size:0.95rem; font-weight:800;'>Select Heavy Image</h4>
-                  <p style='font-size:0.78rem; color:var(--text-muted); margin-top:3px;'>Upload any photo, document or certificate</p>
-                  <input accept='image/*' id='compressInput' onchange='handleCompressUpload(event)' type='file'/>
-                </div>
-                <div class='tool-form-group'>
-                  <label><i class='fas fa-bullseye'/> Target File Size Limit (KB)</label>
-                  <div style='display:flex; gap:8px; margin-top:4px;'>
-                    <button class='tool-tab-btn' onclick='setCompressTarget(20)' type='button'>20 KB</button>
-                    <button class='tool-tab-btn' onclick='setCompressTarget(30)' type='button'>30 KB</button>
-                    <button class='tool-tab-btn' onclick='setCompressTarget(50)' type='button'>50 KB</button>
-                    <button class='tool-tab-btn' onclick='setCompressTarget(100)' type='button'>100 KB</button>
-                    <button class='tool-tab-btn' onclick='setCompressTarget(200)' type='button'>200 KB</button>
-                  </div>
-                  <input class='tool-input' id='compressTargetKb' oninput='runCompressor()' style='margin-top:8px;' type='number' value='50'/>
-                </div>
-              </div>
-              <div class='tool-preview-box'>
-                <div style='font-size:0.82rem; font-weight:800; color:var(--text-secondary); margin-bottom:8px;'>
-                  Compressed Preview (<span id='compressSizeBadge'>0 KB</span>)
-                </div>
-                <div class='tool-canvas-wrap' style='max-height:180px;'>
-                  <canvas id='compressCanvas' style='max-width:180px; max-height:160px; display:block;'/>
-                </div>
-                <button class='tool-btn-primary tool-btn-success' id='compressDownloadBtn' onclick='downloadCompressedImage()' type='button'>
-                  <i class='fas fa-download'/> Download Compressed File
-                </button>
-              </div>
-            </div>
-          </div>
+            <i class='fas fa-chevron-right ft-arrow'/>
+          </a>
         </div>
       </div>
+      <button class='tool-floating-btn' onclick='toggleFloatingTools()' title='Govt Exam Tools Hub' type='button'>
+        <i class='fas fa-magic'/> 🛠️ Exam Tools
+      </button>
     </div>
 
     <!-- Embedded Jobs Database & Portal Engine -->
@@ -3311,585 +3096,29 @@ THEME_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
       }
 
       // ==========================================================
-      // Govt Exam Utility Suite JavaScript Engines (6-in-1 Hub)
+      // Govt Exam Utility Hub Interactive Nav Toggles
       // ==========================================================
-      var activeToolTab = 'kerala_psc';
-
-      function openUtilityToolsModal(tabName) {
-        var overlay = document.getElementById('examToolsOverlay');
-        if (overlay) overlay.classList.add('active');
-        switchToolTab(tabName || 'kerala_psc');
-        document.body.style.overflow = 'hidden';
+      function toggleFloatingTools() {
+        var container = document.getElementById('floatingToolsContainer');
+        if (container) container.classList.toggle('active');
       }
 
-      function closeUtilityToolsModal() {
-        var overlay = document.getElementById('examToolsOverlay');
-        if (overlay) overlay.classList.remove('active');
-        document.body.style.overflow = '';
+      function toggleHeaderToolsDropdown(e) {
+        if (e) e.stopPropagation();
+        var dd = document.getElementById('headerToolsDropdown');
+        if (dd) dd.classList.toggle('active');
       }
 
-      function handleModalBackdropClick(e) {
-        if (e.target && e.target.id === 'examToolsOverlay') {
-          closeUtilityToolsModal();
+      document.addEventListener('click', function(e) {
+        var dd = document.getElementById('headerToolsDropdown');
+        if (dd && !dd.contains(e.target)) {
+          dd.classList.remove('active');
         }
-      }
-
-      function switchToolTab(tabName) {
-        activeToolTab = tabName;
-        var tabs = ['kerala_psc', 'all_psc', 'signature', 'pdf', 'age', 'compress'];
-        for (var i = 0; i < tabs.length; i++) {
-          var btn = document.getElementById('tabBtn-' + tabs[i]);
-          var panel = document.getElementById('panel-' + tabs[i]);
-          if (btn) {
-            if (tabs[i] === tabName) btn.classList.add('active');
-            else btn.classList.remove('active');
-          }
-          if (panel) {
-            if (tabs[i] === tabName) panel.classList.add('active');
-            else panel.classList.remove('active');
-          }
+        var fc = document.getElementById('floatingToolsContainer');
+        if (fc && fc.classList.contains('active') && !fc.contains(e.target)) {
+          fc.classList.remove('active');
         }
-        var dateInput = document.getElementById('kpscDateInput');
-        if (dateInput && !dateInput.value) {
-          var now = new Date();
-          var d = ('0' + now.getDate()).slice(-2);
-          var m = ('0' + (now.getMonth() + 1)).slice(-2);
-          var y = now.getFullYear();
-          dateInput.value = d + '/' + m + '/' + y;
-          updateKpscCanvas();
-        }
-        if (tabName === 'age') {
-          var cutoff = document.getElementById('ageCalcCutoff');
-          if (cutoff && !cutoff.value) {
-            var n = new Date();
-            cutoff.value = n.toISOString().split('T')[0];
-          }
-        }
-      }
-
-      // Universal Canvas Iterative Compressor Helper
-      function compressCanvasToTarget(canvas, targetMaxKb, callback) {
-        var quality = 0.92;
-        function attempt() {
-          canvas.toBlob(function(blob) {
-            if (!blob) return;
-            var sizeKb = blob.size / 1024;
-            if (sizeKb <= targetMaxKb || quality <= 0.1) {
-              callback(blob, sizeKb);
-            } else {
-              quality -= 0.08;
-              attempt();
-            }
-          }, 'image/jpeg', quality);
-        }
-        attempt();
-      }
-
-      // 1. Kerala PSC Photo Maker Engine
-      var kpscUploadedImage = null;
-      function handleKpscPhotoUpload(e) {
-        var file = e.target.files[0];
-        if (!file) return;
-        var reader = new FileReader();
-        reader.onload = function(evt) {
-          var img = new Image();
-          img.onload = function() {
-            kpscUploadedImage = img;
-            updateKpscCanvas();
-          };
-          img.src = evt.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-
-      function updateKpscCanvas() {
-        var canvas = document.getElementById('kpscCanvas');
-        if (!canvas) return;
-        var ctx = canvas.getContext('2d');
-        var targetW = 150;
-        var targetH = 200;
-        canvas.width = targetW;
-        canvas.height = targetH;
-
-        ctx.fillStyle = '#FFFFFF';
-        ctx.fillRect(0, 0, targetW, targetH);
-
-        var nameVal = (document.getElementById('kpscNameInput') ? document.getElementById('kpscNameInput').value : '').toUpperCase().trim();
-        var dateVal = document.getElementById('kpscDateInput') ? document.getElementById('kpscDateInput').value.trim() : '';
-        var fSize = document.getElementById('kpscFontSizeSlider') ? parseInt(document.getElementById('kpscFontSizeSlider').value, 10) : 13;
-
-        var bannerHeight = (nameVal || dateVal) ? 44 : 0;
-        var photoDrawHeight = targetH - bannerHeight;
-
-        if (kpscUploadedImage) {
-          var imgW = kpscUploadedImage.width;
-          var imgH = kpscUploadedImage.height;
-          var scale = Math.max(targetW / imgW, photoDrawHeight / imgH);
-          var nw = imgW * scale;
-          var nh = imgH * scale;
-          var nx = (targetW - nw) / 2;
-          var ny = (photoDrawHeight - nh) / 2;
-          ctx.drawImage(kpscUploadedImage, nx, ny, nw, nh);
-        } else {
-          ctx.fillStyle = '#E2E8F0';
-          ctx.fillRect(0, 0, targetW, photoDrawHeight);
-          ctx.fillStyle = '#94A3B8';
-          ctx.font = 'bold 12px Plus Jakarta Sans, sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText('Select Photo', targetW / 2, photoDrawHeight / 2);
-        }
-
-        if (bannerHeight > 0) {
-          ctx.fillStyle = '#FFFFFF';
-          ctx.fillRect(0, targetH - bannerHeight, targetW, bannerHeight);
-          ctx.strokeStyle = '#CBD5E1';
-          ctx.lineWidth = 1;
-          ctx.strokeRect(0, targetH - bannerHeight, targetW, bannerHeight);
-
-          ctx.fillStyle = '#000000';
-          ctx.textAlign = 'center';
-          ctx.font = 'bold ' + fSize + 'px Arial, sans-serif';
-
-          if (nameVal && dateVal) {
-            ctx.fillText(nameVal, targetW / 2, targetH - bannerHeight + 17);
-            ctx.fillText(dateVal, targetW / 2, targetH - bannerHeight + 35);
-          } else if (nameVal) {
-            ctx.fillText(nameVal, targetW / 2, targetH - 16);
-          } else if (dateVal) {
-            ctx.fillText(dateVal, targetW / 2, targetH - 16);
-          }
-        }
-
-        compressCanvasToTarget(canvas, 28, function(blob, sizeKb) {
-          var badge = document.getElementById('kpscSizeBadge');
-          if (badge) badge.innerText = sizeKb.toFixed(1) + ' KB';
-        });
-      }
-
-      function downloadKpscPhoto() {
-        var canvas = document.getElementById('kpscCanvas');
-        if (!canvas) return;
-        compressCanvasToTarget(canvas, 28, function(blob) {
-          var a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = 'Kerala_PSC_Photo_150x200.jpg';
-          a.click();
-        });
-      }
-
-      // 2. All State & Central Govt Photo Resizer Engine
-      var allPscUploadedImage = null;
-      function handleAllPscPhotoUpload(e) {
-        var file = e.target.files[0];
-        if (!file) return;
-        var reader = new FileReader();
-        reader.onload = function(evt) {
-          var img = new Image();
-          img.onload = function() {
-            allPscUploadedImage = img;
-            updateAllPscCanvas();
-          };
-          img.src = evt.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-
-      function applyPscPreset(preset) {
-        var w = document.getElementById('allPscWidth');
-        var h = document.getElementById('allPscHeight');
-        var kb = document.getElementById('allPscMaxKb');
-        if (!w || !h || !kb) return;
-        if (preset === 'ssc') { w.value = 350; h.value = 450; kb.value = 50; }
-        else if (preset === 'upsc') { w.value = 350; h.value = 350; kb.value = 300; }
-        else if (preset === 'ibps') { w.value = 200; h.value = 230; kb.value = 50; }
-        else if (preset === 'rrb') { w.value = 210; h.value = 270; kb.value = 70; }
-        else if (preset === 'tnpsc') { w.value = 165; h.value = 200; kb.value = 50; }
-        else if (preset === 'kpsc_kar') { w.value = 150; h.value = 200; kb.value = 50; }
-        else if (preset === 'appsc') { w.value = 150; h.value = 200; kb.value = 50; }
-        else if (preset === 'mpsc') { w.value = 160; h.value = 200; kb.value = 50; }
-        updateAllPscCanvas();
-      }
-
-      function updateAllPscCanvas() {
-        var canvas = document.getElementById('allPscCanvas');
-        if (!canvas) return;
-        var ctx = canvas.getContext('2d');
-        var w = parseInt(document.getElementById('allPscWidth').value, 10) || 200;
-        var h = parseInt(document.getElementById('allPscHeight').value, 10) || 230;
-        var maxKb = parseInt(document.getElementById('allPscMaxKb').value, 10) || 50;
-
-        canvas.width = w;
-        canvas.height = h;
-
-        ctx.fillStyle = '#FFFFFF';
-        ctx.fillRect(0, 0, w, h);
-
-        if (allPscUploadedImage) {
-          var imgW = allPscUploadedImage.width;
-          var imgH = allPscUploadedImage.height;
-          var scale = Math.max(w / imgW, h / imgH);
-          var nw = imgW * scale;
-          var nh = imgH * scale;
-          var nx = (w - nw) / 2;
-          var ny = (h - nh) / 2;
-          ctx.drawImage(allPscUploadedImage, nx, ny, nw, nh);
-        } else {
-          ctx.fillStyle = '#E2E8F0';
-          ctx.fillRect(0, 0, w, h);
-          ctx.fillStyle = '#94A3B8';
-          ctx.font = 'bold 13px Plus Jakarta Sans, sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText('Select Photo', w / 2, h / 2);
-        }
-
-        compressCanvasToTarget(canvas, maxKb, function(blob, sizeKb) {
-          var badge = document.getElementById('allPscSizeBadge');
-          if (badge) badge.innerText = sizeKb.toFixed(1) + ' KB';
-        });
-      }
-
-      function downloadAllPscPhoto() {
-        var canvas = document.getElementById('allPscCanvas');
-        var maxKb = parseInt(document.getElementById('allPscMaxKb').value, 10) || 50;
-        if (!canvas) return;
-        compressCanvasToTarget(canvas, maxKb, function(blob) {
-          var a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = 'Govt_Exam_Photo_Resized.jpg';
-          a.click();
-        });
-      }
-
-      // 3. Signature Resizer & Contrast Enhancer Engine
-      var sigUploadedImage = null;
-      function handleSigUpload(e) {
-        var file = e.target.files[0];
-        if (!file) return;
-        var reader = new FileReader();
-        reader.onload = function(evt) {
-          var img = new Image();
-          img.onload = function() {
-            sigUploadedImage = img;
-            updateSigCanvas();
-          };
-          img.src = evt.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-
-      function applySigPreset(preset) {
-        var w = document.getElementById('sigWidth');
-        var h = document.getElementById('sigHeight');
-        if (!w || !h) return;
-        if (preset === 'kpsc_sig') { w.value = 150; h.value = 100; }
-        else if (preset === 'ssc_sig' || preset === 'ibps_sig' || preset === 'rrb_sig') { w.value = 140; h.value = 60; }
-        else if (preset === 'upsc_sig') { w.value = 350; h.value = 175; }
-        updateSigCanvas();
-      }
-
-      function updateSigCanvas() {
-        var canvas = document.getElementById('sigCanvas');
-        if (!canvas) return;
-        var ctx = canvas.getContext('2d');
-        var w = parseInt(document.getElementById('sigWidth').value, 10) || 150;
-        var h = parseInt(document.getElementById('sigHeight').value, 10) || 100;
-        var doEnhance = document.getElementById('sigEnhanceCheck') ? document.getElementById('sigEnhanceCheck').checked : true;
-
-        canvas.width = w;
-        canvas.height = h;
-
-        ctx.fillStyle = '#FFFFFF';
-        ctx.fillRect(0, 0, w, h);
-
-        if (sigUploadedImage) {
-          var imgW = sigUploadedImage.width;
-          var imgH = sigUploadedImage.height;
-          var scale = Math.min(w / imgW, h / imgH);
-          var nw = imgW * scale;
-          var nh = imgH * scale;
-          var nx = (w - nw) / 2;
-          var ny = (h - nh) / 2;
-          ctx.drawImage(sigUploadedImage, nx, ny, nw, nh);
-
-          if (doEnhance) {
-            var imgData = ctx.getImageData(0, 0, w, h);
-            var d = imgData.data;
-            for (var i = 0; i < d.length; i += 4) {
-              var r = d[i];
-              var g = d[i+1];
-              var b = d[i+2];
-              var gray = 0.299 * r + 0.587 * g + 0.114 * b;
-              if (gray > 165) {
-                d[i] = 255;
-                d[i+1] = 255;
-                d[i+2] = 255;
-              } else {
-                var dark = Math.max(0, gray * 0.7);
-                d[i] = dark;
-                d[i+1] = dark;
-                d[i+2] = dark;
-              }
-            }
-            ctx.putImageData(imgData, 0, 0);
-          }
-        } else {
-          ctx.fillStyle = '#E2E8F0';
-          ctx.fillRect(0, 0, w, h);
-          ctx.fillStyle = '#94A3B8';
-          ctx.font = 'bold 12px Plus Jakarta Sans, sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText('Select Signature', w / 2, h / 2);
-        }
-
-        compressCanvasToTarget(canvas, 25, function(blob, sizeKb) {
-          var badge = document.getElementById('sigSizeBadge');
-          if (badge) badge.innerText = sizeKb.toFixed(1) + ' KB';
-        });
-      }
-
-      function downloadSignature() {
-        var canvas = document.getElementById('sigCanvas');
-        if (!canvas) return;
-        compressCanvasToTarget(canvas, 25, function(blob) {
-          var a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = 'Govt_Exam_Signature.jpg';
-          a.click();
-        });
-      }
-
-      // 4. Certificate Image to PDF Converter Engine
-      var selectedPdfImages = [];
-      function handlePdfImagesUpload(e) {
-        var files = e.target.files;
-        if (!files || files.length === 0) return;
-        selectedPdfImages = [];
-        var countEl = document.getElementById('pdfSelectedFilesCount');
-        var pageCount = document.getElementById('pdfPageCount');
-        var grid = document.getElementById('pdfThumbnailsGrid');
-        if (grid) grid.innerHTML = '';
-
-        for (var i = 0; i < files.length; i++) {
-          (function(file) {
-            var reader = new FileReader();
-            reader.onload = function(evt) {
-              var img = new Image();
-              img.onload = function() {
-                selectedPdfImages.push({ name: file.name, img: img, dataUrl: evt.target.result });
-                if (grid) {
-                  var thumb = document.createElement('div');
-                  thumb.style.cssText = 'border:1.5px solid var(--border-color); border-radius:6px; padding:4px; background:#FFFFFF; flex-shrink:0; text-align:center;';
-                  thumb.innerHTML = "<img src='" + evt.target.result + "' style='width:60px; height:80px; object-fit:cover; display:block; border-radius:4px;'/>" +
-                                    "<span style='font-size:0.7rem; color:var(--text-muted); font-weight:700;'>Page " + (selectedPdfImages.length) + "</span>";
-                  grid.appendChild(thumb);
-                }
-                if (countEl && pageCount) {
-                  countEl.style.display = 'block';
-                  pageCount.innerText = selectedPdfImages.length;
-                }
-              };
-              img.src = evt.target.result;
-            };
-            reader.readAsDataURL(file);
-          })(files[i]);
-        }
-      }
-
-      function generateCertificatePdf() {
-        if (!selectedPdfImages || selectedPdfImages.length === 0) {
-          alert('Please select at least 1 certificate image to convert into PDF.');
-          return;
-        }
-        var qual = parseFloat(document.getElementById('pdfQualitySelect').value) || 0.85;
-
-        if (window.jspdf && window.jspdf.jsPDF) {
-          var doc = new window.jspdf.jsPDF('p', 'mm', 'a4');
-          var a4W = 210;
-          var a4H = 297;
-          var margin = 10;
-          var maxW = a4W - (margin * 2);
-          var maxH = a4H - (margin * 2);
-
-          for (var i = 0; i < selectedPdfImages.length; i++) {
-            if (i > 0) doc.addPage();
-            var item = selectedPdfImages[i];
-            var imgW = item.img.width;
-            var imgH = item.img.height;
-            var ratio = Math.min(maxW / imgW, maxH / imgH);
-            var renderW = imgW * ratio;
-            var renderH = imgH * ratio;
-            var posX = margin + (maxW - renderW) / 2;
-            var posY = margin + (maxH - renderH) / 2;
-
-            var tempC = document.createElement('canvas');
-            tempC.width = imgW;
-            tempC.height = imgH;
-            var tCtx = tempC.getContext('2d');
-            tCtx.fillStyle = '#FFFFFF';
-            tCtx.fillRect(0, 0, imgW, imgH);
-            tCtx.drawImage(item.img, 0, 0);
-            var compDataUrl = tempC.toDataURL('image/jpeg', qual);
-
-            doc.addImage(compDataUrl, 'JPEG', posX, posY, renderW, renderH);
-          }
-          doc.save('Govt_Job_Certificates.pdf');
-        } else {
-          var printWin = window.open('', '_blank');
-          var pHtml = "<html><head><title>Certificate PDF</title><style>@page { size: A4 portrait; margin: 10mm; } img { max-width: 100%; max-height: 270mm; display: block; margin: 0 auto 20px; page-break-after: always; }</style></head><body>";
-          for (var j = 0; j < selectedPdfImages.length; j++) {
-            pHtml += "<img src='" + selectedPdfImages[j].dataUrl + "'/>";
-          }
-          pHtml += "<script>window.onload = function() { window.print(); }<\\/script></body></html>";
-          printWin.document.write(pHtml);
-          printWin.document.close();
-        }
-      }
-
-      // 5. Govt Exam Age Calculator Engine
-      function calculateGovtAge() {
-        var dobVal = document.getElementById('ageCalcDob') ? document.getElementById('ageCalcDob').value : '';
-        var cutVal = document.getElementById('ageCalcCutoff') ? document.getElementById('ageCalcCutoff').value : '';
-        var cat = document.getElementById('ageCalcCategory') ? document.getElementById('ageCalcCategory').value : 'GEN';
-        var hero = document.getElementById('ageResultHero');
-        var list = document.getElementById('ageEligibilityList');
-
-        if (!dobVal) {
-          if (hero) hero.innerText = 'Please select Date of Birth';
-          return;
-        }
-        var dob = new Date(dobVal);
-        var cutoff = cutVal ? new Date(cutVal) : new Date();
-
-        if (isNaN(dob.getTime()) || isNaN(cutoff.getTime()) || dob > cutoff) {
-          if (hero) hero.innerText = 'Invalid Date Selection';
-          return;
-        }
-
-        var years = cutoff.getFullYear() - dob.getFullYear();
-        var months = cutoff.getMonth() - dob.getMonth();
-        var days = cutoff.getDate() - dob.getDate();
-
-        if (days < 0) {
-          months--;
-          var prevMonthLastDay = new Date(cutoff.getFullYear(), cutoff.getMonth(), 0).getDate();
-          days += prevMonthLastDay;
-        }
-        if (months < 0) {
-          years--;
-          months += 12;
-        }
-
-        if (hero) {
-          hero.innerHTML = "<strong>" + years + " Years, " + months + " Months, " + days + " Days</strong>";
-        }
-
-        var relax = 0;
-        if (cat === 'OBC') relax = 3;
-        else if (cat === 'SC_ST') relax = 5;
-        else if (cat === 'PWBD') relax = 10;
-        else if (cat === 'EX_SER') relax = 3;
-
-        var exams = [
-          { name: 'Kerala PSC (General Base: 18 - 36 Yrs)', min: 18, max: 36 + relax },
-          { name: 'SSC CGL / CHSL (Base: 18 - 32 Yrs)', min: 18, max: 32 + relax },
-          { name: 'UPSC Civil Services (Base: 21 - 32 Yrs)', min: 21, max: 32 + relax },
-          { name: 'Bank Clerk / SBI Junior Assoc (Base: 20 - 28 Yrs)', min: 20, max: 28 + relax },
-          { name: 'Bank PO / Probationary Officer (Base: 20 - 30 Yrs)', min: 20, max: 30 + relax },
-          { name: 'Railway RRB NTPC / Group D (Base: 18 - 36 Yrs)', min: 18, max: 36 + (cat === 'GEN' ? 0 : relax) }
-        ];
-
-        if (list) {
-          var lHtml = '';
-          for (var e = 0; e < exams.length; e++) {
-            var item = exams[e];
-            var isEligible = years >= item.min && (years < item.max || (years === item.max && months === 0 && days === 0));
-            var badge = isEligible ?
-              "<span style='color:#059669; font-weight:800; background:#ECFDF5; padding:2px 8px; border-radius:4px;'>🟢 Eligible (Max: " + item.max + " Yrs)</span>" :
-              "<span style='color:#DC2626; font-weight:800; background:#FEE2E2; padding:2px 8px; border-radius:4px;'>🔴 " + (years < item.min ? "Underage" : "Overaged") + " (Max: " + item.max + " Yrs)</span>";
-
-            lHtml += "<div style='display:flex; justify-content:space-between; align-items:center; background:var(--bg-page); padding:7px 10px; border-radius:6px; border:1px solid var(--border-color);'>" +
-                       "<span>" + item.name + "</span>" + badge +
-                     "</div>";
-          }
-          list.innerHTML = lHtml;
-        }
-      }
-
-      // 6. Image KB Compressor Engine
-      var compressUploadedImage = null;
-      function handleCompressUpload(e) {
-        var file = e.target.files[0];
-        if (!file) return;
-        var reader = new FileReader();
-        reader.onload = function(evt) {
-          var img = new Image();
-          img.onload = function() {
-            compressUploadedImage = img;
-            runCompressor();
-          };
-          img.src = evt.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-
-      function setCompressTarget(kb) {
-        var input = document.getElementById('compressTargetKb');
-        if (input) {
-          input.value = kb;
-          runCompressor();
-        }
-      }
-
-      function runCompressor() {
-        var canvas = document.getElementById('compressCanvas');
-        if (!canvas) return;
-        var ctx = canvas.getContext('2d');
-        var targetKb = parseInt(document.getElementById('compressTargetKb').value, 10) || 50;
-
-        if (compressUploadedImage) {
-          var w = compressUploadedImage.width;
-          var h = compressUploadedImage.height;
-          var maxDim = 1200;
-          if (w > maxDim || h > maxDim) {
-            if (w > h) {
-              h = Math.round((h * maxDim) / w);
-              w = maxDim;
-            } else {
-              w = Math.round((w * maxDim) / h);
-              h = maxDim;
-            }
-          }
-          canvas.width = w;
-          canvas.height = h;
-          ctx.drawImage(compressUploadedImage, 0, 0, w, h);
-
-          compressCanvasToTarget(canvas, targetKb, function(blob, sizeKb) {
-            var badge = document.getElementById('compressSizeBadge');
-            if (badge) badge.innerText = sizeKb.toFixed(1) + ' KB';
-          });
-        } else {
-          canvas.width = 160;
-          canvas.height = 120;
-          ctx.fillStyle = '#E2E8F0';
-          ctx.fillRect(0, 0, 160, 120);
-          ctx.fillStyle = '#94A3B8';
-          ctx.font = 'bold 12px Plus Jakarta Sans, sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText('Select Image', 80, 60);
-        }
-      }
-
-      function downloadCompressedImage() {
-        var canvas = document.getElementById('compressCanvas');
-        var targetKb = parseInt(document.getElementById('compressTargetKb').value, 10) || 50;
-        if (!canvas) return;
-        compressCanvasToTarget(canvas, targetKb, function(blob) {
-          var a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = 'Compressed_File_' + targetKb + 'KB.jpg';
-          a.click();
-        });
-      }
+      });
 
       var isNativePostPage = (window.location.pathname.indexOf('.html') !== -1) || (document.getElementById('nativePostContainer') !== null);
 
