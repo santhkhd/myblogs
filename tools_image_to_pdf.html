@@ -1,54 +1,193 @@
 <!-- 
   ========================================================================
-  PAGE TITLE: Certificate & Marksheet Image to PDF Converter Online (<200KB)
-  PERMALINK / SLUG: image-to-pdf-converter
+  PAGE TITLE: 📄 Certificate & Image to PDF Converter Online - Merge JPG/PNG to PDF (<200KB)
+  PERMALINK / SLUG: image-to-pdf-converter-online-merge
   ========================================================================
 -->
-<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+<div class="exam-tool-page-wrap" style="max-width:920px; margin:0 auto; padding:1rem 0.5rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#1E293B; line-height:1.6;">
 
-  <!-- Header Banner -->
-  <div style="background:linear-gradient(135deg, #DC2626 0%, #EA580C 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(220,38,38,0.25);">
-    <span style="background:rgba(255,255,255,0.2); color:#FFFFFF; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
-      📄 Multi-Document PDF Merger
+  <!-- Unified Top Banner -->
+  <div style="background:linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(37,99,235,0.25);">
+    <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
+      📄 Multi-Document PDF Converter &amp; Merger
     </span>
-    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
-      Certificate Image-to-PDF Converter
+    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25; color:#FFFFFF;">
+      Certificate Image to PDF Converter Online
     </h1>
-    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
-      Convert JPG/PNG marksheets, degree certificates, caste certificates and ID proof into a single compressed PDF file under 200 KB or 500 KB for government recruitment portals.
+    <p style="font-size:0.95rem; opacity:0.95; max-width:640px; margin:0 auto;">
+      Merge and compress JPG &amp; PNG marksheets, degree certificates, caste certificates, and ID proofs into a single, clean PDF file strictly under 200 KB or 500 KB for government recruitment portals.
     </p>
   </div>
 
-  <!-- Interactive Tool Box -->
-  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-    <div style="border:2px dashed #EA580C; border-radius:12px; padding:2rem 1rem; text-align:center; background:#FFF7ED; cursor:pointer; position:relative;">
-      <div style="font-size:2.5rem; color:#EA580C; margin-bottom:0.5rem;">📑</div>
-      <strong style="font-size:1.05rem; color:#9A3412; display:block;">Click to Select 1 or Multiple Certificate Images</strong>
-      <span style="font-size:0.82rem; color:#64748B;">Upload SSLC, Plus Two, Degree, Community Certificates (JPG, PNG)</span>
-      <input type="file" id="pagePdfInput" multiple="multiple" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="handlePagePdfUpload(event)">
+  <!-- Wizard Card Container -->
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:20px; padding:2rem 1.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin-bottom:2.5rem; min-height:380px;">
+
+    <!-- STEP INDICATOR -->
+    <div style="display:flex; justify-content:center; align-items:center; gap:8px; margin-bottom:2rem; flex-wrap:wrap;">
+      <div id="pdfDot1" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#2563EB; color:#FFFFFF;">
+        <span>1</span> Upload Images
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="pdfDot2" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>2</span> Organize Pages
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="pdfDot3" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>3</span> PDF Settings &amp; Target KB
+      </div>
+      <span style="color:#CBD5E1; font-weight:bold;">➔</span>
+      <div id="pdfDot4" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#F1F5F9; color:#64748B;">
+        <span>4</span> Download PDF
+      </div>
     </div>
 
-    <div id="pagePdfFileCount" style="font-size:0.9rem; font-weight:800; color:#DC2626; margin:1rem 0 0.5rem; display:none;">
-      Selected Documents: <span id="pagePdfNumPages">0</span> Pages
+    <!-- STEP 1: UPLOAD BOX -->
+    <div id="pdfStep1" style="display:block;">
+      <div id="pdfDropArea" style="border:2px dashed #3B82F6; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#2563EB'; this.style.background='#EFF6FF';" onmouseout="this.style.borderColor='#3B82F6'; this.style.background='#F8FAFC';">
+        <p style="font-size:1.15rem; font-weight:700; color:#334155; margin:0 0 0.5rem;">
+          Select Or Drag &amp; Drop 1 or Multiple Certificate Images
+        </p>
+        <span style="font-size:0.85rem; color:#64748B; display:block; margin-bottom:1.25rem;">
+          Upload SSLC, Plus Two, Degree, Community Certificates, Experience letters (JPG, PNG)
+        </span>
+        <button type="button" id="btnSelectPdfImages" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.3);">
+          Select Certificate Images
+        </button>
+        <input type="file" id="pdfFileInput" multiple="multiple" accept="image/*" style="display:none;">
+      </div>
+      <p style="text-align:center; font-size:0.85rem; color:#94A3B8; margin-top:1rem;">
+        🔒 All files are converted locally inside your browser. No certificates are sent to any external server.
+      </p>
     </div>
-    <div id="pagePdfThumbs" style="display:flex; gap:12px; overflow-x:auto; padding:8px 0; margin-bottom:1rem;"></div>
 
-    <div style="margin-top:1rem; max-width:400px;">
-      <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Select PDF Target Size &amp; Quality:</label>
-      <select id="pagePdfQuality" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.9rem; font-weight:700; background:#F8FAFC;">
-        <option value="0.7">High Compression (Target &lt; 200 KB - Recommended for Govt Jobs)</option>
-        <option value="0.85" selected="selected">Balanced Quality (Target &lt; 500 KB)</option>
-        <option value="0.95">Maximum Quality (Original Print)</option>
-      </select>
+    <!-- STEP 2 & 3: ORGANIZE PAGES & SETTINGS -->
+    <div id="pdfStep2" style="display:none;">
+      <!-- Selected Images Header -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:10px;">
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0F172A; margin:0;">
+          Selected Documents (<span id="pdfPageCount">0</span> Pages)
+        </h3>
+        <button type="button" id="btnAddMoreImages" style="background:#EFF6FF; color:#2563EB; border:1.5px solid #BFDBFE; padding:6px 14px; border-radius:6px; font-size:0.85rem; font-weight:800; cursor:pointer;">
+          + Add More Images
+        </button>
+      </div>
+
+      <!-- Thumbnail Carousel / Grid -->
+      <div id="pdfThumbnailsContainer" style="display:flex; gap:14px; overflow-x:auto; padding:10px 4px; margin-bottom:1.75rem; min-height:130px; border:1.5px solid #E2E8F0; border-radius:12px; background:#F8FAFC;">
+        <!-- Dynamic Page Thumbnails inserted here -->
+      </div>
+
+      <!-- PDF Conversion Settings Grid -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem; background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:14px; padding:1.5rem; margin-bottom:1.75rem;">
+        <!-- Page Layout -->
+        <div>
+          <label style="display:block; font-size:0.8rem; font-weight:800; color:#334155; margin-bottom:6px;">PAGE ORIENTATION &amp; FORMAT:</label>
+          <select id="pdfPageFormat" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.9rem; font-weight:700; background:#FFFFFF;">
+            <option value="a4_portrait" selected="selected">A4 Portrait (Standard Certificates)</option>
+            <option value="a4_landscape">A4 Landscape (Wide Marksheets / ID Cards)</option>
+            <option value="fit_image">Fit Exactly to Image Dimensions</option>
+          </select>
+        </div>
+
+        <!-- Compression Quality Preset -->
+        <div>
+          <label style="display:block; font-size:0.8rem; font-weight:800; color:#334155; margin-bottom:6px;">TARGET FILE SIZE &amp; QUALITY:</label>
+          <select id="pdfTargetQuality" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.9rem; font-weight:700; background:#FFFFFF;">
+            <option value="0.65" selected="selected">High Compression (Target &lt; 200 KB - Recommended for Govt Jobs)</option>
+            <option value="0.8">Balanced Quality (Target &lt; 500 KB)</option>
+            <option value="0.95">Maximum Quality (Original High Resolution)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Convert Action Button -->
+      <div style="text-align:center;">
+        <button type="button" id="btnRunPdfConvert" style="background:#2563EB; color:#FFFFFF; border:none; padding:14px 36px; border-radius:8px; font-size:1.05rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
+          📥 Convert &amp; Generate PDF ➔
+        </button>
+      </div>
     </div>
 
-    <button type="button" onclick="convertPageImagesToPdf()" style="margin-top:1.5rem; background:linear-gradient(135deg, #DC2626 0%, #B91C1C 100%); color:#FFFFFF; border:none; padding:13px 28px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(220,38,38,0.3); transition:all 0.2s;">
-      📥 Convert &amp; Download Certificate PDF
-    </button>
+    <!-- STEP 4: DOWNLOAD RESULT -->
+    <div id="pdfStep3" style="display:none; text-align:center;">
+      <div style="max-width:380px; margin:0 auto; background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+        <div style="font-size:3.5rem; color:#2563EB; margin-bottom:0.75rem;">📄</div>
+
+        <div style="margin-bottom:1rem;">
+          <div id="pdfResultStatusText" style="font-size:1.4rem; font-weight:900; color:#0F172A;">PDF Generated Successfully!</div>
+          <span id="pdfFinalPagesBadge" style="background:#EFF6FF; color:#2563EB; font-size:0.82rem; font-weight:800; padding:4px 12px; border-radius:50px; display:inline-block; margin-top:6px;">
+            1 Document (s) Merged
+          </span>
+        </div>
+
+        <div style="margin-bottom:1.25rem; text-align:left;">
+          <label style="display:block; font-size:0.75rem; font-weight:800; color:#64748B; margin-bottom:4px;">Rename PDF Document</label>
+          <div style="display:flex; align-items:center; border:1.5px solid #CBD5E1; border-radius:8px; overflow:hidden; background:#FFFFFF;">
+            <input type="text" id="pdfRenameInput" value="CERTIFICATE_DOCUMENTS_1INDIAJOB" style="flex:1; border:none; outline:none; padding:8px 10px; font-size:0.9rem; font-weight:700;">
+            <span style="background:#F1F5F9; color:#64748B; padding:8px 10px; font-weight:800; font-size:0.85rem;">.pdf</span>
+          </div>
+        </div>
+
+        <button type="button" id="btnDownloadGeneratedPdf" style="width:100%; background:#2563EB; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
+          Download Combined PDF
+        </button>
+      </div>
+
+      <div style="margin-top:2rem; font-size:0.9rem; color:#64748B;">
+        <p style="margin-bottom:6px;">Merged securely in your web browser.</p>
+        <button type="button" id="btnConvertAnotherPdf" style="background:#FFFFFF; color:#475569; border:1px solid #CBD5E1; padding:8px 20px; border-radius:6px; font-size:0.88rem; font-weight:700; cursor:pointer; margin-top:0.75rem;">
+          Convert Another Batch
+        </button>
+      </div>
+    </div>
+
   </div>
 
-  <div style="text-align:center; margin-top:2rem;">
-    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#DC2626; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+  <!-- Specifications Card -->
+  <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2rem;">
+    <h2 style="font-size:1.25rem; font-weight:800; color:#1E3A8A; margin-top:0; margin-bottom:0.75rem;">
+      📋 Government Examination PDF Document Upload Guidelines
+    </h2>
+    <ul style="padding-left:1.25rem; margin:0; font-size:0.9rem; color:#334155; line-height:1.7;">
+      <li><strong>Standard Size Limit:</strong> Must be under 200 KB for State PSCs, SSC, and Banking portals (under 500 KB or 1 MB for UPSC).</li>
+      <li><strong>Legibility:</strong> Certificate numbers, university seals, candidate name, date of birth, and marks tables must remain razor-sharp.</li>
+      <li><strong>Multi-Page Merging:</strong> All pages of semester marksheets or consolidated transcripts should be merged chronologically into a single PDF document.</li>
+      <li><strong>Orientation:</strong> A4 Portrait standard for degree/provisional certificates; Landscape for consolidated marks cards.</li>
+      <li><strong>Privacy Protection:</strong> Ensure no password protection is attached to the uploaded PDF files.</li>
+    </ul>
+  </div>
+
+  <!-- Frequently Asked Questions (SEO FAQs) -->
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2rem;">
+    <h3 style="font-size:1.2rem; font-weight:800; color:#0F172A; margin-top:0; margin-bottom:1rem;">❓ Frequently Asked Questions (FAQs)</h3>
+    <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
+      <strong style="font-size:0.92rem; color:#1E3A8A;">1. How can I merge multiple certificate pages into a single PDF under 200 KB?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">Upload all your certificate photos, select the 'High Compression (Target &lt; 200 KB)' preset, and click Convert. Our built-in compressor automatically optimizes each page for government portals.</p>
+    </div>
+    <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
+      <strong style="font-size:0.92rem; color:#1E3A8A;">2. Which image formats can be converted to PDF?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">You can upload standard JPG, JPEG, PNG, and WebP certificate photos taken directly from your phone camera or flatbed scanner.</p>
+    </div>
+    <div>
+      <strong style="font-size:0.92rem; color:#1E3A8A;">3. Are my sensitive educational and identity certificates stored online?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">Never. 100% of the PDF creation and compression happens locally inside your browser memory. Your documents never touch any server.</p>
+    </div>
+  </div>
+
+  <!-- Cross-Tool Quick Navigation -->
+  <div style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:14px; padding:1.25rem; margin-bottom:2rem; text-align:center;">
+    <span style="font-size:0.85rem; font-weight:800; color:#1E3A8A; display:block; margin-bottom:8px;">⚡ Explore Other Government Exam Utilities</span>
+    <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap; font-size:0.82rem; font-weight:700;">
+      <a href="/p/kerala-psc-photo-resizer.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🌴 Kerala PSC Photo Resizer</a>
+      <a href="/p/signature-resizer-contrast-enhancer.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">✍️ Signature Resizer</a>
+      <a href="/p/govt-job-photo-resizer-online-ssc-upsc.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🇮🇳 State &amp; SSC Resizer</a>
+      <a href="/p/image-kb-compressor-online-compress.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🗜️ KB Compressor</a>
+      <a href="/p/govt-job-age-calculator-online-with.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🧮 Age Calculator</a>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:1.5rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#2563EB; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
       🏠 Return to 1IndiaJob Home
     </a>
   </div>
@@ -56,83 +195,252 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-var pagePdfItems = [];
-function handlePagePdfUpload(e) {
-  var files = e.target.files;
-  if (!files || files.length === 0) return;
-  pagePdfItems = [];
-  var countEl = document.getElementById('pagePdfFileCount');
-  var numEl = document.getElementById('pagePdfNumPages');
-  var thumbs = document.getElementById('pagePdfThumbs');
-  if (thumbs) thumbs.innerHTML = '';
+//<![CDATA[
+(function initPdfTool() {
+  var pdfImageList = [];
+  var generatedPdfDoc = null;
 
-  for (var i = 0; i < files.length; i++) {
-    (function(file) {
-      var r = new FileReader();
-      r.onload = function(evt) {
+  function switchStep(stepNum) {
+    [1, 2, 3].forEach(function(i) {
+      var stepEl = document.getElementById('pdfStep' + i);
+      if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
+    });
+    [1, 2, 3, 4].forEach(function(i) {
+      var dotEl = document.getElementById('pdfDot' + i);
+      if (dotEl) {
+        if (i === stepNum || (stepNum === 2 && (i === 2 || i === 3)) || (stepNum === 3 && i === 4)) {
+          dotEl.style.background = '#2563EB';
+          dotEl.style.color = '#FFFFFF';
+        } else if (i < stepNum) {
+          dotEl.style.background = '#059669';
+          dotEl.style.color = '#FFFFFF';
+        } else {
+          dotEl.style.background = '#F1F5F9';
+          dotEl.style.color = '#64748B';
+        }
+      }
+    });
+  }
+
+  function renderThumbnails() {
+    var container = document.getElementById('pdfThumbnailsContainer');
+    var countBadge = document.getElementById('pdfPageCount');
+    if (countBadge) countBadge.innerText = pdfImageList.length;
+    if (!container) return;
+    container.innerHTML = '';
+
+    pdfImageList.forEach(function(item, idx) {
+      var card = document.createElement('div');
+      card.style.cssText = 'position:relative; background:#FFFFFF; border:1.5px solid #CBD5E1; border-radius:8px; padding:6px; text-align:center; flex-shrink:0; box-shadow:0 2px 6px rgba(0,0,0,0.05);';
+      
+      var img = document.createElement('img');
+      img.src = item.dataUrl;
+      img.style.cssText = 'width:80px; height:105px; object-fit:cover; border-radius:4px; display:block; margin-bottom:4px;';
+      
+      var label = document.createElement('div');
+      label.style.cssText = 'font-size:0.75rem; font-weight:800; color:#475569;';
+      label.innerText = 'Page ' + (idx + 1);
+
+      var delBtn = document.createElement('button');
+      delBtn.innerText = '\u2715';
+      delBtn.style.cssText = 'position:absolute; top:-6px; right:-6px; background:#EF4444; color:#FFFFFF; border:none; border-radius:50%; width:20px; height:20px; font-size:0.7rem; font-weight:900; cursor:pointer; line-height:20px; text-align:center; padding:0;';
+      delBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        pdfImageList.splice(idx, 1);
+        if (pdfImageList.length === 0) {
+          switchStep(1);
+        } else {
+          renderThumbnails();
+        }
+      });
+
+      card.appendChild(delBtn);
+      card.appendChild(img);
+      card.appendChild(label);
+      container.appendChild(card);
+    });
+  }
+
+  function handleFileSelect(e) {
+    var files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    var loaded = 0;
+    var total = files.length;
+
+    Array.prototype.forEach.call(files, function(file) {
+      var reader = new FileReader();
+      reader.onload = function(evt) {
         var img = new Image();
         img.onload = function() {
-          pagePdfItems.push({ name: file.name, img: img, dataUrl: evt.target.result });
-          if (thumbs) {
-            var box = document.createElement('div');
-            box.style.cssText = 'border:1.5px solid #CBD5E1; border-radius:6px; padding:4px; background:#FFFFFF; flex-shrink:0; text-align:center;';
-            box.innerHTML = "<img src='" + evt.target.result + "' style='width:65px; height:85px; object-fit:cover; display:block; border-radius:4px;'/>" +
-                            "<span style='font-size:0.72rem; color:#64748B; font-weight:800;'>Page " + pagePdfItems.length + "</span>";
-            thumbs.appendChild(box);
-          }
-          if (countEl && numEl) {
-            countEl.style.display = 'block';
-            numEl.innerText = pagePdfItems.length;
+          pdfImageList.push({
+            name: file.name,
+            img: img,
+            dataUrl: evt.target.result,
+            width: img.naturalWidth || img.width,
+            height: img.naturalHeight || img.height
+          });
+          loaded++;
+          if (loaded === total) {
+            renderThumbnails();
+            switchStep(2);
           }
         };
         img.src = evt.target.result;
       };
-      r.readAsDataURL(file);
-    })(files[i]);
+      reader.readAsDataURL(file);
+    });
   }
-}
 
-function convertPageImagesToPdf() {
-  if (!pagePdfItems || pagePdfItems.length === 0) {
-    alert('Please select at least 1 certificate image to convert.');
-    return;
-  }
-  var qual = parseFloat(document.getElementById('pagePdfQuality').value) || 0.85;
+  function generatePdf() {
+    if (pdfImageList.length === 0) return;
+    var formatSelect = document.getElementById('pdfPageFormat');
+    var qualitySelect = document.getElementById('pdfTargetQuality');
 
-  if (window.jspdf && window.jspdf.jsPDF) {
-    var doc = new window.jspdf.jsPDF('p', 'mm', 'a4');
-    var maxW = 190;
-    var maxH = 277;
-    for (var i = 0; i < pagePdfItems.length; i++) {
-      if (i > 0) doc.addPage();
-      var item = pagePdfItems[i];
-      var ratio = Math.min(maxW / item.img.width, maxH / item.img.height);
-      var rw = item.img.width * ratio;
-      var rh = item.img.height * ratio;
-      var px = 10 + (maxW - rw) / 2;
-      var py = 10 + (maxH - rh) / 2;
+    var formatVal = formatSelect ? formatSelect.value : 'a4_portrait';
+    var qualityVal = parseFloat(qualitySelect ? qualitySelect.value : 0.65) || 0.65;
 
-      var tempC = document.createElement('canvas');
-      tempC.width = item.img.width;
-      tempC.height = item.img.height;
-      var tCtx = tempC.getContext('2d');
-      tCtx.fillStyle = '#FFFFFF';
-      tCtx.fillRect(0, 0, tempC.width, tempC.height);
-      tCtx.drawImage(item.img, 0, 0);
-      var compUrl = tempC.toDataURL('image/jpeg', qual);
-
-      doc.addImage(compUrl, 'JPEG', px, py, rw, rh);
+    // Check jsPDF availability
+    var jsPDFClass = window.jspdf ? window.jspdf.jsPDF : null;
+    if (!jsPDFClass) {
+      alert('PDF generation engine is loading. Please try again in a few moments.');
+      return;
     }
-    doc.save('Govt_Job_Certificates.pdf');
+
+    var orientation = (formatVal === 'a4_landscape') ? 'landscape' : 'portrait';
+    var doc = new jsPDFClass({
+      orientation: orientation,
+      unit: 'mm',
+      format: 'a4',
+      compress: true
+    });
+
+    var pageWidth = doc.internal.pageSize.getWidth();
+    var pageHeight = doc.internal.pageSize.getHeight();
+
+    pdfImageList.forEach(function(item, index) {
+      if (index > 0) {
+        doc.addPage('a4', orientation);
+      }
+
+      // Draw image to canvas to compress & scale
+      var tempCanvas = document.createElement('canvas');
+      var ctx = tempCanvas.getContext('2d');
+
+      var maxDim = 1600;
+      var w = item.width, h = item.height;
+      if (w > maxDim || h > maxDim) {
+        var scale = Math.min(maxDim / w, maxDim / h);
+        w = Math.round(w * scale);
+        h = Math.round(h * scale);
+      }
+
+      tempCanvas.width = w;
+      tempCanvas.height = h;
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(0, 0, w, h);
+      ctx.drawImage(item.img, 0, 0, w, h);
+
+      var compressedData = tempCanvas.toDataURL('image/jpeg', qualityVal);
+
+      var renderW = pageWidth - 10;
+      var renderH = (item.height / item.width) * renderW;
+
+      if (renderH > (pageHeight - 10)) {
+        renderH = pageHeight - 10;
+        renderW = (item.width / item.height) * renderH;
+      }
+
+      var posX = (pageWidth - renderW) / 2;
+      var posY = (pageHeight - renderH) / 2;
+
+      doc.addImage(compressedData, 'JPEG', posX, posY, renderW, renderH, undefined, 'FAST');
+    });
+
+    generatedPdfDoc = doc;
+
+    var finalPagesBadge = document.getElementById('pdfFinalPagesBadge');
+    if (finalPagesBadge) {
+      finalPagesBadge.innerText = pdfImageList.length + ' Document Page(s) Merged into Single PDF';
+    }
+
+    switchStep(3);
+  }
+
+  function downloadPdf() {
+    if (!generatedPdfDoc) return;
+    var renameInput = document.getElementById('pdfRenameInput');
+    var fname = (renameInput && renameInput.value.trim()) ? renameInput.value.trim() : 'CERTIFICATE_DOCUMENTS_1INDIAJOB';
+    if (!fname.toLowerCase().endsWith('.pdf')) {
+      fname += '.pdf';
+    }
+    generatedPdfDoc.save(fname);
+  }
+
+  function attachListeners() {
+    var dropArea = document.getElementById('pdfDropArea');
+    var fileInput = document.getElementById('pdfFileInput');
+    var selectBtn = document.getElementById('btnSelectPdfImages');
+    var addMoreBtn = document.getElementById('btnAddMoreImages');
+
+    if (dropArea && fileInput) {
+      dropArea.addEventListener('click', function() { fileInput.click(); });
+      dropArea.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        dropArea.style.borderColor = '#2563EB';
+        dropArea.style.background = '#EFF6FF';
+      });
+      dropArea.addEventListener('dragleave', function() {
+        dropArea.style.borderColor = '#3B82F6';
+        dropArea.style.background = '#F8FAFC';
+      });
+      dropArea.addEventListener('drop', function(e) {
+        e.preventDefault();
+        dropArea.style.borderColor = '#3B82F6';
+        dropArea.style.background = '#F8FAFC';
+        if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+          handleFileSelect({ target: { files: e.dataTransfer.files } });
+        }
+      });
+    }
+
+    if (selectBtn && fileInput) {
+      selectBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        fileInput.click();
+      });
+    }
+
+    if (addMoreBtn && fileInput) {
+      addMoreBtn.addEventListener('click', function() { fileInput.click(); });
+    }
+
+    if (fileInput) {
+      fileInput.addEventListener('change', handleFileSelect);
+    }
+
+    var runBtn = document.getElementById('btnRunPdfConvert');
+    if (runBtn) runBtn.addEventListener('click', generatePdf);
+
+    var dlBtn = document.getElementById('btnDownloadGeneratedPdf');
+    if (dlBtn) dlBtn.addEventListener('click', downloadPdf);
+
+    var anotherBtn = document.getElementById('btnConvertAnotherPdf');
+    if (anotherBtn) {
+      anotherBtn.addEventListener('click', function() {
+        pdfImageList = [];
+        generatedPdfDoc = null;
+        if (fileInput) fileInput.value = '';
+        switchStep(1);
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachListeners);
   } else {
-    var pWin = window.open('', '_blank');
-    var pHtml = "<html><head><title>Certificate PDF</title><style>@page { size: A4 portrait; margin: 10mm; } img { max-width: 100%; max-height: 270mm; display: block; margin: 0 auto 20px; page-break-after: always; }</style></head><body>";
-    for (var j = 0; j < pagePdfItems.length; j++) {
-      pHtml += "<img src='" + pagePdfItems[j].dataUrl + "'/>";
-    }
-    pHtml += "<script>window.onload = function() { window.print(); }<\/script></body></html>";
-    pWin.document.write(pHtml);
-    pWin.document.close();
+    attachListeners();
   }
-}
+})();
+//]]>
 </script>

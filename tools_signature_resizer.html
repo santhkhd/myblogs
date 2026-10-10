@@ -1,30 +1,30 @@
 <!-- 
   ========================================================================
   PAGE TITLE: ✍️ Signature Resizer & Background Cleaner - 140x60, 150x100 px (10KB - 20KB)
-  PERMALINK / SLUG: govt-job-signature-resizer
+  PERMALINK / SLUG: signature-resizer-contrast-enhancer
   ========================================================================
 -->
-<div class="pi7-sig-wrapper" style="max-width:920px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#1E293B; line-height:1.6;">
+<div class="exam-tool-page-wrap" style="max-width:920px; margin:0 auto; padding:1rem 0.5rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#1E293B; line-height:1.6;">
 
-  <!-- Main Heading -->
-  <div style="text-align:center; margin-bottom:2rem;">
-    <span style="background:#EEF2FF; color:#4F46E5; font-size:0.8rem; font-weight:800; padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.6rem; border:1px solid #C7D2FE;">
+  <!-- Unified Top Banner -->
+  <div style="background:linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(37,99,235,0.25);">
+    <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
       ✍️ Auto Shadow Cleaner &amp; Contrast Enhancer
     </span>
-    <h1 style="font-size:2rem; font-weight:900; color:#0F172A; margin:0 0 0.5rem; line-height:1.25;">
+    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25; color:#FFFFFF;">
       Govt Exam Signature Resizer &amp; Cleaner
     </h1>
-    <p style="font-size:0.95rem; color:#64748B; max-width:620px; margin:0 auto;">
-      Crop, whiten paper background, and resize signature for Kerala PSC (150&#215;100 px), SSC (140&#215;60 px), IBPS, UPSC, and RRB strictly under 10KB - 20KB.
+    <p style="font-size:0.95rem; opacity:0.95; max-width:640px; margin:0 auto;">
+      Crop, whiten paper background, and resize signatures for Kerala PSC (150&#215;100 px), SSC (140&#215;60 px), Bank IBPS, UPSC, and Railway exams strictly under 10KB - 20KB.
     </p>
   </div>
 
   <!-- Wizard Card Container -->
-  <div id="sigWizardContainer" style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:20px; padding:2rem 1.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin-bottom:2.5rem; min-height:380px;">
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:20px; padding:2rem 1.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin-bottom:2.5rem; min-height:380px;">
 
     <!-- STEP INDICATOR -->
     <div style="display:flex; justify-content:center; align-items:center; gap:8px; margin-bottom:2rem; flex-wrap:wrap;">
-      <div id="sigDot1" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#4F46E5; color:#FFFFFF;">
+      <div id="sigDot1" style="display:flex; align-items:center; gap:6px; font-size:0.82rem; font-weight:800; padding:6px 14px; border-radius:50px; background:#2563EB; color:#FFFFFF;">
         <span>1</span> Upload
       </div>
       <span style="color:#CBD5E1; font-weight:bold;">➔</span>
@@ -47,11 +47,11 @@
 
     <!-- STEP 1: UPLOAD BOX -->
     <div id="sigStep1" style="display:block;">
-      <div id="sigDropArea" onclick="document.getElementById('sigFileInput').click();" style="border:2px dashed #818CF8; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#4F46E5'; this.style.background='#EEF2FF';" onmouseout="this.style.borderColor='#818CF8'; this.style.background='#F8FAFC';">
+      <div id="sigDropArea" style="border:2px dashed #3B82F6; border-radius:16px; padding:3.5rem 1.5rem; text-align:center; background:#F8FAFC; cursor:pointer; position:relative; transition:all 0.2s;" onmouseover="this.style.borderColor='#2563EB'; this.style.background='#EFF6FF';" onmouseout="this.style.borderColor='#3B82F6'; this.style.background='#F8FAFC';">
         <p style="font-size:1.15rem; font-weight:700; color:#334155; margin:0 0 1.25rem;">
           Select Or Drag &amp; Drop Signature Photo Here
         </p>
-        <button type="button" onclick="event.stopPropagation(); document.getElementById('sigFileInput').click();" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.3);">
+        <button type="button" id="btnSelectSig" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.3);">
           Select Signature
         </button>
         <input type="file" id="sigFileInput" accept="image/*" style="display:none;">
@@ -79,7 +79,7 @@
         </button>
       </div>
 
-      <button type="button" id="btnSigCropNext" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+      <button type="button" id="btnSigCropNext" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
         Crop &amp; Next
       </button>
     </div>
@@ -133,7 +133,7 @@
 
           <!-- Buttons -->
           <div style="display:flex; gap:12px;">
-            <button type="button" id="btnSigSaveClean" style="background:#4F46E5; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(79,70,229,0.3);">
+            <button type="button" id="btnSigSaveClean" style="background:#2563EB; color:#FFFFFF; border:none; padding:10px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3);">
               Save &amp; Next
             </button>
             <button type="button" id="btnSigSkipClean" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:10px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
@@ -157,7 +157,7 @@
         <!-- Controls Right -->
         <div>
           <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin:0 0 1rem;">
-            Select Exam Preset &amp; KB
+            Select Exam Preset &amp; Target KB
           </h3>
 
           <div style="margin-bottom:1rem;">
@@ -196,10 +196,10 @@
 
           <!-- Buttons -->
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <button type="button" id="btnSigCreate" style="background:#4F46E5; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(79,70,229,0.3);">
+            <button type="button" id="btnSigCreate" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 28px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3);">
               Create Signature
             </button>
-            <button type="button" id="btnSigUploadNew" style="background:#FFFFFF; color:#4F46E5; border:1.5px solid #4F46E5; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+            <button type="button" id="btnSigUploadNew" style="background:#FFFFFF; color:#2563EB; border:1.5px solid #2563EB; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
               + Upload New Image
             </button>
           </div>
@@ -216,7 +216,7 @@
 
         <div style="margin-bottom:1rem;">
           <div id="sigFinalSizeBadge" style="font-size:1.8rem; font-weight:900; color:#0F172A;">15 KB</div>
-          <span id="sigFinalDimBadge" style="background:#EEF2FF; color:#4F46E5; font-size:0.8rem; font-weight:800; padding:3px 10px; border-radius:50px; display:inline-block;">140 &#215; 60 px</span>
+          <span id="sigFinalDimBadge" style="background:#EFF6FF; color:#2563EB; font-size:0.8rem; font-weight:800; padding:3px 10px; border-radius:50px; display:inline-block;">140 &#215; 60 px</span>
         </div>
 
         <div style="margin-bottom:1.25rem; text-align:left;">
@@ -227,7 +227,7 @@
           </div>
         </div>
 
-        <button type="button" id="btnSigDownloadFinal" style="width:100%; background:#4F46E5; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(79,70,229,0.35);">
+        <button type="button" id="btnSigDownloadFinal" style="width:100%; background:#2563EB; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
           Download Signature
         </button>
       </div>
@@ -243,8 +243,51 @@
 
   </div>
 
-  <div style="text-align:center; margin-top:2rem;">
-    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#4F46E5; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+  <!-- Specifications Card -->
+  <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2rem;">
+    <h2 style="font-size:1.25rem; font-weight:800; color:#1E3A8A; margin-top:0; margin-bottom:0.75rem;">
+      📋 Standard Government Exam Signature Dimensions
+    </h2>
+    <ul style="padding-left:1.25rem; margin:0; font-size:0.9rem; color:#334155; line-height:1.7;">
+      <li><strong>Kerala PSC:</strong> 150&#215;100 pixels, File size under 30 KB.</li>
+      <li><strong>SSC (CGL, CHSL, MTS, GD):</strong> 140&#215;60 pixels, File size 10 KB to 20 KB.</li>
+      <li><strong>IBPS / SBI PO &amp; Clerk:</strong> 140&#215;60 pixels, File size 10 KB to 20 KB.</li>
+      <li><strong>UPSC CSE &amp; CDS:</strong> 350&#215;350 pixels, File size 20 KB to 300 KB.</li>
+      <li><strong>Railway RRB &amp; RPF:</strong> 140&#215;60 pixels, File size 10 KB to 20 KB.</li>
+    </ul>
+  </div>
+
+  <!-- Frequently Asked Questions (SEO FAQs) -->
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2rem;">
+    <h3 style="font-size:1.2rem; font-weight:800; color:#0F172A; margin-top:0; margin-bottom:1rem;">❓ Frequently Asked Questions (FAQs)</h3>
+    <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
+      <strong style="font-size:0.92rem; color:#1E3A8A;">1. Why is white background important for exam signatures?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">Exam boards like SSC, Kerala PSC, and IBPS use automated OCR systems. Grey paper shadows can cause OCR failure and application rejection. Our tool automatically converts paper background to pure white.</p>
+    </div>
+    <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
+      <strong style="font-size:0.92rem; color:#1E3A8A;">2. Which ink color should I use for signatures?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">Black or blue ink on clean unruled white paper is recommended. You can choose black or blue enhancement in step 3.</p>
+    </div>
+    <div>
+      <strong style="font-size:0.92rem; color:#1E3A8A;">3. Is my signature kept private?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">Absolutely. 100% of processing is done locally inside your browser via HTML5 Canvas. No image data is transmitted to any server.</p>
+    </div>
+  </div>
+
+  <!-- Cross-Tool Quick Navigation -->
+  <div style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:14px; padding:1.25rem; margin-bottom:2rem; text-align:center;">
+    <span style="font-size:0.85rem; font-weight:800; color:#1E3A8A; display:block; margin-bottom:8px;">⚡ Explore Other Government Exam Utilities</span>
+    <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap; font-size:0.82rem; font-weight:700;">
+      <a href="/p/kerala-psc-photo-resizer.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🌴 Kerala PSC Photo Maker</a>
+      <a href="/p/govt-job-photo-resizer-online-ssc-upsc.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🇮🇳 State &amp; SSC Resizer</a>
+      <a href="/p/image-kb-compressor-online-compress.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🗜️ KB Compressor</a>
+      <a href="/p/image-to-pdf-converter-online-merge.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">📄 Image to PDF</a>
+      <a href="/p/govt-job-age-calculator-online-with.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🧮 Age Calculator</a>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:1.5rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#2563EB; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
       🏠 Return to 1IndiaJob Home
     </a>
   </div>
@@ -267,7 +310,7 @@
       if (sEl) sEl.style.display = (i === stepNum) ? 'block' : 'none';
       if (dEl) {
         if (i === stepNum) {
-          dEl.style.background = '#4F46E5';
+          dEl.style.background = '#2563EB';
           dEl.style.color = '#FFFFFF';
         } else if (i < stepNum) {
           dEl.style.background = '#059669';
@@ -334,7 +377,7 @@
     ctx.fillRect(0, sigCropBox.y, sigCropBox.x, sigCropBox.h);
     ctx.fillRect(sigCropBox.x + sigCropBox.w, sigCropBox.y, canvas.width - (sigCropBox.x + sigCropBox.w), sigCropBox.h);
 
-    ctx.strokeStyle = '#818CF8';
+    ctx.strokeStyle = '#38BDF8';
     ctx.lineWidth = 2;
     ctx.strokeRect(sigCropBox.x, sigCropBox.y, sigCropBox.w, sigCropBox.h);
   }
@@ -544,6 +587,12 @@
   function attachListeners() {
     var fInput = document.getElementById('sigFileInput');
     if (fInput) fInput.addEventListener('change', handleFileSelect);
+
+    var dropArea = document.getElementById('sigDropArea');
+    if (dropArea) dropArea.onclick = function() { if (fInput) fInput.click(); };
+
+    var btnSelect = document.getElementById('btnSelectSig');
+    if (btnSelect) btnSelect.onclick = function(e) { e.stopPropagation(); if (fInput) fInput.click(); };
 
     var btnRotL = document.getElementById('btnSigRotLeft');
     if (btnRotL) btnRotL.onclick = function() { rotateImage(-90); };

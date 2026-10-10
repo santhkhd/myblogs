@@ -1,149 +1,298 @@
 <!-- 
   ========================================================================
-  PAGE TITLE: Government Job Age Calculator with Category Relaxation Online
-  PERMALINK / SLUG: govt-job-age-calculator
+  PAGE TITLE: 🧮 Govt Job Age Calculator Online with Category Relaxation (OBC, SC, ST)
+  PERMALINK / SLUG: govt-job-age-calculator-online-with
   ========================================================================
 -->
-<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+<div class="exam-tool-page-wrap" style="max-width:920px; margin:0 auto; padding:1rem 0.5rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#1E293B; line-height:1.6;">
 
-  <!-- Header Banner -->
-  <div style="background:linear-gradient(135deg, #0284C7 0%, #0369A1 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(2,132,199,0.25);">
-    <span style="background:rgba(255,255,255,0.2); color:#FFFFFF; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
+  <!-- Unified Top Banner -->
+  <div style="background:linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(37,99,235,0.25);">
+    <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
       🧮 Smart Category Relaxation Matcher
     </span>
-    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
+    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25; color:#FFFFFF;">
       Government Job Age Calculator Online
     </h1>
-    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
-      Calculate your exact age in Years, Months, and Days as of the exam cut-off date with automatic reservation relaxation (OBC +3 yrs, SC/ST +5 yrs, PwBD +10 yrs).
+    <p style="font-size:0.95rem; opacity:0.95; max-width:640px; margin:0 auto;">
+      Calculate your exact age in Years, Months, and Days as of the exam cut-off date with automatic reservation relaxation (OBC +3 yrs, SC/ST +5 yrs, PwBD +10 yrs) and live eligibility check.
     </p>
   </div>
 
-  <!-- Interactive Tool Box -->
-  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem;">
-      <!-- Inputs -->
+  <!-- Main Calculator Card -->
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:20px; padding:2rem 1.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin-bottom:2.5rem;">
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:2rem; align-items:start;">
+      <!-- Left: Inputs -->
       <div>
-        <div>
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">🎂 Date of Birth (Candidate DOB):</label>
-          <input type="date" id="pageAgeDob" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.92rem; font-weight:700;" onchange="calculatePageAge()">
+        <h3 style="font-size:1.15rem; font-weight:800; color:#0F172A; margin:0 0 1.25rem;">
+          Enter Candidate Details
+        </h3>
+
+        <!-- DOB -->
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:0.82rem; font-weight:800; color:#334155; margin-bottom:6px;">
+            🎂 Date of Birth (DOB):
+          </label>
+          <input type="date" id="ageDobInput" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.95rem; font-weight:700; background:#F8FAFC;">
         </div>
 
-        <div style="margin-top:1rem;">
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">📅 Cut-off / Reference Date:</label>
-          <input type="date" id="pageAgeCutoff" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.92rem; font-weight:700;" onchange="calculatePageAge()">
+        <!-- Cut-off / Reference Date -->
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:0.82rem; font-weight:800; color:#334155; margin-bottom:6px;">
+            📅 Age as of (Cut-off Date):
+          </label>
+          <input type="date" id="ageCutoffInput" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.95rem; font-weight:700; background:#F8FAFC;">
         </div>
 
-        <div style="margin-top:1rem;">
-          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">👥 Reservation Category:</label>
-          <select id="pageAgeCat" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.9rem; font-weight:700; background:#F8FAFC;" onchange="calculatePageAge()">
-            <option value="GEN">General / Unreserved (No Age Relaxation)</option>
-            <option value="OBC">OBC / Non-Creamy Layer (+3 Years Relaxation)</option>
+        <!-- Category Relaxation -->
+        <div style="margin-bottom:1.5rem;">
+          <label style="display:block; font-size:0.82rem; font-weight:800; color:#334155; margin-bottom:6px;">
+            👥 Reservation Category:
+          </label>
+          <select id="ageCategorySelect" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.9rem; font-weight:700; background:#FFFFFF;">
+            <option value="GEN">General / UR (No Age Relaxation)</option>
+            <option value="OBC">OBC - Non Creamy Layer (+3 Years Relaxation)</option>
             <option value="SC_ST">SC / ST (+5 Years Relaxation)</option>
             <option value="PWBD">PwBD / Differently Abled (+10 Years Relaxation)</option>
             <option value="EX_SER">Ex-Servicemen (+3 Years Relaxation)</option>
           </select>
         </div>
 
-        <button type="button" onclick="calculatePageAge()" style="margin-top:1.5rem; width:100%; background:linear-gradient(135deg, #0284C7 0%, #0369A1 100%); color:#FFFFFF; border:none; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(2,132,199,0.3); transition:all 0.2s;">
+        <button type="button" id="btnCalculateAge" style="width:100%; background:#2563EB; color:#FFFFFF; border:none; padding:12px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
           ⚡ Calculate Exact Age &amp; Eligibility
         </button>
       </div>
 
-      <!-- Result View -->
-      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; justify-content:center;">
-        <div style="font-size:0.85rem; font-weight:800; color:#64748B;">Exact Age as on Cut-off Date:</div>
-        <div id="pageAgeHero" style="font-size:1.45rem; font-weight:900; color:#0284C7; margin:6px 0 14px;">
-          Select DOB above
+      <!-- Right: Live Result Display -->
+      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.5rem;">
+        <div style="font-size:0.8rem; font-weight:800; color:#64748B; text-transform:uppercase; letter-spacing:0.5px;">
+          Calculated Exact Age
+        </div>
+        
+        <!-- Big Age Pill -->
+        <div id="ageHeroResult" style="font-size:1.6rem; font-weight:900; color:#1E3A8A; margin:8px 0 12px; line-height:1.2;">
+          Select DOB &amp; Click Calculate
         </div>
 
-        <div style="border-top:1px solid #E2E8F0; padding-top:12px;">
-          <div style="font-size:0.88rem; font-weight:800; color:#0F172A; margin-bottom:8px;">Major Exam Eligibility Status:</div>
-          <div id="pageAgeExamsList" style="display:flex; flex-direction:column; gap:6px; font-size:0.84rem;">
-            <div style="color:#64748B;">Enter your date of birth to check recruitment eligibility.</div>
+        <!-- Extra Stats Grid -->
+        <div id="ageDetailedStats" style="display:none; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:1.25rem; font-size:0.82rem; background:#FFFFFF; padding:10px; border-radius:8px; border:1px solid #E2E8F0;">
+          <div><strong style="color:#64748B;">Total Months:</strong> <span id="statTotalMonths" style="font-weight:800; color:#0F172A;">-</span></div>
+          <div><strong style="color:#64748B;">Total Days:</strong> <span id="statTotalDays" style="font-weight:800; color:#0F172A;">-</span></div>
+          <div style="grid-column:span 2;"><strong style="color:#64748B;">Next Birthday In:</strong> <span id="statNextBirthday" style="font-weight:800; color:#2563EB;">-</span></div>
+        </div>
+
+        <!-- Major Exams Eligibility Box -->
+        <div style="border-top:1.5px solid #E2E8F0; padding-top:1rem;">
+          <div style="font-size:0.88rem; font-weight:800; color:#0F172A; margin-bottom:8px;">
+            Major Exam Eligibility Status:
+          </div>
+          <div id="ageExamsList" style="display:flex; flex-direction:column; gap:6px; font-size:0.82rem;">
+            <div style="color:#64748B;">Select your date of birth above to check real-time qualification.</div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 
-  <div style="text-align:center; margin-top:2rem;">
-    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#0284C7; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+  <!-- Specifications Card -->
+  <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2rem;">
+    <h2 style="font-size:1.25rem; font-weight:800; color:#1E3A8A; margin-top:0; margin-bottom:0.75rem;">
+      📋 Standard Government Age Limits &amp; Category Relaxations
+    </h2>
+    <ul style="padding-left:1.25rem; margin:0; font-size:0.9rem; color:#334155; line-height:1.7;">
+      <li><strong>Other Backward Classes (OBC - NCL):</strong> 3 Years relaxation in upper age limit across all Central and State government jobs.</li>
+      <li><strong>Scheduled Castes / Scheduled Tribes (SC / ST):</strong> 5 Years relaxation in upper age limit across SSC, UPSC, IBPS, RRB, and State PSCs.</li>
+      <li><strong>Persons with Benchmark Disabilities (PwBD):</strong> 10 Years relaxation (PwBD + OBC = 13 Years; PwBD + SC/ST = 15 Years).</li>
+      <li><strong>Ex-Servicemen (ESM):</strong> 3 Years after deduction of the military service rendered from the actual age as on the closing date.</li>
+      <li><strong>Kerala PSC General Maximum Age:</strong> Standard 18 to 36 years (OBC upper limit: 39 years; SC/ST upper limit: 41 years).</li>
+    </ul>
+  </div>
+
+  <!-- Frequently Asked Questions (SEO FAQs) -->
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2rem;">
+    <h3 style="font-size:1.2rem; font-weight:800; color:#0F172A; margin-top:0; margin-bottom:1rem;">❓ Frequently Asked Questions (FAQs)</h3>
+    <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
+      <strong style="font-size:0.92rem; color:#1E3A8A;">1. What is the standard cut-off reference date for SSC and UPSC exams?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">SSC and UPSC exams typically set the reference cut-off date as 1st August or 1st January of the examination notification year. Always verify with the official notification.</p>
+    </div>
+    <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
+      <strong style="font-size:0.92rem; color:#1E3A8A;">2. How is age calculated accurately in Leap Years?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">Our algorithm accounts for exact calendar month lengths (28, 29, 30, and 31 days) to deliver accurate day, month, and year counts matching official recruitment boards.</p>
+    </div>
+    <div>
+      <strong style="font-size:0.92rem; color:#1E3A8A;">3. Can EWS candidates claim upper age relaxation?</strong>
+      <p style="font-size:0.85rem; color:#475569; margin:4px 0 0;">Under Central government guidelines, Economically Weaker Section (EWS) candidates receive reservation in vacancies and fee concessions, but not upper age relaxation (unless specifically notified by State governments).</p>
+    </div>
+  </div>
+
+  <!-- Cross-Tool Quick Navigation -->
+  <div style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:14px; padding:1.25rem; margin-bottom:2rem; text-align:center;">
+    <span style="font-size:0.85rem; font-weight:800; color:#1E3A8A; display:block; margin-bottom:8px;">⚡ Explore Other Government Exam Utilities</span>
+    <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap; font-size:0.82rem; font-weight:700;">
+      <a href="/p/kerala-psc-photo-resizer.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🌴 Kerala PSC Photo Resizer</a>
+      <a href="/p/signature-resizer-contrast-enhancer.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">✍️ Signature Resizer</a>
+      <a href="/p/govt-job-photo-resizer-online-ssc-upsc.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🇮🇳 State &amp; SSC Resizer</a>
+      <a href="/p/image-kb-compressor-online-compress.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">🗜️ KB Compressor</a>
+      <a href="/p/image-to-pdf-converter-online-merge.html" style="background:#FFFFFF; color:#2563EB; padding:6px 12px; border-radius:6px; text-decoration:none; border:1px solid #CBD5E1;">📄 Image to PDF</a>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:1.5rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#2563EB; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
       🏠 Return to 1IndiaJob Home
     </a>
   </div>
 </div>
 
 <script>
-function calculatePageAge() {
-  var dobVal = document.getElementById('pageAgeDob').value;
-  var cutVal = document.getElementById('pageAgeCutoff').value;
-  var cat = document.getElementById('pageAgeCat').value;
-  var hero = document.getElementById('pageAgeHero');
-  var list = document.getElementById('pageAgeExamsList');
-
-  if (!dobVal) return;
-  var dob = new Date(dobVal);
-  var cutoff = cutVal ? new Date(cutVal) : new Date();
-
-  if (isNaN(dob.getTime()) || isNaN(cutoff.getTime()) || dob > cutoff) {
-    if (hero) hero.innerText = 'Invalid Date';
-    return;
-  }
-
-  var years = cutoff.getFullYear() - dob.getFullYear();
-  var months = cutoff.getMonth() - dob.getMonth();
-  var days = cutoff.getDate() - dob.getDate();
-
-  if (days < 0) {
-    months--;
-    days += new Date(cutoff.getFullYear(), cutoff.getMonth(), 0).getDate();
-  }
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-
-  if (hero) {
-    hero.innerHTML = "<strong>" + years + " Years, " + months + " Months, " + days + " Days</strong>";
-  }
-
-  var relax = 0;
-  if (cat === 'OBC') relax = 3;
-  else if (cat === 'SC_ST') relax = 5;
-  else if (cat === 'PWBD') relax = 10;
-  else if (cat === 'EX_SER') relax = 3;
-
-  var exams = [
-    { name: 'Kerala PSC (18 - 36 Yrs)', min: 18, max: 36 + relax },
-    { name: 'SSC CGL / CHSL (18 - 32 Yrs)', min: 18, max: 32 + relax },
-    { name: 'UPSC Civil Services (21 - 32 Yrs)', min: 21, max: 32 + relax },
-    { name: 'Bank Clerk / SBI (20 - 28 Yrs)', min: 20, max: 28 + relax },
-    { name: 'Bank PO (20 - 30 Yrs)', min: 20, max: 30 + relax },
-    { name: 'Railway RRB (18 - 36 Yrs)', min: 18, max: 36 + (cat === 'GEN' ? 0 : relax) }
-  ];
-
-  if (list) {
-    var h = '';
-    for (var i = 0; i < exams.length; i++) {
-      var item = exams[i];
-      var ok = years >= item.min && (years < item.max || (years === item.max && months === 0 && days === 0));
-      var badge = ok ?
-        "<span style='color:#059669; font-weight:800; background:#ECFDF5; padding:2px 8px; border-radius:4px;'>🟢 Eligible (Max " + item.max + "y)</span>" :
-        "<span style='color:#DC2626; font-weight:800; background:#FEE2E2; padding:2px 8px; border-radius:4px;'>🔴 " + (years < item.min ? "Underage" : "Overaged") + " (Max " + item.max + "y)</span>";
-
-      h += "<div style='display:flex; justify-content:space-between; align-items:center; background:#FFFFFF; padding:6px 10px; border-radius:6px; border:1px solid #E2E8F0;'>" +
-             "<span>" + item.name + "</span>" + badge +
-           "</div>";
+//<![CDATA[
+(function initAgeTool() {
+  function setDefaultDates() {
+    var today = new Date();
+    var cutEl = document.getElementById('ageCutoffInput');
+    if (cutEl && !cutEl.value) {
+      var yyyy = today.getFullYear();
+      var mm = String(today.getMonth() + 1).padStart(2, '0');
+      var dd = String(today.getDate()).padStart(2, '0');
+      cutEl.value = yyyy + '-' + mm + '-' + dd;
     }
-    list.innerHTML = h;
   }
-}
 
-window.addEventListener('DOMContentLoaded', function() {
-  var cut = document.getElementById('pageAgeCutoff');
-  if (cut && !cut.value) {
-    cut.value = new Date().toISOString().split('T')[0];
+  function calculateAge() {
+    var dobVal = document.getElementById('ageDobInput').value;
+    var cutVal = document.getElementById('ageCutoffInput').value;
+    var cat = document.getElementById('ageCategorySelect').value;
+    var hero = document.getElementById('ageHeroResult');
+    var list = document.getElementById('ageExamsList');
+    var statsBox = document.getElementById('ageDetailedStats');
+
+    if (!dobVal || !cutVal) {
+      if (hero) hero.innerText = 'Please select your Date of Birth';
+      return;
+    }
+
+    var dob = new Date(dobVal);
+    var cut = new Date(cutVal);
+
+    if (dob > cut) {
+      if (hero) hero.innerText = 'DOB cannot be after cut-off date!';
+      return;
+    }
+
+    var y = cut.getFullYear() - dob.getFullYear();
+    var m = cut.getMonth() - dob.getMonth();
+    var d = cut.getDate() - dob.getDate();
+
+    if (d < 0) {
+      m -= 1;
+      var prevMonthDays = new Date(cut.getFullYear(), cut.getMonth(), 0).getDate();
+      d += prevMonthDays;
+    }
+
+    if (m < 0) {
+      y -= 1;
+      m += 12;
+    }
+
+    if (hero) {
+      hero.innerText = y + ' Years, ' + m + ' Months, ' + d + ' Days';
+    }
+
+    // Detailed Stats
+    var diffTime = Math.abs(cut - dob);
+    var totalDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    var totalMonths = (y * 12) + m;
+
+    var nextBday = new Date(cut.getFullYear(), dob.getMonth(), dob.getDate());
+    if (nextBday < cut) {
+      nextBday.setFullYear(cut.getFullYear() + 1);
+    }
+    var daysToBday = Math.ceil((nextBday - cut) / (1000 * 60 * 60 * 24));
+
+    if (statsBox) {
+      statsBox.style.display = 'grid';
+      var mEl = document.getElementById('statTotalMonths');
+      var dEl = document.getElementById('statTotalDays');
+      var bEl = document.getElementById('statNextBirthday');
+      if (mEl) mEl.innerText = totalMonths + ' Months';
+      if (dEl) dEl.innerText = totalDays + ' Days';
+      if (bEl) bEl.innerText = daysToBday + ' Days';
+    }
+
+    // Relaxation offset
+    var relax = 0;
+    if (cat === 'OBC') relax = 3;
+    else if (cat === 'SC_ST') relax = 5;
+    else if (cat === 'PWBD') relax = 10;
+    else if (cat === 'EX_SER') relax = 3;
+
+    // Major Exams
+    var exams = [
+      { name: 'SSC CGL / CHSL', min: 18, max: 27 + relax },
+      { name: 'SSC CGL (Upper Tier)', min: 18, max: 32 + relax },
+      { name: 'UPSC Civil Services (CSE)', min: 21, max: 32 + relax },
+      { name: 'IBPS / SBI Bank PO', min: 20, max: 30 + relax },
+      { name: 'Kerala PSC (General)', min: 18, max: 36 + relax },
+      { name: 'Railway RRB NTPC', min: 18, max: 33 + relax }
+    ];
+
+    if (list) {
+      list.innerHTML = '';
+      exams.forEach(function(item) {
+        var isEligible = (y >= item.min && (y < item.max || (y === item.max && m === 0 && d === 0)));
+        var row = document.createElement('div');
+        row.style.cssText = 'display:flex; justify-content:space-between; align-items:center; background:#FFFFFF; padding:6px 10px; border-radius:6px; border:1px solid #E2E8F0;';
+        
+        var nameSpan = document.createElement('span');
+        nameSpan.style.fontWeight = '700';
+        nameSpan.style.color = '#1E293B';
+        nameSpan.innerText = item.name + ' (' + item.min + '-' + item.max + ' yrs)';
+        
+        var statusSpan = document.createElement('span');
+        statusSpan.style.fontWeight = '800';
+        statusSpan.style.fontSize = '0.78rem';
+        statusSpan.style.padding = '2px 8px';
+        statusSpan.style.borderRadius = '50px';
+
+        if (isEligible) {
+          statusSpan.style.background = '#DCFCE7';
+          statusSpan.style.color = '#15803D';
+          statusSpan.innerText = '\u2713 Eligible';
+        } else {
+          statusSpan.style.background = '#FEE2E2';
+          statusSpan.style.color = '#B91C1C';
+          statusSpan.innerText = '\u2715 Overage / Underage';
+        }
+
+        row.appendChild(nameSpan);
+        row.appendChild(statusSpan);
+        list.appendChild(row);
+      });
+    }
   }
-});
+
+  function attachListeners() {
+    setDefaultDates();
+
+    var calcBtn = document.getElementById('btnCalculateAge');
+    if (calcBtn) calcBtn.addEventListener('click', calculateAge);
+
+    var dobInp = document.getElementById('ageDobInput');
+    var cutInp = document.getElementById('ageCutoffInput');
+    var catSel = document.getElementById('ageCategorySelect');
+
+    if (dobInp) dobInp.addEventListener('change', calculateAge);
+    if (cutInp) cutInp.addEventListener('change', calculateAge);
+    if (catSel) catSel.addEventListener('change', calculateAge);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachListeners);
+  } else {
+    attachListeners();
+  }
+})();
+//]]>
 </script>
