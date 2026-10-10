@@ -1726,6 +1726,14 @@
           font-size: 0.8rem;
         }
       }
+
+      .native-post-view article:has(.exam-tool-page-wrap),
+      .native-post-view:has(.exam-tool-page-wrap) article {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
     ]]></b:skin>
   </head>
   <body>
@@ -1942,7 +1950,9 @@
                           </b:loop>
                         </div>
                       </b:if>
-                      <h1 style='font-size:1.6rem; font-weight:900; line-height:1.4; color:var(--text-primary); margin-bottom:1.25rem;'><data:post.title/></h1>
+                      <b:if cond='data:blog.pageType == "item"'>
+                        <h1 style='font-size:1.6rem; font-weight:900; line-height:1.4; color:var(--text-primary); margin-bottom:1.25rem;'><data:post.title/></h1>
+                      </b:if>
                       <div class='post-body-content' style='font-size:0.95rem; line-height:1.8; color:var(--text-primary);'>
                         <data:post.body/>
                       </div>
