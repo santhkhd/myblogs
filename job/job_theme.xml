@@ -1431,12 +1431,12 @@
     <!-- Top Header -->
     <header>
       <div class='header-wrap'>
-        <a class='site-logo' href='javascript:void(0)' onclick='showAllJobsView()'>
+        <a class='site-logo' href='/' onclick='showAllJobsView()'>
           <i class='fas fa-briefcase'/> <data:blog.title/> <span>LIVE <span class='dyn-year'>2026</span></span>
         </a>
         <div style='display:flex; align-items:center; gap:8px;'>
           <nav class='nav-links'>
-            <a class='active' href='javascript:void(0)' onclick='showAllJobsView()'>Home</a>
+            <a class='active' href='/' onclick='showAllJobsView()'>Home</a>
             <a href='javascript:void(0)' onclick='filterTodayJobs()'>⚡ Added Today</a>
             <a href='javascript:void(0)' onclick='switchPortalType("notification")'>📢 Notifications</a>
             <a href='javascript:void(0)' onclick='switchPortalType("admit_card")'>🎫 Admit Cards</a>
@@ -1681,7 +1681,7 @@
       </main>
 
       <!-- Sidebar: Expanded Top Job Sectors with Live Counts -->
-      <aside>
+      <aside class='portal-sidebar'>
         <!-- Telegram Alerts CTA -->
         <div class='telegram-cta'>
           <i class='fab fa-telegram-plane' style='font-size:2rem; margin-bottom:0.3rem;'/>
@@ -1946,6 +1946,10 @@
       }
 
       function switchPortalType(type) {
+        if (isNativePostPage) {
+          window.location.href = '/';
+          return;
+        }
         showFeedView();
         currentChannel = type || 'all';
         currentFilter = '';
@@ -2008,6 +2012,10 @@
       }
 
       function showAllJobsView() {
+        if (isNativePostPage) {
+          window.location.href = '/';
+          return;
+        }
         showFeedView();
         currentChannel = 'all';
         currentFilter = '';
@@ -2465,6 +2473,11 @@
       }
 
       function renderJobCards(jobs) {
+        if (isNativePostPage) {
+          var fw = document.getElementById('jobFeedWrapper');
+          if (fw) fw.style.display = 'none';
+          return;
+        }
         var container = document.getElementById('jobFeedContainer');
         if (!container) return;
 
@@ -2721,6 +2734,10 @@
       }
 
       function filterTodayJobs() {
+        if (isNativePostPage) {
+          window.location.href = '/';
+          return;
+        }
         showFeedView();
         currentSearch = '';
         var input = document.getElementById('jobSearch');
@@ -2760,6 +2777,10 @@
       }
 
       function filterByLabel(label) {
+        if (isNativePostPage) {
+          window.location.href = '/';
+          return;
+        }
         showFeedView();
         currentSearch = '';
         var input = document.getElementById('jobSearch');
