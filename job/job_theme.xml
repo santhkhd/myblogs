@@ -2184,6 +2184,19 @@
         <span style='color:var(--border-color);'>•</span>
         <a href='/p/disclaimer.html' style='color:var(--text-secondary); text-decoration:none;'>Disclaimer</a>
       </div>
+      <div style='display:flex; justify-content:center; gap:12px; margin-bottom:1rem; flex-wrap:wrap; font-size:0.82rem; font-weight:800; color:var(--primary);'>
+        <a href='/p/kerala-psc-photo-resizer.html' style='color:var(--primary); text-decoration:none;'>🌴 Kerala PSC Photo Maker</a>
+        <span style='color:var(--border-color);'>•</span>
+        <a href='/p/govt-job-photo-resizer.html' style='color:var(--primary); text-decoration:none;'>🇮🇳 State &amp; SSC Photo Resizer</a>
+        <span style='color:var(--border-color);'>•</span>
+        <a href='/p/govt-job-signature-resizer.html' style='color:var(--primary); text-decoration:none;'>✍️ Signature Resizer</a>
+        <span style='color:var(--border-color);'>•</span>
+        <a href='/p/image-to-pdf-converter.html' style='color:var(--primary); text-decoration:none;'>📄 Image to PDF</a>
+        <span style='color:var(--border-color);'>•</span>
+        <a href='/p/govt-job-age-calculator.html' style='color:var(--primary); text-decoration:none;'>🧮 Age Calculator</a>
+        <span style='color:var(--border-color);'>•</span>
+        <a href='/p/image-kb-compressor.html' style='color:var(--primary); text-decoration:none;'>🗜️ KB Compressor</a>
+      </div>
       <p style='margin-bottom:0.4rem;'>
         <strong><data:blog.title/></strong> &#169; <span class='dyn-year'>2026</span> - Daily Government Job Notifications, Admit Cards &amp; Results Portal.
       </p>

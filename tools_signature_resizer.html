@@ -1,0 +1,197 @@
+<!-- 
+  ========================================================================
+  PAGE TITLE: Government Job Signature Resizer & Background Cleaner Online
+  PERMALINK / SLUG: govt-job-signature-resizer
+  ========================================================================
+-->
+<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+
+  <!-- Header Banner -->
+  <div style="background:linear-gradient(135deg, #4338CA 0%, #6366F1 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(99,102,241,0.25);">
+    <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
+      ✍️ Auto Shadow Cleaner &amp; Contrast Enhancer
+    </span>
+    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
+      Govt Exam Signature Resizer &amp; Cleaner Online
+    </h1>
+    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
+      Crop, resize and enhance signatures for Kerala PSC (150&#215;100 px), SSC (140&#215;60 px), Bank IBPS, UPSC and Railway exams. Automatically removes phone shadow and turns grey paper pure white.
+    </p>
+  </div>
+
+  <!-- Interactive Tool Box -->
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem;">
+      <!-- Controls -->
+      <div>
+        <div style="border:2px dashed #6366F1; border-radius:12px; padding:1.75rem 1rem; text-align:center; background:#EEF2FF; cursor:pointer; position:relative;">
+          <div style="font-size:2.2rem; color:#4F46E5; margin-bottom:0.5rem;">✍️</div>
+          <strong style="font-size:1rem; color:#3730A3; display:block;">Click to Upload Signature</strong>
+          <span style="font-size:0.8rem; color:#64748B;">Upload photo of paper signature</span>
+          <input type="file" id="pageSigInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="handlePageSigUpload(event)">
+        </div>
+
+        <div style="margin-top:1.25rem;">
+          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Select Signature Preset:</label>
+          <select id="pageSigPreset" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.9rem; font-weight:700; background:#F8FAFC;" onchange="applyPageSigPreset(this.value)">
+            <option value="kpsc_sig">Kerala PSC Signature - 150&#215;100 px (&lt;30 KB)</option>
+            <option value="ssc_sig">SSC Signature - 140&#215;60 px (10-20 KB)</option>
+            <option value="ibps_sig">IBPS &amp; Bank Signature - 140&#215;60 px (10-20 KB)</option>
+            <option value="upsc_sig">UPSC Signature - 350&#215;350 px (20-300 KB)</option>
+            <option value="rrb_sig">Railway RRB Signature - 140&#215;60 px (10-20 KB)</option>
+            <option value="custom">Custom Signature Dimension</option>
+          </select>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:1rem;">
+          <div>
+            <label style="display:block; font-size:0.82rem; font-weight:800; color:#475569; margin-bottom:4px;">Width (px):</label>
+            <input type="number" id="pageSigW" value="150" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageSigCanvas()">
+          </div>
+          <div>
+            <label style="display:block; font-size:0.82rem; font-weight:800; color:#475569; margin-bottom:4px;">Height (px):</label>
+            <input type="number" id="pageSigH" value="100" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageSigCanvas()">
+          </div>
+        </div>
+
+        <div style="margin-top:1.15rem; display:flex; align-items:center; gap:8px;">
+          <input type="checkbox" id="pageSigEnhance" checked="checked" style="width:18px; height:18px;" onchange="updatePageSigCanvas()">
+          <label for="pageSigEnhance" style="font-size:0.88rem; font-weight:800; color:#4F46E5; cursor:pointer;">
+            ✨ Remove Shadow &amp; Whiten Background Paper
+          </label>
+        </div>
+      </div>
+
+      <!-- Preview Box -->
+      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+        <div style="font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:10px;">
+          Clean Signature Preview (<span id="pageSigSizeBadge" style="color:#059669;">0 KB</span>)
+        </div>
+        <div style="border:1px solid #CBD5E1; box-shadow:0 4px 14px rgba(0,0,0,0.1); background:#FFFFFF; display:inline-block; border-radius:4px; overflow:hidden;">
+          <canvas id="pageSigCanvas" width="150" height="100" style="max-width:200px; max-height:100px; display:block;"></canvas>
+        </div>
+        <button type="button" onclick="downloadPageSignature()" style="margin-top:1.25rem; width:100%; background:linear-gradient(135deg, #059669 0%, #047857 100%); color:#FFFFFF; border:none; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(5,150,105,0.3); transition:all 0.2s;">
+          📥 Download Official Signature
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#4338CA; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+      🏠 Return to 1IndiaJob Home
+    </a>
+  </div>
+</div>
+
+<script>
+var pageSigImg = null;
+function handlePageSigUpload(e) {
+  var file = e.target.files[0];
+  if (!file) return;
+  var r = new FileReader();
+  r.onload = function(evt) {
+    var img = new Image();
+    img.onload = function() {
+      pageSigImg = img;
+      updatePageSigCanvas();
+    };
+    img.src = evt.target.result;
+  };
+  r.readAsDataURL(file);
+}
+
+function applyPageSigPreset(p) {
+  var w = document.getElementById('pageSigW');
+  var h = document.getElementById('pageSigH');
+  if (!w || !h) return;
+  if (p === 'kpsc_sig') { w.value = 150; h.value = 100; }
+  else if (p === 'ssc_sig' || p === 'ibps_sig' || p === 'rrb_sig') { w.value = 140; h.value = 60; }
+  else if (p === 'upsc_sig') { w.value = 350; h.value = 175; }
+  updatePageSigCanvas();
+}
+
+function updatePageSigCanvas() {
+  var canvas = document.getElementById('pageSigCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var w = parseInt(document.getElementById('pageSigW').value, 10) || 150;
+  var h = parseInt(document.getElementById('pageSigH').value, 10) || 100;
+  var doEnhance = document.getElementById('pageSigEnhance') ? document.getElementById('pageSigEnhance').checked : true;
+
+  canvas.width = w;
+  canvas.height = h;
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, w, h);
+
+  if (pageSigImg) {
+    var scale = Math.min(w / pageSigImg.width, h / pageSigImg.height);
+    var nw = pageSigImg.width * scale;
+    var nh = pageSigImg.height * scale;
+    var nx = (w - nw) / 2;
+    var ny = (h - nh) / 2;
+    ctx.drawImage(pageSigImg, nx, ny, nw, nh);
+
+    if (doEnhance) {
+      var imgData = ctx.getImageData(0, 0, w, h);
+      var d = imgData.data;
+      for (var i = 0; i < d.length; i += 4) {
+        var gray = 0.299 * d[i] + 0.587 * d[i+1] + 0.114 * d[i+2];
+        if (gray > 165) {
+          d[i] = 255; d[i+1] = 255; d[i+2] = 255;
+        } else {
+          var dark = Math.max(0, gray * 0.7);
+          d[i] = dark; d[i+1] = dark; d[i+2] = dark;
+        }
+      }
+      ctx.putImageData(imgData, 0, 0);
+    }
+  } else {
+    ctx.fillStyle = '#E2E8F0';
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = '#94A3B8';
+    ctx.font = 'bold 12px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Select Signature', w / 2, h / 2);
+  }
+
+  var q = 0.92;
+  function step() {
+    canvas.toBlob(function(b) {
+      if (!b) return;
+      var kb = b.size / 1024;
+      if (kb <= 25 || q <= 0.1) {
+        var bd = document.getElementById('pageSigSizeBadge');
+        if (bd) bd.innerText = kb.toFixed(1) + ' KB';
+      } else {
+        q -= 0.08;
+        step();
+      }
+    }, 'image/jpeg', q);
+  }
+  step();
+}
+
+function downloadPageSignature() {
+  var canvas = document.getElementById('pageSigCanvas');
+  if (!canvas) return;
+  var q = 0.92;
+  function step() {
+    canvas.toBlob(function(b) {
+      if (!b) return;
+      var kb = b.size / 1024;
+      if (kb <= 25 || q <= 0.1) {
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(b);
+        a.download = 'Govt_Exam_Signature.jpg';
+        a.click();
+      } else {
+        q -= 0.08;
+        step();
+      }
+    }, 'image/jpeg', q);
+  }
+  step();
+}
+</script>

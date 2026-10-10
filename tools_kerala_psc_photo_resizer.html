@@ -1,0 +1,208 @@
+<!-- 
+  ========================================================================
+  PAGE TITLE: Kerala PSC Photo Resizer with Name and Date Online (150x200 px, <30KB)
+  PERMALINK / SLUG: kerala-psc-photo-resizer
+  ========================================================================
+-->
+<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+
+  <!-- Header Banner -->
+  <div style="background:linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(37,99,235,0.25);">
+    <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
+      ⚡ Official Kerala PSC Thulasi Standard
+    </span>
+    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
+      Kerala PSC Photo Resizer with Name &amp; Date Online
+    </h1>
+    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
+      Instant 150&#215;200 px photo maker with name &amp; date stamped at the bottom. Auto-compressed strictly under 30 KB for Kerala PSC One Time Registration (OTR).
+    </p>
+  </div>
+
+  <!-- Interactive Tool Box -->
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem;">
+      <!-- Controls -->
+      <div>
+        <div style="border:2px dashed #3B82F6; border-radius:12px; padding:1.75rem 1rem; text-align:center; background:#EFF6FF; cursor:pointer; position:relative;">
+          <div style="font-size:2.2rem; color:#2563EB; margin-bottom:0.5rem;">📷</div>
+          <strong style="font-size:1rem; color:#1E3A8A; display:block;">Click to Upload Candidate Photo</strong>
+          <span style="font-size:0.8rem; color:#64748B;">Supports JPG, JPEG, PNG (Phone camera or scan)</span>
+          <input type="file" id="pageKpscPhotoInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="handlePageKpscUpload(event)">
+        </div>
+
+        <div style="margin-top:1.25rem;">
+          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Candidate Full Name (in Capital Letters):</label>
+          <input type="text" id="pageKpscNameInput" placeholder="e.g. ARUN KUMAR M" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.92rem; font-weight:700;" oninput="updatePageKpscCanvas()">
+        </div>
+
+        <div style="margin-top:1rem;">
+          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Date of Photo Taken (DD/MM/YYYY):</label>
+          <input type="text" id="pageKpscDateInput" placeholder="e.g. 10/10/2026" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.92rem; font-weight:700;" oninput="updatePageKpscCanvas()">
+        </div>
+
+        <div style="margin-top:1rem;">
+          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Text Size Adjustment:</label>
+          <input type="range" id="pageKpscFontSlider" min="10" max="18" value="13" style="width:100%;" oninput="updatePageKpscCanvas()">
+        </div>
+      </div>
+
+      <!-- Preview Box -->
+      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+        <div style="font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:10px;">
+          Live 150&#215;200 Preview (<span id="pageKpscSizeBadge" style="color:#059669;">0 KB</span>)
+        </div>
+        <div style="border:1px solid #CBD5E1; box-shadow:0 4px 14px rgba(0,0,0,0.1); background:#FFFFFF; display:inline-block; border-radius:4px; overflow:hidden;">
+          <canvas id="pageKpscCanvas" width="150" height="200" style="width:150px; height:200px; display:block;"></canvas>
+        </div>
+        <button type="button" id="pageKpscDownloadBtn" onclick="downloadPageKpscPhoto()" style="margin-top:1.25rem; width:100%; background:linear-gradient(135deg, #059669 0%, #047857 100%); color:#FFFFFF; border:none; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(5,150,105,0.3); transition:all 0.2s;">
+          📥 Download Kerala PSC Photo (&lt;30 KB)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed Specifications & Guide -->
+  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:1.5rem; margin-bottom:2rem;">
+    <h2 style="font-size:1.3rem; font-weight:800; color:#1E3A8A; margin-top:0; margin-bottom:0.75rem;">
+      📋 Official Kerala PSC Photograph Upload Guidelines
+    </h2>
+    <ul style="padding-left:1.25rem; margin-bottom:1rem; font-size:0.92rem; color:#334155; line-height:1.7;">
+      <li><strong>Dimensions:</strong> 150 pixels width by 200 pixels height (aspect ratio 3:4).</li>
+      <li><strong>File Size:</strong> Strictly maximum 30 KB (Our tool optimizes between 15 KB and 28 KB).</li>
+      <li><strong>File Format:</strong> JPG / JPEG.</li>
+      <li><strong>Bottom White Banner:</strong> The name of the candidate in bold capital letters and the date on which the photograph was taken must be firmly printed in black color at the bottom portion of the photograph.</li>
+      <li><strong>Validity:</strong> The photograph once uploaded on Kerala PSC Thulasi One Time Registration is valid for 10 years from the date of taking.</li>
+    </ul>
+  </div>
+
+  <!-- Frequently Asked Questions (SEO FAQs) -->
+  <div style="margin-bottom:2rem;">
+    <h3 style="font-size:1.2rem; font-weight:800; color:#0F172A; margin-bottom:1rem;">❓ Frequently Asked Questions</h3>
+    <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
+      <strong style="font-size:0.95rem; color:#1E3A8A;">1. Why is Kerala PSC rejecting my uploaded photograph?</strong>
+      <p style="font-size:0.88rem; color:#475569; margin:4px 0 0;">Rejections usually occur if the file size exceeds 30 KB, dimensions are not 150&#215;200 px, or candidate name &amp; date taken are missing from the bottom white strip.</p>
+    </div>
+    <div style="border-bottom:1px solid #E2E8F0; padding-bottom:0.75rem; margin-bottom:0.75rem;">
+      <strong style="font-size:0.95rem; color:#1E3A8A;">2. Is my photo uploaded to any external server?</strong>
+      <p style="font-size:0.88rem; color:#475569; margin:4px 0 0;">No. All processing happens 100% locally inside your web browser via HTML5 Canvas. Your photograph is never uploaded to any remote server, ensuring complete data security.</p>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#2563EB; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+      🏠 Return to 1IndiaJob Home
+    </a>
+  </div>
+</div>
+
+<script>
+var pageKpscImg = null;
+function handlePageKpscUpload(e) {
+  var file = e.target.files[0];
+  if (!file) return;
+  var r = new FileReader();
+  r.onload = function(evt) {
+    var img = new Image();
+    img.onload = function() {
+      pageKpscImg = img;
+      updatePageKpscCanvas();
+    };
+    img.src = evt.target.result;
+  };
+  r.readAsDataURL(file);
+}
+
+function updatePageKpscCanvas() {
+  var canvas = document.getElementById('pageKpscCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  canvas.width = 150;
+  canvas.height = 200;
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, 150, 200);
+
+  var nameVal = (document.getElementById('pageKpscNameInput') ? document.getElementById('pageKpscNameInput').value : '').toUpperCase().trim();
+  var dateVal = document.getElementById('pageKpscDateInput') ? document.getElementById('pageKpscDateInput').value.trim() : '';
+  var fSize = document.getElementById('pageKpscFontSlider') ? parseInt(document.getElementById('pageKpscFontSlider').value, 10) : 13;
+
+  var bannerH = (nameVal || dateVal) ? 44 : 0;
+  var photoH = 200 - bannerH;
+
+  if (pageKpscImg) {
+    var scale = Math.max(150 / pageKpscImg.width, photoH / pageKpscImg.height);
+    var nw = pageKpscImg.width * scale;
+    var nh = pageKpscImg.height * scale;
+    var nx = (150 - nw) / 2;
+    var ny = (photoH - nh) / 2;
+    ctx.drawImage(pageKpscImg, nx, ny, nw, nh);
+  } else {
+    ctx.fillStyle = '#E2E8F0';
+    ctx.fillRect(0, 0, 150, photoH);
+    ctx.fillStyle = '#94A3B8';
+    ctx.font = 'bold 12px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Select Photo', 75, photoH / 2);
+  }
+
+  if (bannerH > 0) {
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 200 - bannerH, 150, bannerH);
+    ctx.strokeStyle = '#CBD5E1';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(0, 200 - bannerH, 150, bannerH);
+
+    ctx.fillStyle = '#000000';
+    ctx.textAlign = 'center';
+    ctx.font = 'bold ' + fSize + 'px Arial, sans-serif';
+
+    if (nameVal && dateVal) {
+      ctx.fillText(nameVal, 75, 200 - bannerH + 17);
+      ctx.fillText(dateVal, 75, 200 - bannerH + 35);
+    } else if (nameVal) {
+      ctx.fillText(nameVal, 75, 200 - 16);
+    } else if (dateVal) {
+      ctx.fillText(dateVal, 75, 200 - 16);
+    }
+  }
+
+  compressPageCanvas(canvas, 28, function(blob, kb) {
+    var b = document.getElementById('pageKpscSizeBadge');
+    if (b) b.innerText = kb.toFixed(1) + ' KB';
+  });
+}
+
+function compressPageCanvas(canvas, maxKb, cb) {
+  var q = 0.92;
+  function step() {
+    canvas.toBlob(function(b) {
+      if (!b) return;
+      var kb = b.size / 1024;
+      if (kb <= maxKb || q <= 0.1) cb(b, kb);
+      else { q -= 0.08; step(); }
+    }, 'image/jpeg', q);
+  }
+  step();
+}
+
+function downloadPageKpscPhoto() {
+  var canvas = document.getElementById('pageKpscCanvas');
+  if (!canvas) return;
+  compressPageCanvas(canvas, 28, function(blob) {
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'Kerala_PSC_Photo_150x200.jpg';
+    a.click();
+  });
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+  var dInput = document.getElementById('pageKpscDateInput');
+  if (dInput && !dInput.value) {
+    var now = new Date();
+    dInput.value = ('0' + now.getDate()).slice(-2) + '/' + ('0' + (now.getMonth() + 1)).slice(-2) + '/' + now.getFullYear();
+    updatePageKpscCanvas();
+  }
+});
+</script>

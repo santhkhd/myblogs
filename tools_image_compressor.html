@@ -1,0 +1,149 @@
+<!-- 
+  ========================================================================
+  PAGE TITLE: Government Job Image KB Reducer & Compressor Online (20KB, 50KB, 100KB, 200KB)
+  PERMALINK / SLUG: image-kb-compressor
+  ========================================================================
+-->
+<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+
+  <!-- Header Banner -->
+  <div style="background:linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(124,58,237,0.25);">
+    <span style="background:rgba(255,255,255,0.2); color:#FDE047; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
+      🗜️ Precision KB Reducer
+    </span>
+    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
+      Image KB Reducer &amp; Compressor Online
+    </h1>
+    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
+      Reduce and compress any image or certificate down to exact target file size (20 KB, 30 KB, 50 KB, 100 KB, 200 KB) without blur or loss of quality.
+    </p>
+  </div>
+
+  <!-- Interactive Tool Box -->
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem;">
+      <!-- Inputs -->
+      <div>
+        <div style="border:2px dashed #9333EA; border-radius:12px; padding:1.75rem 1rem; text-align:center; background:#FAF5FF; cursor:pointer; position:relative;">
+          <div style="font-size:2.2rem; color:#7C3AED; margin-bottom:0.5rem;">🗜️</div>
+          <strong style="font-size:1rem; color:#581C87; display:block;">Click to Select Heavy Image</strong>
+          <span style="font-size:0.8rem; color:#64748B;">Upload camera photo or scanned certificate</span>
+          <input type="file" id="pageCompInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="handlePageCompUpload(event)">
+        </div>
+
+        <div style="margin-top:1.25rem;">
+          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Select Target KB Limit:</label>
+          <div style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button type="button" onclick="setPageCompKb(20)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">20 KB</button>
+            <button type="button" onclick="setPageCompKb(30)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">30 KB</button>
+            <button type="button" onclick="setPageCompKb(50)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">50 KB</button>
+            <button type="button" onclick="setPageCompKb(100)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">100 KB</button>
+            <button type="button" onclick="setPageCompKb(200)" style="padding:6px 12px; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:6px; font-size:0.82rem; font-weight:800; cursor:pointer;">200 KB</button>
+          </div>
+          <input type="number" id="pageCompTargetKb" value="50" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700; margin-top:8px;" oninput="runPageCompressor()">
+        </div>
+      </div>
+
+      <!-- Preview Box -->
+      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+        <div style="font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:10px;">
+          Compressed Preview (<span id="pageCompSizeBadge" style="color:#059669;">0 KB</span>)
+        </div>
+        <div style="border:1px solid #CBD5E1; box-shadow:0 4px 14px rgba(0,0,0,0.1); background:#FFFFFF; display:inline-block; border-radius:4px; overflow:hidden;">
+          <canvas id="pageCompCanvas" style="max-width:180px; max-height:160px; display:block;"></canvas>
+        </div>
+        <button type="button" onclick="downloadPageCompFile()" style="margin-top:1.25rem; width:100%; background:linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%); color:#FFFFFF; border:none; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(124,58,237,0.3); transition:all 0.2s;">
+          📥 Download Compressed Image
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#7C3AED; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+      🏠 Return to 1IndiaJob Home
+    </a>
+  </div>
+</div>
+
+<script>
+var pageCompImg = null;
+function handlePageCompUpload(e) {
+  var file = e.target.files[0];
+  if (!file) return;
+  var r = new FileReader();
+  r.onload = function(evt) {
+    var img = new Image();
+    img.onload = function() {
+      pageCompImg = img;
+      runPageCompressor();
+    };
+    img.src = evt.target.result;
+  };
+  r.readAsDataURL(file);
+}
+
+function setPageCompKb(kb) {
+  var i = document.getElementById('pageCompTargetKb');
+  if (i) { i.value = kb; runPageCompressor(); }
+}
+
+function runPageCompressor() {
+  var canvas = document.getElementById('pageCompCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var targetKb = parseInt(document.getElementById('pageCompTargetKb').value, 10) || 50;
+
+  if (pageCompImg) {
+    var w = pageCompImg.width;
+    var h = pageCompImg.height;
+    var maxDim = 1200;
+    if (w > maxDim || h > maxDim) {
+      if (w > h) { h = Math.round((h * maxDim) / w); w = maxDim; }
+      else { w = Math.round((w * maxDim) / h); h = maxDim; }
+    }
+    canvas.width = w;
+    canvas.height = h;
+    ctx.drawImage(pageCompImg, 0, 0, w, h);
+
+    var q = 0.92;
+    function step() {
+      canvas.toBlob(function(b) {
+        if (!b) return;
+        var kb = b.size / 1024;
+        if (kb <= targetKb || q <= 0.1) {
+          var bd = document.getElementById('pageCompSizeBadge');
+          if (bd) bd.innerText = kb.toFixed(1) + ' KB';
+        } else {
+          q -= 0.08;
+          step();
+        }
+      }, 'image/jpeg', q);
+    }
+    step();
+  }
+}
+
+function downloadPageCompFile() {
+  var canvas = document.getElementById('pageCompCanvas');
+  var targetKb = parseInt(document.getElementById('pageCompTargetKb').value, 10) || 50;
+  if (!canvas) return;
+  var q = 0.92;
+  function step() {
+    canvas.toBlob(function(b) {
+      if (!b) return;
+      var kb = b.size / 1024;
+      if (kb <= targetKb || q <= 0.1) {
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(b);
+        a.download = 'Compressed_Image_' + targetKb + 'KB.jpg';
+        a.click();
+      } else {
+        q -= 0.08;
+        step();
+      }
+    }, 'image/jpeg', q);
+  }
+  step();
+}
+</script>

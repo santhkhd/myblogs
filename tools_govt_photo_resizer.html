@@ -1,0 +1,233 @@
+<!-- 
+  ========================================================================
+  PAGE TITLE: Government Job Photo Resizer Online (SSC, UPSC, Bank, Railway, State PSCs)
+  PERMALINK / SLUG: govt-job-photo-resizer
+  ========================================================================
+-->
+<div class="psc-tool-page-wrap" style="max-width:960px; margin:0 auto; padding:1.5rem 1rem; font-family:'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0F172A; line-height:1.6;">
+
+  <!-- Header Banner -->
+  <div style="background:linear-gradient(135deg, #047857 0%, #10B981 100%); color:#FFFFFF; padding:2rem 1.5rem; border-radius:16px; text-align:center; margin-bottom:2rem; box-shadow:0 10px 25px rgba(16,185,129,0.25);">
+    <span style="background:rgba(255,255,255,0.2); color:#FFFFFF; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:0.75rem;">
+      🇮🇳 All-India &amp; State PSCs Multi-Preset Resizer
+    </span>
+    <h1 style="font-size:1.85rem; font-weight:900; margin:0 0 0.5rem; line-height:1.25;">
+      Government Job Online Photo Resizer
+    </h1>
+    <p style="font-size:0.95rem; opacity:0.95; max-width:680px; margin:0 auto;">
+      Resize and compress your passport photo for SSC CGL, UPSC Civil Services, IBPS Banking, Railway RRB, and State PSC application forms in exact required dimensions and KB limits.
+    </p>
+  </div>
+
+  <!-- Interactive Tool Box -->
+  <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.75rem; margin-bottom:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem;">
+      <!-- Controls -->
+      <div>
+        <div style="border:2px dashed #10B981; border-radius:12px; padding:1.75rem 1rem; text-align:center; background:#ECFDF5; cursor:pointer; position:relative;">
+          <div style="font-size:2.2rem; color:#059669; margin-bottom:0.5rem;">🖼️</div>
+          <strong style="font-size:1rem; color:#065F46; display:block;">Click to Upload Photo</strong>
+          <span style="font-size:0.8rem; color:#64748B;">Upload camera image or scanned photograph</span>
+          <input type="file" id="pageAllPscPhotoInput" accept="image/*" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;" onchange="handlePageAllPscUpload(event)">
+        </div>
+
+        <div style="margin-top:1.25rem;">
+          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Select Exam Portal Preset:</label>
+          <select id="pageAllPscPreset" style="width:100%; box-sizing:border-box; padding:10px 14px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.9rem; font-weight:700; background:#F8FAFC;" onchange="applyPageAllPscPreset(this.value)">
+            <option value="ssc">SSC (CGL, CHSL, MTS, GD) - 350&#215;450 px (20-50 KB)</option>
+            <option value="upsc">UPSC (Civil Services, NDA, CDS) - 350&#215;350 px (20-300 KB)</option>
+            <option value="ibps">IBPS / SBI Banking - 200&#215;230 px (20-50 KB)</option>
+            <option value="rrb">Railway RRB (NTPC, Group D, ALP) - 210&#215;270 px (30-70 KB)</option>
+            <option value="tnpsc">TNPSC (Tamil Nadu PSC) - 165&#215;200 px (20-50 KB)</option>
+            <option value="kpsc_kar">KPSC (Karnataka PSC) - 150&#215;200 px (20-50 KB)</option>
+            <option value="appsc">APPSC / TSPSC - 150&#215;200 px (20-50 KB)</option>
+            <option value="mpsc">MPSC (Maharashtra) - 160&#215;200 px (20-50 KB)</option>
+            <option value="custom">⚙️ Custom Dimension &amp; Target Size</option>
+          </select>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:1rem;">
+          <div>
+            <label style="display:block; font-size:0.82rem; font-weight:800; color:#475569; margin-bottom:4px;">Width (px):</label>
+            <input type="number" id="pageAllPscW" value="350" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageAllPscCanvas()">
+          </div>
+          <div>
+            <label style="display:block; font-size:0.82rem; font-weight:800; color:#475569; margin-bottom:4px;">Height (px):</label>
+            <input type="number" id="pageAllPscH" value="450" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageAllPscCanvas()">
+          </div>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <label style="display:block; font-size:0.85rem; font-weight:800; color:#334155; margin-bottom:5px;">Max Target File Size (KB):</label>
+          <input type="number" id="pageAllPscMaxKb" value="50" style="width:100%; box-sizing:border-box; padding:8px 12px; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.88rem; font-weight:700;" oninput="updatePageAllPscCanvas()">
+        </div>
+      </div>
+
+      <!-- Preview Box -->
+      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+        <div style="font-size:0.85rem; font-weight:800; color:#475569; margin-bottom:10px;">
+          Resized Preview (<span id="pageAllPscSizeBadge" style="color:#059669;">0 KB</span>)
+        </div>
+        <div style="border:1px solid #CBD5E1; box-shadow:0 4px 14px rgba(0,0,0,0.1); background:#FFFFFF; display:inline-block; border-radius:4px; overflow:hidden;">
+          <canvas id="pageAllPscCanvas" width="350" height="450" style="max-width:180px; max-height:220px; display:block;"></canvas>
+        </div>
+        <button type="button" onclick="downloadPageAllPscPhoto()" style="margin-top:1.25rem; width:100%; background:linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%); color:#FFFFFF; border:none; padding:12px 20px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3); transition:all 0.2s;">
+          📥 Download Resized Photo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exam Photo Specifications Reference Table -->
+  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:1.5rem; margin-bottom:2rem; overflow-x:auto;">
+    <h2 style="font-size:1.3rem; font-weight:800; color:#0F172A; margin-top:0; margin-bottom:1rem;">
+      📊 Major Government Exam Photo Upload Requirements
+    </h2>
+    <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+      <thead>
+        <tr style="background:#E2E8F0; text-align:left;">
+          <th style="padding:10px 12px; border:1px solid #CBD5E1;">Exam Organization</th>
+          <th style="padding:10px 12px; border:1px solid #CBD5E1;">Required Dimensions</th>
+          <th style="padding:10px 12px; border:1px solid #CBD5E1;">File Size Limit</th>
+          <th style="padding:10px 12px; border:1px solid #CBD5E1;">Format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1; font-weight:700;">SSC (Staff Selection Commission)</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1;">3.5 cm &#215; 4.5 cm (350&#215;450 px)</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1; color:#059669; font-weight:700;">20 KB to 50 KB</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1;">JPG / JPEG</td>
+        </tr>
+        <tr style="background:#FFFFFF;">
+          <td style="padding:8px 12px; border:1px solid #CBD5E1; font-weight:700;">UPSC (Civil Services / NDA / CDS)</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1;">350 &#215; 350 pixels</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1; color:#059669; font-weight:700;">20 KB to 300 KB</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1;">JPG / JPEG</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1; font-weight:700;">IBPS &amp; State Bank of India (SBI)</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1;">200 &#215; 230 pixels</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1; color:#059669; font-weight:700;">20 KB to 50 KB</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1;">JPG / JPEG</td>
+        </tr>
+        <tr style="background:#FFFFFF;">
+          <td style="padding:8px 12px; border:1px solid #CBD5E1; font-weight:700;">Railway RRB (NTPC, ALP, Group D)</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1;">35 mm &#215; 45 mm</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1; color:#059669; font-weight:700;">30 KB to 70 KB</td>
+          <td style="padding:8px 12px; border:1px solid #CBD5E1;">JPG / JPEG</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="/" style="display:inline-flex; align-items:center; gap:6px; background:#047857; color:#FFFFFF; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem;">
+      🏠 Return to 1IndiaJob Home
+    </a>
+  </div>
+</div>
+
+<script>
+var pageAllPscImg = null;
+function handlePageAllPscUpload(e) {
+  var file = e.target.files[0];
+  if (!file) return;
+  var r = new FileReader();
+  r.onload = function(evt) {
+    var img = new Image();
+    img.onload = function() {
+      pageAllPscImg = img;
+      updatePageAllPscCanvas();
+    };
+    img.src = evt.target.result;
+  };
+  r.readAsDataURL(file);
+}
+
+function applyPageAllPscPreset(preset) {
+  var w = document.getElementById('pageAllPscW');
+  var h = document.getElementById('pageAllPscH');
+  var kb = document.getElementById('pageAllPscMaxKb');
+  if (!w || !h || !kb) return;
+  if (preset === 'ssc') { w.value = 350; h.value = 450; kb.value = 50; }
+  else if (preset === 'upsc') { w.value = 350; h.value = 350; kb.value = 300; }
+  else if (preset === 'ibps') { w.value = 200; h.value = 230; kb.value = 50; }
+  else if (preset === 'rrb') { w.value = 210; h.value = 270; kb.value = 70; }
+  else if (preset === 'tnpsc') { w.value = 165; h.value = 200; kb.value = 50; }
+  else if (preset === 'kpsc_kar') { w.value = 150; h.value = 200; kb.value = 50; }
+  else if (preset === 'appsc') { w.value = 150; h.value = 200; kb.value = 50; }
+  else if (preset === 'mpsc') { w.value = 160; h.value = 200; kb.value = 50; }
+  updatePageAllPscCanvas();
+}
+
+function updatePageAllPscCanvas() {
+  var canvas = document.getElementById('pageAllPscCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var w = parseInt(document.getElementById('pageAllPscW').value, 10) || 350;
+  var h = parseInt(document.getElementById('pageAllPscH').value, 10) || 450;
+  var maxKb = parseInt(document.getElementById('pageAllPscMaxKb').value, 10) || 50;
+
+  canvas.width = w;
+  canvas.height = h;
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, w, h);
+
+  if (pageAllPscImg) {
+    var scale = Math.max(w / pageAllPscImg.width, h / pageAllPscImg.height);
+    var nw = pageAllPscImg.width * scale;
+    var nh = pageAllPscImg.height * scale;
+    var nx = (w - nw) / 2;
+    var ny = (h - nh) / 2;
+    ctx.drawImage(pageAllPscImg, nx, ny, nw, nh);
+  } else {
+    ctx.fillStyle = '#E2E8F0';
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = '#94A3B8';
+    ctx.font = 'bold 13px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Select Photo', w / 2, h / 2);
+  }
+
+  var q = 0.92;
+  function step() {
+    canvas.toBlob(function(b) {
+      if (!b) return;
+      var kb = b.size / 1024;
+      if (kb <= maxKb || q <= 0.1) {
+        var bd = document.getElementById('pageAllPscSizeBadge');
+        if (bd) bd.innerText = kb.toFixed(1) + ' KB';
+      } else {
+        q -= 0.08;
+        step();
+      }
+    }, 'image/jpeg', q);
+  }
+  step();
+}
+
+function downloadPageAllPscPhoto() {
+  var canvas = document.getElementById('pageAllPscCanvas');
+  var maxKb = parseInt(document.getElementById('pageAllPscMaxKb').value, 10) || 50;
+  if (!canvas) return;
+  var q = 0.92;
+  function step() {
+    canvas.toBlob(function(b) {
+      if (!b) return;
+      var kb = b.size / 1024;
+      if (kb <= maxKb || q <= 0.1) {
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(b);
+        a.download = 'Govt_Exam_Photo_Resized.jpg';
+        a.click();
+      } else {
+        q -= 0.08;
+        step();
+      }
+    }, 'image/jpeg', q);
+  }
+  step();
+}
+</script>
