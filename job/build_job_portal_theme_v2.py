@@ -1431,6 +1431,14 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
         color: var(--text-secondary);
       }
       footer a { color: var(--primary); text-decoration: none; font-weight: 700; }
+
+      .native-post-view article:has(.exam-tool-page-wrap),
+      .native-post-view:has(.exam-tool-page-wrap) article {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
     ]]></b:skin>
   </head>
   <body>
@@ -1621,20 +1629,22 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
         <b:section id='main' showaddelement='yes'>
           <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
             <b:includable id='main' var='top'>
-              <b:if cond='data:blog.pageType == "item"'>
+              <b:if cond='data:blog.pageType in {"item","static_page"}'>
                 <div class='native-post-view' id='nativePostContainer'>
                   <a class='back-nav-bar' href='/' style='text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:1.25rem; font-weight:800;'>
-                    <i class='fas fa-arrow-left'/> Back to All 167+ Latest Jobs Feed
+                    <i class='fas fa-arrow-left'/> Back to All Latest Jobs Feed
                   </a>
                   <b:loop values='data:posts' var='post'>
                     <article style='background:var(--bg-card); padding:1.75rem; border-radius:14px; border:1px solid var(--border-color); box-shadow:var(--card-shadow); margin-bottom:1.5rem;'>
-                      <div style='margin-bottom:1rem; display:flex; flex-wrap:wrap; gap:8px;'>
-                        <span class='type-chip chip-notif'>📢 OFFICIAL NOTIFICATION</span>
-                        <b:loop values='data:post.labels' var='label'>
-                          <span class='job-org-badge'><i class='fas fa-tag'/> <data:label.name/></span>
-                        </b:loop>
-                      </div>
-                      <h1 style='font-size:1.6rem; font-weight:900; line-height:1.4; color:var(--text-primary); margin-bottom:1.25rem;'><data:post.title/></h1>
+                      <b:if cond='data:blog.pageType == "item"'>
+                        <div style='margin-bottom:1rem; display:flex; flex-wrap:wrap; gap:8px;'>
+                          <span class='type-chip chip-notif'>📢 OFFICIAL NOTIFICATION</span>
+                          <b:loop values='data:post.labels' var='label'>
+                            <span class='job-org-badge'><i class='fas fa-tag'/> <data:label.name/></span>
+                          </b:loop>
+                        </div>
+                        <h1 style='font-size:1.6rem; font-weight:900; line-height:1.4; color:var(--text-primary); margin-bottom:1.25rem;'><data:post.title/></h1>
+                      </b:if>
                       <div class='post-body-content' style='font-size:0.95rem; line-height:1.8; color:var(--text-primary);'>
                         <data:post.body/>
                       </div>
@@ -3148,7 +3158,7 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
       function syncLiveBloggerPosts() {
         try {
           var script = document.createElement('script');
-          script.src = '/feeds/posts/default?alt=json-in-script&callback=onBloggerLiveFeedLoaded&max-results=50';
+          script.src = '/feeds/posts/default?alt=json-in-script&callback=onBloggerLiveFeedLoaded&max-results=500';
           script.async = true;
           document.body.appendChild(script);
         } catch (e) {}
@@ -3164,12 +3174,26 @@ THEME_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8" ?>
         updateCategoryCounts();
 
         if (isNativePostPage) {
+          // Keep top Hero Search & Category header visible matching Image 2
           var hero = document.getElementById('heroSearchSection');
-          if (hero) hero.style.display = 'none';
+          if (hero) hero.style.display = 'block';
+
           var feedWrapper = document.getElementById('jobFeedWrapper');
           if (feedWrapper) feedWrapper.style.display = 'none';
           var articleView = document.getElementById('fullJobArticleView');
           if (articleView) articleView.style.display = 'none';
+          var sidebar = document.querySelector('.portal-sidebar');
+          if (sidebar) sidebar.style.display = 'none';
+          var portalLayout = document.querySelector('.portal-layout');
+          if (portalLayout) portalLayout.style.gridTemplateColumns = '1fr';
+
+          // Cleanly hide bottom bank and state directory grids on tool / post pages
+          var banks = document.getElementById('banksDirectorySection');
+          if (banks) banks.style.display = 'none';
+          var states = document.getElementById('statesDirectorySection');
+          if (states) states.style.display = 'none';
+          var hubs = document.getElementById('browseHubsSection');
+          if (hubs) hubs.style.display = 'none';
         } else {
           renderJobCards(ALL_JOBS);
           checkHashRoute();
