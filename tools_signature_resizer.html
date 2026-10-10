@@ -63,25 +63,50 @@
 
     <!-- STEP 2: CROP SIGNATURE -->
     <div id="sigStep2" style="display:none; text-align:center;">
-      <div style="background:#0F172A; border-radius:12px; padding:1rem; max-width:650px; margin:0 auto 1.5rem; position:relative; overflow:hidden; min-height:280px; display:flex; align-items:center; justify-content:center;">
-        <canvas id="sigCropCanvas" style="max-width:100%; max-height:340px; object-fit:contain; border-radius:6px; cursor:crosshair;"></canvas>
+      <!-- Aspect Ratio Preset Pills -->
+      <div style="margin-bottom:1rem; display:flex; justify-content:center; align-items:center; gap:8px; flex-wrap:wrap;">
+        <span style="font-size:0.8rem; font-weight:800; color:#64748B; margin-right:4px;">CROP RATIO:</span>
+        <button type="button" class="sigRatioBtn" data-ratio="7:3" style="background:#2563EB; color:#FFFFFF; border:1px solid #2563EB; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">7:3 (SSC 140×60)</button>
+        <button type="button" class="sigRatioBtn" data-ratio="3:2" style="background:#F1F5F9; color:#475569; border:1px solid #CBD5E1; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">3:2 (Kerala PSC 150×100)</button>
+        <button type="button" class="sigRatioBtn" data-ratio="2:1" style="background:#F1F5F9; color:#475569; border:1px solid #CBD5E1; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">2:1 (IBPS Bank)</button>
+        <button type="button" class="sigRatioBtn" data-ratio="1:1" style="background:#F1F5F9; color:#475569; border:1px solid #CBD5E1; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">1:1 (Square)</button>
+        <button type="button" class="sigRatioBtn" data-ratio="free" style="background:#F1F5F9; color:#475569; border:1px solid #CBD5E1; padding:5px 12px; border-radius:6px; font-size:0.8rem; font-weight:800; cursor:pointer;">Free Form</button>
       </div>
 
-      <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:1.5rem; flex-wrap:wrap;">
-        <button type="button" id="btnSigRotLeft" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+      <div style="background:#0F172A; border-radius:12px; padding:1rem; max-width:650px; margin:0 auto 1.25rem; position:relative; overflow:hidden; min-height:280px; display:flex; align-items:center; justify-content:center; touch-action:none;">
+        <canvas id="sigCropCanvas" style="max-width:100%; max-height:340px; object-fit:contain; border-radius:6px; cursor:move;"></canvas>
+      </div>
+
+      <!-- Quick Transform & Zoom Controls -->
+      <div style="display:flex; justify-content:center; align-items:center; gap:8px; margin-bottom:1.5rem; flex-wrap:wrap;">
+        <button type="button" id="btnSigRotLeft" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
           ↺ Rotate Left
         </button>
-        <button type="button" id="btnSigRotRight" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnSigRotRight" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
           ↻ Rotate Right
         </button>
-        <button type="button" id="btnSigResetBox" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:8px 16px; border-radius:8px; font-size:0.88rem; font-weight:700; cursor:pointer;">
+        <button type="button" id="btnSigFlipH" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
+          ⇄ Flip
+        </button>
+        <button type="button" id="btnSigZoomIn" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
+          🔍 Zoom In (+)
+        </button>
+        <button type="button" id="btnSigZoomOut" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
+          🔍 Zoom Out (-)
+        </button>
+        <button type="button" id="btnSigResetBox" style="background:#F1F5F9; border:1px solid #CBD5E1; padding:7px 14px; border-radius:8px; font-size:0.84rem; font-weight:700; cursor:pointer;">
           ⛶ Reset Box
         </button>
       </div>
 
-      <button type="button" id="btnSigCropNext" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 36px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
-        Crop &amp; Next
-      </button>
+      <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <button type="button" id="btnSigCropNext" style="background:#2563EB; color:#FFFFFF; border:none; padding:12px 32px; border-radius:8px; font-size:1rem; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">
+          Crop &amp; Next ➔
+        </button>
+        <button type="button" id="btnSigSkipCrop" style="background:#FFFFFF; color:#475569; border:1.5px solid #CBD5E1; padding:12px 24px; border-radius:8px; font-size:0.95rem; font-weight:800; cursor:pointer;">
+          Use Full Image (No Crop)
+        </button>
+      </div>
     </div>
 
     <!-- STEP 3: CLEAN BACKGROUND & CONTRAST -->
@@ -300,8 +325,12 @@
   var sigCroppedCanvas = null;
   var sigFinalBlob = null;
   var sigCropBox = { x: 0, y: 0, w: 200, h: 100 };
+  var currentSigRatio = '7:3'; // '7:3', '3:2', '2:1', '1:1', 'free'
+  var activeHandle = null;
   var isSigDragging = false;
   var sigDragStartX = 0, sigDragStartY = 0;
+  var startBox = { x: 0, y: 0, w: 0, h: 0 };
+  var HANDLE_SIZE = 10;
 
   function switchStep(stepNum) {
     [1, 2, 3, 4, 5].forEach(function(i) {
@@ -339,29 +368,61 @@
     reader.readAsDataURL(file);
   }
 
+  function getNumericRatio() {
+    if (currentSigRatio === '7:3') return 7 / 3;
+    if (currentSigRatio === '3:2') return 3 / 2;
+    if (currentSigRatio === '2:1') return 2 / 1;
+    if (currentSigRatio === '1:1') return 1;
+    return null;
+  }
+
   function initCropScreen() {
     if (!sigRawImg) return;
     var canvas = document.getElementById('sigCropCanvas');
     if (!canvas) return;
-    var maxW = 500, maxH = 320;
+    var maxW = 550, maxH = 340;
     var ratio = Math.min(maxW / sigRawImg.width, maxH / sigRawImg.height, 1);
-    canvas.width = sigRawImg.width * ratio;
-    canvas.height = sigRawImg.height * ratio;
+    canvas.width = Math.round(sigRawImg.width * ratio);
+    canvas.height = Math.round(sigRawImg.height * ratio);
 
-    var boxW = canvas.width * 0.8;
-    var boxH = boxW * 0.45;
-    if (boxH > canvas.height * 0.85) {
-      boxH = canvas.height * 0.85;
-      boxW = boxH / 0.45;
-    }
-    sigCropBox = {
-      x: (canvas.width - boxW) / 2,
-      y: (canvas.height - boxH) / 2,
-      w: boxW,
-      h: boxH
-    };
+    resetCropBox();
     drawCropCanvas();
     setupCropDrag(canvas);
+  }
+
+  function resetCropBox() {
+    var canvas = document.getElementById('sigCropCanvas');
+    if (!canvas) return;
+    var numRatio = getNumericRatio() || (7 / 3);
+
+    var boxW = canvas.width * 0.8;
+    var boxH = boxW / numRatio;
+
+    if (boxH > canvas.height * 0.85) {
+      boxH = canvas.height * 0.85;
+      boxW = boxH * numRatio;
+    }
+
+    sigCropBox = {
+      x: Math.round((canvas.width - boxW) / 2),
+      y: Math.round((canvas.height - boxH) / 2),
+      w: Math.round(boxW),
+      h: Math.round(boxH)
+    };
+  }
+
+  function getHandles() {
+    var x = sigCropBox.x, y = sigCropBox.y, w = sigCropBox.w, h = sigCropBox.h;
+    return {
+      tl: { x: x, y: y },
+      tr: { x: x + w, y: y },
+      bl: { x: x, y: y + h },
+      br: { x: x + w, y: y + h },
+      tc: { x: x + w / 2, y: y },
+      bc: { x: x + w / 2, y: y + h },
+      ml: { x: x, y: y + h / 2 },
+      mr: { x: x + w, y: y + h / 2 }
+    };
   }
 
   function drawCropCanvas() {
@@ -371,15 +432,57 @@
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(sigRawImg, 0, 0, canvas.width, canvas.height);
 
+    // Dark overlay
     ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
     ctx.fillRect(0, 0, canvas.width, sigCropBox.y);
     ctx.fillRect(0, sigCropBox.y + sigCropBox.h, canvas.width, canvas.height - (sigCropBox.y + sigCropBox.h));
     ctx.fillRect(0, sigCropBox.y, sigCropBox.x, sigCropBox.h);
     ctx.fillRect(sigCropBox.x + sigCropBox.w, sigCropBox.y, canvas.width - (sigCropBox.x + sigCropBox.w), sigCropBox.h);
 
+    // Border
     ctx.strokeStyle = '#38BDF8';
     ctx.lineWidth = 2;
     ctx.strokeRect(sigCropBox.x, sigCropBox.y, sigCropBox.w, sigCropBox.h);
+
+    // Grid lines
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(sigCropBox.x + sigCropBox.w / 3, sigCropBox.y);
+    ctx.lineTo(sigCropBox.x + sigCropBox.w / 3, sigCropBox.y + sigCropBox.h);
+    ctx.moveTo(sigCropBox.x + (2 * sigCropBox.w) / 3, sigCropBox.y);
+    ctx.lineTo(sigCropBox.x + (2 * sigCropBox.w) / 3, sigCropBox.y + sigCropBox.h);
+    ctx.moveTo(sigCropBox.x, sigCropBox.y + sigCropBox.h / 3);
+    ctx.lineTo(sigCropBox.x + sigCropBox.w, sigCropBox.y + sigCropBox.h / 3);
+    ctx.moveTo(sigCropBox.x, sigCropBox.y + (2 * sigCropBox.h) / 3);
+    ctx.lineTo(sigCropBox.x + sigCropBox.w, sigCropBox.y + (2 * sigCropBox.h) / 3);
+    ctx.stroke();
+
+    // 8 handles
+    var handles = getHandles();
+    ctx.fillStyle = '#FFFFFF';
+    ctx.strokeStyle = '#0284C7';
+    ctx.lineWidth = 2;
+    for (var k in handles) {
+      var pt = handles[k];
+      ctx.fillRect(pt.x - HANDLE_SIZE / 2, pt.y - HANDLE_SIZE / 2, HANDLE_SIZE, HANDLE_SIZE);
+      ctx.strokeRect(pt.x - HANDLE_SIZE / 2, pt.y - HANDLE_SIZE / 2, HANDLE_SIZE, HANDLE_SIZE);
+    }
+  }
+
+  function getMouseHandle(mx, my) {
+    var handles = getHandles();
+    var hit = HANDLE_SIZE + 4;
+    for (var k in handles) {
+      var pt = handles[k];
+      if (Math.abs(mx - pt.x) <= hit && Math.abs(my - pt.y) <= hit) {
+        return k;
+      }
+    }
+    if (mx >= sigCropBox.x && mx <= sigCropBox.x + sigCropBox.w && my >= sigCropBox.y && my <= sigCropBox.y + sigCropBox.h) {
+      return 'inside';
+    }
+    return null;
   }
 
   function setupCropDrag(canvas) {
@@ -387,26 +490,101 @@
       var rect = canvas.getBoundingClientRect();
       var x = cx - rect.left;
       var y = cy - rect.top;
-      if (x >= sigCropBox.x && x <= sigCropBox.x + sigCropBox.w && y >= sigCropBox.y && y <= sigCropBox.y + sigCropBox.h) {
+      var hKey = getMouseHandle(x, y);
+
+      if (hKey) {
+        activeHandle = hKey;
         isSigDragging = true;
-        sigDragStartX = x - sigCropBox.x;
-        sigDragStartY = y - sigCropBox.y;
+        sigDragStartX = x;
+        sigDragStartY = y;
+        startBox = { x: sigCropBox.x, y: sigCropBox.y, w: sigCropBox.w, h: sigCropBox.h };
       }
     };
 
     var onMove = function(cx, cy) {
-      if (!isSigDragging) return;
       var rect = canvas.getBoundingClientRect();
       var x = cx - rect.left;
       var y = cy - rect.top;
-      var newX = Math.max(0, Math.min(x - sigDragStartX, canvas.width - sigCropBox.w));
-      var newY = Math.max(0, Math.min(y - sigDragStartY, canvas.height - sigCropBox.h));
-      sigCropBox.x = newX;
-      sigCropBox.y = newY;
+
+      if (!isSigDragging) {
+        var hoverHandle = getMouseHandle(x, y);
+        if (hoverHandle === 'tl' || hoverHandle === 'br') canvas.style.cursor = 'nwse-resize';
+        else if (hoverHandle === 'tr' || hoverHandle === 'bl') canvas.style.cursor = 'nesw-resize';
+        else if (hoverHandle === 'tc' || hoverHandle === 'bc') canvas.style.cursor = 'ns-resize';
+        else if (hoverHandle === 'ml' || hoverHandle === 'mr') canvas.style.cursor = 'ew-resize';
+        else if (hoverHandle === 'inside') canvas.style.cursor = 'move';
+        else canvas.style.cursor = 'crosshair';
+        return;
+      }
+
+      var dx = x - sigDragStartX;
+      var dy = y - sigDragStartY;
+      var numRatio = getNumericRatio();
+
+      if (activeHandle === 'inside') {
+        var newX = Math.max(0, Math.min(startBox.x + dx, canvas.width - startBox.w));
+        var newY = Math.max(0, Math.min(startBox.y + dy, canvas.height - startBox.h));
+        sigCropBox.x = newX;
+        sigCropBox.y = newY;
+      } else if (activeHandle === 'br') {
+        var newW = Math.max(30, Math.min(startBox.w + dx, canvas.width - startBox.x));
+        var newH = numRatio ? (newW / numRatio) : Math.max(20, Math.min(startBox.h + dy, canvas.height - startBox.y));
+        if (startBox.y + newH <= canvas.height && startBox.x + newW <= canvas.width) {
+          sigCropBox.w = newW;
+          sigCropBox.h = newH;
+        }
+      } else if (activeHandle === 'tl') {
+        var newW = Math.max(30, startBox.w - dx);
+        var newH = numRatio ? (newW / numRatio) : Math.max(20, startBox.h - dy);
+        var newX = startBox.x + (startBox.w - newW);
+        var newY = startBox.y + (startBox.h - newH);
+        if (newX >= 0 && newY >= 0) {
+          sigCropBox.x = newX;
+          sigCropBox.y = newY;
+          sigCropBox.w = newW;
+          sigCropBox.h = newH;
+        }
+      } else if (activeHandle === 'tr') {
+        var newW = Math.max(30, Math.min(startBox.w + dx, canvas.width - startBox.x));
+        var newH = numRatio ? (newW / numRatio) : Math.max(20, startBox.h - dy);
+        var newY = startBox.y + (startBox.h - newH);
+        if (newY >= 0 && startBox.x + newW <= canvas.width) {
+          sigCropBox.y = newY;
+          sigCropBox.w = newW;
+          sigCropBox.h = newH;
+        }
+      } else if (activeHandle === 'bl') {
+        var newW = Math.max(30, startBox.w - dx);
+        var newH = numRatio ? (newW / numRatio) : Math.max(20, startBox.h + dy);
+        var newX = startBox.x + (startBox.w - newW);
+        if (newX >= 0 && startBox.y + newH <= canvas.height) {
+          sigCropBox.x = newX;
+          sigCropBox.w = newW;
+          sigCropBox.h = newH;
+        }
+      } else if (activeHandle === 'tc' || activeHandle === 'bc' || activeHandle === 'ml' || activeHandle === 'mr') {
+        if (activeHandle === 'bc') sigCropBox.h = Math.max(20, Math.min(startBox.h + dy, canvas.height - sigCropBox.y));
+        if (activeHandle === 'mr') sigCropBox.w = Math.max(30, Math.min(startBox.w + dx, canvas.width - sigCropBox.x));
+        if (activeHandle === 'tc') {
+          var newH = Math.max(20, startBox.h - dy);
+          var newY = startBox.y + (startBox.h - newH);
+          if (newY >= 0) { sigCropBox.y = newY; sigCropBox.h = newH; }
+        }
+        if (activeHandle === 'ml') {
+          var newW = Math.max(30, startBox.w - dx);
+          var newX = startBox.x + (startBox.w - newW);
+          if (newX >= 0) { sigCropBox.x = newX; sigCropBox.w = newW; }
+        }
+      }
+
       drawCropCanvas();
     };
 
-    var onEnd = function() { isSigDragging = false; };
+    var onEnd = function() {
+      isSigDragging = false;
+      activeHandle = null;
+    };
+
     canvas.onmousedown = function(e) { onStart(e.clientX, e.clientY); };
     window.onmousemove = function(e) { onMove(e.clientX, e.clientY); };
     window.onmouseup = onEnd;
@@ -434,17 +612,68 @@
     rImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
   }
 
-  function applyCrop() {
-    var canvas = document.getElementById('sigCropCanvas');
-    if (!canvas || !sigRawImg) return;
-    var scaleX = sigRawImg.width / canvas.width;
-    var scaleY = sigRawImg.height / canvas.height;
+  function flipImageHorizontal() {
+    if (!sigRawImg) return;
+    var offCanvas = document.createElement('canvas');
+    var offCtx = offCanvas.getContext('2d');
+    offCanvas.width = sigRawImg.width;
+    offCanvas.height = sigRawImg.height;
+    offCtx.translate(offCanvas.width, 0);
+    offCtx.scale(-1, 1);
+    offCtx.drawImage(sigRawImg, 0, 0);
 
+    var fImg = new Image();
+    fImg.onload = function() {
+      sigRawImg = fImg;
+      initCropScreen();
+    };
+    fImg.src = offCanvas.toDataURL('image/jpeg', 0.95);
+  }
+
+  function zoomCropBox(factor) {
+    var canvas = document.getElementById('sigCropCanvas');
+    if (!canvas) return;
+    var newW = sigCropBox.w * factor;
+    var newH = sigCropBox.h * factor;
+    var cx = sigCropBox.x + sigCropBox.w / 2;
+    var cy = sigCropBox.y + sigCropBox.h / 2;
+
+    if (newW >= 40 && newH >= 20 && newW <= canvas.width && newH <= canvas.height) {
+      sigCropBox.w = Math.round(newW);
+      sigCropBox.h = Math.round(newH);
+      sigCropBox.x = Math.max(0, Math.min(Math.round(cx - sigCropBox.w / 2), canvas.width - sigCropBox.w));
+      sigCropBox.y = Math.max(0, Math.min(Math.round(cy - sigCropBox.h / 2), canvas.height - sigCropBox.h));
+      drawCropCanvas();
+    }
+  }
+
+  function applyCrop(skip) {
+    if (!sigRawImg) return;
+    var canvas = document.getElementById('sigCropCanvas');
     sigCroppedCanvas = document.createElement('canvas');
-    sigCroppedCanvas.width = sigCropBox.w * scaleX;
-    sigCroppedCanvas.height = sigCropBox.h * scaleY;
     var ctx = sigCroppedCanvas.getContext('2d');
-    ctx.drawImage(sigRawImg, sigCropBox.x * scaleX, sigCropBox.y * scaleY, sigCropBox.w * scaleX, sigCropBox.h * scaleY, 0, 0, sigCroppedCanvas.width, sigCroppedCanvas.height);
+
+    if (skip === true || !canvas) {
+      sigCroppedCanvas.width = sigRawImg.width;
+      sigCroppedCanvas.height = sigRawImg.height;
+      ctx.drawImage(sigRawImg, 0, 0);
+    } else {
+      var scaleX = sigRawImg.width / canvas.width;
+      var scaleY = sigRawImg.height / canvas.height;
+      sigCroppedCanvas.width = Math.round(sigCropBox.w * scaleX);
+      sigCroppedCanvas.height = Math.round(sigCropBox.h * scaleY);
+      ctx.drawImage(
+        sigRawImg,
+        sigCropBox.x * scaleX,
+        sigCropBox.y * scaleY,
+        sigCropBox.w * scaleX,
+        sigCropBox.h * scaleY,
+        0,
+        0,
+        sigCroppedCanvas.width,
+        sigCroppedCanvas.height
+      );
+    }
 
     renderCleanPreview();
     switchStep(3);
@@ -474,17 +703,23 @@
       var imgData = tCtx.getImageData(0, 0, 240, 120);
       var d = imgData.data;
       for (var i = 0; i < d.length; i += 4) {
-        var r = d[i], g = d[i+1], b = d[i+2];
+        var r = d[i], g = d[i + 1], b = d[i + 2];
         var brightness = (r * 0.299 + g * 0.587 + b * 0.114);
 
         if (brightness > thresh) {
-          d[i] = 255; d[i+1] = 255; d[i+2] = 255;
+          d[i] = 255;
+          d[i + 1] = 255;
+          d[i + 2] = 255;
         } else {
           if (inkType === 'black') {
             var dark = Math.max(0, brightness - 40);
-            d[i] = dark; d[i+1] = dark; d[i+2] = dark;
+            d[i] = dark;
+            d[i + 1] = dark;
+            d[i + 2] = dark;
           } else if (inkType === 'blue') {
-            d[i] = 10; d[i+1] = 40; d[i+2] = 180;
+            d[i] = 10;
+            d[i + 1] = 40;
+            d[i + 2] = 180;
           }
         }
       }
@@ -594,17 +829,48 @@
     var btnSelect = document.getElementById('btnSelectSig');
     if (btnSelect) btnSelect.onclick = function(e) { e.stopPropagation(); if (fInput) fInput.click(); };
 
+    // Ratio Preset Buttons
+    var ratioBtns = document.querySelectorAll('.sigRatioBtn');
+    ratioBtns.forEach(function(btn) {
+      btn.onclick = function() {
+        var r = btn.getAttribute('data-ratio');
+        currentSigRatio = r;
+        ratioBtns.forEach(function(b) {
+          b.style.background = '#F1F5F9';
+          b.style.color = '#475569';
+          b.style.borderColor = '#CBD5E1';
+        });
+        btn.style.background = '#2563EB';
+        btn.style.color = '#FFFFFF';
+        btn.style.borderColor = '#2563EB';
+        resetCropBox();
+        drawCropCanvas();
+      };
+    });
+
     var btnRotL = document.getElementById('btnSigRotLeft');
     if (btnRotL) btnRotL.onclick = function() { rotateImage(-90); };
 
     var btnRotR = document.getElementById('btnSigRotRight');
     if (btnRotR) btnRotR.onclick = function() { rotateImage(90); };
 
+    var btnFlpH = document.getElementById('btnSigFlipH');
+    if (btnFlpH) btnFlpH.onclick = flipImageHorizontal;
+
+    var btnZmIn = document.getElementById('btnSigZoomIn');
+    if (btnZmIn) btnZmIn.onclick = function() { zoomCropBox(0.9); };
+
+    var btnZmOut = document.getElementById('btnSigZoomOut');
+    if (btnZmOut) btnZmOut.onclick = function() { zoomCropBox(1.1); };
+
     var btnReset = document.getElementById('btnSigResetBox');
     if (btnReset) btnReset.onclick = initCropScreen;
 
     var btnCrop = document.getElementById('btnSigCropNext');
-    if (btnCrop) btnCrop.onclick = applyCrop;
+    if (btnCrop) btnCrop.onclick = function() { applyCrop(false); };
+
+    var btnSkip = document.getElementById('btnSigSkipCrop');
+    if (btnSkip) btnSkip.onclick = function() { applyCrop(true); };
 
     var chkWh = document.getElementById('autoWhitePaperCheckbox');
     if (chkWh) chkWh.onchange = renderCleanPreview;
